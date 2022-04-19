@@ -18,6 +18,8 @@ html, body{
     align-items: center;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     justify-content: center;
+    position: fixed;
+    background-color: #ffffff;
 }
 .nav-menu .logo {
     font-size: 29px;
@@ -286,3 +288,9 @@ div#footer-grid {
     padding-bottom: 60px;
 }
 
+#mentions {
+    width: 70%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+}

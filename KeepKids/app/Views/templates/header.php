@@ -7,8 +7,8 @@
 
                 <?php
                 if (empty(session('email'))) { ?>
-                    <li><a href="<?= base_url(); ?>/news/create">A propos</a></li>
-                    <li><a href="<?= base_url(); ?>/categories">Mentions Legales</a></li>
+                    <li><a href="<?= base_url(); ?>#apropos">A propos</a></li>
+                    <li><a href="<?= base_url(); ?>/accueil/mentions_legales">Mentions Legales</a></li>
                     <div class="menu">
                         <div class="logo">KEEPKIDS</div>
                     </div>

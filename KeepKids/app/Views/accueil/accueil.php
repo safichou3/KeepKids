@@ -7,10 +7,11 @@
 <?= $this->section('content') ?>
 <img src="/img/enfant.png" width="100%" alt="" style="margin-bottom: 75px;">
 
+<div id="apropos">
 <div class="section2">
 
     <section>
-        <em>About Us</em>
+        <em>A propos de nous</em>
         <h1 class="title">Nous sommes une jeune équipe qui mettons nos qualité a l'oeuvre pour votre confort</h1>
         <p>En imaginant ce site nous avons pensé aux jeunes parents dans le besoin qui ne savent pas ou ils peuvent faire garder leurs bout-de-choux. </p>
         <p>Pour cela nous avons mis en commun les compétences de 6 jeunes développeurs.</p>
@@ -18,7 +19,7 @@
     <section>
         <img src="/img/garcon_joue.png" alt="garçons">
     </section>
-</div>
+</div></div>
 <div class="section3">
     <section>
         <img src="/img/famille_danse.png" alt="enfants" width="20px">

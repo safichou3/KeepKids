@@ -31,13 +31,17 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// ACCUEIL
 $routes->get('/', 'AccueilController::index');
+$routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
+
 
 // ESPACE PRO
 $routes->get('espaces/espace_pro', 'EspaceProController::index');
-$routes->get('espaces/espace_parents', 'EspaceParentsController::index');
 
 // ESPACE PARENTS
+$routes->get('espaces/espace_parents', 'EspaceParentsController::index');
 
 /*
  * --------------------------------------------------------------------
