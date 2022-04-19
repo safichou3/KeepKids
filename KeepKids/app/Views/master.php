@@ -16,6 +16,7 @@
     <?= $this->renderSection('content') ?>
     <script src="<?= base_url(); ?>/js/main.js"></script>
     <?= $this->renderSection('javascript') ?>
+    <?php include_once("templates/footer.php") ?>
 </body>
 
 </html>
