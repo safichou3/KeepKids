@@ -66,7 +66,6 @@ html, body{
     width:100%;
     display:flex;
     align-items:center;
-    background-color: aliceblue;
     }
     
     .section2 section{
@@ -113,6 +112,17 @@ html, body{
     width:100%;
     display:flex;
     align-items:center;
+    background-color: #ffffc3;
+}
+.container {
+     min-height: 400px;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     overflow: hidden;
+     background-color: #ffffff;
     }
     
     .section3 section{
@@ -294,3 +304,52 @@ div#footer-grid {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* ANIMATIONS  */
+.container {
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+  
+  .card {
+    width: 400px;
+    min-height: 250px;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 18px );
+    -webkit-backdrop-filter: blur( 18px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 1rem;
+    padding: 1.5rem;
+    z-index: 10;
+    color: rgb(0, 0, 0);
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    color: whitesmoke;
+    background-color: #fa709a;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+  
