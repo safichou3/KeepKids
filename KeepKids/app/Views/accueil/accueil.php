@@ -16,7 +16,7 @@
         <p>Pour cela nous avons mis en commun les compétences de 6 jeunes développeurs.</p>
     </section>
     <section>
-        <img src="/img/garcon_joue.png" alt="garçons" >
+        <img src="/img/garcon_joue.png" alt="garçons">
     </section>
 </div>
 <div class="section3">

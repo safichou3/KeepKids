@@ -33,6 +33,12 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'AccueilController::index');
 
+// ESPACE PRO
+$routes->get('espaces/espace_pro', 'EspaceProController::index');
+$routes->get('espaces/espace_parents', 'EspaceParentsController::index');
+
+// ESPACE PARENTS
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
