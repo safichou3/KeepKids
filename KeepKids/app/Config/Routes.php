@@ -36,6 +36,10 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'AccueilController::index');
 $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
 
+// UTILISATEURS
+$routes->match(['get', 'post'], 'users/inscription', 'UsersController::inscription');
+$routes->match(['get', 'post'], 'connexion', 'UsersController::connexion');
+$routes->get('deconnexion', 'UsersController::deconnexion');
 
 // ESPACE PRO
 $routes->get('espaces/espace_pro', 'EspaceProController::index');
