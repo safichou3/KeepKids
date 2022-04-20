@@ -5,7 +5,23 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<img src="/img/enfant.png" width="100%" alt="" style="margin-bottom: 75px;">
+
+<div class="rouge">
+    <div class="center-div">
+
+        <div class="wrap">
+            <h1>KEEPKIDS, Tranquille le temps d'une balade</h1>
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Rechercher des creches à proximité">
+                <button type="submit" class="searchButton">
+                    <i class="fi fi-br-search"></i>
+                </button>
+            </div>
+        </div>
+
+        </form>
+    </div>
+</div>
 
 <div id="apropos">
     <div class="section2">
@@ -38,7 +54,7 @@
             <h1 class="title">Une plateforme validé par TrustPilot</h1>
             <img src="http://calliope-consulting.fr/wp-content/uploads/2020/04/trustpilot-new-.png" width="150px" alt="">
             <p class="subtitle">Parce que nous avons les meilleurs nounous sur notre site !</p>
-            <button class="btn">Get Started</button>
+            <button class="btn">Nous noter sur TrustPilot.com</button>
         </div>
         <div class="blob"></div>
     </div>
