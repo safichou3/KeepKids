@@ -31,6 +31,8 @@
             <h1 class="title">Nous sommes une jeune équipe qui mettons nos qualité a l'oeuvre pour votre confort</h1>
             <p>En imaginant ce site nous avons pensé aux jeunes parents dans le besoin qui ne savent pas ou ils peuvent faire garder leurs bout-de-choux. </p>
             <p>Pour cela nous avons mis en commun les compétences de 6 jeunes développeurs.</p>
+            <p>La rigueur et l’exigence sont les qualités principales indispensables aux prestations de garde d’enfants : chez Kangourou Kids, le recrutement est sélectif et la formation et le contrôle de qualité sont permanents.</p>
+        <p>La réglementation doit devenir plus précise et plus intransigeante pour limiter le développement des pratiques approximatives du secteur (notamment le travail au noir) qui présentent des risques, tant pour les enfants que pour leurs parents</p>
         </section>
         <section>
             <img src="/img/garcon_joue.png" alt="garçons">
@@ -39,13 +41,16 @@
 </div>
 <div class="section3">
     <section>
-        <img src="/img/famille_danse.png" alt="enfants" width="20px">
+        <img src="https://www.wecasa.fr/mag/wp-content/uploads/2021/06/shutterstock_348486443-500x500.jpg" alt="enfants" width="20px">
     </section>
     <section>
         <em>Why Us</em>
         <h1 class="title">Notre plateforme est sûr et vous permettra d'aller au travail en toute sérenité</h1>
         <p>En effet, chacun des professionels pouvant garder des enfants nous aura donner une preuve de sa capacité a garder des enfants.</p>
         <p>Le site vous indiqueras oû sont les professionels les plus proches afin de vous aider le mieux possible </p>
+   <p>Votre agence KEEPKIDS met à votre disposition des baby-sitters ou créche qui prendront en charge vos enfants depuis la sortie de l'école jusqu'à votre retour à la maison sur toute la France. 
+
+Le trajet est assuré en toute sécurité par votre baby-sitter ou  jusqu’à votre domicile. Selon vos besoins, nos nounous sont là pour donner le goûter, le bain ou la douche, aider aux devoirs, accompagner aux activités, jouer avec eux et préparer le repas. Vous partirez sereinement à votre travail et profiterez pleinement de vos enfants à votre retour.</p>
     </section>
 </div>
 <section>
