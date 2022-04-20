@@ -1,8 +1,6 @@
 /* ============================= CSS SAFIA ============================= */
-.section-title{
-  color: #3D63F3;
-}
-.body-parents {
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #E4EAFF;
   min-height: 100vh;
 }
@@ -11,18 +9,26 @@
   padding-bottom: 70px;
 }
 
+.top-empty {
+  width: 100%;
+  height: 130px;
+}
+
 .hello-parents {
   color: #8B3EDF;
   font-size: 50px;
 }
-.mini-title-parents{
+
+.mini-title-parents {
   color: #000;
   margin-bottom: -30px;
 }
-.mini-text-parents{
+
+.mini-text-parents {
   font-size: 20px;
   margin-bottom: 50px;
 }
+
 .top-parents {
   display: flex;
   justify-content: space-between;
@@ -30,14 +36,16 @@
   background-color: #C6D2FF;
   /* border: 2px solid black; */
 }
-.top-left-parents{
+
+.top-left-parents {
   margin-left: 30px;
 }
 
-.btn-parents{
+.btn-parents {
   display: flex;
   justify-content: space-evenly;
 }
+
 .btn-parents-res, .btn-parents-kids {
   padding: 20px 40px;
   border-radius: 10px;
@@ -58,20 +66,21 @@
   background-color: #A05BB6;
 }
 
-.img-top-right{
+.img-top-right {
   width: 35%;
 }
-.img_parents{
+
+.img_parents {
   width: 95%;
 }
 
-.middle-parents{
+.middle-parents {
   display: flex;
   justify-content: space-around;
   margin-top: 100px;
 }
 
-.kids{
+.kids {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,7 +95,7 @@
 }
 
 
-.access{
+.access {
   margin-top: 25px;
   padding: 20px 20px;
   border-radius: 10px;
@@ -99,10 +108,10 @@
   background-color: #8B3EDF;
 }
 
-.title-card-parents{
+.title-card-parents {
   font-size: 25px;
 }
 
-.link-btn-parents{
+.link-btn-parents {
   width: 60%;
 }
