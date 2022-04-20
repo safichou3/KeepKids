@@ -409,4 +409,75 @@ footer.site-footer {
       flex-direction: column;
     }
   }
+<<<<<<< Updated upstream
   
+=======
+  
+   
+  .rouge {
+    width: 100%;
+    height: 750px;
+    margin: 0 auto;
+    background-image: url(../img/enfant.png);
+    background-size: cover;
+}
+
+.center-div {
+    display: table;
+    height: 700px;
+    width: 100%;
+    text-align: center;
+}
+#input-recherche {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* search */
+
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: none;
+    border-right: none;
+    padding: 8px;
+    height: 28px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #000000;
+    background-color: #ffffff94;
+}
+.searchTerm:hover{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+  .searchTerm:focus{
+    color: #000000;
+  }
+  
+  .searchButton {
+    width: 49px;
+    height: 44px;
+    border: none;
+    background: #f3c964;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+>>>>>>> Stashed changes
