@@ -31,13 +31,21 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// ACCUEIL
 $routes->get('/', 'AccueilController::index');
+$routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
+
+// UTILISATEURS
+$routes->match(['get', 'post'], 'users/inscription', 'UsersController::inscription');
+$routes->match(['get', 'post'], 'connexion', 'UsersController::connexion');
+$routes->get('deconnexion', 'UsersController::deconnexion');
 
 // ESPACE PRO
 $routes->get('espaces/espace_pro', 'EspaceProController::index');
-$routes->get('espaces/espace_parents', 'EspaceParentsController::index');
 
 // ESPACE PARENTS
+$routes->get('espaces/espace_parents', 'EspaceParentsController::index');
 
 /*
  * --------------------------------------------------------------------

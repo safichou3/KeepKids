@@ -1,7 +1,7 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link href="<?= base_url(); ?>/css/newsCreation.css" rel="stylesheet">
+<link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
 <?= $this->section('title') ?>
