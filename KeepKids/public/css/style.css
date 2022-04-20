@@ -285,9 +285,6 @@ div#footer-container {
 
 div#footer-grid {
     display: flex;
-    align-items: stretch;
-    padding-bottom: 60px;
-}
     border-radius: 0.3em;
     transition: all 0.25s ease 0s;
   }
