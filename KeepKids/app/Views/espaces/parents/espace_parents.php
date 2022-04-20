@@ -6,7 +6,7 @@
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
 <?= $this->section('title') ?>
-<h2 class="section-title">ESPACE PARENTS</h2>
+<h2 class="section-title"><br></h2>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -17,8 +17,8 @@
       <div class="top-left-parents">
         <div class="top-text-parents">
           <h3 class="mini-title-parents">Vous avez la main sur votre planning</h3>
-          <h1 class="hello-parents">Bonjour Houda,</h1>
-          <p class="mini-text-parents">Mon espace santé vous permet de conserver et partager vos données et documents de santé en toute confidentialité</p>
+          <h1 class="hello-parents">Bonjour <?= session("prenom");?>,</h1>
+          <p class="mini-text-parents">Votre espace parent KeepKids vous permet de gérer votre planning de garde et vos factures en toute sérénité</p>
         </div>
 
         <div class="btn-parents">

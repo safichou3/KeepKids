@@ -8,6 +8,6 @@ class EspaceParentsController extends BaseController
 {
     public function index()
     {
-        return view("espaces/espace_parents");
+        return view("espaces/parents/espace_parents");
     }
 }
