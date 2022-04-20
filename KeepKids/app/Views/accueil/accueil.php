@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<img src="/img/enfant.png" width="100%" alt="">
+<img src="/img/enfant.png" width="100%" alt="" style="margin-bottom: 75px;">
 
 <div class="section2">
 

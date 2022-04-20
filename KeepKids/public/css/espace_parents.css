@@ -1,0 +1,45 @@
+/* ============================= CSS SAFIA ============================= */
+
+.body-parents {
+  background-color: #C6D2FF;
+  min-height: 100vh;
+  
+}
+
+.content-body-parents {
+  margin-left: 10px;
+}
+
+/* .parents-title{
+  color: #C6D2FF;
+} */
+
+h1 {
+  color: red;
+}
+
+.top-parents {
+  display: flex;
+  border: 2px solid black;
+}
+
+
+.btn-parents{
+  display: flex;
+  justify-content: space-around;
+}
+.btn-parents-res, .btn-parents-kids {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-parents-res {
+  background-color: #3D63F3;
+}
+
+.btn-parents-kids {
+  background-color: #A05BB6;
+}
