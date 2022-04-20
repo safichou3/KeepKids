@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'sql730.main-hosting.eu',
-        'username' => 'u281089890_hugo',
-        'password' => '7|kBsTIjwP',
-        'database' => 'u281089890_projet',
+        'hostname' => 'localhost',
+        'username' => '',
+        'password' => '',
+        'database' => '',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -47,7 +47,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => "",
+        'port'     => 3306,
     ];
 
     /**

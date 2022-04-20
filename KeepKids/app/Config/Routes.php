@@ -36,16 +36,18 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'AccueilController::index');
 $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
 
-// UTILISATEURS
-$routes->match(['get', 'post'], 'users/inscription', 'UsersController::inscription');
-$routes->match(['get', 'post'], 'connexion', 'UsersController::connexion');
-$routes->get('deconnexion', 'UsersController::deconnexion');
-
-// ESPACE PRO
-$routes->get('espaces/espace_pro', 'EspaceProController::index');
+// BOTH
+$routes->get('deconnexion', 'ParentsController::deconnexion');
 
 // ESPACE PARENTS
-$routes->get('espaces/espace_parents', 'EspaceParentsController::index');
+$routes->get('espaces/parents/espace_parents', 'EspaceParentsController::index');
+$routes->match(['get', 'post'], 'espaces/parents/connexionParents', 'ParentsController::connexion');
+$routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsController::inscription');
+
+// ESPACE PRO
+$routes->get('espaces/pro/espace_pro', 'EspaceProController::index');
+$routes->match(['get', 'post'], 'espaces/pro/connexionPro', 'ProController::connexion');
+$routes->match(['get', 'post'], 'espaces/pro/inscriptionPro', 'ProController::inscription');
 
 /*
  * --------------------------------------------------------------------

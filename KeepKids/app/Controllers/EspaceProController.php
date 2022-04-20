@@ -8,6 +8,6 @@ class EspaceProController extends BaseController
 {
     public function index()
     {
-        return view("espaces/espace_pro");
+        return view("espaces/pro/espace_pro");
     }
 }

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UsersModel extends Model
+class ProModel extends Model
 {
-    protected $table          = 'parent';
-    protected $allowedFields  = ['nom', 'prenom', 'email', 'tel', 'adresse', 'password'];
+    protected $table          = 'pro';
+    protected $allowedFields  = ['nom', 'prenom', 'email', 'nomEntreprise','tel', 'adresse', 'siret', 'password','idEtablissement','idDocument'];
     // protected $createdField   = 'created_at';
     // protected $updatedField   = 'updated_at';
     // protected $useSoftDeletes = true;
