@@ -57,12 +57,12 @@ class UsersController extends BaseController
         if ($this->request->getMethod() === 'post' && $this->validate([
             'nom' => 'required|min_length[3]|max_length[255]',
             'prenom' => 'required|min_length[3]|max_length[255]',
-            'email' => 'required|valid_email|is_unique[users.email]',
+            'email' => 'required|valid_email|is_unique[parent.email]',
             'tel' => 'required|min_length[10]|max_length[10]',
             'password' => 'required|min_length[6]|max_length[255]',
         ])) {
 
-            $user = [
+            $parent = [
                 "nom" => $this->request->getPost("nom"),
                 "prenom" => $this->request->getPost("prenom"),
                 "email" => $this->request->getPost("email"),
@@ -70,7 +70,7 @@ class UsersController extends BaseController
                 "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT)
             ];
 
-            $this->usersModel->insert($user);
+            $this->usersModel->insert($parent);
             return redirect()->to('/');
         } else {
             echo view("users/inscription", [
