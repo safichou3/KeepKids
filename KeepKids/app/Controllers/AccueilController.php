@@ -10,4 +10,8 @@ class AccueilController extends BaseController
     {
         return view("accueil/accueil");
     }
+    public function mentionsL()
+    {
+        return view("accueil/mentions_legales");
+    }
 }
