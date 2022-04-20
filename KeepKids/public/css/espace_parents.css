@@ -6,9 +6,9 @@
   
 }
 
-.content-body-parents {
-  margin-left: 10px;
-}
+/* .content-body-parents {
+  margin: 30px 10px;
+} */
 
 
 h1 {
@@ -17,7 +17,9 @@ h1 {
 
 .top-parents {
   display: flex;
-  border: 2px solid black;
+  justify-content: space-between;
+  padding: 60px 20px;
+  /* border: 2px solid black; */
 }
 
 
