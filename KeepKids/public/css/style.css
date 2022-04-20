@@ -270,7 +270,7 @@ footer.site-footer {
     .section3 section em {
         top: 10px;
     }
-}
+
 
 /* FOOTER */
 :root {
@@ -409,9 +409,6 @@ footer.site-footer {
       flex-direction: column;
     }
   }
-<<<<<<< Updated upstream
-  
-=======
   
    
   .rouge {
@@ -480,4 +477,3 @@ footer.site-footer {
     left: 50%;
     transform: translate(-50%, -50%);
   }
->>>>>>> Stashed changes
