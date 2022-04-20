@@ -13,11 +13,17 @@
 
 <body>
     <?php include_once("templates/header.php") ?>
+
     <h1><?= $this->renderSection('title') ?></h1>
+
     <?= $this->renderSection('content') ?>
-    <script src="<?= base_url(); ?>/js/main.js"></script>
-    <?= $this->renderSection('javascript') ?>
+
     <?php include_once("templates/footer.php") ?>
+    
+    <script src="<?= base_url(); ?>/js/main.js"></script>
+
+    <?= $this->renderSection('javascript') ?>
+
 </body>
 
 </html>
