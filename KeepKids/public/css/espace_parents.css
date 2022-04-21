@@ -71,7 +71,7 @@
   margin-top: 100px;
 }
 
-.kids{
+.kids {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,10 +79,10 @@
   justify-content: space-between;
   background-color: #B891E3;
   width: 276px;
-  height: 380px;
+  height: auto;
   border-radius: 45px;
   color: #fff;
-  padding: 25px 0;
+  padding: 25px;
 }
 
 

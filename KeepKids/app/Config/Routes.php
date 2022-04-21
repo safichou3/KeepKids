@@ -41,6 +41,8 @@ $routes->get('deconnexion', 'ParentsController::deconnexion');
 
 // ESPACE PARENTS
 $routes->get('espaces/parents/espace_parents', 'EspaceParentsController::index');
+$routes->get('espaces/parents/mesEnfants', 'EspaceParentsController::mesEnfants');
+
 $routes->match(['get', 'post'], 'espaces/parents/connexionParents', 'ParentsController::connexion');
 $routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsController::inscription');
 
