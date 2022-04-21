@@ -24,7 +24,7 @@
 
                 <div class="btn-pro">
                     <div class="btn-planning-pro">
-                        <button class="btn-pro-plan"><i class="fa-solid fa-calendar-days"></i>Réserver</button>
+                        <button class="btn-pro-plan"><i class="fi fi-br-search"></i></i>Réserver</button>
                     </div>
                     <div class="btn-add-kids-pro">
                         <button class="btn-pro-kids"><i class="fa-solid fa-calendar-days"></i>Ajouter un enfant</button>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="img-top-right">
-                <img class="img_pro" src="<?= base_url(); ?>/img/house.svg" alt="">
+                <img class="img_pro" src="<?= base_url(); ?>/img/creche.svg" alt="">
             </div>
         </div>
         <div class="middle-pro">
