@@ -60,7 +60,7 @@
             <h1 class="title">Une plateforme validé par TrustPilot</h1>
             <img src="http://calliope-consulting.fr/wp-content/uploads/2020/04/trustpilot-new-.png" width="150px" alt="">
             <p class="subtitle">Parce que les meilleurs nounous se trouvent sur notre site !</p>
-            <a href="https://www.trustpilot.com/"><button class="btn-accueil-pilot">Nous noter sur TrustPilot.com</button></a>
+            <a href="https://www.trustpilot.com/" target="_blank"><button class="btn-accueil-pilot">Nous noter sur TrustPilot.com</button></a>
         </div>
         <div class="blob"></div>
     </div>
