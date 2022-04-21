@@ -42,9 +42,13 @@ $routes->get('deconnexion', 'ParentsController::deconnexion');
 // ESPACE PARENTS
 $routes->get('espaces/parents/espace_parents', 'EspaceParentsController::index');
 $routes->get('espaces/parents/mesEnfants', 'EspaceParentsController::mesEnfants');
+$routes->get('espaces/parents/mesEnfants/delete/(:num)', 'EspaceParentsController::delete/$1');
+$routes->match(['get', 'post'],'espaces/parents/modifEnfants/(:num)', 'News::modifEnfants/$1');
+$routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::reservations');
 
 $routes->match(['get', 'post'], 'espaces/parents/connexionParents', 'ParentsController::connexion');
 $routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsController::inscription');
+
 
 // ESPACE PRO
 $routes->get('espaces/pro/espace_pro', 'EspaceProController::index');

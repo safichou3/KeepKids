@@ -12,26 +12,45 @@
 
 <?= $this->section('content') ?>
 
-<div class="btn-add-kids-div">
-    <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="btn-add-kids">Ajouter un enfant</button></a>
+<div class="add-kids-display">
+
+<div class='card-add-kids'>
+
+    <h3 class='title-card-parents'>Ajouter un enfant</h3>
+    <form method="POST" action="<?= base_url(); ?>/espaces/parents/modifEnfants" enctype="multipart/form-data">
+        <label>Nom</label><br>
+        <input class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
+
+        <label>Prenom</label><br>
+        <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
+
+        <label>Date de Naissance</label><br>
+        <input class="input-inscription" type="date" name="dateDeNaissance" placeholder="Date de naissance" required><br>
+
+        <label>Allergies ?</label><br>
+        <input class="input-inscription" type="text" name="allergies" placeholder="Allergies"><br>
+
+        <label>Maladie(s) ?</label><br>
+        <input class="input-inscription" type="text" name="maladies" placeholder="Maladies"><br>
+
+        <label>Traitement(s) ?</label><br>
+        <input class="input-inscription" type="text" name="traitements" placeholder="Traitements"><br>
+
+        <label>Traitement(s) ?</label><br>
+        <input class="textarea" type="text" name="description" placeholder="Description"><br>
+
+        <input class="inscription access" type="submit"  value="Ajouter l'enfant">
+    </form>
 </div>
 
-<!-- foreach des enfants ici -->
-
-
-
-
-<div class="add-kids-display">
     <?php foreach ($enfant as $element) {
         echo "<div class='card-add-kids'><h3 class='title-card-parents'>" . $element["prenom"] . " " . $element["nom"] . "</h3><h4>Né(e) le: " . $element["dateDeNaissance"] . "<br>Allergie(s): " . $element["allergies"] . "<br>Maladie(s): " . $element["maladies"] . "<br>Traitement(s): " . $element["traitement"] . "<br>Description: " . $element["description"] . "<br><br>
         <div class='link-btn-kids-div'>
-        <a class='link-btn-kids modify' href=" . base_url() . "/news/modify/" . $element["id"] . ">Modifier</a>
-        <a class='link-btn-kids delete' href=" . base_url() . "/news/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Voir la fiche</button></h4></div>";
+        <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/mesEnfants/modifEnfants/" . $element["id"] . ">Modifier</a>
+        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Voir la fiche</button></h4></div>";
     }
     ?>
 </div>
 
-<!-- Ajouter un enfant -->
-
-<br><br>
-<?= $this->endSection() ?>
+    <br><br>
+    <?= $this->endSection() ?>
