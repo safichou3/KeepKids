@@ -27,7 +27,7 @@
             <button class="btn-parents-res"><i class="fa-solid fa-calendar-days"></i>Réserver</button>
           </div>
           <div class="btn-add-kids-parents">
-            <button class="btn-parents-kids"><i class="fa-solid fa-calendar-days"></i>Ajouter un enfant</button>
+            <a href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-kids"><i class="fa-solid fa-calendar-days"></i>Ajouter un enfant</button></a>
           </div>
         </div>
       </div>
@@ -37,9 +37,9 @@
     </div>
     <div class="middle-parents">
       <div class="kids">
-        <h3 class="title-card-parents">Enfants</h3>
+        <h3 class="title-card-parents">Mes Enfants</h3>
         <img class="img-title-card-parents" src="<?= base_url(); ?>/img/kiddo.svg" alt="">
-        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
+        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="access">Accéder</button></a>
       </div>
       <div class="justificatifs kids">
         <h3 class="title-card-parents">Justificatifs</h3>
@@ -47,7 +47,7 @@
         <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
       </div>
       <div class="factures kids">
-        <h3 class="title-card-parents">Factures</h3>
+        <h3 class="title-card-parents">Mes Factures</h3>
         <img class="img-title-card-parents" src="<?= base_url(); ?>/img/factures.svg" alt="">
         <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
       </div>

@@ -18,9 +18,9 @@
                     <li><a href="<?= base_url(); ?>/profil">JUSTIFICATIFS</a></li>
                     <li><a href="<?= base_url(); ?>/profil">RESERVATIONS</a></li>
                     <div class="menu">
-                        <div class="logo" style="color: #3D63F3;">ESPACE PARENT</div>
+                        <div class="logo"><a style="color: #3D63F3;text-decoration:none;" href="<?= base_url(); ?>/espaces/parents/espace_parents">ESPACE PARENTS</a></div>
                     </div>
-                    <li><a href="<?= base_url(); ?>/profil">MES ENFANTS</a></li>
+                    <li><a href="<?= base_url(); ?>/espaces/parents/mesEnfants">MES ENFANTS</a></li>
                     <li><a href="<?= base_url(); ?>/profil"><?= session("email"); ?></a></li>
                     <li><a href="<?= base_url(); ?>/deconnexion"><span class="glyphicon glyphicon-log-out red"></span> Déconnexion</a></li>
                 <?php }
@@ -29,5 +29,3 @@
         </div>
     </div>
 </div>
-
-<?= session('nom'); ?>
