@@ -24,17 +24,16 @@
         <input class="input-inscription" type="text" name="adresse" placeholder="adresse"><br>
 
         <label>Mot de passe</label><br>
-        <input id="password_inscription"
- class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
+        <input id="passwordInput" class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
         <div class="errors">
-                        <span id="passwordErrorMajuscule">1 majuscule</span>
-                        <span id="passwordErrorMinuscule">1 minuscule</span>
-                        <span id="passwordErrorNombre">1 chiffre</span>
-                        <span id="passwordErrorSpecial">1 caractère special</span>
-                        <span id="passwordErrorSize">8 caractères minimum</span>
-                    </div>
+            <span id="passwordErrorMajuscule">1 majuscule</span>
+            <span id="passwordErrorMinuscule">1 minuscule</span>
+            <span id="passwordErrorNombre">1 chiffre</span>
+            <span id="passwordErrorSpecial">1 caractère special</span>
+            <span id="passwordErrorSize">8 caractères minimum</span>
+        </div>
         <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris">
-   
+
 
     </form>
 </div>
