@@ -13,7 +13,9 @@ class EnfantsModel extends Model
     // protected $useSoftDeletes = true;
     // protected $deletedField   = 'deleted_at';
 
-    public function findByEmail(string $email) {
-        return $this->where(['email' => $email])->first();
+    public function findEnfantsByParent(int $idParent){
+        return $this->select("enfant.*")
+            ->where(['idParent' => $idParent])
+            ->findAll();
     }
 }
