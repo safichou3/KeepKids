@@ -1,6 +1,10 @@
 <footer class="footer" id="footer">
 
-  <span class="col">
+  <div class="footer-content">
+    
+  </div>
+
+  <!-- <span class="col">
     <h3 class="col-title">Info</h3>
     <nav class="col-list">
       <ul>
@@ -58,6 +62,6 @@
             </svg></a></li>
       </ul>
     </div>
-  </span>
+  </span> -->
 
 </footer>
