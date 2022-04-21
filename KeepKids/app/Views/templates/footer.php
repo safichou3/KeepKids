@@ -8,10 +8,10 @@
       <div class="right-trait trait"></div>
     </div>
     <div class="social-footer">
-      <i class="fi fi-brands-facebook fi-footer"></i>
-      <i class="fi fi-brands-linkedin fi-footer"></i>
-      <i class="fi fi-brands-twitter fi-footer"></i>
-      <i class="fi fi-brands-instagram fi-footer"></i>
+      <a class="link-footer-a" href="https://facebook.com" target="_blank"><i class="fi fi-brands-facebook fi-footer"></i></a>
+      <a class="link-footer-a" href="https://linkedin.com" target="_blank"><i class="fi fi-brands-linkedin fi-footer"></i></a>
+      <a class="link-footer-a" href="https://twitter.com" target="_blank"><i class="fi fi-brands-twitter fi-footer"></i></a>
+      <a class="link-footer-a" href="https://instagram.com" target="_blank"><i class="fi fi-brands-instagram fi-footer"></i></a>
     </div>
     <div class="link-footer">
       <ul class="ul-footer">
