@@ -73,7 +73,7 @@ class ParentsController extends BaseController
                 "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT)
             ];
 
-            $this->usersModel->insert($parent);
+            $this->parentsModel->insert($parent);
             return redirect()->to('/');
         } else {
             echo view("espaces/parents/inscriptionParents", [
