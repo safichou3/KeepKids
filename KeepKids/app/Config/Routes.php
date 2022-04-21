@@ -39,18 +39,22 @@ $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
 // BOTH
 $routes->get('deconnexion', 'ParentsController::deconnexion');
 
-// ESPACE PARENTS
+// ESPACE PARENTS ----------------------
 $routes->get('espaces/parents/espace_parents', 'EspaceParentsController::index');
+
+// mes enfants:
 $routes->get('espaces/parents/mesEnfants', 'EspaceParentsController::mesEnfants');
+$routes->match(['get', 'post'], 'espaces/parents/mesEnfants', 'EspaceParentsController::creerEnfant');
 $routes->get('espaces/parents/mesEnfants/delete/(:num)', 'EspaceParentsController::delete/$1');
-$routes->match(['get', 'post'],'espaces/parents/modifEnfants/(:num)', 'News::modifEnfants/$1');
+$routes->match(['get', 'post'],'espaces/parents/modifEnfants/(:num)', 'EspaceParentsController::modifEnfants/$1');
 $routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::reservations');
 
+// connexion/inscription
 $routes->match(['get', 'post'], 'espaces/parents/connexionParents', 'ParentsController::connexion');
 $routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsController::inscription');
 
 
-// ESPACE PRO
+// ESPACE PRO ----------------------------
 $routes->get('espaces/pro/espace_pro', 'EspaceProController::index');
 $routes->match(['get', 'post'], 'espaces/pro/connexionPro', 'ProController::connexion');
 $routes->match(['get', 'post'], 'espaces/pro/inscriptionPro', 'ProController::inscription');
