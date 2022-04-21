@@ -2,7 +2,7 @@
 
 
 <?= $this->section('css') ?>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
 <?= $this->section('title') ?>
@@ -18,16 +18,16 @@
       <div class="top-left-parents">
         <div class="top-text-parents">
           <h3 class="mini-title-parents">Vous avez la main sur votre planning</h3>
-          <h1 class="hello-parents">Bonjour <?= session("prenom");?>,</h1>
+          <h1 class="hello-parents">Bonjour <?= session("prenom"); ?>,</h1>
           <p class="mini-text-parents">Votre espace parent KeepKids vous permet de gérer votre planning de garde et vos factures en toute sérénité</p>
         </div>
 
         <div class="btn-parents">
           <div class="btn-reservation-parents">
-            <button class="btn-parents-res"><i class="fa-solid fa-calendar-days"></i>Réserver</button>
+            <button class="btn-parents-res"><i class="fi fi-rs-calendar icons-btn"></i>Réserver</button>
           </div>
           <div class="btn-add-kids-parents">
-            <a href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-kids"><i class="fa-solid fa-calendar-days"></i>Ajouter un enfant</button></a>
+            <a href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-kids"><i class="fi fi-rs-child-head icons-btn"></i>Ajouter un enfant</button></a>
           </div>
         </div>
       </div>
