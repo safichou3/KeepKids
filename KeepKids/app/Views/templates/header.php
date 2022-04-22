@@ -14,7 +14,16 @@
                     </div>
                     <li><a href="<?= base_url(); ?>/espaces/pro/connexionPro">ESPACE PRO</a></li>
                     <li><a href="<?= base_url(); ?>/espaces/parents/connexionParents">ESPACE PARENTS</a></li>
-                <?php } else { ?>
+                <?php } else if ($table = "SELECT * FROM pro") { ?>
+                    <li><a href="<?= base_url(); ?>/espaces/pro/planningPro">PLANNING</a></li>
+                    <li><a href="<?= base_url(); ?>/espaces/parents/reservations">PAIEMENTS & RELANCES</a></li>
+                    <div class="menu">
+                        <div class="logo"><a style="color: red;text-decoration:none;" href="<?= base_url(); ?>/espaces/pro/espace_pro">ESPACE PRO</a></div>
+                    </div>
+                    <li><a href="<?= base_url(); ?>/espaces/parents/mesEnfants">FACTURES</a></li>
+                    <li><a href="<?= base_url(); ?>/profil"><?= session("email"); ?></a></li>
+                    <li><a href="<?= base_url(); ?>/deconnexion"><span class="glyphicon glyphicon-log-out red"></span> Déconnexion</a></li>
+                <?php }else { ?>
                     <li><a href="<?= base_url(); ?>/profil">JUSTIFICATIFS</a></li>
                     <li><a href="<?= base_url(); ?>/espaces/parents/reservations">RESERVATIONS</a></li>
                     <div class="menu">

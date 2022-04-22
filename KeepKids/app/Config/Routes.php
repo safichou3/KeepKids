@@ -58,6 +58,8 @@ $routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsCo
 $routes->get('espaces/pro/espace_pro', 'EspaceProController::index');
 $routes->match(['get', 'post'], 'espaces/pro/connexionPro', 'ProController::connexion');
 $routes->match(['get', 'post'], 'espaces/pro/inscriptionPro', 'ProController::inscription');
+$routes->match(['get', 'post'], 'espaces/pro/planningPro', 'ProController::planningPro');
+
 
 /*
  * --------------------------------------------------------------------
