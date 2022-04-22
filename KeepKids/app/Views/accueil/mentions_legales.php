@@ -150,9 +150,8 @@
     complexité de la demande et/ou le nombre de demandes l'exigent. <br>
     De plus, et depuis la loi n°2016-1321 du 7 octobre 2016, les personnes qui le souhaitent, ont la possibilité d’
     organiser le sort de leurs données après leur décès. Pour plus d’information sur le sujet, vous pouvez
-    consulter le site Internet de la CNIL : https://www.cnil.fr/. <br>
-    Les utilisateurs peuvent aussi introduire une réclamation auprès de la CNIL sur le site de la CNIL : <br>
-    https://www.cnil.fr. <br>
+    consulter le site Internet de la CNIL : <a href="https://www.cnil.fr/" target="_blank">https://www.cnil.fr/</a>. <br>
+    Les utilisateurs peuvent aussi introduire une réclamation auprès de la CNIL sur le site de la CNIL : <a href="https://www.cnil.fr/" target="_blank">https://www.cnil.fr/</a>. <br>
     Nous vous recommandons de nous contacter dans un premier temps avant de déposer une réclamation auprès
     de la CNIL, car nous sommes à votre entière disposition pour régler votre problème.</p>
   </div>
@@ -218,7 +217,7 @@
     <p>Un « Cookie » ou traceur est un fichier électronique déposé sur un terminal (ordinateur, tablette, smartphone,
     …) et lu par exemple lors de la consultation d'un site internet, de la lecture d'un courrier électronique, de
     l'installation ou de l'utilisation d'un logiciel ou d'une application mobile et ce, quel que soit le type de
-    terminal utilisé (source : https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi). <br>
+    terminal utilisé (source : <a href="https://www.cnil.fr/fr/cookies-et-traceurs-que-dit-la-loi" target="_blank">https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi</a>). <br>
     Le site peut collecter automatiquement des informations standards. Toutes les informations collectées indirectement ne
     seront utilisées que pour suivre le volume, le type et la configuration du trafic utilisant ce site, pour en développer la
     conception et l'agencement et à d'autres fins administratives et de planification et plus généralement pour améliorer le
