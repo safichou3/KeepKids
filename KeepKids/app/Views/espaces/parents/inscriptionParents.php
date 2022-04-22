@@ -24,7 +24,6 @@
         <input class="input-inscription" type="text" name="adresse" placeholder="adresse"><br>
 
         <label>Mot de passe</label><br>
-<<<<<<< Updated upstream
         <input id="passwordInput" class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
         <div class="errors">
             <span id="passwordErrorMajuscule">1 majuscule</span>
@@ -35,19 +34,6 @@
         </div>
         <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris">
 
-=======
-        <input id="password_inscription" onclick="validate()"
- class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
-        <div class="errors">
-                        <span id="passwordErrorMajuscule">1 majuscule</span>
-                        <span id="passwordErrorMinuscule">1 minuscule</span>
-                        <span id="passwordErrorNombre">1 chiffre</span>
-                        <span id="passwordErrorSpecial">1 caractère special</span>
-                        <span id="passwordErrorSize">8 caractères minimum</span>
-                    </div>
-        <input  class="inscription" type="submit" value="Je m'inscris">
-   
->>>>>>> Stashed changes
 
     </form>
 </div>

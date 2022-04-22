@@ -39,11 +39,19 @@
         <input class="input-inscription" type="number" name="idEtablissement" required><br>
 
         <label>Mot de passe</label><br>
-        <input class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
-
-        <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
+        <input id="passwordInput class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
+        <div class="errors">
+            <span id="passwordErrorMajuscule">1 majuscule</span>
+            <span id="passwordErrorMinuscule">1 minuscule</span>
+            <span id="passwordErrorNombre">1 chiffre</span>
+            <span id="passwordErrorSpecial">1 caractère special</span>
+            <span id="passwordErrorSize">8 caractères minimum</span>
+        </div>
+        <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
     </form>
 </div>
 <a href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
-
+<?= $this->endSection() ?>
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
 <?= $this->endSection() ?>
