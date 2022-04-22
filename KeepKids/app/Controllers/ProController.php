@@ -36,7 +36,9 @@ class ProController extends BaseController
                     session()->set([
                         "email" => $pro["email"],
                         "prenom" => $pro["prenom"],
-                        "id" => $pro["id"]
+                        "id" => $pro["id"],
+                        "type" => "pro",
+                        "idE" => $pro["idEtablissement"]
                     ]);
                     return redirect()->to('espaces/pro/espace_pro');
                 } else {
