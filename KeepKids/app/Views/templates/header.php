@@ -16,7 +16,7 @@
                     <li><a href="<?= base_url(); ?>/espaces/parents/connexionParents">ESPACE PARENTS</a></li>
                 <?php } else { ?>
                     <li><a href="<?= base_url(); ?>/profil">JUSTIFICATIFS</a></li>
-                    <li><a href="<?= base_url(); ?>/profil">RESERVATIONS</a></li>
+                    <li><a href="<?= base_url(); ?>/espaces/parents/reservations">RESERVATIONS</a></li>
                     <div class="menu">
                         <div class="logo"><a style="color: #3D63F3;text-decoration:none;" href="<?= base_url(); ?>/espaces/parents/espace_parents">ESPACE PARENTS</a></div>
                     </div>
