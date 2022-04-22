@@ -19,35 +19,34 @@ function passwordChange() {
 	if (password.value.length >= 8) {
 		passwordErrorSize.style.color = "green";
 	} else {
-		passwordErrorSize.style.color = "red";
+		passwordErrorSize.style.color = "red";s
 	}
 
 	//Vérification présence d'une minuscule
-	if (hasLowerCase(jQuery("#password_inscription").val()) == true) {
-		colorValide(jQuery("#passwordErrorMinuscule"));
+	if (password.value.match(/[A-Z]/, 'g')) {
+        passwordErrorMinuscule.style.color = "green";
 	} else {
-		colorError(jQuery("#passwordErrorMinuscule"));
+		passwordErrorMinuscule.style.color = "green";
 	}
 
 	//Vérification présence d'une majuscule
-
-	if (hasUpperCase(jQuery("#password_inscription").val())) {
-		colorValide(jQuery("#passwordErrorMajuscule"));
+    if (password.value.match(/[a-z]/, 'g')) {
+        passwordErrorMajuscule.style.color = "green";
 	} else {
-		colorError(jQuery("#passwordErrorMajuscule"));
+		passwordErrorMajuscule.style.color = "green";
 	}
 
 	//Vérification présence d'un nombre
-	if (hasNumber(jQuery("#password_inscription").val())) {
-		colorValide(jQuery("#passwordErrorNombre"));
+	if (password.value.match(/[0-9]/, 'g')) {
+        passwordErrorNombre.style.color = "green";
 	} else {
-		colorError(jQuery("#passwordErrorNombre"));
+		passwordErrorNombre.style.color = "green";
 	}
 
 	//Vérification présence d'un char special
-	if (hasSpecial(jQuery("#password_inscription").val())) {
-		colorValide(jQuery("#passwordErrorSpecial"));
+	if (password.value.match(/[^a-zA-Z\d]/, 'g')) {
+        passwordErrorSpecial.style.color = "green";
 	} else {
-		colorError(jQuery("#passwordErrorSpecial"));
+		passwordErrorSpecial.style.color = "green";
 	}
 }
