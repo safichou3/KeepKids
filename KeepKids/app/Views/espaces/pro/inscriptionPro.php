@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 
-<h1>inscription pro</h1>
+<h1>Inscription pro</h1>
 <div class="body-inscription">
     <form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
         <label>Nom</label><br>
@@ -43,7 +43,7 @@
 
         <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
     </form>
+    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
 </div>
-<a href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
 
 <?= $this->endSection() ?>

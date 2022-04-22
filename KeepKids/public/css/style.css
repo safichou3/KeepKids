@@ -21,7 +21,7 @@ html, body {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   justify-content: center;
   position: fixed;
-  background-color: #ffffff;
+  background-color: #FFFFC3;
   z-index: 1;
 }
 
@@ -306,6 +306,7 @@ html, body {
   align-items: center;
   align-content: center;
   width: 100%;
+  margin-top: -35px;
 }
 
 .trait {
