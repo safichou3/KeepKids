@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ProModel extends Model
 {
     protected $table          = 'pro';
-    protected $allowedFields  = ['nom', 'prenom', 'email', 'nomEntreprise','tel', 'adresse', 'siret', 'password','idEtablissement','idDocument'];
+    protected $allowedFields  = ['nom', 'prenom', 'email', 'nomEntreprise','tel', 'adresse', 'siret', 'password','idEtablissement','carteId','kbis'];
     // protected $createdField   = 'created_at';
     // protected $updatedField   = 'updated_at';
     // protected $useSoftDeletes = true;
@@ -15,5 +15,9 @@ class ProModel extends Model
 
     public function findByEmail(string $email) {
         return $this->where(['email' => $email])->first();
+    }
+
+    public function findByEntreprise(string $nomEntreprise) {
+        return $this->where(['nomEntreprise' => $nomEntreprise])->first();
     }
 }

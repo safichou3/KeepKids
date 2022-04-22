@@ -19,7 +19,7 @@
         <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
 
         <label>Nom de l'Entreprise</label><br>
-        <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
+        <input class="input-inscription" type="text" name="nomEntreprise" placeholder="Prenom" required><br>
 
         <label>Email</label><br>
         <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
@@ -34,10 +34,10 @@
         <input class="input-inscription" type="number" name="siret" placeholder="siret"><br>
 
         <label>Pièce d'identité (Carte d'Id / Passeport / Permis de conduire)</label><br>
-        <input class="input-inscription" type="number" name="idDocument" required><br>
+        <input class="input-inscription" type="text" name="carteId" required><br>
 
-        <!-- <label>Extrait de kbis</label><br>
-        <input class="input-inscription" type="file" name="kbis" required><br> -->
+        <label>Extrait de kbis</label><br>
+        <input class="input-inscription" type="text" name="kbis" required><br>
 
         <label>Type d'Etablissement</label><br>
         <input class="input-inscription" type="number" name="idEtablissement" required><br>

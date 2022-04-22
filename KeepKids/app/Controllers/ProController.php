@@ -51,6 +51,11 @@ class ProController extends BaseController
         ]);
     }
 
+    public function planningPro()
+    {
+        echo view("espaces/pro/planningPro");
+    }
+
     public function inscription()
 
     {
@@ -63,7 +68,8 @@ class ProController extends BaseController
             'tel' => 'required|min_length[10]|max_length[10]',
             'siret' => 'required|min_length[14]|max_length[14]',
             'idEtablissement' => 'required',
-            'idDocument' => 'required',
+            'carteId' => 'required',
+            'kbis' => 'required',
             'password' => 'required|min_length[6]|max_length[255]',
         ])) {
 
@@ -75,7 +81,8 @@ class ProController extends BaseController
                 "adresse" => $this->request->getPost("adresse"),
                 "tel" => $this->request->getPost("tel"),
                 "siret" => $this->request->getPost("siret"),
-                "idDocument" => $this->request->getPost("idDocument"),
+                "carteId" => $this->request->getPost("carteId"),
+                "kbis" => $this->request->getPost("kbis"),
                 "idEtablissement" => $this->request->getPost("idEtablissement"),
                 "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT)
             ];
