@@ -15,7 +15,7 @@
 <body>
     <?php include_once("templates/header.php") ?>
 
-    <h1><?= $this->renderSection('title') ?></h1>
+    <?= $this->renderSection('title') ?>
 
     <?= $this->renderSection('content') ?>
 

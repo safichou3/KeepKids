@@ -3,10 +3,14 @@
 <?= $this->section('css') ?>
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
+
+<?= $this->section('title') ?>
+<h2 class="section-title-pro">Inscription pro</h2>
+<?= $this->endSection() ?>
 <?= $this->section('content') ?>
 
-<h1>Inscription pro</h1>
-<div class="body-inscription">
+<div class="body-form body-co-pro body-pro">
+    <!-- <h1>Inscription pro</h1>  -->
     <form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
         <label>Nom</label><br>
         <input class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
