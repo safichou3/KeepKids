@@ -57,6 +57,10 @@ class ProController extends BaseController
     {
         echo view("espaces/pro/planningPro");
     }
+    public function CreatePlanningPro()
+    {
+        echo view("espaces/pro/createPlanningPro");
+    }
 
     public function inscription()
 
