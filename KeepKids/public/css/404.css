@@ -1,0 +1,26 @@
+.body-change {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  -webkit-animation-name: example; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 10s; /* Chrome, Safari, Opera */
+  animation-name: example;
+  animation-duration: 10s;
+}
+
+
+/* Chrome, Safari, Opera */
+/* @-webkit-keyframes example {
+  0%   {background-color: #FFF;}
+  25%  {background-color:  #F9C6C4;}
+  50%  {background-color: #C6D2FF;}
+  100% {background-color:  #FFFFC3;}
+} */
+
+/* Standard syntax */
+@keyframes example {
+  0%   {background-color: #FFF;}
+  25%  {background-color:  #F9C6C4;}
+  50%  {background-color: #C6D2FF;}
+  100% {background-color:  #FFFFC3;}
+}

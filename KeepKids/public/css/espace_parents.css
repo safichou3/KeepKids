@@ -188,3 +188,12 @@ body {
 .icons-btn{
   margin-right: 10px;
 }
+
+
+/* ============================= FORM ADD KIDS ============================= */
+
+.input-inscription{
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
