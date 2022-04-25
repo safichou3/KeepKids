@@ -10,7 +10,7 @@
     <form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
         <label>Nom</label><br>
         <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
-        <span id="onlyText">pas de nombrez</span><br>
+        <span id="onlyText">pas de nombre</span><br>
 
         <label>Prénom</label><br>
         <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
