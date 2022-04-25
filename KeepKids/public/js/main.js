@@ -51,6 +51,7 @@ function passwordChange() {
 const nom = document.getElementById("nom");
 nom.addEventListener("input", verifNom);
 const onlyText = document.getElementById("onlyText");
+onlyText.style.visibility = 'hidden'
 function verifNom() {
 	// alert(nom.value);
 	if (nom.value.match(/[0-9]/, "g")) {
@@ -64,6 +65,7 @@ function verifNom() {
 const prenom = document.getElementById("prenom");
 prenom.addEventListener("input", verifPrenom);
 const onlyTexte = document.getElementById("onlyTexte");
+onlyTexte.style.visibility = 'hidden'
 function verifPrenom() {
 	// alert(nom.value);
 	if (prenom.value.match(/[0-9]/, "g")) {
