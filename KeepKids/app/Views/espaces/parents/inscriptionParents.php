@@ -9,8 +9,11 @@
 <div class="body-inscription">
     <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
         <label>Nom</label><br>
-        <input class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
-
+        <input class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required><br>
+        <div class="errors">
+            <span id="nameNumber">pas de chiffre</span>
+        </div>
+        <br>
         <label>Prenom</label><br>
         <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
 

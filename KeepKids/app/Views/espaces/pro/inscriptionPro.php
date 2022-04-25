@@ -9,11 +9,11 @@
 <div class="body-inscription">
     <form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
         <label>Nom</label><br>
-        <input class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
+        <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
+        <span id="onlyText">pas de nombrez</span><br>
 
         <label>Prénom</label><br>
         <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
-
         <label>Nom de l'Entreprise</label><br>
         <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
 
@@ -27,8 +27,8 @@
         <input class="input-inscription" type="text" name="adresse" placeholder="adresse"><br>
 
         <label>Siret</label><br>
-        <input class="input-inscription" type="number" name="siret" placeholder="siret"><br>
-
+        <input id="siretImput" class="input-inscription" type="number" name="siret" placeholder="siret"><br>
+        <span id="siretERROR">14 nombres</span><br>
         <label>Pièce d'identité (Carte d'Id / Passeport / Permis de conduire)</label><br>
         <input class="input-inscription" type="number" name="idDocument" required><br>
 
@@ -39,7 +39,7 @@
         <input class="input-inscription" type="number" name="idEtablissement" required><br>
 
         <label>Mot de passe</label><br>
-        <input id="passwordInput class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
+        <input id="passwordInput" class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
         <div class="errors">
             <span id="passwordErrorMajuscule">1 majuscule</span>
             <span id="passwordErrorMinuscule">1 minuscule</span>
