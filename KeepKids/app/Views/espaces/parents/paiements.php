@@ -5,5 +5,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-FACTURES PRO
+FACTURES & PAIEMENTS
 <?= $this->endSection() ?>

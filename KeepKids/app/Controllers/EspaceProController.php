@@ -14,7 +14,6 @@ class EspaceProController extends BaseController
     {
         echo view("espaces/pro/planningPro");
     }
-
     public function facturesPro()
     {
         echo view("espaces/pro/facturesPro");
@@ -23,4 +22,13 @@ class EspaceProController extends BaseController
     {
         echo view("espaces/pro/relancesPro");
     }
+    public function enfantsPro()
+    {
+        echo view("espaces/pro/enfantsPro");
+    }
+    public function profilPro()
+    {
+        echo view("espaces/pro/profilPro");
+    }
 }
+

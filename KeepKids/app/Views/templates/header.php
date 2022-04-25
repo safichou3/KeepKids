@@ -1,3 +1,5 @@
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+
 <div class="header">
     <div class="nav-menu">
 
@@ -27,31 +29,31 @@
                         <div class="menu">
                             <div class="logo"><a style="color: red;text-decoration:none;" href="<?= base_url(); ?>/espaces/pro/espace_pro">ESPACE PRO</a></div>
                         </div>
-                        <li><a href="<?= base_url(); ?>/espaces/pro/facturesPro">LES ENFANTS</a></li>
+                        <li><a href="<?= base_url(); ?>/espaces/pro/enfantsPro">LES ENFANTS</a></li>
                         <li><a href="<?= base_url(); ?>/espaces/pro/facturesPro">FACTURES</a></li>
                         
-                        <li><a href="<?= base_url(); ?>/profil"><?= session("email"); ?></a></li>
+                        <li><a href="<?= base_url(); ?>/espaces/pro/profilPro"><?= session("email"); ?></a></li>
                         <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
                     <?php
                     } else if (session("idE") == 2) { ?>
                         <!-- AM -->
                         <li><a href="<?= base_url(); ?>/espaces/pro/planningPro">PLANNING AM</a></li>
-                        <li><a href="<?= base_url(); ?>/espaces/parents/reservations">PAIEMENTS & RELANCES</a></li>
+                        <li><a href="<?= base_url(); ?>/espaces/pro/relancesPro">PAIEMENTS & RELANCES</a></li>
                         <div class="menu">
                             <div class="logo"><a style="color: red;text-decoration:none;" href="<?= base_url(); ?>/espaces/pro/espace_pro">ESPACE PRO</a></div>
                         </div>
-                        <li><a href="<?= base_url(); ?>/espaces/parents/mesEnfants">FACTURES</a></li>
-                        <li><a href="<?= base_url(); ?>/profil"><?= session("email"); ?></a></li>
+                        <li><a href="<?= base_url(); ?>/espaces/pro/facturesPro">FACTURES</a></li>
+                        <li><a href="<?= base_url(); ?>/espaces/pro/profilPro"><?= session("email"); ?></a></li>
                         <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
                     <?php
                     } else if (session("type") == "parent") { ?>
-                        <li><a href="<?= base_url(); ?>/espaces/parents/reservations">PAIEMENTS & FACTURES</a></li>
+                        <li><a href="<?= base_url(); ?>/espaces/parents/paiements">PAIEMENTS & FACTURES</a></li>
                         <li><a href="<?= base_url(); ?>/espaces/parents/reservations">RESERVATIONS</a></li>
                         <div class="menu">
                             <div class="logo"><a style="color: #3D63F3;text-decoration:none;" href="<?= base_url(); ?>/espaces/parents/espace_parents">ESPACE PARENTS</a></div>
                         </div>
                         <li><a href="<?= base_url(); ?>/espaces/parents/mesEnfants">MES ENFANTS</a></li>
-                        <li><a href="<?= base_url(); ?>/profil"><?= session("email"); ?></a></li>
+                        <li><a href="<?= base_url(); ?>/espaces/parents/profil"><?= session("email"); ?></a></li>
                         <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
                 <?php
                     }

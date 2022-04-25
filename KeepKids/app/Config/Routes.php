@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-// ACCUEIL
+// ACCUEIL------------------------------------------------------------------------------------------------------------
 $routes->get('/', 'AccueilController::index');
 $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
 $routes->get('accueil/contact', 'AccueilController::contact');
@@ -40,24 +40,31 @@ $routes->get('accueil/contact', 'AccueilController::contact');
 // BOTH
 $routes->get('deconnexion', 'ParentsController::deconnexion');
 
-// ESPACE PARENTS ----------------------
+// ESPACE PARENTS -----------------------------------------------------------------------------------------------------
 $routes->get('espaces/parents/espace_parents', 'EspaceParentsController::index');
 
-// mes enfants:
+// mes enfants
 $routes->get('espaces/parents/mesEnfants', 'EspaceParentsController::mesEnfants');
 $routes->match(['get', 'post'], 'espaces/parents/mesEnfants', 'EspaceParentsController::creerEnfant');
 $routes->get('espaces/parents/mesEnfants/delete/(:num)', 'EspaceParentsController::delete/$1');
 $routes->match(['get', 'post'],'espaces/parents/modifEnfants/(:num)', 'EspaceParentsController::modifEnfants/$1');
+
+
+// reservations
 $routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::reservations');
 
-// mes reservations
+//paiements & factures
+$routes->match(['get', 'post'], 'espaces/parents/paiements', 'EspaceParentsController::paiements');
+
+// profil parents
+$routes->match(['get', 'post'], 'espaces/parents/profil', 'EspaceParentsController::profil');
 
 // connexion/inscription
 $routes->match(['get', 'post'], 'espaces/parents/connexionParents', 'ParentsController::connexion');
 $routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsController::inscription');
 
 
-// ESPACE PRO ----------------------------
+// ESPACE PRO -----------------------------------------------------------------------------------------------------------
 $routes->get('espaces/pro/espace_pro', 'EspaceProController::index');
 $routes->match(['get', 'post'], 'espaces/pro/connexionPro', 'ProController::connexion');
 $routes->match(['get', 'post'], 'espaces/pro/inscriptionPro', 'ProController::inscription');
@@ -69,6 +76,13 @@ $routes->match(['get', 'post'], 'espaces/pro/planningPro', 'EspaceProController:
 $routes->match(['get', 'post'], 'espaces/pro/relancesPro', 'EspaceProController::relancesPro');
 // factures
 $routes->match(['get', 'post'], 'espaces/pro/facturesPro', 'EspaceProController::facturesPro');
+// les enfants
+$routes->match(['get', 'post'], 'espaces/pro/enfantsPro', 'EspaceProController::enfantsPro');
+// profil pro
+$routes->match(['get', 'post'], 'espaces/pro/profilPro', 'EspaceProController::profilPro');
+
+// ------------------------------------------------------------------------------------------------------------------------
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

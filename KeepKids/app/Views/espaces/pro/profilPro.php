@@ -5,5 +5,5 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-FACTURES PRO
+PROFIL PRO
 <?= $this->endSection() ?>
