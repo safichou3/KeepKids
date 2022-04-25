@@ -10,25 +10,4 @@ class EspaceProController extends BaseController
     {
         return view("espaces/pro/espace_pro");
     }
-    public function planningPro()
-    {
-        echo view("espaces/pro/planningPro");
-    }
-    public function facturesPro()
-    {
-        echo view("espaces/pro/facturesPro");
-    }
-    public function relancesPro()
-    {
-        echo view("espaces/pro/relancesPro");
-    }
-    public function enfantsPro()
-    {
-        echo view("espaces/pro/enfantsPro");
-    }
-    public function profilPro()
-    {
-        echo view("espaces/pro/profilPro");
-    }
 }
-

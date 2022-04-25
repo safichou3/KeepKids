@@ -12,7 +12,7 @@ body {
 
 .top-empty {
   width: 100%;
-  height: 50px;
+  height: 130px;
 }
 
 .hello-parents {
@@ -27,7 +27,7 @@ body {
 
 .mini-text-parents {
   font-size: 20px;
-  margin: 0 10px 50px 0;
+  margin-bottom: 50px;
 }
 
 .top-parents {
@@ -68,11 +68,11 @@ body {
 }
 
 .img-top-right {
-  width: 60%;
+  width: 55%;
 }
 
 .img_parents {
-  width: 100%;
+  width: 95%;
 }
 
 .middle-parents, .add-kids-display {

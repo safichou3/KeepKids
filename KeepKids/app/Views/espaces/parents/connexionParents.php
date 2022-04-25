@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 
-<h1>Connexion parents</h1>
+<h1>connexion parents</h1>
 <div class="body-inscription">
     <form method="POST" action="<?= base_url(); ?>/espaces/parents/connexionParents" enctype="multipart/form-data">
         <?php if (!empty($validation)) {
@@ -18,9 +18,9 @@
         <label>Mot de passe</label><br>
         <input class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
 
-        <input class="inscription ins-parents" type="submit" value="Je me connecte">
+        <input class="inscription" type="submit" value="Je me connecte">
 
     </form>
-    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">J'aimerais m'inscrire</a>
 </div>
+<a href="<?= base_url(); ?>/espaces/parents/inscriptionParents">J'aimerais m'inscrire</a>
 <?= $this->endSection() ?>
