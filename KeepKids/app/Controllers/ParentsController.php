@@ -37,7 +37,8 @@ class ParentsController extends BaseController
                         "email" => $user["email"],
                         "prenom" => $user["prenom"],
                         "nom" => $user["nom"],
-                        "id" => $user["id"]
+                        "id" => $user["id"],
+                        "type" => "parent"
                     ]);
                     return redirect()->to('espaces/parents/espace_parents');
                 } else {

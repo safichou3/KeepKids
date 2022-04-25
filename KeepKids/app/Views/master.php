@@ -29,7 +29,7 @@
     <script src="<?= base_url(); ?>/js/bg-change.js"></script>
     <script src="<?= base_url(); ?>/js/main.js"></script>
 
-    <?= $this->renderSection('javascript') ?>
+    <?= $this->renderSection('js') ?>
 
 </body>
 
