@@ -12,7 +12,7 @@ padding: 30px 0px;
     border-radius:5px;
     border: none;
     padding: 10px 20px;
-    margin-top:  20px;
+    margin: 20px 0;
     width: 15%;
     color:#ffff;
   }
@@ -22,4 +22,34 @@ padding: 30px 0px;
     padding: 10px 20px;
     margin:10px 0px;
 }
+input.invalid{
+  border-color: #900;
+  background-color: #FDD;
+}
 
+input:focus.invalid {
+  outline: none;
+}
+
+.error {
+  width  : 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+.link-co-ins{
+  color: #8B3EDF;
+  font-weight: bold;
+  text-decoration: none;
+}
