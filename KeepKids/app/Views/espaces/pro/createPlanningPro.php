@@ -24,23 +24,28 @@
         </span>
 
     </div>
-    <div class="<?= $day ?>horaire">
-        <span id='<?= $day ?>ouverture'></span><span>-</span><span id='<?= $day ?>fermeture'></span>
+    <div class="horaire">
+        <span id="<?= $day ?>fermé"><span id='<?= $day ?>ouverture'></span><span>-</span><span id='<?= $day ?>fermeture'></span></span>
+    </div>
+    <div class="checkbox">
+        <input type="checkbox" id="<?= $day ?>checkbox">
     </div>
     <div class="break"></div>
     <script>
         var <?= $day ?>lowerSlider = document.querySelector('#<?= $day ?>lower'),
             <?= $day ?>upperSlider = document.querySelector('#<?= $day ?>upper'),
             <?= $day ?>ouverture = document.querySelector('#<?= $day ?>ouverture'),
-            <?= $day ?>fermeture = document.querySelector('#<?= $day ?>fermeture')
+            <?= $day ?>fermeture = document.querySelector('#<?= $day ?>fermeture'),
+            <?= $day ?>fermé = document.querySelector('#<?= $day ?>fermé')
         <?= $day ?>lowerVal = parseInt(<?= $day ?>lowerSlider.value);
         <?= $day ?>upperVal = parseInt(<?= $day ?>upperSlider.value);
 
         <?= $day ?>ouverture.innerHTML = <?= $day ?>lowerVal + 'H'
         <?= $day ?>fermeture.innerHTML = <?= $day ?>upperVal + 'H'
 
-
-
+        <?= $day ?>fermé.onchange = function() {
+            alert("test")
+        }
         <?= $day ?>upperSlider.oninput = function() {
             <?= $day ?>lowerVal = parseInt(<?= $day ?>lowerSlider.value);
             <?= $day ?>upperVal = parseInt(<?= $day ?>upperSlider.value);
