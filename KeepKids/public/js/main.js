@@ -1,3 +1,35 @@
+$(document).ready(function () {
+
+	$(".showMore1").click(function () {
+		$(".hideContent1").hide();
+		$(".showContent1").show();
+	});
+	$(".hideMore1").click(function () {
+		$(".hideContent1").show();
+		$(".showContent1").hide();
+	});
+	// card 2
+	$(".showMore2").click(function () {
+		$(".hideContent2").hide();
+		$(".showContent2").show();
+	});
+	$(".hideMore2").click(function () {
+		$(".hideContent2").show();
+		$(".showContent2").hide();
+	});
+	// card 3
+	$(".showMore3").click(function () {
+		$(".hideContent3").hide();
+		$(".showContent3").show();
+	});
+	$(".hideMore3").click(function () {
+		$(".hideContent3").show();
+		$(".showContent3").hide();
+	});
+	})
+
+
+
 var wk1 = [4, 5, 6, 7, 8, 9, 10];
 var wk2 = [11, 12, 13, 14, 15, 16, 17];
 var wk3 = [18, 19, 20, 21, 22, 23, 24];
@@ -106,3 +138,11 @@ document.getElementById('forward').addEventListener("click", function() {
 
 setup();
 
+
+// function on() {
+//   document.getElementById("overlay").style.display = "block";
+// }
+
+// function off() {
+//   document.getElementById("overlay").style.display = "none";
+// }
