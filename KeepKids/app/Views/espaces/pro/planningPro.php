@@ -6,7 +6,7 @@
 
 <?= $this->section('content') ?>
 
-<center>
+<!-- <center>
     <div id="title">
         <div id="back"></div>
         <p id="month"></p>
@@ -45,10 +45,61 @@
             </ul>
         </div>
     </div>
-</center>
+</center> -->
 
+<link rel="stylesheet/less" type="text/css" href="<?= base_url(); ?>/css/styles.less" />
+<form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
+    <label>lundi</label><br>
+    <label>horaire</label><br>
+    <span class="multi-range">
+        <input type="range" min="0" max="50" value="5" id="lower">
+        <input type="range" min="0" max="50" value="45" id="upper">
+    </span><br>
+    <span class="multi-range">
+        <input type="range" min="0" max="50" value="5" id="lundilower">
+        <input type="range" min="0" max="50" value="45" id="lundiupper">
+    </span>
+    <br>
+
+    <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
+</form>
+<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+<script>
+    var lowerSlider = document.querySelector('#lundilower'),
+        upperSlider = document.querySelector('#lundiupper'),
+        lowerVal = parseInt(lowerSlider.value);
+    upperVal = parseInt(upperSlider.value);
+
+    upperSlider.oninput = function() {
+        lowerVal = parseInt(lowerSlider.value);
+        upperVal = parseInt(upperSlider.value);
+
+        if (upperVal < lowerVal + 4) {
+            lowerSlider.value = upperVal - 4;
+
+            if (lowerVal == lowerSlider.min) {
+                upperSlider.value = 4;
+            }
+        }
+    };
+
+
+    lowerSlider.oninput = function() {
+        lowerVal = parseInt(lowerSlider.value);
+        upperVal = parseInt(upperSlider.value);
+
+        if (lowerVal > upperVal - 4) {
+            upperSlider.value = lowerVal + 4;
+
+            if (upperVal == upperSlider.max) {
+                lowerSlider.value = parseInt(upperSlider.max) - 4;
+            }
+
+        }
+    };
+</script>
 <style>
-    footer{
+    footer {
         display: none;
     }
 </style>
