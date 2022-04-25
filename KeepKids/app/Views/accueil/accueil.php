@@ -11,7 +11,7 @@
     <div class="center-div">
         <img class="img-header" src="<?= base_url(); ?>/img/enfant.png" alt="">
         <div class="wrap">
-            <h1 class="title-accueil">KEEPKIDS, <br> Tranquille le temps d'une balade</h1>
+            <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>
             <div class="search">
                 <input type="text" class="searchTerm" placeholder="Rechercher des creches à proximité">
                 <button type="submit" class="searchButton">
