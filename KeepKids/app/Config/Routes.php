@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 // ACCUEIL
 $routes->get('/', 'AccueilController::index');
 $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
+$routes->get('accueil/contact', 'AccueilController::contact');
 
 // BOTH
 $routes->get('deconnexion', 'ParentsController::deconnexion');

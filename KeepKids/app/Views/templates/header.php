@@ -6,7 +6,10 @@
                 <li><a href="<?= base_url(); ?>/">Accueil</a></li>
 
                 <?php
+                // print_r(session("type"));
+                // print_r(session("idE"));
                 if (empty(session('email'))) { ?>
+                    <!-- NON connecté -->
                     <li><a href="<?= base_url(); ?>#apropos">A propos</a></li>
                     <!-- <li><a href="<?= base_url(); ?>/accueil/mentions_legales">Mentions Legales</a></li> -->
                     <div class="menu">

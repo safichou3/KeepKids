@@ -21,7 +21,7 @@ html, body {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   justify-content: center;
   position: fixed;
-  background-color: #ffffff;
+  background-color: #FFFFC3;
   z-index: 1;
 }
 
@@ -121,7 +121,7 @@ html, body {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #ffffc3;
+  background-color: #FFE4E2;
 }
 
 .container-accueil-bottom {
@@ -249,17 +249,18 @@ html, body {
 
 /* ============================= STYLE SAFIA ============================= */
 .title-accueil {
-  color: #AB7575;
+  color: #000;
 }
 
-.text-accueil{
+.text-accueil {
   text-align: justify;
 }
-.text-middle-accueil{
+
+.text-middle-accueil {
   margin-right: 20px;
 }
 
-.card{
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -267,7 +268,7 @@ html, body {
   justify-content: center;
 }
 
-.btn-accueil-pilot{
+.btn-accueil-pilot {
   padding: 15px 10px;
   border-radius: 10px;
   border: none;
@@ -281,12 +282,90 @@ html, body {
 
 
 /* ============================= STYLE FOOTER SAFIA ============================= */
-/* FOOTER */
-
-.img-accueil {
+/* .img-accueil {
   background-size: cover;
   width: 50%;
+} */
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
+
+
+.img-footer {
+  width: 20%;
+}
+
+.trait-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  margin-top: -35px;
+}
+
+.trait {
+  width: 30%;
+  height: 6px;
+  background-color: #FE938C;
+  margin: 0 10px;
+}
+
+.title-footer {
+  font-size: 30px;
+  color: #FE938C;
+}
+
+.fi-footer {
+  font-size: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.fi-brands-facebook {
+  color: #4267B2;
+}
+
+.fi-brands-linkedin {
+  color: #0077B5;
+}
+
+.fi-brands-twitter {
+  color: #00ACEE;
+}
+
+.fi-brands-instagram {
+  color: #C13584;
+}
+
+.ul-footer {
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+
+.link-footer-a {
+  text-decoration: none;
+  color: #000;
+  margin: 0 10px;
+}
+
+.copy{
+  font-size: 10px;
+  color: #757575;
+}
+
+
+
+
+
+
+
 
 .section2 section {
   width: 100%;
@@ -512,5 +591,3 @@ footer ul {
     flex-direction: column;
   }
 }
-
-
