@@ -49,6 +49,8 @@ $routes->get('espaces/parents/mesEnfants/delete/(:num)', 'EspaceParentsControlle
 $routes->match(['get', 'post'],'espaces/parents/modifEnfants/(:num)', 'EspaceParentsController::modifEnfants/$1');
 $routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::reservations');
 
+// mes reservations
+
 // connexion/inscription
 $routes->match(['get', 'post'], 'espaces/parents/connexionParents', 'ParentsController::connexion');
 $routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsController::inscription');
@@ -58,9 +60,14 @@ $routes->match(['get', 'post'], 'espaces/parents/inscriptionParents', 'ParentsCo
 $routes->get('espaces/pro/espace_pro', 'EspaceProController::index');
 $routes->match(['get', 'post'], 'espaces/pro/connexionPro', 'ProController::connexion');
 $routes->match(['get', 'post'], 'espaces/pro/inscriptionPro', 'ProController::inscription');
-$routes->match(['get', 'post'], 'espaces/pro/planningPro', 'ProController::planningPro');
 
 
+// planning creche
+$routes->match(['get', 'post'], 'espaces/pro/planningPro', 'EspaceProController::planningPro');
+// paiement & relances
+$routes->match(['get', 'post'], 'espaces/pro/relancesPro', 'EspaceProController::relancesPro');
+// factures
+$routes->match(['get', 'post'], 'espaces/pro/facturesPro', 'EspaceProController::facturesPro');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
