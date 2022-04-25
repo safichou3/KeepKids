@@ -13,37 +13,47 @@ function passwordChange() {
 	//Vérification Taille >=8
 	if (password.value.length >= 8) {
 		passwordErrorSize.style.color = "green";
+		onlyText.style.visibility = 'visible';
+
 	} else {
 		passwordErrorSize.style.color = "red";
-		s;
+		;
 	}
 
 	//Vérification présence d'une minuscule
 	if (password.value.match(/[A-Z]/, "g")) {
 		passwordErrorMinuscule.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorMinuscule.style.color = "red";
+		onlyTexte.style.visibility = 'hidden'
 	}
 
 	//Vérification présence d'une majuscule
 	if (password.value.match(/[a-z]/, "g")) {
 		passwordErrorMajuscule.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorMajuscule.style.color = "red";
+		onlyTexte.style.visibility = 'hidden'
 	}
 
 	//Vérification présence d'un nombre
 	if (password.value.match(/[0-9]/, "g")) {
 		passwordErrorNombre.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorNombre.style.color = "red";
+		onlyTexte.style.visibility = 'hidden'
 	}
 
 	//Vérification présence d'un char special
 	if (password.value.match(/[^a-zA-Z\d]/, "g")) {
 		passwordErrorSpecial.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorSpecial.style.color = "red";
+		onlyTexte.style.visibility = 'hidden'
 	}
 }
 // ---------------------véérif nom
@@ -84,6 +94,7 @@ function verifSiret() {
 		siretERROR.style.color = "green";
 	} else {
 		siretERROR.style.color = "red";
+		
 		;
 	}	
 }
