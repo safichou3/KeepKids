@@ -9,13 +9,13 @@
 <div class="body-inscription">
     <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
         <label>Nom</label><br>
-        <input class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required><br>
-        <div class="errors">
-            <span id="nameNumber">pas de chiffre</span>
-        </div>
+        <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required><br>
+        <span id="onlyText">pas de nombre</span><br>
+
         <br>
         <label>Prenom</label><br>
-        <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
+        <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
+        <span id="onlyTexte">pas de nombre</span><br>
 
         <label>Email</label><br>
         <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>

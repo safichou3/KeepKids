@@ -55,8 +55,33 @@ function verifNom() {
 	// alert(nom.value);
 	if (nom.value.match(/[0-9]/, "g")) {
 		onlyText.style.color = "red";
+		onlyText.style.visibility = 'visible';
 	} else {
-		onlyText.style.color = "green";
+		onlyText.style.visibility = 'hidden';
 	}
 }
 // -------------------------verif prénom
+const prenom = document.getElementById("prenom");
+prenom.addEventListener("input", verifPrenom);
+const onlyTexte = document.getElementById("onlyTexte");
+function verifPrenom() {
+	// alert(nom.value);
+	if (prenom.value.match(/[0-9]/, "g")) {
+		onlyTexte.style.color = "red";
+		onlyTexte.style.visibility = 'visible';
+	} else {
+		onlyTexte.style.visibility = 'hidden'
+	}
+}
+// -------------------------verif prénom
+const siretImput = document.getElementById("siretImput");
+siretImput.addEventListener("input", verifSiret);
+const siretERROR = document.getElementById("siretERROR");
+function verifSiret() {
+	if (siretImput.value.length = 14) {
+		siretERROR.style.color = "green";
+	} else {
+		siretERROR.style.color = "red";
+		;
+	}	
+}

@@ -13,7 +13,9 @@
         <span id="onlyText">pas de nombre</span><br>
 
         <label>Prénom</label><br>
-        <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
+        <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
+        <span id="onlyTexte">pas de nombre</span><br>
+
         <label>Nom de l'Entreprise</label><br>
         <input class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
 
