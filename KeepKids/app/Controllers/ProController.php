@@ -52,16 +52,6 @@ class ProController extends BaseController
             'validation' => $this->validator
         ]);
     }
-
-    public function planningPro()
-    {
-        echo view("espaces/pro/planningPro");
-    }
-    public function CreatePlanningPro()
-    {
-        echo view("espaces/pro/createPlanningPro");
-    }
-
     public function inscription()
 
     {

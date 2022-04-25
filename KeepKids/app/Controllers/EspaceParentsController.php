@@ -64,12 +64,6 @@ class EspaceParentsController extends BaseController
         $this->enfantsModel->delete($id);
         return redirect()->to('espaces/parents/mesEnfants');
     }
-
-    function reservations()
-    {
-        return view("espaces/parents/reservations");
-    }
-
     function modifEnfants(int $id)
     {
         $enfant = $this->enfantsModel->findEnfantsByParent(session("id"));
@@ -85,4 +79,17 @@ class EspaceParentsController extends BaseController
             ]);
         }
     }
+
+    function reservations() {
+        return view("espaces/parents/reservations");
+    }
+
+    function paiements() {
+        return view("espaces/parents/paiements");
+    }
+
+    function profil() {
+        return view("espaces/parents/profil");
+    }
+    
 }
