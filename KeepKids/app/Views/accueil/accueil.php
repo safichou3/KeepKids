@@ -109,7 +109,7 @@
                 </div>
                 <div class="contentCard">
                     <span class="hideContent3">
-                        <p>Grâce à l'équipe de Kids'Nap nous avons trouvé une solution de garde pour... <a type="" class="showMore3">plus</a></p>
+                        <p>Grâce à l'équipe de KeepKids nous avons trouvé une solution de garde pour... <a type="" class="showMore3">plus</a></p>
                     </span>
                     <span class="showContent3">
                         <p>Grâce à l'équipe de Kids'Nap nous avons trouvé une solution de garde pour Arthur en 1 semaine. L'équipe est disponible et à l'écoute, l'application est simple d'utilisation et fluide. <a type="" class="hideMore3">moins</a></p>

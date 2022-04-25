@@ -56,6 +56,7 @@ body {
   font-weight: bold;
   width: 100%;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .btn-parents-res {
@@ -63,8 +64,17 @@ body {
   margin-right: 10px;
 }
 
+.btn-parents-res:hover {
+  background-color: #2D19ED;
+  margin-right: 10px;
+}
+
 .btn-parents-kids {
   background-color: #A05BB6;
+}
+
+.btn-parents-kids:hover {
+  background-color: #9915CD;
 }
 
 .img-top-right {
@@ -112,6 +122,10 @@ body {
   background-color: #8B3EDF;
 }
 
+.access:hover {
+  background-color: #9915CD;
+}
+
 .title-card-parents {
   font-size: 25px;
 }
@@ -134,7 +148,7 @@ body {
   color: #fff;
   font-size: 15px;
   font-weight: bold;
-  width: 20%;
+  width: 100%;
   cursor: pointer;
   background-color: #8B3EDF;
 }
@@ -152,9 +166,13 @@ body {
   border-radius: 45px;
   color: #fff;
   padding: 25px;
-  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* margin-top: 20px; */
 }
 
+.add-kids-card-form {
+  background-color: #6f8ea9;
+}
 
 .link-card-add-kids {
   text-align: left;
@@ -180,20 +198,35 @@ body {
   color: #3D63F3;
 }
 
+.add-kids-title {
+  text-align: center;
+  padding-top: 50px;
+}
+
 /* ============================= ICONS ============================= */
 .fi {
   font-size: 20px;
 }
 
-.icons-btn{
+.icons-btn {
   margin-right: 10px;
 }
 
 
 /* ============================= FORM ADD KIDS ============================= */
 
-.input-inscription{
+.input-inscription {
   border: none;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 8px 15px;
+}
+
+textarea {
+  resize: none;
+  padding: 5px 10px;
+  width: 85%;
+}
+
+.date-add-kids {
+  width: 85%;
 }
