@@ -12,7 +12,7 @@ padding: 30px 0px;
     border-radius:5px;
     border: none;
     padding: 10px 20px;
-    margin-top:  20px;
+    margin: 20px 0;
     width: 15%;
     color:#ffff;
   }
@@ -48,3 +48,8 @@ input:focus.invalid {
   padding: 0.3em;
 }
 
+.link-co-ins{
+  color: #8B3EDF;
+  font-weight: bold;
+  text-decoration: none;
+}
