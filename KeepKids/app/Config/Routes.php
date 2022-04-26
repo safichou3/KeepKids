@@ -47,7 +47,12 @@ $routes->get('espaces/parents/espace_parents', 'EspaceParentsController::index')
 $routes->get('espaces/parents/mesEnfants', 'EspaceParentsController::mesEnfants');
 $routes->match(['get', 'post'], 'espaces/parents/mesEnfants', 'EspaceParentsController::creerEnfant');
 $routes->get('espaces/parents/mesEnfants/delete/(:num)', 'EspaceParentsController::delete/$1');
-$routes->match(['get', 'post'],'espaces/parents/modifEnfants/(:num)', 'EspaceParentsController::modifEnfants/$1');
+$routes->match(['get', 'post'], 'espaces/parents/modifEnfants/(:num)', 'EspaceParentsController::modifEnfants/$1');
+
+$routes->match(['get', 'post'], 'espaces/parents/accompagnateur', 'EspaceParentsController::creerAccompagnant');
+$routes->get('espaces/parents/mesEnfants/deleteAccompagnant/(:num)', 'EspaceParentsController::deleteAccompagnant/$1');
+$routes->match(['get', 'post'], 'espaces/parents/modifAccompagnant/(:num)', 'EspaceParentsController::modifAccompagnant/$1');
+
 
 // reservations
 $routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::reservations');

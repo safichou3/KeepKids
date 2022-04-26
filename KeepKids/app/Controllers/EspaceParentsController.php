@@ -8,12 +8,13 @@ class EspaceParentsController extends BaseController
 {
     protected $enfantsModel;
     protected $parentsModel;
-
+    protected $accompagnantsModel;
 
     public function __construct()
     {
         $this->enfantsModel = model(EnfantsModel::class);
         $this->parentsModel = model(ParentsModel::class);
+        $this->accompagnantsModel = model(AccompagnantModel::class);
     }
     public function index()
     {
@@ -35,7 +36,6 @@ class EspaceParentsController extends BaseController
             @unlink(ROOTPATH . "/public/upload/certificat/" . $imageName);
         }
     }
-
     private function moveVaccin(string $inputName)
     {
         $img = $this->request->getFile($inputName);
@@ -47,19 +47,6 @@ class EspaceParentsController extends BaseController
             return $carnetVaccin;
         }
     }
-    
-    private function moveCertificat(string $inputName)
-    {
-        $img2 = $this->request->getFile($inputName);
-
-        if ($img2->isValid() && !$img2->hasMoved()) {
-            $certificat = $img2->getRandomName();
-            $img2->move(ROOTPATH . "/public/upload/certificat", $certificat);
-
-            return $certificat;
-        }
-    }
-
     private function generateEnfant(string $carnetVaccin, $certificat)
     {
         return [
@@ -73,10 +60,8 @@ class EspaceParentsController extends BaseController
             "description" => $this->request->getPost('description'),
             "carnetVaccin" => $carnetVaccin,
             "certificat" => $certificat
-
         ];
     }
-
     function creerEnfant()
     {
         if ($this->request->getMethod() === 'post') {
@@ -99,8 +84,11 @@ class EspaceParentsController extends BaseController
     function mesEnfants()
     {
         $enfant = $this->enfantsModel->findEnfantsByParent(session("id"));
+        $accompagnant = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
+
         $data = [
-            "enfant" => $enfant
+            "enfant" => $enfant,
+            "accompagnant" => $accompagnant
         ];
 
         echo view("espaces/parents/mesEnfants", $data);
@@ -126,7 +114,6 @@ class EspaceParentsController extends BaseController
                 $this->unlinkCertificatById($id);
                 $carnetVaccin = $this->moveVaccin("carnetVaccin");
                 $certificat = $this->moveCertificat("certificat");
-
             } else {
                 $carnetVaccin = $enfant["carnetVaccin"];
                 $certificat = $enfant["certificat"];
@@ -144,6 +131,69 @@ class EspaceParentsController extends BaseController
         }
     }
 
+    // ACCOMPAGNATEURS
+
+    private function moveCertificat(string $inputName2)
+    {
+        $img2 = $this->request->getFile($inputName2);
+
+        if ($img2->isValid() && !$img2->hasMoved()) {
+            $certificat = $img2->getRandomName();
+            $img2->move(ROOTPATH . "/public/upload/certificat", $certificat);
+
+            return $certificat;
+        }
+    }
+    private function generateAccompagnant()
+    {
+        return [
+            "idParent" => session('id'),
+            "nomAccompagnant" => $this->request->getPost('nomAccompagnant'),
+            "prenomAccompagnant" => $this->request->getPost('prenomAccompagnant'),
+            "relation" => $this->request->getPost('relation')
+        ];
+    }
+    function creerAccompagnant()
+    {
+        if ($this->request->getMethod() === 'post') {
+
+            if (!empty($this->request->getPost('nomAccompagnant')) && !empty($this->request->getPost('prenomAccompagnant')) && !empty($this->request->getPost('relation'))) {
+                $data1 = $this->generateAccompagnant();
+                $this->accompagnantsModel->insert($data1);
+            }
+            return redirect()->to('espaces/parents/mesEnfants');
+        } else {
+            echo view("espaces/parents/mesEnfants", [
+                "idParent" => $this->accompagnantModel->findAll()
+            ]);
+        }
+    }
+
+
+
+    function deleteAccompagnant(int $id)
+    {
+        $this->accompagnantsModel->delete($id);
+        return redirect()->to('espaces/parents/mesEnfants');
+    }
+
+    function modifAccompagnant(int $id)
+    {
+        $accompagnant = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
+
+        if ($this->request->getMethod() === 'post') {
+
+            $data = $this->generateAccompagnant();
+
+            $this->accompagnantsModel->update($id, $data);
+            return redirect()->to('espaces/parents/mesEnfants');
+        } else {
+            echo view("espaces/parents/modifAccompagnant", [
+                "accompagnant"       => $accompagnant,
+                "parents" => $this->parentsModel->findAll()
+            ]);
+        }
+    }
     function reservations()
     {
         return view("espaces/parents/reservations");

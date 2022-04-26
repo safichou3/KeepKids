@@ -37,16 +37,16 @@
         <input class='input-inscription' type='text' name='dateDeNaissance' value='" . $element['dateDeNaissance'] . "'required><br>
 
         <label>Allergie(s) ?</label><br>
-        <input class='input-inscription' type='text' name='allergies' value='" . $element['allergies'] . "'required><br>
+        <input class='input-inscription' type='text' name='allergies' value='" . $element['allergies'] . "'><br>
 
         <label>Maladie(s) ?</label><br>
-        <input class='input-inscription' type='text' name='maladies' value='" . $element['maladies'] . "'required><br>
+        <input class='input-inscription' type='text' name='maladies' value='" . $element['maladies'] . "'><br>
 
         <label>Traitement(s) ?</label><br>
-        <input class='input-inscription' type='text' name='traitement' value='" . $element['traitement'] . "'required><br>
+        <input class='input-inscription' type='text' name='traitement' value='" . $element['traitement'] . "'><br>
 
         <label>Régime Alimentaire</label><br>
-        <input class='input-inscription' type='text' name='description' value='" . $element['description'] . "'required><br>
+        <input class='input-inscription' type='text' name='description' value='" . $element['description'] . "'><br>
 
 
         <label>Carnet de vaccination</label><br>
@@ -62,6 +62,28 @@
     ?>
 
 </div>
+<div class="add-kids-display">
 
+    <?php foreach ($accompagnant as $element) {
+        echo "<div class='card-add-kids'>
+        <h3 class='title-card-parents'>" . $element['nom'] . "</h3>
+        <form method='POST' action=" . base_url() . "/espaces/parents/modifAccompagnant/" . $element["id"] . " enctype='multipart/form-data'>
+
+        <label>Nom</label><br>
+        <input class='input-inscription' type='text' name='nom' value='" . $element['nom'] . "'required><br>
+
+        <label>Prenom</label><br>
+        <input class='input-inscription' type='text' name='prenom' value='" . $element['prenom'] . "'required><br>
+
+        <label>Date de Naissance</label><br>
+        <input class='input-inscription' type='text' name='dateDeNaissance' value='" . $element['dateDeNaissance'] . "'required><br>
+
+        <div class='link-btn-kids-div'>
+        <button class='access'>Valider</button></form>
+        </div></div></h4>";
+    }
+    ?>
+
+</div>
 <br><br>
 <?= $this->endSection() ?>

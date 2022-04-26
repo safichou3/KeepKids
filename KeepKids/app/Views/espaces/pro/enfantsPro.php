@@ -17,7 +17,7 @@
             <th>Maladie(s)</th>
             <th>Traitement(s)</th>
             <th>Régime Alimentaire</th>
-            <th>Régime Alimentaire</th>
+            <th>Accompagnateurs</th>
             <th>Carnet de Vaccination</th>
             <th>Certificat Médical</th>
         </tr>
@@ -32,7 +32,7 @@
             <td>" . $element["maladies"] . "</td>
             <td>" . $element["traitement"] . "</td>
             <td>" . $element["description"] . "</td>
-            <td>Accompagnateur</td>
+            <td title='". $element["description"] ."'><i class='fi fi-rs-eye' ></i> </td>
             <td><a href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download><i class='fi fi-rs-download'></a></i></td>
             <td><a href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download><i class='fi fi-rs-download'></a></i></td></tr>";
         }
