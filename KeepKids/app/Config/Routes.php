@@ -36,6 +36,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'AccueilController::index');
 $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
 $routes->get('accueil/contact', 'AccueilController::contact');
+$routes->get('Error', 'Error404Controller::Error404');
+$routes->get('404', 'Error404Controller::Error');
 
 // BOTH
 $routes->get('deconnexion', 'ParentsController::deconnexion');

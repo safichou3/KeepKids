@@ -1,7 +1,7 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link href="<?= base_url(); ?>/css/error.css" rel="stylesheet">
+<link href="<?= base_url(); ?>/css/404.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
 
@@ -9,7 +9,12 @@
 
 <!-- <div class="body-change"></div> -->
 
+<!-- <div id="body-change"> -->
 
+<!-- <div class="test-404"> -->
+<!-- </div> -->
+
+<!-- </div> -->
 
 
 
@@ -20,7 +25,7 @@
     <?php
     if (empty(session('email'))) { ?>
       <!-- NON CONNECTE -->
-      <img class="img-404" src="<?= base_url(); ?>/img/404.svg" alt="">
+      <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS-removebg.png" alt="">
 
       <?php
     } else {
@@ -32,7 +37,7 @@
           }
         </style>
         <!-- CRECHE - AM -->
-        <img class="img-404" src="<?= base_url(); ?>/img/404.svg" alt="">
+        <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS-removebg.png" alt="">
 
       <?php
       } else if (session("type") == "parent") { ?>
@@ -42,7 +47,7 @@
           }
         </style>
         <!-- CONNECTE PARENTS -->
-        <img class="img-404" src="<?= base_url(); ?>/img/404.svg" alt="">
+        <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS-removebg.png" alt="">
 
     <?php
       }
@@ -51,5 +56,4 @@
   </div>
 
 </div>
-
 <?= $this->endSection() ?>
