@@ -3,10 +3,14 @@
 <?= $this->section('css') ?>
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
+
+<?= $this->section('title') ?>
+<h1 class="section-title-parents">Inscription parents</h1>
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 
-<h1>Inscription parents</h1>
-<div class="body-inscription">
+<div class="body-form body-ins-parents body-parents">
     <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
         <label>Nom</label><br>
         <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required><br>

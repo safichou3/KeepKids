@@ -45,7 +45,7 @@ body {
   justify-content: space-evenly;
 }
 
-.btn-pro-plan, .btn-pro-kids {
+.btn-pro-plan, .btn-pro-fact {
   padding: 20px 40px;
   border-radius: 10px;
   border: none;
@@ -61,7 +61,13 @@ body {
   margin-right: 10px;
 }
 
-.btn-pro-kids {
+.fi-pro {
+  font-size: 20px;
+  margin: 0 10px;
+  /* cursor: pointer; */
+}
+
+.btn-pro-fact {
   background-color: #FFB2AE;
 }
 
