@@ -66,22 +66,20 @@ body {
   margin-right: 10px;
 }
 
-.btn-pro-plan:hover {
-  background-color: #FFB2AE;
-  margin-right: 10px;
-}
 
 .fi-pro {
-  font-size: 20px;
+	font-size: 20px;
   margin: 0 10px;
   /* cursor: pointer; */
 }
 
 .btn-pro-fact {
-  background-color: #FFB2AE;
+	background-color: #FFB2AE;
+	margin-right: 10px;
 }
-.btn-pro-fact:hover {
-  background-color: #FF5146;
+
+.btn-pro-plan:hover, .btn-pro-fact:hover {
+	background-color: #b51c14;
 }
 
 .img-top-right {
@@ -128,6 +126,9 @@ body {
   background-color: #FF2015;
 }
 
+.access:hover{
+	background-color: #b51c14;
+}
 .title-card-pro {
   font-size: 25px;
 }
