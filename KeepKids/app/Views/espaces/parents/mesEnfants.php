@@ -14,7 +14,7 @@
 
 <details>
     <summary>
-        <div class="button">
+        <div class="buttonPurple">
             Ajouter un enfant
         </div>
     </summary>
@@ -47,7 +47,7 @@
                 <input class="input-inscription" type="file" name="carnetVaccin" accept="application/pdf"><br>
 
                 <label>Certificat médical</label><br>
-                <input class="input-inscription" type="file" name="certificat"><br>
+                <input class="input-inscription" type="file" name="certificat" accept="application/pdf"><br>
 
 
                 <input class="inscription access" type="submit" value="Ajouter l'enfant">

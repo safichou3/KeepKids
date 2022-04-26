@@ -5,7 +5,6 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
 <h2>Enfants inscris</h2>
 
 <table>
@@ -18,26 +17,26 @@
             <th>Maladie(s)</th>
             <th>Traitement(s)</th>
             <th>Régime Alimentaire</th>
+            <th>Régime Alimentaire</th>
             <th>Carnet de Vaccination</th>
             <th>Certificat Médical</th>
         </tr>
     </thead>
     <tbody>
-       
-        <?php foreach ($enfant as $element) {
-            echo " <tr><td><strong>". $element["nom"] ."</strong></td>
-            <td>". $element["prenom"] ."</td>
-            <td>". $element["date"] ."</td>
-            <td>". $element["allergies"] ."</td>
-            <td>". $element["maladies"] ."</td>
-            <td>". $element["traitement"] ."</td>
-            <td>". $element["description"] ."</td>
-            <td>Accompagnateur</td>
-            <td><i class='fi fi-rs-download'>". $element["date"] ."</i></td>
-            <td><i class='fi fi-rs-download'>". $element["date"] ."</i></td></tr>";
-        }
-        ?> 
 
+        <?php foreach ($enfant as $element) {
+            echo " <tr><td><strong>" . $element["nom"] . "</strong></td>
+            <td>" . $element["prenom"] . "</td>
+            <td>" . $element["date"] . "</td>
+            <td>" . $element["allergies"] . "</td>
+            <td>" . $element["maladies"] . "</td>
+            <td>" . $element["traitement"] . "</td>
+            <td>" . $element["description"] . "</td>
+            <td>Accompagnateur</td>
+            <td><a href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download><i class='fi fi-rs-download'></a></i></td>
+            <td><a href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download><i class='fi fi-rs-download'></a></i></td></tr>";
+        }
+        ?>
     </tbody>
 </table>
 <?= $this->endSection() ?>
