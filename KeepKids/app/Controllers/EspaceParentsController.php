@@ -91,4 +91,5 @@ class EspaceParentsController extends BaseController
     function profil() {
         return view("espaces/parents/profil");
     }
+    
 }

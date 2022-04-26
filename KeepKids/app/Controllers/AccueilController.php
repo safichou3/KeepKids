@@ -14,8 +14,4 @@ class AccueilController extends BaseController
     {
         return view("accueil/mentions_legales");
     }
-    public function contact()
-    {
-        return view("accueil/contact");
-    }
 }

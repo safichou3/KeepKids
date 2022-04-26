@@ -30,5 +30,14 @@ class EspaceProController extends BaseController
     {
         echo view("espaces/pro/profilPro");
     }
+    public function CreatePlanningPro()
+    {
+        echo view("espaces/pro/createPlanningPro");
+    }
+
 }
+
+
+
+    
 

@@ -5,8 +5,9 @@
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
+
 <?= $this->section('title') ?>
-<h2 class="section-title"><br></h2>
+<h2 class="section-title"></h2>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

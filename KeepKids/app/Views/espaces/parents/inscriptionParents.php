@@ -3,19 +3,23 @@
 <?= $this->section('css') ?>
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
+
+<?= $this->section('title') ?>
+<h1 class="section-title-parents">Inscription parents</h1>
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 
-<h1>Inscription parents</h1>
-<div class="body-inscription">
+<div class="body-form body-ins-parents body-parents">
     <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
         <label>Nom</label><br>
         <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required><br>
-        <span id="onlyText">pas de nombre</span><br>
+        <span id="onlyText">Chiffres interdits</span><br>
 
         <br>
         <label>Prenom</label><br>
         <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
-        <span id="onlyTexte">pas de nombre</span><br>
+        <span id="onlyTexte">Chiffres interdits</span><br>
 
         <label>Email</label><br>
         <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
@@ -31,7 +35,7 @@
         <div class="errors">
             <span id="passwordErrorMajuscule">1 majuscule</span>
             <span id="passwordErrorMinuscule">1 minuscule</span>
-            <span id="passwordErrorNombre">1 chiffre</span>
+            <span id="passwordErrorNombre">1 chiffre</span><br>
             <span id="passwordErrorSpecial">1 caractère special</span>
             <span id="passwordErrorSize">8 caractères minimum</span>
         </div>

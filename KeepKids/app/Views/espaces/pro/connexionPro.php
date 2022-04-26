@@ -3,10 +3,14 @@
 <?= $this->section('css') ?>
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
+
+<?= $this->section('title') ?>
+<h2 class="section-title-pro">Connexion pro</h2>
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 
-<h1>Connexion pro</h1>
-<div class="body-inscription">
+<div class="body-form body-co-pro body-pro">
     <form action="" method="POST" action="<?= base_url(); ?>/espaces/pro/connexionPro" enctype="multipart/form-data">
         <?php if (!empty($validation)) {
             echo $validation->listErrors();

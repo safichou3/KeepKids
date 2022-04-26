@@ -25,10 +25,11 @@
 
     </div>
     <div class="horaire">
-        <span id="<?= $day ?>fermé"><span id='<?= $day ?>ouverture'></span><span>-</span><span id='<?= $day ?>fermeture'></span></span>
+        <span id="<?= $day ?>fermé" style="display:none">fermé</span>
+        <span id="<?= $day ?>ouvert"><span id='<?= $day ?>ouverture'></span><span>-</span><span id='<?= $day ?>fermeture'></span></span>
     </div>
     <div class="checkbox">
-        <input type="checkbox" id="<?= $day ?>checkbox">
+        <input type="checkbox" id="<?= $day ?>checkbox" onchange="doalert(this)">
     </div>
     <div class="break"></div>
     <script>
@@ -43,9 +44,26 @@
         <?= $day ?>ouverture.innerHTML = <?= $day ?>lowerVal + 'H'
         <?= $day ?>fermeture.innerHTML = <?= $day ?>upperVal + 'H'
 
-        <?= $day ?>fermé.onchange = function() {
-            alert("test")
+        // bouton fermé
+
+
+        function doalert(element) {
+
+
+            <?= $day ?>fermé = document.getElementById(element.id.replace('checkbox', "") + "fermé")
+            <?= $day ?>ouvert = document.getElementById(element.id.replace('checkbox', "") + "ouvert")
+
+            if (element.checked == true) {
+
+                <?= $day ?>fermé.style.display = "block"
+                <?= $day ?>ouvert.style.display = "none"
+            } else if (element.checked == false) {
+
+                <?= $day ?>fermé.style.display = "none"
+                <?= $day ?>ouvert.style.display = "block"
+            }
         }
+
         <?= $day ?>upperSlider.oninput = function() {
             <?= $day ?>lowerVal = parseInt(<?= $day ?>lowerSlider.value);
             <?= $day ?>upperVal = parseInt(<?= $day ?>upperSlider.value);

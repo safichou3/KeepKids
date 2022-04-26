@@ -1,54 +1,45 @@
-html{
-background-color:#C6D2FF;
-text-align: center;
+html {
+  /* background-color: #C6D2FF; */
+  text-align: center;
 }
 
-.body-inscription{
-padding: 30px 0px;
+.body-form {
+  padding: 30px 0px;
 }
 
-.inscription{
-    background-color:#3D63F3;
-    border-radius:5px;
-    border: none;
-    padding: 10px 20px;
-    margin: 20px 0;
-    width: 15%;
-    color:#ffff;
-  }
-  .input-inscription{
-    border-radius:5px;
-    border: none;
-    padding: 10px 20px;
-    margin:10px 0px;
+.section-title-pro{
+  background-color: #F9C6C4;
 }
-input.invalid{
-  border-color: #900;
-  background-color: #FDD;
+.section-title-parents{
+  background-color: #C6D2FF;
 }
 
-input:focus.invalid {
-  outline: none;
+.body-pro {
+  background-color: #F9C6C4;
+}
+.body-parents {
+  background-color: #C6D2FF;
 }
 
-.error {
-  width  : 100%;
-  padding: 0;
-
-  font-size: 80%;
-  color: white;
-  background-color: #900;
-  border-radius: 0 0 5px 5px;
-
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.inscription {
+  background-color: #3D63F3;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px 0;
+  width: 15%;
+  color: #ffff;
+  cursor: pointer;
 }
 
-.error.active {
-  padding: 0.3em;
+.input-inscription {
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0px;
 }
 
-.link-co-ins{
+.link-co-ins {
   color: #8B3EDF;
   font-weight: bold;
   text-decoration: none;
