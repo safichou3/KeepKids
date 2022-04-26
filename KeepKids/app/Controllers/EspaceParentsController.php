@@ -19,8 +19,26 @@ class EspaceParentsController extends BaseController
     {
         return view("espaces/parents/espace_parents");
     }
+    private function unlinkNewsImageById(int $id) {
+        $enfant = $this->enfantsModel->find($id);
+        if (!empty($enfants)) {
+            $imageName = $enfant["carnetVaccin"];
+            @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $imageName);
+        }
+    }
 
-    private function generateEnfant()
+    private function moveImage(string $inputName) {
+        $img = $this->request->getFile($inputName);
+
+        if ($img->isValid() && ! $img->hasMoved()) {
+            $carnetVaccin = $img->getRandomName();
+            $img->move(ROOTPATH . "/public/upload/news", $carnetVaccin);
+
+            return $carnetVaccin;
+        }
+    }
+
+    private function generateEnfant(string $carnetVaccin)
     {
         return [
             "idParent" => session('id'),
@@ -30,16 +48,18 @@ class EspaceParentsController extends BaseController
             "allergies" => $this->request->getPost('allergies'),
             "maladies" => $this->request->getPost('maladies'),
             "traitement" => $this->request->getPost('traitement'),
-            "description" => $this->request->getPost('description')
+            "description" => $this->request->getPost('description'),
+            "carnetVaccin" => $carnetVaccin
         ];
     }
 
     function creerEnfant()
     {
         if ($this->request->getMethod() === 'post') {
+            $carnetVaccin = $this->moveImage("carnetVaccin");
 
             if (!empty($this->request->getPost('nom')) && !empty($this->request->getPost('prenom')) && !empty($this->request->getPost('dateDeNaissance'))) {
-                $data = $this->generateEnfant();
+                $data = $this->generateEnfant($carnetVaccin);
                 $this->enfantsModel->insert($data);
             }
             return redirect()->to('espaces/parents/mesEnfants');
@@ -61,6 +81,7 @@ class EspaceParentsController extends BaseController
     }
     function delete(int $id)
     {
+        $this->unlinkNewsImageById($id);
         $this->enfantsModel->delete($id);
         return redirect()->to('espaces/parents/mesEnfants');
     }
@@ -68,8 +89,16 @@ class EspaceParentsController extends BaseController
     {
         $enfant = $this->enfantsModel->findEnfantsByParent(session("id"));
         if ($this->request->getMethod() === 'post') {
+            $img = $this->request->getFile('carnetVaccin');
 
-            $data = $this->generateEnfant();
+            if ($img->isValid() && !$img->hasMoved()) {
+                $this->unlinkNewsImageById($id);
+                $carnetVaccin = $this->moveImage("carnetVaccin");
+            } else {
+                $carnetVaccin = $enfant["carnetVaccin"];
+            }
+
+            $data = $this->generateEnfant($carnetVaccin);
             $this->enfantsModel->update($id, $data);
             return redirect()->to('espaces/parents/mesEnfants');
         } else {
@@ -80,16 +109,18 @@ class EspaceParentsController extends BaseController
         }
     }
 
-    function reservations() {
+    function reservations()
+    {
         return view("espaces/parents/reservations");
     }
 
-    function paiements() {
+    function paiements()
+    {
         return view("espaces/parents/paiements");
     }
 
-    function profil() {
+    function profil()
+    {
         return view("espaces/parents/profil");
     }
-    
 }

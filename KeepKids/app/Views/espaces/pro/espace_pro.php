@@ -19,7 +19,7 @@
                 <div class="top-text-pro">
                     <h3 class="mini-title-pro">Vous avez la main sur votre planning</h3>
                     <h1 class="hello-pro">Bonjour Houda,</h1>
-                    <p class="mini-text-pro">L'espace Professionnel NeedKids vous permet de gérer le planning, les factures clients, et les paiements en toute sérénité </p>
+                    <p class="mini-text-pro">L'espace Professionnel KeepKids vous permet de gérer le planning, les factures clients, et les paiements en toute sérénité </p>
                 </div>
 
                 <div class="btn-pro">

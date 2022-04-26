@@ -5,7 +5,9 @@ body {
   background-color: #E4EAFF;
   min-height: 100vh;
 }
-
+html {
+  width: 100%;
+}
 .content-body-parents {
   padding-bottom: 70px;
 }
@@ -187,4 +189,59 @@ body {
 
 .icons-btn{
   margin-right: 10px;
+}
+
+
+/* ============================= FORM ADD KIDS ============================= */
+
+.input-inscription{
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+/* modal */
+
+.button {
+  appearance: none;
+  background: #3D63F3;
+  border-radius: 0.25em;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 1em;
+}
+
+.details-modal {
+  background: #ffffff;
+  border-radius: 0.5em;
+  box-shadow: 0 10px 20px rgba(black, 0.2);
+  left: 50%;
+  max-width: 90%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30em;
+  text-align: left;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+summary {
+  display: flex;
+  justify-content: center;
+}
+.details-modal-content {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

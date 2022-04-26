@@ -37,8 +37,9 @@
             <label>Traitement(s) ?</label><br>
             <input class="input-inscription" type="text" name="traitement" placeholder="Traitements"><br>
 
-            <label>Description</label><br>
-            <input class="textarea" type="text" name="description" placeholder="Description"><br>
+            <label>Régime Alimentaire ?</label><br>
+            <input class="input-inscription" type="textarea" name="description" placeholder="Régime Alimentaire"><br>
+
 
             <input class="inscription access" type="submit" value="Ajouter l'enfant">
         </form>
