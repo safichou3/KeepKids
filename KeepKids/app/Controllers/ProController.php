@@ -59,7 +59,11 @@ class ProController extends BaseController
     }
     public function CreatePlanningPro()
     {
-        echo view("espaces/pro/createPlanningPro");
+        if ($this->request->getMethod() === 'post') {
+            echo view("espaces/pro/createPlanningPro");
+        } else {
+            echo view("espaces/pro/createPlanningPro");
+        }
     }
 
     public function inscription()

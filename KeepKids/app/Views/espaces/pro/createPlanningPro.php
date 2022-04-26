@@ -6,6 +6,7 @@
 
 <?= $this->section('content') ?>
 
+<?= print_r($_POST); ?>
 <?php function formPlanning($day)
 {
     ob_start(); ?>
@@ -19,8 +20,8 @@
 
     <div class="range">
         <span class="multi-range">
-            <input type="range" min="6" max="20" value="8" id="<?= $day ?>lower">
-            <input type="range" min="6" max="20" value="18" id="<?= $day ?>upper">
+            <input type="range" min="6" max="20" value="8" id="<?= $day ?>lower" name="<?= $day ?>lower">
+            <input type="range" min="6" max="20" value="18" id="<?= $day ?>upper" name="<?= $day ?>upper">
         </span>
 
     </div>
@@ -109,7 +110,7 @@
     return ob_get_clean();
 } ?>
 <link rel="stylesheet/less" type="text/css" href="<?= base_url(); ?>/css/styles.less" />
-<form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
+<form method="POST" action="<?= base_url(); ?>/espaces/pro/create/planningPro" enctype="multipart/form-data">
     <div id='formContainer'>
         <?php
 
