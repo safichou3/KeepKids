@@ -25,7 +25,7 @@
     <?php
     if (empty(session('email'))) { ?>
       <!-- NON CONNECTE -->
-      <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS-removebg.png" alt="">
+      <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS_3_no-bg.png" alt="">
 
       <?php
     } else {
@@ -37,7 +37,7 @@
           }
         </style>
         <!-- CRECHE - AM -->
-        <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS-removebg.png" alt="">
+        <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS_3_no-bg.png" alt="">
 
       <?php
       } else if (session("type") == "parent") { ?>
@@ -47,7 +47,7 @@
           }
         </style>
         <!-- CONNECTE PARENTS -->
-        <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS-removebg.png" alt="">
+        <img class="img-houda-404" src="<?= base_url(); ?>/img/KEEPKIDS_3_no-bg.png" alt="">
 
     <?php
       }

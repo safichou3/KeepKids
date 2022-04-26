@@ -45,8 +45,8 @@
         <?php foreach ($enfant as $element) {
             echo "<div class='card-add-kids'><h3 class='title-card-parents'>" . $element["prenom"] . " " . $element["nom"] . "</h3><h4>Né(e) le: " . $element["dateDeNaissance"] . "<br>Allergie(s): " . $element["allergies"] . "<br>Maladie(s): " . $element["maladies"] . "<br>Traitement(s): " . $element["traitement"] . "<br>Description: " . $element["description"] . "<br><br>
         <div class='link-btn-kids-div'>
-        <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/modifEnfants/" . $element["id"] . $element["id"] . "><i class='fi fi-rs-pencil'></i></a>
-        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Voir la fiche</button></h4></div>";
+        <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/modifEnfants/" . $element["id"] . $element["id"] . "><i class='fi fi-rs-pencil icons-add-kids'></i></a>
+        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash icons-add-kids'></i></a></div><button class='access'>Voir la fiche</button></h4></div>";
         }
         ?>
     </div>

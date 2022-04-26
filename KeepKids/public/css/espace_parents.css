@@ -206,12 +206,18 @@ body {
 /* ============================= ICONS ============================= */
 .fi {
   font-size: 20px;
+  /* transition: transform .2s; */
 }
 
 .icons-btn {
   margin-right: 10px;
 }
 
+/* .fi:hover{
+  font-size: 25px; */
+  /* transform: scale(1.5); */
+  /* font-weight: bold; */
+/* } */
 
 /* ============================= FORM ADD KIDS ============================= */
 
