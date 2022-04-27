@@ -52,6 +52,45 @@ class ProController extends BaseController
             'validation' => $this->validator
         ]);
     }
+
+    public function planningPro()
+    {
+        echo view("espaces/pro/planningPro");
+    }
+    public function gestionHoraire($day)
+    {
+        $day = strtolower($day);
+        if (null !== $this->request->getPost($day . 'checkbox')) {
+            $fermé = 0;
+            $ouverture = null;
+            $fermeture = null;
+        } else {
+            $fermé = 1;
+            $ouverture = $this->request->getPost("$day . 'lower'");
+            $fermeture = $this->request->getPost("$day . 'upper'");
+        }
+        return [
+            $fermé, $ouverture, $fermeture
+        ];
+    }
+    public function CreatePlanningPro()
+    {
+        if ($this->request->getMethod() === 'post') {
+            echo "<pre>";
+            print_r($_POST);
+            echo "</pre>";
+
+
+
+
+
+            echo view("espaces/pro/createPlanningPro");
+        } else {
+            print_r("pas de post");
+            echo view("espaces/pro/createPlanningPro");
+        }
+    }
+
     public function inscription()
 
     {
