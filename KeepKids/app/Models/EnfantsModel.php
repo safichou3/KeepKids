@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class EnfantsModel extends Model
 {
     protected $table          = 'enfant';
-    protected $allowedFields  = ['idParent', 'nom', 'prenom', 'dateDeNaissance', 'allergies', 'maladies', 'traitement','description'];
+    protected $allowedFields  = ['idParent', 'nom', 'prenom', 'dateDeNaissance', 'allergies', 'maladies', 'traitement','description','carnetVaccin','certificat'];
     // protected $createdField   = 'created_at';
     // protected $updatedField   = 'updated_at';
     // protected $useSoftDeletes = true;

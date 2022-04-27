@@ -27,6 +27,9 @@
                             .nav-menu {
                                 background-color: #FE938C;
                             }
+                            footer{
+                                background-color: #F9C6C4;
+                            }
                         </style>
                         <!-- CRECHE -->
                         <li><a href="<?= base_url(); ?>/espaces/pro/planningPro">PLANNING</a></li>
@@ -41,7 +44,7 @@
                         <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
                     <?php
                     } else if (session("idE") == 2) { ?>
-                     <style>
+                        <style>
                             .nav-menu {
                                 background-color: pink;
                             }
@@ -57,9 +60,12 @@
                         <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
                     <?php
                     } else if (session("type") == "parent") { ?>
-                     <style>
+                        <style>
                             .nav-menu {
                                 background-color: #C6D2FF;
+                            }
+                            footer{
+                                background-color: #E4EAFF;
                             }
                         </style>
                         <li><a href="<?= base_url(); ?>/espaces/parents/paiements">PAIEMENTS & FACTURES</a></li>

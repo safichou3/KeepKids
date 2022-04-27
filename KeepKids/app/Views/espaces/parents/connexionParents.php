@@ -4,13 +4,12 @@
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
-<?= $this->section('title') ?>
-<h2 class="section-title-parents">Connexion parents</h2>
-<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 
 <div class="body-form body-co-parents body-parents">
+
+    <h2 class="section-title-parents">Connexion parents</h2>
     <form method="POST" action="<?= base_url(); ?>/espaces/parents/connexionParents" enctype="multipart/form-data">
         <?php if (!empty($validation)) {
             echo $validation->listErrors();

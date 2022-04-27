@@ -29,7 +29,7 @@ $(document).ready(function () {
 		$(".hideContent3").show();
 		$(".showContent3").hide();
 	});
-	})
+})
 
 
 
@@ -51,7 +51,7 @@ function passwordChange() {
 		onlyText.style.visibility = 'visible';
 
 	} else {
-		passwordErrorSize.style.color = "black";	
+		passwordErrorSize.style.color = "black";
 	}
 
 	//Vérification présence d'une minuscule
@@ -135,3 +135,11 @@ function verifSiret() {
 
 // 	}
 // }
+
+
+// fonction de téléchargement
+var downloadURL = function downloadURL(url) 
+{ var hiddenIFrameID = 'hiddenDownloader', iframe = document.getElementById(hiddenIFrameID);
+ if (iframe === null) { iframe = document.createElement('iframe');
+ iframe.id = hiddenIFrameID; iframe.style.display = 'none'; document.body.appendChild(iframe);
+ } iframe.src = url; };
