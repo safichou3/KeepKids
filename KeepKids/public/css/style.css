@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
 }
 
 
@@ -78,6 +79,186 @@ html, body {
   font-size: 90%;
   text-transform: uppercase;
 }
+
+/* navbar2 */
+nav {
+  height: 4rem;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 3px 20px rgb(0 0 0 / 20%);
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+
+/*Styling logo*/
+
+.logo img {
+  height: 5rem;
+  width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 88vw;
+  padding: 0 0.7vw;
+  justify-content: flex-end;
+  align-items: center;
+  text-transform: uppercase;
+}
+.nav-links li a {
+  text-decoration: none;
+  margin: 0 0.7vw;
+  color: black;
+}
+.nav-links li a:hover {
+  color: #f3c964;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links li a::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: #f3c964;
+  position: absolute;
+  transition: all ease-in-out 250ms;
+  margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before{
+  width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button{
+  background-color: transparent;
+  border: 1.5px solid #f3c964;
+  border-radius: 2em;
+  padding: 0.6rem 0.8rem;
+  margin-left: 2vw;
+  font-size: 1rem;
+  cursor: pointer;
+
+}
+.login-button:hover {
+  color: #131418;
+  background-color: #f2f5f7;
+  transition: all ease-in-out 350ms;
+}
+.join-button {
+  color: #ffffff;
+  background-color: #f3c964;
+  border-radius: 2em;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.join-button:hover {
+  color: #f2f5f7;
+  background-color: transparent;
+  border:1.5px solid #f3c964;
+  transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+  width: 30px;
+  height:3px;
+  background: #f2f5f7;
+  margin: 5px;
+  transition: all 0.3s ease;
+  background-color: #f3c964 ;
+}
+.hamburger{
+  display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+  nav{
+      position: fixed;
+      z-index: 3;
+      top: 0;
+  }
+  .hamburger{
+      display:block;
+      position: absolute;
+      cursor: pointer;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+      transition: all 0.7s ease;
+  }
+  .nav-links {
+      position: fixed;
+      background: #ffffff;
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-around;
+      clip-path: circle(50px at 90% -20%);
+      -webkit-clip-path: circle(50px at 90% -10%);
+      transition: all 1s ease-out;
+      pointer-events: none;
+      margin: 0px;
+  }
+  .nav-links.open{
+      clip-path: circle(1000px at 90% -10%);
+      -webkit-clip-path: circle(1000px at 90% -10%);
+      pointer-events: all;
+  }
+  .nav-links li{
+      opacity: 0;
+  }
+  .nav-links li:nth-child(1){
+      transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2){
+      transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3){
+      transition: all 0.5s ease 0.6s;
+  }
+  .nav-links li:nth-child(4){
+      transition: all 0.5s ease 0.7s;
+  }
+  .nav-links li:nth-child(5){
+      transition: all 0.5s ease 0.8s;
+  }
+  .nav-links li:nth-child(6){
+      transition: all 0.5s ease 0.9s;
+      margin: 0;
+  }
+  .nav-links li:nth-child(7){
+      transition: all 0.5s ease 1s;
+      margin: 0;
+  }
+  li.fade{
+      opacity: 1;
+  }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+  background-color: #f3c964 ;
+}
+.toggle .line2{
+  transition: all 0.7s ease;
+  width:0;
+  background-color: #f3c964 ;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+  background-color: #f3c964;
+}
+
 
 /* ============================= END NAVBAR ============================= */
 
@@ -306,14 +487,15 @@ html, body {
 } */
 
 footer {
-  font-size: 16px;
+  font-size: 10%;
   background: var(--footer-bg);
-  padding: 2em 4em;
+  padding: 3em 4em;
   display: flex;
   align-items: start;
   justify-content: center;
   gap: 1em;
   font-family: "IBM Plex Sans", sans-serif;
+  /* width: 100%; */
 }
 
 footer ul {
@@ -325,7 +507,7 @@ footer ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center;
+  /* align-content: center; */
 }
 
 
