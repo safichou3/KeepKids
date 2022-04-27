@@ -1,0 +1,50 @@
+/* #body-change {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #C6D2FF;
+  -webkit-animation-name: example; Chrome, Safari, Opera
+  -webkit-animation-duration: 10s; Chrome, Safari, Opera
+  animation-name: example;
+  animation-duration: 10s;
+} */
+
+/* Chrome, Safari, Opera */
+/* @-webkit-keyframes example {
+  0%   {background-color: #FFF;}
+  15%  {background-color:  #F9C6C4;}
+  30%  {background-color: #C6D2FF;}
+  45% {background-color:  #FE938C;}
+  55% {background-color:  #B891E3;}
+  60% {background-color:  #8B3EDF;}
+  70% {background-color:  #3D63F3;}
+  80% {background-color:  #FFFFC3;}
+  90% {background-color:  #FFFFC3;}
+  100% {background-color:  #FFFFC3;}
+} */
+
+/* Standard syntax */
+/* @keyframes example {
+  0%   {background-color: #FFF;}
+  15%  {background-color:  #F9C6C4;}
+  30%  {background-color: #C6D2FF;}
+  45% {background-color:  #FE938C;}
+  55% {background-color:  #B891E3;}
+  60% {background-color:  #8B3EDF;}
+  70% {background-color:  #3D63F3;}
+  80% {background-color:  #FFFFC3;}
+  90% {background-color:  #FFFFC3;}
+  100% {background-color:  #FFFFC3;}
+} */
+
+.body-change{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 50px 0;
+  background-color: #FFFFC3;
+}
+.img-404{
+  width: 30%;
+}

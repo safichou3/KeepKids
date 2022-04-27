@@ -1,7 +1,7 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/espace_pro.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
@@ -19,15 +19,15 @@
                 <div class="top-text-pro">
                     <h3 class="mini-title-pro">Vous avez la main sur votre planning</h3>
                     <h1 class="hello-pro">Bonjour Houda,</h1>
-                    <p class="mini-text-pro">L'espace Professionnel NeedKids vous permet de gérer le planning, les factures clients, et les paiements en toute sérénité </p>
+                    <p class="mini-text-pro">L'espace Professionnel KeepKids vous permet de gérer le planning, les factures clients, et les paiements en toute sérénité </p>
                 </div>
 
                 <div class="btn-pro">
                     <div class="btn-planning-pro">
-                        <button class="btn-pro-plan"></i>Mon Planning de garde</button>
+                        <button class="btn-pro-plan"><i class="fi fi-rs-calendar fi-pro fi-plan"></i>Mon Planning de garde</button>
                     </div>
-                    <div class="btn-add-kids-pro">
-                        <button class="btn-pro-kids"><i class="fa-solid fa-calendar-days"></i>Créer une facture</button>
+                    <div class="btn-add-fact-pro">
+                        <button class="btn-pro-fact"><i class="fi fi-rs-receipt fi-pro fi-fact"></i>Créer une facture</button>
                     </div>
                 </div>
             </div>

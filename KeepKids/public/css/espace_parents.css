@@ -3,9 +3,10 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #E4EAFF;
-  min-height: 100vh;
 }
-
+html {
+  width: 100%;
+}
 .content-body-parents {
   padding-bottom: 70px;
 }
@@ -56,6 +57,7 @@ body {
   font-weight: bold;
   width: 100%;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .btn-parents-res {
@@ -63,8 +65,17 @@ body {
   margin-right: 10px;
 }
 
+.btn-parents-res:hover {
+  background-color: #2D19ED;
+  margin-right: 10px;
+}
+
 .btn-parents-kids {
   background-color: #A05BB6;
+}
+
+.btn-parents-kids:hover {
+  background-color: #9915CD;
 }
 
 .img-top-right {
@@ -105,22 +116,30 @@ body {
   border-radius: 10px;
   border: none;
   color: #fff;
-  font-size: 15px;
+  font-size: 80%;
   font-weight: bold;
   width: 100%;
   cursor: pointer;
   background-color: #8B3EDF;
 }
 
-.title-card-parents {
-  font-size: 25px;
+.access:hover {
+  background-color: #9915CD;
 }
 
+.title-card-parents {
+  font-size: 100%;
+  text-align: center;
+}
 .link-btn-parents {
   width: 60%;
 }
-
-
+.vaccin{
+  color: #dac20b;
+}
+.certificat{
+  color: #027134;
+}
 /* ============================= ADD KIDS ============================= */
 .btn-add-kids-div {
   margin-left: 20px;
@@ -134,7 +153,7 @@ body {
   color: #fff;
   font-size: 15px;
   font-weight: bold;
-  width: 20%;
+  width: 100%;
   cursor: pointer;
   background-color: #8B3EDF;
 }
@@ -147,14 +166,18 @@ body {
   align-content: center;
   justify-content: space-between;
   background-color: #B891E3;
-  width: 276px;
-  height: auto;
+  width: 20%;
   border-radius: 45px;
   color: #fff;
-  padding: 25px;
-  margin-top: 20px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+
+.add-kids-card-form {
+  background-color: #2D19ED;
+}
 
 .link-card-add-kids {
   text-align: left;
@@ -180,11 +203,93 @@ body {
   color: #3D63F3;
 }
 
+.add-kids-title {
+  text-align: center;
+  padding-top: 50px;
+}
+
 /* ============================= ICONS ============================= */
 .fi {
   font-size: 20px;
+  /* transition: transform .2s; */
 }
 
-.icons-btn{
+.icons-btn {
   margin-right: 10px;
+}
+
+/* .fi:hover{
+  font-size: 25px; */
+  /* transform: scale(1.5); */
+  /* font-weight: bold; */
+/* } */
+
+/* ============================= FORM ADD KIDS ============================= */
+
+.input-inscription {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+/* modal */
+
+.buttonPurple {
+  appearance: none;
+  background: #3D63F3;
+  border-radius: 0.25em;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 1em;
+}
+
+.details-modal {
+  background: #ffffff;
+  border-radius: 0.5em;
+  box-shadow: 0 10px 20px rgba(black, 0.2);
+  left: 50%;
+  max-width: 90%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30em;
+  text-align: left;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+summary {
+  display: flex;
+  justify-content: center;
+}
+.details-modal-content {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h4{
+  width: 100%;
+  
+  padding: 8px 15px;
+}
+
+textarea {
+  resize: none;
+  padding: 5px 10px;
+  width: 85%;
+}
+
+.date-add-kids {
+  width: 85%;
 }
