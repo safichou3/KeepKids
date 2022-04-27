@@ -119,7 +119,7 @@ class EspaceParentsController extends BaseController
         if ($this->request->getMethod() === 'post') {
             foreach ($enfant as $element) {
                 if ($element["id"] == $id) {
-                    print_r($element);
+                    // print_r($element);
                     $enfantAModif = $element;
                     // echo $element["id"];
                     // echo $id;
@@ -137,21 +137,35 @@ class EspaceParentsController extends BaseController
             // echo '<pre>';
             // print_r($enfant);
             // echo '</pre>';
-            // die();
+            print_r($this->request->getFile('carnetVaccin'));
+            //die();
 
 
-            if (null !== $this->request->getPost('certificat')) {
-                if ($img2->isValid() && !$img2->hasMoved()) {
-                    $this->unlinkCertificatById($id);
-                    $certificat = $this->moveCertificat("certificat");
-                }
+            if ($img2->isValid() && !$img2->hasMoved()) {
+                @unlink(ROOTPATH . "/public/upload/certificat/" . $enfantAModif['certificat']);
+                $certificat = $this->moveCertificat("certificat");
             }
-            if (null !== $this->request->getPost('carnetVaccin')) {
-                if ($img->isValid() && !$img->hasMoved()) {
-                    $this->unlinkCarnetVaccinById($id);
-                    $carnetVaccin = $this->moveVaccin("carnetVaccin");
-                }
+
+
+            if ($img->isValid() && !$img->hasMoved()) {
+                @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $enfantAModif['carnetVaccin']);
+                $carnetVaccin = $this->moveVaccin("carnetVaccin");
             }
+
+            // if ($this->request->getPost('certificat')) {
+            //     if ($img2->isValid() && !$img2->hasMoved()) {
+            //         $this->unlinkCertificatById($id);
+            //         $certificat = $this->moveCertificat("certificat");
+            //     }
+            // }
+            // if ($this->request->getFile('carnetVaccin')) {
+            //     echo "ping";
+            //     die();
+            //     if ($img->isValid() && !$img->hasMoved()) {
+            //         $this->unlinkCarnetVaccinById($id);
+            //         $carnetVaccin = $this->moveVaccin("carnetVaccin");
+            //     }
+            // }
 
             $data = $this->generateEnfant($carnetVaccin, $certificat);
 
@@ -168,7 +182,7 @@ class EspaceParentsController extends BaseController
 
     // ACCOMPAGNATEURS
 
-    
+
     private function generateAccompagnant()
     {
         return [
