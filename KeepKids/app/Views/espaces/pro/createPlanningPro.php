@@ -6,6 +6,7 @@
 
 <?= $this->section('content') ?>
 
+
 <?php function formPlanning($day)
 {
     ob_start(); ?>
@@ -19,8 +20,8 @@
 
     <div class="range">
         <span class="multi-range">
-            <input type="range" min="6" max="20" value="8" id="<?= $day ?>lower">
-            <input type="range" min="6" max="20" value="18" id="<?= $day ?>upper">
+            <input type="range" min="6" max="20" value="8" id="<?= $day ?>lower" name="<?= $day ?>lower">
+            <input type="range" min="6" max="20" value="18" id="<?= $day ?>upper" name="<?= $day ?>upper">
         </span>
 
     </div>
@@ -29,7 +30,7 @@
         <span id="<?= $day ?>ouvert"><span id='<?= $day ?>ouverture'></span><span>-</span><span id='<?= $day ?>fermeture'></span></span>
     </div>
     <div class="checkbox">
-        <input type="checkbox" id="<?= $day ?>checkbox" onchange="doalert(this)">
+        <input type="checkbox" id="<?= $day ?>checkbox" onchange="doalert(this)" name="<?= $day ?>checkbox">
     </div>
     <div class="break"></div>
     <script>
@@ -109,7 +110,7 @@
     return ob_get_clean();
 } ?>
 <link rel="stylesheet/less" type="text/css" href="<?= base_url(); ?>/css/styles.less" />
-<form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
+<form method="POST" action="<?= base_url(); ?>/espaces/pro/create/planningPro" enctype="multipart/form-data">
     <div id='formContainer'>
         <?php
 
