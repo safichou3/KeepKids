@@ -71,7 +71,7 @@ class ProController extends BaseController
         }
         return [
             $fermé, $ouverture, $fermeture
-        ]
+        ];
     }
     public function CreatePlanningPro()
     {
