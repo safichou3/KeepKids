@@ -6,7 +6,7 @@
 
 <?= $this->section('content') ?>
 
-<?= print_r($_POST); ?>
+
 <?php function formPlanning($day)
 {
     ob_start(); ?>
@@ -30,7 +30,7 @@
         <span id="<?= $day ?>ouvert"><span id='<?= $day ?>ouverture'></span><span>-</span><span id='<?= $day ?>fermeture'></span></span>
     </div>
     <div class="checkbox">
-        <input type="checkbox" id="<?= $day ?>checkbox" onchange="doalert(this)">
+        <input type="checkbox" id="<?= $day ?>checkbox" onchange="doalert(this)" name="<?= $day ?>checkbox">
     </div>
     <div class="break"></div>
     <script>
