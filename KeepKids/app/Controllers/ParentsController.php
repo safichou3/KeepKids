@@ -64,7 +64,6 @@ class ParentsController extends BaseController
             'tel' => 'required|min_length[10]|max_length[10]',
             'password' => 'required|min_length[6]|max_length[255]',
         ])) {
-
             $parent = [
                 "nom" => $this->request->getPost("nom"),
                 "prenom" => $this->request->getPost("prenom"),
