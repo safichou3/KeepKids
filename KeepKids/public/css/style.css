@@ -712,13 +712,13 @@ footer.site-footer {
 }
 
 .contentCard a {
-  color: #ffc800;
+  color: #3D63F3;
   font-weight: bold;
   cursor: pointer;
 }
 
 .star-color {
-  color: #ffc800;
+  color: #3D63F3;
 }
 
 /* ============================= END CARD REVIEW ============================= */
@@ -837,11 +837,11 @@ footer.site-footer {
 /* ====================== FIN RESPONSIVE ACCUEIL ====================== */
 
 /* @media screen and (min-width: 1300px) {
-
+  
   .center-div {
     font-size: 12px;
   }
-
+  
   .header{
     width: 30%;
   }
@@ -850,7 +850,13 @@ footer.site-footer {
     justify-content: space-around;
   }
 } */
-@media screen and (min-width: 360px) {
+@media screen and (max-width: 1300px) {
+  .card {
+    width: 28%;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 1200px) {
   /* body{
     margin: 0;
   } */
@@ -879,10 +885,7 @@ footer.site-footer {
 
 
 
-  .card {
-    width: 25%;
-    justify-content: space-around;
-  }
+  
 }
 
 /* @media screen and (max-width: 1250px) {
