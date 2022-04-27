@@ -18,6 +18,7 @@
 
 <body>
     <?php include_once("templates/header.php") ?>
+    
 
     <?= $this->renderSection('title') ?>
 

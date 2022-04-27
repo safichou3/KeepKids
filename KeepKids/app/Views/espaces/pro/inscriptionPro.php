@@ -4,13 +4,10 @@
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
-<?= $this->section('title') ?>
-<h2 class="section-title-pro">Inscription pro</h2>
-<?= $this->endSection() ?>
 <?= $this->section('content') ?>
 
 <div class="body-form body-co-pro body-pro">
-    <!-- <h1>Inscription pro</h1>  -->
+<h2 class="section-title-pro">Inscription pro</h2>
     <form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
         <label>Nom</label><br>
         <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
@@ -34,7 +31,8 @@
 
         <label>Siret</label><br>
         <input id="siretImput" class="input-inscription" type="number" name="siret" placeholder="siret"><br>
-        <span id="siretERROR">14 nombres</span><br><br>
+        <span id="siretERROR">14 nombres</span><br>
+
         <label>Carte d'Id | Passeport | Permis de conduire</label><br>
         <input class="input-inscription" type="text" name="carteId" required><br>
 
@@ -57,7 +55,6 @@
     </form>
     <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
 </div>
-<a href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script src="<?= base_url(); ?>/js/main.js"></script>

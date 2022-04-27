@@ -10,6 +10,15 @@ class EspaceProController extends BaseController
     {
         return view("espaces/pro/espace_pro");
     }
+    protected $enfantsModel;
+    protected $reservationsModel;
+
+
+    public function __construct()
+    {
+        $this->enfantsModel = model(EnfantsModel::class);
+        $this->reservationsModel = model(ReservationModel::class);
+    }
     public function planningPro()
     {
         echo view("espaces/pro/planningPro");
@@ -24,8 +33,14 @@ class EspaceProController extends BaseController
     }
     public function enfantsPro()
     {
-        echo view("espaces/pro/enfantsPro");
+        $enfant = $this->reservationsModel->findAllEnfantsByPro();
+        $data = [
+            "enfant" => $enfant
+        ];
+
+        echo view("espaces/pro/enfantsPro", $data);
     }
+
     public function profilPro()
     {
         echo view("espaces/pro/profilPro");
@@ -34,10 +49,4 @@ class EspaceProController extends BaseController
     {
         echo view("espaces/pro/createPlanningPro");
     }
-
 }
-
-
-
-    
-

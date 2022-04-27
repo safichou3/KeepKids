@@ -46,29 +46,40 @@ body {
 }
 
 .btn-pro-plan, .btn-pro-fact {
-  padding: 20px 40px;
+  padding: 15px 20px;
   border-radius: 10px;
   border: none;
   color: #fff;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   width: 100%;
   cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+/* .btn-pro-plan:hover, .btn-pro-fact:hover{
+	
+} */
 
 .btn-pro-plan {
   background-color: #FF5146;
   margin-right: 10px;
 }
 
+
 .fi-pro {
-  font-size: 20px;
+	font-size: 20px;
   margin: 0 10px;
   /* cursor: pointer; */
 }
 
 .btn-pro-fact {
-  background-color: #FFB2AE;
+	background-color: #FFB2AE;
+	margin-right: 10px;
+}
+
+.btn-pro-plan:hover, .btn-pro-fact:hover {
+	background-color: #b51c14;
 }
 
 .img-top-right {
@@ -98,6 +109,7 @@ body {
   border-radius: 45px;
   /* color: #fff; */
   padding: 25px 0;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 
@@ -114,6 +126,9 @@ body {
   background-color: #FF2015;
 }
 
+.access:hover{
+	background-color: #b51c14;
+}
 .title-card-pro {
   font-size: 25px;
 }
@@ -318,4 +333,52 @@ body {
 }
 .check:hover {
   text-decoration: none;
+}
+
+/* CSS tableau des enfants */
+strong {
+	font-weight: bold; 
+}
+
+em {
+	font-style: italic; 
+}
+
+table {
+	width: 90%;
+    font-size: 13px;
+    line-height: 24px;
+    margin: 30px auto;
+    text-align: left;
+    color: black;
+}
+
+th {
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    background-color: #ff9595;
+	padding: 10px;
+}
+
+td {
+    position: relative;
+    transition: all 300ms;
+	background-color: #e2e2e2;
+	text-align: center;
+}
+
+
+tr:nth-child(odd) td {
+	background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);	
+}
+
+tbody:hover td {
+	color: transparent;
+	text-shadow: 0 0 1px #aaa;
+}
+
+tbody:hover tr:hover td {
+	color: rgb(0, 0, 0);
+	text-shadow: 0 1px 0 #fff;
 }
