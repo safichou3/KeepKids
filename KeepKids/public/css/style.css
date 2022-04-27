@@ -6,7 +6,7 @@ html, body {
 
 /* Couleur site */
 :root {
-  --black: #221824;
+  --black: #000000;
   --violet: #DD06FF;
   --violet-light: #FF69FF;
   --pink-light: #FFEAFF;
@@ -22,13 +22,9 @@ html, body {
   --blue-secondary: #00d4ff;
   --green: #8bff96;
   --red: #ff6b6b;
-  /* --light: 300;
-  --regular: 400;
-  --semi-bold: 500;
-  --bold: 700;
-  --columnCountMax: 4; */
   --test-bg: #EDC9FF;
   --footer-bg: #FFFFC3;
+  --footer-bg-hover: #ffff87;
 }
 
 
@@ -64,7 +60,7 @@ html, body {
 }
 
 .nav-menu .menu ul li a:hover {
-  text-decoration-color: #ffc400;
+  color: #ffc400;
 }
 
 .nav-menu .menu ul {
@@ -85,9 +81,6 @@ html, body {
 
 /* ============================= END NAVBAR ============================= */
 
-
-
-
 /* ============================= PAGE ACCUEIL ============================= */
 
 /* =============== SEARCH ============= */
@@ -100,15 +93,23 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
 } */
+
+/* .title-accueil {
+  color: #000;
+} */
+
 .img-header {
   width: 100%;
 }
 
 .center-div {
-  display: table;
+  /* display: table;
   height: auto;
   width: 100%;
+  text-align: center; */
+  position: relative;
   text-align: center;
+  color: var(--black);
 }
 
 #input-recherche {
@@ -184,6 +185,10 @@ html, body {
   line-height: 2.5rem;
 }
 
+.text-accueil {
+  text-align: justify;
+}
+
 /* =============== SECTION 2 ============= */
 
 .section2 {
@@ -251,25 +256,14 @@ html, body {
   width: 100%;
 }
 
-/* =============== END SECTION 3 ============= */
-
-/* ============================= END ACCUEIL ============================= */
-
-
-
-
-/* ============================= STYLE SAFIA ============================= */
-.title-accueil {
-  color: #000;
-}
-
-.text-accueil {
-  text-align: justify;
-}
-
 .text-middle-accueil {
   margin-right: 20px;
 }
+
+/* =============== END SECTION 3 ============= */
+
+
+/* ============= TRUSTPILOT ============= */
 
 .card-pilot {
   display: flex;
@@ -280,7 +274,7 @@ html, body {
 }
 
 .btn-accueil-pilot {
-  padding: 15px 10px;
+  padding: 15px 20px;
   border-radius: 10px;
   border: none;
   color: #000;
@@ -288,8 +282,21 @@ html, body {
   font-weight: bold;
   width: 100%;
   cursor: pointer;
-  background-color: #FFFFC3;
+  background-color: var(--footer-bg);
 }
+
+.btn-accueil-pilot:hover {
+  background-color: var(--footer-bg-hover);
+}
+
+/* ============= END TRUSTPILOT ============= */
+
+/* ============================= END ACCUEIL ============================= */
+
+
+
+
+
 
 
 /* ============================= STYLE FOOTER SAFIA ============================= */
@@ -297,6 +304,21 @@ html, body {
   background-size: cover;
   width: 50%;
 } */
+
+footer {
+  font-size: 16px;
+  background: var(--footer-bg);
+  padding: 2em 4em;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 1em;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+footer ul {
+  list-style: none;
+}
 
 .footer-content {
   display: flex;
@@ -308,7 +330,7 @@ html, body {
 
 
 .img-footer {
-  width: 20%;
+  width: 17%;
 }
 
 .trait-footer {
@@ -376,7 +398,7 @@ html, body {
 
 
 
-
+/* ============================= STYLE SECTION 2 SAFIA ============================= */
 .section2 section {
   width: 100%;
   padding: 2rem;
@@ -395,29 +417,7 @@ html, body {
   font-size: 2em;
 }
 
-@media (max-width:1080px) {
-  .section2 section .title {
-    font-size: 1.4em;
-  }
-}
 
-@media (max-width:920px) {
-  .section2 {
-    flex-wrap: wrap;
-  }
-
-  .section2 section {
-    padding: 1rem;
-  }
-
-  .section2 section em {
-    top: 10px;
-  }
-
-  .section2 section img {
-    display: none;
-  }
-}
 
 /*SECTION3*/
 .section3 {
@@ -444,11 +444,7 @@ html, body {
   width: 100%;
 }
 
-@media (max-width:1080px) {
-  .section3 section .title {
-    font-size: 1.4em;
-  }
-}
+
 
 footer#footer-2-cols div#copyright-information div#social-buttons i.fa:hover {
   color: #666666;
@@ -473,7 +469,7 @@ footer.site-footer {
 
 
 
-/* START SECTION THIRD */
+/* ============================= CARD REVIEW ============================= */
 
 .card-review {
   height: 370px;
@@ -486,9 +482,9 @@ footer.site-footer {
 }
 
 .card {
-  width: 100%;
+  width: 20%;
   height: auto;
-  background: #FFFFFF;
+  background: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   position: relative;
@@ -497,7 +493,7 @@ footer.site-footer {
   justify-content: center;
   align-items: center;
   padding: 20px 20px;
-  background-color: var(--pink-light);
+  background-color: #C6D2FF;
 }
 
 .wrapCard {
@@ -508,7 +504,7 @@ footer.site-footer {
 .infoCard {
   width: 170px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -543,7 +539,7 @@ footer.site-footer {
   color: #ffc800;
 }
 
-/*  SECTION THIRD */
+/* ============================= END CARD REVIEW ============================= */
 
 
 
@@ -556,132 +552,43 @@ footer.site-footer {
 /* FOOTER */
 
 
-footer {
-  font-size: 16px;
-  background: var(--footer-bg);
-  padding: 2em 4em;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  gap: 1em;
-  font-family: "IBM Plex Sans", sans-serif;
-}
 
-footer ul {
-  list-style: none;
-}
 
-.col {
-  flex: 1;
-}
-
-.col-title {
-  font-family: "Merriweather", serif;
-  color: var(--color);
-  font-size: 1.1em;
-  font-weight: 500;
-  padding: 0.5em 0;
-}
-
-.col-list a {
-  color: var(--color-smooth);
-  text-decoration: none;
-  line-height: 1.4;
-  font-weight: 400;
-}
-
-.col-list a:hover,
-.col-list a:focus {
-  text-decoration: underline;
-}
-
-.subscribe-form,
-.social-media {
-  display: flex;
-  gap: 0.5em;
-  padding: 0.5em 0;
-}
-
-.subscribe-input {
-  width: auto;
-  flex: 1;
-  background: transparent;
-  border: 0.06em solid var(--input-border);
-  font-size: 1em;
-  font-weight: 500;
-  padding: 0.5em;
-  border-radius: 0.3em;
-  transition: all 0.25s ease 0s;
-  display: inline-block;
-  color: var(--color-smooth);
-}
-
-.subscribe-input:focus {
-  outline: none;
-  border-color: var(--color);
-  color: var(--color);
-}
-
-.subscribe-btn {
-  background: var(--btn-bg-color);
-  border: none;
-  font-size: 1em;
-  font-weight: 600;
-  padding: 0.5em;
-  border-radius: 0.3em;
-  transition: all 0.25s ease 0s;
-  display: inline-block;
-  color: var(--btn-color);
-  cursor: pointer;
-}
-
-.subscribe-btn:hover,
-.subscribe-btn:focus {
-  background: var(--btn-hover-bg);
-}
-
-.form-title,
-.social-col-title {
-  font-size: 1em;
-  color: var(--color);
-  font-weight: 500;
-}
-
-.social-media {
+/* .social-media {
   flex-direction: column;
-}
+} */
 
-.social-media-list {
+/* .social-media-list {
   display: flex;
   gap: 0.5rem;
-}
+} */
 
-.social-media-list a {
+/* .social-media-list a {
   padding: 0.5em;
   color: var(--color-smooth);
   display: flex;
   border-radius: 0.3em;
   transition: all 0.25s ease 0s;
-}
+} */
 
-.social-media-list a:hover,
+/* .social-media-list a:hover,
 .social-media-list a:focus {
   color: var(--color);
   background: #ffffff1a;
-}
+} */
 
-.social-media-list svg {
+/* .social-media-list svg {
   width: 1.5em;
   height: 1.5em;
   transition: all 0.25s ease 0s;
-}
+} */
 
-@media screen and (max-width: 750px) {
+/* @media screen and (max-width: 750px) {
   footer {
     padding: 2em;
     flex-direction: column;
   }
-}
+} */
 
 
 
@@ -715,6 +622,16 @@ footer ul {
   }
 }
 
+
+
+
+
+@media (max-width:1080px) {
+  .section2 section .title {
+    font-size: 1.4em;
+  }
+}
+
 @media (max-width:1080px) {
   .section3 section .title {
     font-size: 1.4em;
@@ -735,11 +652,123 @@ footer ul {
   }
 }
 
-/* ====================== FIN RESPONSIVE HEADER ====================== */
+/* ====================== FIN RESPONSIVE ACCUEIL ====================== */
 
-@media screen and (max-width: 1900px) {
+/* @media screen and (min-width: 1300px) {
+
+  .center-div {
+    font-size: 12px;
+  }
+
+  .header{
+    width: 30%;
+  }
   .card {
-    width: 28%;
-    justify-content: space-between;
+    width: 25%;
+    justify-content: space-around;
+  }
+} */
+@media screen and (min-width: 360px) {
+  /* body{
+    margin: 0;
+  } */
+  /* .nav-menu{
+    width: 20%;
+  } */
+  .center-div {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .card {
+    width: 25%;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .card {
+    width: 25%;
+    justify-content: space-around;
+  }
+}
+
+
+
+
+@media screen and (max-width: 360px) {
+  /* .header {} */
+  /* .header {} */
+  /* .header {} */
+  /* .nav-menu {
+    
+  } */
+}
+
+
+
+
+/* .header {
+  width: 100%;
+  height: 50px;
+  color: rgb(0, 0, 0);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+
+/* .nav-menu {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: #3c40434d 0px 1px 2px 0px, #3c404326 0px 2px 6px 2px;
+  justify-content: center;
+  position: fixed;
+  background-color: var(--white);
+  z-index: 1;
+} */
+
+/* .nav-menu .logo {
+  font-size: 29px;
+  font-weight: 600;
+  padding-left: 20px;
+  color: #ffc800;
+  padding-right: 20px;
+} */
+
+/* .nav-menu .menu ul li a:hover {
+  text-decoration-color: #ffc400;
+} */
+
+/* .nav-menu .menu ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+} */
+
+/* .nav-menu .menu ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 1em 1.5em;
+  line-height: 1px;
+  font-size: 15px;
+  text-transform: uppercase;
+} */
+
+
+
+
+
+@media screen and (max-width: 360px) {
+  .card-review {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card {
+    width: 25%;
+    /* justify-content: space-around; */
   }
 }

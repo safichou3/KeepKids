@@ -46,29 +46,40 @@ body {
 }
 
 .btn-pro-plan, .btn-pro-fact {
-  padding: 20px 40px;
+  padding: 15px 20px;
   border-radius: 10px;
   border: none;
   color: #fff;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   width: 100%;
   cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+/* .btn-pro-plan:hover, .btn-pro-fact:hover{
+	
+} */
 
 .btn-pro-plan {
   background-color: #FF5146;
   margin-right: 10px;
 }
 
+
 .fi-pro {
-  font-size: 20px;
+	font-size: 20px;
   margin: 0 10px;
   /* cursor: pointer; */
 }
 
 .btn-pro-fact {
-  background-color: #FFB2AE;
+	background-color: #FFB2AE;
+	margin-right: 10px;
+}
+
+.btn-pro-plan:hover, .btn-pro-fact:hover {
+	background-color: #b51c14;
 }
 
 .img-top-right {
@@ -98,6 +109,7 @@ body {
   border-radius: 45px;
   /* color: #fff; */
   padding: 25px 0;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 
@@ -114,6 +126,9 @@ body {
   background-color: #FF2015;
 }
 
+.access:hover{
+	background-color: #b51c14;
+}
 .title-card-pro {
   font-size: 25px;
 }

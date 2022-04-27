@@ -4,19 +4,19 @@
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
-<?= $this->section('title') ?>
-<h1 class="section-title-parents">Inscription parents</h1>
-<?= $this->endSection() ?>
+
 
 <?= $this->section('content') ?>
 
 <div class="body-form body-ins-parents body-parents">
+    <h2 class="section-title-parents">Inscription parents</h2>
+
+
     <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
         <label>Nom</label><br>
         <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required><br>
         <span id="onlyText">Chiffres interdits</span><br>
 
-        <br>
         <label>Prenom</label><br>
         <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
         <span id="onlyTexte">Chiffres interdits</span><br>
@@ -45,7 +45,6 @@
     </form>
     <a class="link-co-ins" href="<?= base_url(); ?>/espaces/parents/connexionParents">J'aimerais me connecter</a>
 </div>
-<a href="<?= base_url(); ?>/espaces/parents/connexionParents">J'aimerais me connecter</a>
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script src="<?= base_url(); ?>/js/main.js"></script>

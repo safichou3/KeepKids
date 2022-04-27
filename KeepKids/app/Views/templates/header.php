@@ -64,7 +64,7 @@
                             .nav-menu {
                                 background-color: #C6D2FF;
                             }
-                            footer {
+                            footer{
                                 background-color: #E4EAFF;
                             }
                         </style>
