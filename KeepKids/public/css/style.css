@@ -780,7 +780,7 @@ footer.site-footer {
 
 /* ====================== RESPONSIVE ACCUEIL ====================== */
 
-@media (max-width:1080px) {
+/* @media (max-width:1080px) {
   .section2 section .title {
     font-size: 1.4em;
   }
@@ -832,7 +832,7 @@ footer.site-footer {
   .section3 section em {
     top: 10px;
   }
-}
+} */
 
 /* ====================== FIN RESPONSIVE ACCUEIL ====================== */
 
@@ -859,8 +859,25 @@ footer.site-footer {
   } */
   .center-div {
     width: 100%;
-    font-size: 12px;
+    font-size: 5px;
   }
+
+
+  /* .search {
+    width: 50%;
+    font-size: 10px;
+  }
+  
+  .searchTerm {
+    width: 50%;
+  } */
+
+  .wrap {
+    width: 10%;
+  }
+  
+
+
 
   .card {
     width: 25%;
@@ -868,24 +885,24 @@ footer.site-footer {
   }
 }
 
-@media screen and (max-width: 1250px) {
+/* @media screen and (max-width: 1250px) {
   .card {
     width: 25%;
     justify-content: space-around;
   }
-}
+} */
 
 
 
 
-@media screen and (max-width: 360px) {
+/* @media screen and (max-width: 360px) { */
   /* .header {} */
   /* .header {} */
   /* .header {} */
   /* .nav-menu {
     
   } */
-}
+/* } */
 
 
 

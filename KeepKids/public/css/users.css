@@ -7,18 +7,19 @@ html {
   padding: 30px 0px;
 }
 
-.section-title-pro{
+/* .section-title-pro{
   background-color: #F9C6C4;
 }
 .section-title-parents{
   background-color: #C6D2FF;
-}
+} */
 
 .body-pro {
-  background-color: #F9C6C4;
+  background-color: #FF817B;
 }
+
 .body-parents {
-  background-color: #C6D2FF;
+  background-color: #E4EAFF;
 }
 
 .inscription {
@@ -27,7 +28,7 @@ html {
   border: none;
   padding: 10px 20px;
   margin: 20px 0;
-  width: 15%;
+  width: 100%;
   color: #ffff;
   cursor: pointer;
 }
@@ -43,4 +44,36 @@ html {
   color: #8B3EDF;
   font-weight: bold;
   text-decoration: none;
+}
+
+.card-co {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  width: 20%;
+  height: 350px;
+  border-radius: 45px;
+  color: #000000;
+  padding: 25px;
+}
+
+.card-co-parents {
+  background-color: #C6D2FF;
+}
+.card-co-pro {
+  background-color: #F9C6C4;
+}
+
+.co-space {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.img-co {
+  width: 40%;
+  margin-top: 30px;
 }
