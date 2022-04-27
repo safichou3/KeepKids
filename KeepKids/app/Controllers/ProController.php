@@ -69,22 +69,23 @@ class ProController extends BaseController
             $ouverture = $this->request->getPost("$day . 'lower'");
             $fermeture = $this->request->getPost("$day . 'upper'");
         }
-        return [
+        return array(
             $fermé, $ouverture, $fermeture
-        ];
+        );
     }
     public function CreatePlanningPro()
     {
         if ($this->request->getMethod() === 'post') {
-            echo "<pre>";
-            print_r($_POST);
-            echo "</pre>";
 
 
 
 
 
             echo view("espaces/pro/createPlanningPro");
+            echo $this->gestionHoraire('lundi');
+            echo "<pre>";
+            print_r($_POST);
+            echo "</pre>";
         } else {
             print_r("pas de post");
             echo view("espaces/pro/createPlanningPro");
