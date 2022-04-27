@@ -9,21 +9,28 @@
 
 <div class="body-form body-co-parents body-parents">
 
-    <h2 class="section-title-parents">Connexion parents</h2>
-    <form method="POST" action="<?= base_url(); ?>/espaces/parents/connexionParents" enctype="multipart/form-data">
-        <?php if (!empty($validation)) {
-            echo $validation->listErrors();
-        } ?>
+    <div class="co-parents co-space">
+        <div class="card-co-parents card-co">
 
-        <label>Email</label><br>
-        <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
+            <h2 class="section-title-parents">Connexion parents</h2>
+            <form method="POST" action="<?= base_url(); ?>/espaces/parents/connexionParents" enctype="multipart/form-data">
+                <?php if (!empty($validation)) {
+                    echo $validation->listErrors();
+                } ?>
 
-        <label>Mot de passe</label><br>
-        <input class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
+                <label>Email</label><br>
+                <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
 
-        <input class="inscription ins-parents" type="submit" value="Je me connecte">
+                <label>Mot de passe</label><br>
+                <input class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
 
-    </form>
-    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">J'aimerais m'inscrire</a>
+                <input class="inscription ins-parents" type="submit" value="Je me connecte">
+
+            </form>
+            <a class="link-co-ins" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">J'aimerais m'inscrire</a>
+
+        </div>
+        <img class="img-co-parents img-co" src="<?= base_url(); ?>/img/co-parents-img.svg" alt="">
+    </div>
 </div>
 <?= $this->endSection() ?>

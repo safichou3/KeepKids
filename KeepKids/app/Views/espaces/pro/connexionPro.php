@@ -8,21 +8,30 @@
 
 <div class="body-form body-co-pro body-pro">
 
-    <h2 class="section-title-pro">Connexion pro</h2>
-    <form action="" method="POST" action="<?= base_url(); ?>/espaces/pro/connexionPro" enctype="multipart/form-data">
-        <?php if (!empty($validation)) {
-            echo $validation->listErrors();
-        } ?>
+    <div class="co-pro co-space">
 
-        <label>Email</label><br>
-        <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
+        <img class="img-co-pro img-co" src="<?= base_url(); ?>/img/co-pro-img.svg" alt="">
+        
+        <div class="card-co-pro card-co">
 
-        <label>Mot de passe</label><br>
-        <input class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
+            <h2 class="section-title-pro">Connexion pro</h2>
 
-        <input class="inscription ins-pro" type="submit" value="Je me connecte">
+            <form action="" method="POST" action="<?= base_url(); ?>/espaces/pro/connexionPro" enctype="multipart/form-data">
+                <?php if (!empty($validation)) {
+                    echo $validation->listErrors();
+                } ?>
 
-    </form>
-    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/inscriptionPro">J'aimerais m'inscrire</a>
+                <label>Email</label><br>
+                <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
+
+                <label>Mot de passe</label><br>
+                <input class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
+
+                <input class="inscription ins-pro" type="submit" value="Je me connecte">
+
+            </form>
+            <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/inscriptionPro">J'aimerais m'inscrire</a>
+        </div>
+    </div>
 </div>
 <?= $this->endSection() ?>
