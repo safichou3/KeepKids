@@ -1,3 +1,26 @@
+console.log("JS ACTIF");
+// Molette géolocalisation (km)
+
+var rangeSlider = function(){
+	var slider = $('.range-slider'),
+		range = $('.range-slider__range'),
+		value = $('.range-slider__value');
+	  
+	slider.each(function(){
+  
+	  value.each(function(){
+		var value = $(this).prev().attr('value');
+		$(this).html(value);
+	  });
+  
+	  range.on('input', function(){
+		$(this).next(value).html(this.value);
+	  });
+	});
+  };
+  
+  rangeSlider();
+  
 //  fonction invoice (facture)
 
 window.onload = function () {
@@ -20,22 +43,6 @@ window.onload = function () {
 		html2pdf().from(invoice).set(opt).save();
 	});
 };
-
-// document.getElementById("downloadPdf").addEventListener("click", function () {
-// 	const element = document.getElementById("invoice");
-// 	var opt = {
-// 		margin: 0,
-// 		filename: "facture.pdf",
-// 		image: { type: "jpeg", quality: 0.98 },
-// 		html2canvas: { scale: 1 },
-// 		jsPDF: {
-// 			unit: "mm",
-// 			format: "a4",
-// 			orientation: "portrait",
-// 			precision: "2",
-// 		};
-// 		html2pdf().from(element).set(opt).save();
-// 	});
 //  menu burger
 
 const hamburger = document.querySelector(".hamburger");
@@ -84,7 +91,7 @@ $(document).ready(function () {
 	});
 })
 
-
+// verifs
 
 const password = document.getElementById("passwordInput");
 const passwordErrorSize = document.getElementById("passwordErrorSize");

@@ -108,8 +108,10 @@
                 <option value="fraterie">Fraterie</option>
                 <option value="parents">Parents</option>
                 <option value="nounou">Nounou</option>
-            </select>
+                <option value="amie">Amie</option>
+                <option value="autre">Autre</option>
 
+            </select>
 
             <input class="inscription access" type="submit" value="Ajouter l'accompagnateur">
         </form>
