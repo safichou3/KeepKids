@@ -59,11 +59,10 @@
     <div class="card">
         <div class="wrapCard">
             <div class="infoCard">
-                <img src="<?= base_url(); ?>/img/pp1.svg" alt="">
+                <img src="<?= base_url(); ?>/img/steve.svg" alt="">
                 <div class="detailInfo">
                     <p>Guillaume C.</p>
                     <p>
-                        <!-- <i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i> -->
                         <i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i>
                     </p>
                 </div>

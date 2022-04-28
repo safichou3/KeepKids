@@ -14,45 +14,55 @@
 
 <div class="body-parents">
   <div class="content-body-parents">
-    <div class="top-empty"></div>
-    <div class="top-parents">
-      <div class="top-left-parents">
-        <div class="top-text-parents">
-          <h3 class="mini-title-parents">Vous avez la main sur votre planning</h3>
-          <h1 class="hello-parents">Bonjour <?= session("prenom"); ?>,</h1>
-          <p class="mini-text-parents">Votre espace parent KeepKids vous permet de gérer votre planning de garde et vos factures en toute sérénité</p>
+
+    <div class="top-empty">
+      <div class="profil-top">
+        <h3 class="mini-title-parents">Profil</h3>
+        <img class="img-profil-parents" src="<?= base_url(); ?>/img/sammy.jpg" alt="">
+      </div>
+      <a class="link-mail-parents" href="mailto:addresse@duparent.com"><button class="mail-parents">addresse@duparent.com</button></a>
+    </div>
+
+    <div class="middle-parents">
+      <div class="middle-left-parents">
+        <div class="middle-text-parents">
+          <div class="kids">
+            <h3 class="title-card-parents">Nom de l'enfant</h3>
+            <img class="img-title-card-parents" src="<?= base_url(); ?>/img/infos-enfants.svg" alt="">
+            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="access">Modifier le profil</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="img-middle-right">
+        <img class="img_parents" src="<?= base_url(); ?>/img/img-profil-parents.svg" alt="">
+      </div>
+    </div>
+
+
+    <div class="bottom-parents">
+      <div class="btn-parents">
+
+        <div class="btn-param-parents btn-options">
+          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants">
+            <button class="btn-parents-param btn-color-light btn-parents-bottom"><i class="fi fi-rs-settings icons-btn"></i>Paramètres</button>
+          </a>
         </div>
 
-        <div class="btn-parents">
-          <div class="btn-reservation-parents">
-            <button class="btn-parents-res"><i class="fi fi-rs-calendar icons-btn"></i>Réserver</button>
-          </div>
-          <div class="btn-add-kids-parents">
-            <a href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-kids"><i class="fi fi-rs-child-head icons-btn"></i>Ajouter un enfant</button></a>
-          </div>
+        <div class="btn-theme-parents btn-options">
+          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-theme btn-color-dark btn-parents-bottom"><i class="fi fi-rs-fill icons-btn"></i>Thème du site</button></a>
         </div>
-      </div>
-      <div class="img-top-right">
-        <img class="img_parents" src="<?= base_url(); ?>/img/booking.svg" alt="">
-      </div>
-    </div>
-    <div class="middle-parents">
-      <div class="kids">
-        <h3 class="title-card-parents">Mes Enfants</h3>
-        <img class="img-title-card-parents" src="<?= base_url(); ?>/img/kiddo.svg" alt="">
-        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="access">Accéder</button></a>
-      </div>
-      <div class="justificatifs kids">
-        <h3 class="title-card-parents">Justificatifs</h3>
-        <img class="img-title-card-parents" src="<?= base_url(); ?>/img/justificatifs.svg" alt="">
-        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
-      </div>
-      <div class="factures kids">
-        <h3 class="title-card-parents">Mes Factures</h3>
-        <img class="img-title-card-parents" src="<?= base_url(); ?>/img/factures.svg" alt="">
-        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
+
+        <div class="btn-contact-parents btn-options">
+          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-contact btn-color-light btn-parents-bottom"><i class="fi fi-rs-headset icons-btn"></i>Nous contacter</button></a>
+        </div>
+
+        <div class="btn-tuto-parents btn-options">
+          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rr-play-alt icons-btn"></i>Tutoriel</button></a>
+        </div>
+
       </div>
     </div>
+
   </div>
 </div>
 
