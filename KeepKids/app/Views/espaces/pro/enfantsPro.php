@@ -23,8 +23,7 @@
         </tr>
     </thead>
     <tbody>
- 
-        <?php foreach ($enfant as $element) {    
+        <?php foreach ($enfant as $element) {
             echo " <tr><td><strong>" . $element["nom"] . "</strong></td>
             <td>" . $element["prenom"] . "</td>
             <td>" . $element["date"] . "</td>
@@ -32,11 +31,22 @@
             <td>" . $element["maladies"] . "</td>
             <td>" . $element["traitement"] . "</td>
             <td>" . $element["description"] . "</td>
-            <td title='". $element["nom"] ."'><i class='fi fi-rs-eye' ></i> </td>
+            <td>";
+            foreach ($accompagnant as $elements) {
+                if ($elements["id"] == $element["id"]) {
+                    echo $elements["nomAccompagnant"] . " " . $elements["prenomAccompagnant"] . "<br>";
+                }
+            }
+            echo "</td>
             <td><a href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download><i class='fi fi-rs-download'></a></i></td>
             <td><a href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download><i class='fi fi-rs-download'></a></i></td></tr>";
         }
         ?>
     </tbody>
 </table>
+<style>
+    pre {
+        background-color: black;
+    }
+</style>
 <?= $this->endSection() ?>

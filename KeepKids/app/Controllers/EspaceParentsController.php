@@ -95,11 +95,11 @@ class EspaceParentsController extends BaseController
     function mesEnfants()
     {
         $enfant = $this->enfantsModel->findEnfantsByParent(session("id"));
-        $accompagnant = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
+        $accompagnants = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
 
         $data = [
             "enfant" => $enfant,
-            "accompagnant" => $accompagnant
+            "accompagnant" => $accompagnants
         ];
 
         echo view("espaces/parents/mesEnfants", $data);
