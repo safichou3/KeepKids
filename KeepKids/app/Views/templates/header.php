@@ -1,7 +1,3 @@
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
-
-
-
 <nav>
     <div class="logo">
         <img src="<?= base_url(); ?>/img/logo.svg" alt="Logo Image">
