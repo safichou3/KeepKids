@@ -21,36 +21,40 @@
         <div id="creche-client">
             <input class="input-facture" type="text" value="Mme./M. nom du client" name="nom du client">
             <input class="input-facture" type="text" value="20parc de la rive 76130 mont saint aignan" name="adresse client">
-            <input class="input-facture" type="text" value="adresse du client" name="nom de la creche">
+            <input class="input-facture" type="number" value="0652365233" name="telephone client">
             <br>
-            <input class="input-facture" type="text" value="fait le 01/02/2022" name="nom de la creche">
+            <p>Fait le: <input class="input-facture" type="date" value="" name="date d'emission"></p>
+            
 
         </div>
+        <br><br>
         <div>
-        <table id="table-facture">
-        <tr>
-            <th>Prestation pour</th>
-            <th>Prix x Quantité</th>
-            <th>Total</th>
-        </tr>
-        <tr>
-            <td><strong>Forfait pour votre enfant Mathis Dupond</strong></td>
-            <td>30 x 10 H</td>
-            <td>300€</td>
-        </tr>
-        <tr>
-            <td style="background-color: white;"></td>
-            <td style="background-color: white;text-align:right;"><strong>Total</strong></td>
-            <td>300€</td>
-        </tr>
-        <tr>
-            <td style="background-color: white;"></td>
-            <td style="background-color: white;text-align:right;"><strong>Net à Payer</strong></td>
-            <td>350€</td>
-        </tr>
-</table>
+            <table id="table-facture">
+                <tr>
+                    <th>Prestation(s)</th>
+                    <th>Prix x Quantité</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td><strong>Forfait pour votre enfant Mathis Dupond</strong></td>
+                    <td>30 x 10 H</td>
+                    <td>300€</td>
+                </tr>
+                <tr>
+                    <td style="background-color: white;"></td>
+                    <td style="background-color: white;text-align:right;"><strong>Total</strong></td>
+                    <td>300€</td>
+                </tr>
+                <tr>
+                    <td style="background-color: white;"></td>
+                    <td style="background-color: white;text-align:right;"><strong>Net à Payer</strong></td>
+                    <td>350€</td>
+                </tr>
+            </table>
         </div>
-        <p>A payer avant le : 02/03/2022</p>
+        <br><br>
+        <p>A payer avant le : <input class="input-facture" type="date" name="paiement max">
+        </p>
     </form>
 </div>
 <button id="downloadPdf">telecharger</button>

@@ -386,9 +386,8 @@ tbody:hover tr:hover td {
 /* facture */
 #invoice{
 	background-color: #ffffff;
-	margin: auto;
 	color: #000;
-	padding: 70px;
+	padding: 3px;
 	border-radius: 3px;
 }
 .input-facture {
