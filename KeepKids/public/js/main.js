@@ -1,18 +1,56 @@
+//  fonction invoice (facture)
+
+window.onload = function () {
+	document.getElementById("downloadPdf").addEventListener("click", () => {
+		const invoice = this.document.getElementById("invoice");
+		console.log(invoice);
+		console.log(window);
+		var opt = {
+			margin: 2,
+			filename: "facture.pdf",
+			image: { type: "jpeg", quality: 0.98 },
+			html2canvas: { scale: 7 },
+			jsPDF: {
+				unit: "mm",
+				format: "a4",
+				orientation: "portrait"
+				
+			},
+		};
+		html2pdf().from(invoice).set(opt).save();
+	});
+};
+
+// document.getElementById("downloadPdf").addEventListener("click", function () {
+// 	const element = document.getElementById("invoice");
+// 	var opt = {
+// 		margin: 0,
+// 		filename: "facture.pdf",
+// 		image: { type: "jpeg", quality: 0.98 },
+// 		html2canvas: { scale: 1 },
+// 		jsPDF: {
+// 			unit: "mm",
+// 			format: "a4",
+// 			orientation: "portrait",
+// 			precision: "2",
+// 		};
+// 		html2pdf().from(element).set(opt).save();
+// 	});
 //  menu burger
 
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
 
-hamburger.addEventListener('click', ()=>{
-   //Animate Links
-    navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
+hamburger.addEventListener('click', () => {
+	//Animate Links
+	navLinks.classList.toggle("open");
+	links.forEach(link => {
+		link.classList.toggle("fade");
+	});
 
-    //Hamburger Animation
-    hamburger.classList.toggle("toggle");
+	//Hamburger Animation
+	hamburger.classList.toggle("toggle");
 });
 // cards
 
@@ -141,8 +179,10 @@ function verifSiret() {
 }
 
 // fonction de téléchargement
-var downloadURL = function downloadURL(url) 
-{ var hiddenIFrameID = 'hiddenDownloader', iframe = document.getElementById(hiddenIFrameID);
- if (iframe === null) { iframe = document.createElement('iframe');
- iframe.id = hiddenIFrameID; iframe.style.display = 'none'; document.body.appendChild(iframe);
- } iframe.src = url; };
+var downloadURL = function downloadURL(url) {
+	var hiddenIFrameID = 'hiddenDownloader', iframe = document.getElementById(hiddenIFrameID);
+	if (iframe === null) {
+		iframe = document.createElement('iframe');
+		iframe.id = hiddenIFrameID; iframe.style.display = 'none'; document.body.appendChild(iframe);
+	} iframe.src = url;
+};
