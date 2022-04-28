@@ -50,10 +50,10 @@
 
 
         <label>Carnet de vaccination</label><br>
-        <input type='file' name='carnetVaccin' size='20' /><br>
+        <input type='file' name='carnetVaccin'/><br>
 
         <label>Certificat médical</label><br>
-        <input type='file' name='certificat' size='20' />
+        <input type='file' name='certificat'/>
 
         <div class='link-btn-kids-div'>
         <button class='access'>Valider</button></form>
@@ -66,17 +66,16 @@
 
     <?php foreach ($accompagnant as $element) {
         echo "<div class='card-add-kids'>
-        <h3 class='title-card-parents'>" . $element['nom'] . "</h3>
         <form method='POST' action=" . base_url() . "/espaces/parents/modifAccompagnant/" . $element["id"] . " enctype='multipart/form-data'>
 
         <label>Nom</label><br>
-        <input class='input-inscription' type='text' name='nom' value='" . $element['nom'] . "'required><br>
+        <input class='input-inscription' type='text' name='nomAccompagnant' value='" . $element['nomAccompagnant'] . "'required><br>
 
         <label>Prenom</label><br>
-        <input class='input-inscription' type='text' name='prenom' value='" . $element['prenom'] . "'required><br>
+        <input class='input-inscription' type='text' name='prenomAccompagnant' value='" . $element['prenomAccompagnant'] . "'required><br>
 
         <label>Date de Naissance</label><br>
-        <input class='input-inscription' type='text' name='dateDeNaissance' value='" . $element['dateDeNaissance'] . "'required><br>
+        <input class='input-inscription' type='text' name='relation' value='" . $element['relation'] . "'required><br>
 
         <div class='link-btn-kids-div'>
         <button class='access'>Valider</button></form>
