@@ -49,7 +49,7 @@
                 </div>
                 <li><a href="<?= base_url(); ?>/espaces/pro/planningPro">PLANNING AM</a></li>
                 <li><a href="<?= base_url(); ?>/espaces/pro/relancesPro">PAIEMENTS & RELANCES</a></li>
-                
+
                 <li><a href="<?= base_url(); ?>/espaces/pro/facturesPro">FACTURES</a></li>
                 <li><a href="<?= base_url(); ?>/espaces/pro/profilPro"><?= session("email"); ?></a></li>
                 <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
@@ -72,6 +72,18 @@
 
                 <li><a href="<?= base_url(); ?>/espaces/parents/mesEnfants">MES ENFANTS</a></li>
                 <li><a href="<?= base_url(); ?>/espaces/parents/profil"><?= session("email"); ?></a></li>
+                <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
+            <?php
+            } else if (session("idE") == 3) { ?>
+                <style>
+                    .nav-links li a:hover {
+                        color: green;
+                    }
+                </style>
+                <div class="menu">
+                    <div class="logo"><a style="color: green;text-decoration:none;" href="<?= base_url(); ?>/espaces/administrateurs/espace_admin">MON ESPACE ADMINISTRATEUR</a></div>
+                </div>
+                <li><a href="<?= base_url(); ?>/espaces/administrateurs/espace_admin">Utilisateurs</a></li>
                 <li><a href="<?= base_url(); ?>/deconnexion"><i class="fi fi-rs-sign-out"></i></a></li>
         <?php
             }

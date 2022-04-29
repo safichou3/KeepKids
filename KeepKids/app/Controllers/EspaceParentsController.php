@@ -119,33 +119,19 @@ class EspaceParentsController extends BaseController
         if ($this->request->getMethod() === 'post') {
             foreach ($enfant as $element) {
                 if ($element["id"] == $id) {
-                    // print_r($element);
                     $enfantAModif = $element;
-                    // echo $element["id"];
-                    // echo $id;
                 }
-                // echo '<pre>';
-
-                //     print_r($element);
-                // echo '</pre>';
-
             }
             $img = $this->request->getFile('carnetVaccin');
             $img2 = $this->request->getFile('certificat');
             $carnetVaccin = $enfantAModif["carnetVaccin"];
             $certificat = $enfantAModif["certificat"];
-            // echo '<pre>';
-            // print_r($enfant);
-            // echo '</pre>';
             print_r($this->request->getFile('carnetVaccin'));
-            //die();
-
 
             if ($img2->isValid() && !$img2->hasMoved()) {
                 @unlink(ROOTPATH . "/public/upload/certificat/" . $enfantAModif['certificat']);
                 $certificat = $this->moveCertificat("certificat");
             }
-
 
             if ($img->isValid() && !$img->hasMoved()) {
                 @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $enfantAModif['carnetVaccin']);

@@ -1,4 +1,4 @@
-console.log("JS ACTIF");
+// console.log("JS ACTIF");
 // Molette géolocalisation (km)
 
 var rangeSlider = function(){
