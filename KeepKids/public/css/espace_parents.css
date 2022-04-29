@@ -1,17 +1,13 @@
 /* ============================= CSS SAFIA ============================= */
-
-
 /* ============================= MON ESPACE PARENTS ============================= */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #E4EAFF;
   min-height: 100vh;
 }
-
 .content-body-parents {
   padding-bottom: 70px;
 }
-
 .top-empty {
   width: 100%;
   height: 130px;
@@ -37,7 +33,6 @@ body {
   justify-content: space-between;
   padding: 60px 20px;
   background-color: #C6D2FF;
-  /* border: 2px solid black; */
 }
 
 .top-left-parents {
@@ -116,7 +111,7 @@ body {
   border-radius: 10px;
   border: none;
   color: #fff;
-  font-size: 15px;
+  font-size: 80%;
   font-weight: bold;
   width: 100%;
   cursor: pointer;
@@ -128,18 +123,18 @@ body {
 }
 
 .title-card-parents {
-  font-size: 25px;
+  font-size: 100%;
+  text-align: center;
 }
-
 .link-btn-parents {
   width: 60%;
 }
-
-
-.img-title-card-parents{
-  width: 50%;
+.vaccin{
+  color: #dac20b;
 }
-
+.certificat{
+  color: #027134;
+}
 /* ============================= ADD KIDS ============================= */
 .btn-add-kids-div {
   margin-left: 20px;
@@ -166,8 +161,7 @@ body {
   align-content: center;
   justify-content: space-between;
   background-color: #B891E3;
-  width: 276px;
-  height: auto;
+  width: 20%;
   border-radius: 45px;
   color: #fff;
   padding: 16px;
@@ -180,7 +174,7 @@ body {
 }
 
 .add-kids-card-form {
-  background-color: #6f8ea9;
+  background-color: #2D19ED;
 }
 
 .link-card-add-kids {
@@ -194,6 +188,7 @@ body {
 }
 
 .link-btn-kids {
+  /* color: #fff; */
   text-decoration: none;
   font-weight: bold;
 }
@@ -214,18 +209,74 @@ body {
 /* ============================= ICONS ============================= */
 .fi {
   font-size: 20px;
+  /* transition: transform .2s; */
 }
 
 .icons-btn {
   margin-right: 10px;
 }
 
-
 /* ============================= FORM ADD KIDS ============================= */
 
 .input-inscription {
   border: none;
   border-radius: 10px;
+  padding: 10px 20px;
+}
+
+/* modal */
+
+.buttonPurple {
+  appearance: none;
+  background: #3D63F3;
+  border-radius: 0.25em;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 1em;
+}
+
+.details-modal {
+  background: #ffffff;
+  border-radius: 0.5em;
+  box-shadow: 0 10px 20px rgba(black, 0.2);
+  left: 50%;
+  max-width: 90%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30em;
+  text-align: left;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+summary {
+  display: flex;
+  justify-content: center;
+}
+.details-modal-content {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+h4{
+  width: 100%;
+  
   padding: 8px 15px;
 }
 
@@ -313,5 +364,3 @@ tbody:hover tr:hover td {
   display: flex;
   justify-content: center;
 }
-
-/* molette range */
