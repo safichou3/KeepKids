@@ -108,6 +108,8 @@ function passwordChange() {
 	//Vérification Taille >=8
 	if (password.value.length >= 8) {
 		passwordErrorSize.style.color = "green";
+		onlyText.style.visibility = 'visible';
+
 	} else {
 		passwordErrorSize.style.color = "black";
 	}
@@ -115,6 +117,7 @@ function passwordChange() {
 	//Vérification présence d'une minuscule
 	if (password.value.match(/[a-z]/, "g")) {
 		passwordErrorMinuscule.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorMinuscule.style.color = "black";
 	}
@@ -122,6 +125,7 @@ function passwordChange() {
 	//Vérification présence d'une majuscule
 	if (password.value.match(/[A-Z]/, "g")) {
 		passwordErrorMajuscule.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorMajuscule.style.color = "black";
 	}
@@ -129,6 +133,7 @@ function passwordChange() {
 	//Vérification présence d'un nombre
 	if (password.value.match(/[0-9]/, "g")) {
 		passwordErrorNombre.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorNombre.style.color = "black";
 	}
@@ -136,6 +141,7 @@ function passwordChange() {
 	//Vérification présence d'un char special
 	if (password.value.match(/[^a-zA-Z\d]/, "g")) {
 		passwordErrorSpecial.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorSpecial.style.color = "black";
 	}
@@ -180,10 +186,16 @@ function verifSiret() {
 	if (siretImput.value.length == 14) {
 		siretERROR.style.visibility = 'hidden';
 	} else {
-		siretERROR.style.visibility = 'visible';
-
-	}
+		siretERROR.style.color = "red";
+		
+		;
+	}	
 }
+// 		siretERROR.style.visibility = 'visible';
+
+// 	}
+// }
+
 
 // fonction de téléchargement
 var downloadURL = function downloadURL(url) {
