@@ -8,10 +8,12 @@ class ProController extends BaseController
 {
 
     protected $proModel;
+    protected $planningModel;
 
     public function __construct()
     {
         $this->proModel = model(ProModel::class);
+        $this->planningModel = model(planningModel::class);
     }
 
     public function deconnexion()
@@ -60,34 +62,47 @@ class ProController extends BaseController
     public function gestionHoraire($day)
     {
         $day = strtolower($day);
+        echo $this->request->getPost($day . "lower");
         if (null !== $this->request->getPost($day . 'checkbox')) {
             $fermé = 0;
             $ouverture = null;
             $fermeture = null;
         } else {
             $fermé = 1;
-            $ouverture = $this->request->getPost("$day . 'lower'");
-            $fermeture = $this->request->getPost("$day . 'upper'");
+            $ouverture = $this->request->getPost($day . "lower");
+            $fermeture = $this->request->getPost($day . "upper");
         }
-        return [
+        return array(
             $fermé, $ouverture, $fermeture
-        ];
+        );
     }
     public function CreatePlanningPro()
     {
         if ($this->request->getMethod() === 'post') {
-            echo "<pre>";
-            print_r($_POST);
-            echo "</pre>";
 
 
 
 
 
             echo view("espaces/pro/createPlanningPro");
+            echo "<pre>";
+            print_r($this->gestionHoraire('lundi'));
+            print_r($this->gestionHoraire('mardi'));
+            print_r($this->gestionHoraire('mercredi'));
+            print_r($this->gestionHoraire('jeudi'));
+            print_r($this->gestionHoraire('vendre'));
+            print_r($this->gestionHoraire('samedi'));
+            print_r($this->gestionHoraire('dimanche'));
+            // $this->planningModel->insert();
+            print_r($_POST);
+            print_r($this->planningModel->findAll());
+            print_r($_SESSION);
+            echo "</pre>";
         } else {
             print_r("pas de post");
-            echo view("espaces/pro/createPlanningPro");
+            $data = [$this->planningModel->lastMonday()];
+            echo view("espaces/pro/createPlanningPro", $data);
+            print_r($data);
         }
     }
     private function unlinkCarteIdById(int $id)
