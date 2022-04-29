@@ -24,10 +24,14 @@
 
                 <div class="btn-pro">
                     <div class="btn-planning-pro">
-                        <button class="btn-pro-plan"><i class="fi fi-rs-calendar fi-pro fi-plan"></i>Mon Planning de garde</button>
+                        <a href="<?= base_url(); ?>/espaces/pro/planningPro">
+                            <button class="btn-pro-plan"><i class="fi fi-rs-calendar fi-pro fi-plan"></i>Mon Planning de garde</button>
+                        </a>
                     </div>
                     <div class="btn-add-fact-pro">
-                        <button class="btn-pro-fact"><i class="fi fi-rs-receipt fi-pro fi-fact"></i>Créer une facture</button>
+                        <a href="<?= base_url(); ?>/espaces/pro/facturesPro">
+                            <button class="btn-pro-fact"><i class="fi fi-rs-receipt fi-pro fi-fact"></i>Créer une facture</button>
+                        </a>
                     </div>
                 </div>
             </div>
