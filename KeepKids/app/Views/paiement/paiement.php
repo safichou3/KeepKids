@@ -45,6 +45,8 @@ if(isset($_POST['prix']) && !empty($_POST['prix'])){
         <div id="card-errors" role="alert"></div>
         <button id="card-button" type="button" data-secret="<?= $intent['client_secret'] ?>">Procéder au paiement</button>
     </form>
+    <script src="<?= base_url(); ?>/js/stripe.js"></script>
+
     
 <?= $this->endSection() ?>
 
