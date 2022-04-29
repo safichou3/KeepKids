@@ -7,17 +7,6 @@
 
 <?= $this->section('content') ?>
 
-<!-- <div class="body-change"></div> -->
-
-<!-- <div id="body-change"> -->
-
-<!-- <div class="test-404"> -->
-<!-- </div> -->
-
-<!-- </div> -->
-
-
-
 <div id="body-change">
 
   <div class="body-change">

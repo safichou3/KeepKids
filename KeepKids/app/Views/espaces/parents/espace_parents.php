@@ -2,7 +2,6 @@
 
 
 <?= $this->section('css') ?>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
@@ -25,7 +24,9 @@
 
         <div class="btn-parents">
           <div class="btn-reservation-parents">
-            <button class="btn-parents-res"><i class="fi fi-rs-calendar icons-btn"></i>Réserver</button>
+            <a href="<?= base_url(); ?>/espaces/parents/reservations">
+              <button class="btn-parents-res"><i class="fi fi-rs-calendar icons-btn"></i>Réserver</button>
+            </a>
           </div>
           <div class="btn-add-kids-parents">
             <a href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-kids"><i class="fi fi-rs-child-head icons-btn"></i>Ajouter un enfant</button></a>
@@ -43,14 +44,14 @@
         <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="access">Accéder</button></a>
       </div>
       <div class="justificatifs kids">
-        <h3 class="title-card-parents">Justificatifs</h3>
-        <img class="img-title-card-parents" src="<?= base_url(); ?>/img/justificatifs.svg" alt="">
-        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
+        <h3 class="title-card-parents">Mon Profil</h3>
+        <img class="img-title-card-parents" src="<?= base_url(); ?>/img/profil-pro-avatar.svg" alt="">
+        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espaces/parents/profil"><button class="access">Accéder</button></a>
       </div>
       <div class="factures kids">
         <h3 class="title-card-parents">Mes Factures</h3>
-        <img class="img-title-card-parents" src="<?= base_url(); ?>/img/factures.svg" alt="">
-        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
+        <img class="img-title-card-parents" src="<?= base_url(); ?>/img/justificatifs.svg" alt="">
+        <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/paiements"><button class="access">Accéder</button></a>
       </div>
     </div>
   </div>

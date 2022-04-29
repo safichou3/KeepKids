@@ -1,3 +1,26 @@
+// console.log("JS ACTIF");
+// Molette géolocalisation (km)
+
+var rangeSlider = function(){
+	var slider = $('.range-slider'),
+		range = $('.range-slider__range'),
+		value = $('.range-slider__value');
+	  
+	slider.each(function(){
+  
+	  value.each(function(){
+		var value = $(this).prev().attr('value');
+		$(this).html(value);
+	  });
+  
+	  range.on('input', function(){
+		$(this).next(value).html(this.value);
+	  });
+	});
+  };
+  
+  rangeSlider();
+  
 //  fonction invoice (facture)
 
 window.onload = function () {
@@ -20,22 +43,6 @@ window.onload = function () {
 		html2pdf().from(invoice).set(opt).save();
 	});
 };
-
-// document.getElementById("downloadPdf").addEventListener("click", function () {
-// 	const element = document.getElementById("invoice");
-// 	var opt = {
-// 		margin: 0,
-// 		filename: "facture.pdf",
-// 		image: { type: "jpeg", quality: 0.98 },
-// 		html2canvas: { scale: 1 },
-// 		jsPDF: {
-// 			unit: "mm",
-// 			format: "a4",
-// 			orientation: "portrait",
-// 			precision: "2",
-// 		};
-// 		html2pdf().from(element).set(opt).save();
-// 	});
 //  menu burger
 
 const hamburger = document.querySelector(".hamburger");
@@ -84,7 +91,7 @@ $(document).ready(function () {
 	});
 })
 
-
+// verifs
 
 const password = document.getElementById("passwordInput");
 const passwordErrorSize = document.getElementById("passwordErrorSize");
@@ -101,6 +108,8 @@ function passwordChange() {
 	//Vérification Taille >=8
 	if (password.value.length >= 8) {
 		passwordErrorSize.style.color = "green";
+		onlyText.style.visibility = 'visible';
+
 	} else {
 		passwordErrorSize.style.color = "black";
 	}
@@ -108,6 +117,7 @@ function passwordChange() {
 	//Vérification présence d'une minuscule
 	if (password.value.match(/[a-z]/, "g")) {
 		passwordErrorMinuscule.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorMinuscule.style.color = "black";
 	}
@@ -115,6 +125,7 @@ function passwordChange() {
 	//Vérification présence d'une majuscule
 	if (password.value.match(/[A-Z]/, "g")) {
 		passwordErrorMajuscule.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorMajuscule.style.color = "black";
 	}
@@ -122,6 +133,7 @@ function passwordChange() {
 	//Vérification présence d'un nombre
 	if (password.value.match(/[0-9]/, "g")) {
 		passwordErrorNombre.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorNombre.style.color = "black";
 	}
@@ -129,6 +141,7 @@ function passwordChange() {
 	//Vérification présence d'un char special
 	if (password.value.match(/[^a-zA-Z\d]/, "g")) {
 		passwordErrorSpecial.style.color = "green";
+		onlyText.style.visibility = 'visible';
 	} else {
 		passwordErrorSpecial.style.color = "black";
 	}
@@ -173,10 +186,16 @@ function verifSiret() {
 	if (siretImput.value.length == 14) {
 		siretERROR.style.visibility = 'hidden';
 	} else {
-		siretERROR.style.visibility = 'visible';
-
-	}
+		siretERROR.style.color = "red";
+		
+		;
+	}	
 }
+// 		siretERROR.style.visibility = 'visible';
+
+// 	}
+// }
+
 
 // fonction de téléchargement
 var downloadURL = function downloadURL(url) {

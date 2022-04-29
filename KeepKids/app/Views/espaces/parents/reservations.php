@@ -2,7 +2,6 @@
 
 
 <?= $this->section('css') ?>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
 <?= $this->section('title') ?>
@@ -11,5 +10,22 @@
 
 <?= $this->section('content') ?>
 
+<div class='card-add-reservation'>
+    <select class="input-inscription" name="relation">
+        <option value="">Selectionnez un enfant</option>
+    </select>
+    <br>
+    <select class="input-inscription" name="relation">
+        <option value="">Selectionnez votre type de garde</option>
+    </select>
+    <br>
+    <div class="range-slider">
+        <input class="range-slider__range" type="range" value="25" min="0" max="150">
+        <span class="range-slider__value"></span>
+    </div>
+    <h4>
+        <button class='continuer'>Continuer</button>
+    </h4>
+</div>
 
 <?= $this->endSection() ?>
