@@ -10,46 +10,64 @@
 
 <div class="body-form body-ins-parents body-parents">
     <div class="ins-space">
-        <div class="card-co">
-            <h2 class="section-title-parents">Inscription parents</h2>
+        <h2 class="section-title-parents">Inscription parents</h2>
 
-            <div class="form-ins-parents">
-                <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
-                    <div class="ins-group">
-                        <label>Nom</label><br>
-                        <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required><br>
-                        <span id="onlyText">Chiffres interdits</span><br>
-
-                        <label>Prenom</label><br>
-                        <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
-                        <span id="onlyTexte">Chiffres interdits</span><br>
+        <div class="form-ins-parents">
+            <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
+                <div class="ins-group">
+                    <div class="input-label margin-group-right">
+                        <label>Nom</label>
+                        <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" onkeyup="onlyText();" required>
+                        <span id="onlyText">Chiffres interdits</span>
                     </div>
-
-                    <div class="ins-group">
-                        <label>Email</label><br>
-                        <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
-
-                        <label>Téléphone</label><br>
-                        <input class="input-inscription" type="tel" name="tel" placeholder="Telephone" required><br>
+                    <div class="input-label">
+                        <label>Prenom</label>
+                        <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required>
+                        <span id="onlyTexte">Chiffres interdits</span>
                     </div>
-                    <div class="ins-group">
-                        <label>Adresse</label><br>
-                        <input class="input-inscription" type="text" name="adresse" placeholder="adresse"><br>
+                </div>
 
-                        <label>Mot de passe</label><br>
-                        <input id="passwordInput" class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
-                        <div class="errors">
-                            <span id="passwordErrorMajuscule">1 majuscule</span>
-                            <span id="passwordErrorMinuscule">1 minuscule</span>
-                            <span id="passwordErrorNombre">1 chiffre</span><br>
-                            <span id="passwordErrorSpecial">1 caractère special</span>
-                            <span id="passwordErrorSize">8 caractères minimum</span>
-                        </div>
+                <div class="ins-group">
+                    <div class="input-label margin-group-right">
+                        <label>Email</label>
+                        <input class="input-inscription" type="email" name="email" placeholder="Email" required>
                     </div>
-                    <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris">
-
-                </form>
-                <a class="link-co-ins" href="<?= base_url(); ?>/espaces/parents/connexionParents">J'aimerais me connecter</a>
+                    <div class="input-label">
+                        <label>Téléphone</label>
+                        <input class="input-inscription" type="tel" name="tel" placeholder="Telephone" required>
+                    </div>
+                </div>
+                <!-- <div class="ins-group"> -->
+                <div class="input-label">
+                    <label>Adresse</label>
+                    <input class="input-inscription input-full-width" type="text" name="adresse" placeholder="adresse">
+                </div>
+                <div class="input-label">
+                    <label>Mot de passe</label>
+                    <input id="passwordInput" class="input-inscription input-full-width" type="password" name="password" placeholder="Mot de Passe" required>
+                    <div class="errors">
+                        <!-- <div class="errors-line"> -->
+                        <span id="passwordErrorMajuscule">1 majuscule</span>
+                        <span id="passwordErrorMinuscule">1 minuscule</span>
+                        <!-- </div> -->
+                        <!-- <div class="errors-line"> -->
+                        <span id="passwordErrorNombre">1 chiffre</span>
+                        <span id="passwordErrorSpecial">1 caractère special</span>
+                        <!-- </div> -->
+                        <span id="passwordErrorSize">8 caractères minimum</span>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <div class="ins-group">
+                    <div class="input-label">
+                        <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris">
+                    </div>
+                </div>
+            </form>
+            <div class="ins-group">
+                <div class="input-label">
+                    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/parents/connexionParents">J'aimerais me connecter</a>
+                </div>
             </div>
         </div>
     </div>

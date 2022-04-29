@@ -73,7 +73,7 @@
                 <div class="detailInfo">
                     <p>Guillaume C.</p>
                     <p>
-                        <i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i>
+                       <i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i>
                     </p>
                 </div>
             </div>
