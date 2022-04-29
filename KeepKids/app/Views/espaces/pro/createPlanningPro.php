@@ -6,13 +6,14 @@
 
 <?= $this->section('content') ?>
 
-
-<?php function formPlanning($day)
+<?php
+$_POST['timestamp'] = $timestamp ?>
+<?php function formPlanning($day, $timestamp)
 {
     ob_start(); ?>
     <div class="day">
-        <span><?= $day ?></span>
-        <!-- <input style="visiblity:hidden" name="" -->
+        <span><?= $day ?> <?= date("d", $timestamp) ?></span>
+
     </div>
 
     <div class="horaires">
@@ -34,6 +35,9 @@
         <input type="checkbox" id="<?= $day ?>checkbox" onchange="doalert(this)" name="<?= $day ?>checkbox">
     </div>
     <div class="break"></div>
+    <?php
+
+    ?>
     <script>
         var <?= $day ?>lowerSlider = document.querySelector('#<?= $day ?>lower'),
             <?= $day ?>upperSlider = document.querySelector('#<?= $day ?>upper'),
@@ -115,18 +119,26 @@
     <div id='formContainer'>
         <?php
 
-        echo formPlanning('lundi');
-        echo formPlanning('mardi');
-        echo formPlanning('mercredi');
-        echo formPlanning('jeudi');
-        echo formPlanning('vendredi');
-        echo formPlanning('samedi');
-        echo formPlanning('dimanche');
+        echo formPlanning('lundi', $timestamp);
+        $timestamp = ($timestamp + 24 * 60 * 60);
+        echo formPlanning('mardi', $timestamp);
+        $timestamp = ($timestamp + 24 * 60 * 60);
+        echo formPlanning('mercredi', $timestamp);
+        $timestamp = ($timestamp + 24 * 60 * 60);
+        echo formPlanning('jeudi', $timestamp);
+        $timestamp = ($timestamp + 24 * 60 * 60);
+        echo formPlanning('vendredi', $timestamp);
+        $timestamp = ($timestamp + 24 * 60 * 60);
+        echo formPlanning('samedi', $timestamp);
+        $timestamp = ($timestamp + 24 * 60 * 60);
+        echo formPlanning('dimanche', $timestamp);
         ?>
     </div>
     <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
 </form>
+<?php
 
+?>
 <script src="https://cdn.jsdelivr.net/npm/less@4">
 
 </script>
