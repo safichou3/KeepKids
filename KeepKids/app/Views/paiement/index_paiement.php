@@ -11,7 +11,7 @@
 
 <?= $this->section('content') ?>
 
-<form method="post" action="paiement.php">
+<form method="post" action="<?= base_url(); ?>/paiement/paiement">
     <label for="prix">Prix :</label>
     <input type="text" name="prix" id="prix">
     <button>Procéder au paiement</button>

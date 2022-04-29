@@ -89,8 +89,8 @@ $routes->match(['get', 'post'], 'espaces/pro/enfantsPro', 'EspaceProController::
 $routes->match(['get', 'post'], 'espaces/pro/profilPro', 'EspaceProController::profilPro');
 
 // PAIEMENT -----------------------------------------------------------------------------------------------------------
-$routes->get('paiement/index_paiement', 'PaiementController::indexPaiement');
-$routes->get('paiement/paiement', 'PaiementController::paiement');
+$routes->match(['get', 'post'], 'paiement/index_paiement', 'PaiementController::indexPaiement');
+$routes->match(['get', 'post'], 'paiement/paiement', 'PaiementController::paiement');
 
 // ------------------------------------------------------------------------------------------------------------------------
 
