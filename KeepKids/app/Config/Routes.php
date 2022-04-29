@@ -20,7 +20,9 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+$routes->set404Override(function () {
+    echo view('404.php');
+});
 $routes->setAutoRoute(true);
 
 /*
@@ -36,11 +38,12 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'AccueilController::index');
 $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
 $routes->get('accueil/contact', 'AccueilController::contact');
-$routes->get('Error', 'Error404Controller::Error404');
-$routes->get('404', 'Error404Controller::Error');
+// $routes->get('Error', 'Error404Controller::Error404');
+// $routes->get('404', 'Error404Controller::Error');
 
 // BOTH
 $routes->get('deconnexion', 'ParentsController::deconnexion');
+
 
 // ESPACE PARENTS -----------------------------------------------------------------------------------------------------
 $routes->get('espaces/parents/espace_parents', 'EspaceParentsController::index');
@@ -78,7 +81,7 @@ $routes->match(['get', 'post'], 'espaces/pro/inscriptionPro', 'ProController::in
 
 // planning creche
 $routes->match(['get', 'post'], 'espaces/pro/planningPro', 'EspaceProController::planningPro');
-$routes->match(['get', 'post'], 'espaces/pro/create/planningPro', 'EspaceProController::createPlanningPro');
+$routes->match(['get', 'post'], 'espaces/pro/create/planningPro', 'ProController::createPlanningPro');
 // paiement & relances
 $routes->match(['get', 'post'], 'espaces/pro/relancesPro', 'EspaceProController::relancesPro');
 // factures
@@ -92,8 +95,13 @@ $routes->match(['get', 'post'], 'espaces/pro/profilPro', 'EspaceProController::p
 $routes->match(['get', 'post'], 'paiement/index_paiement', 'PaiementController::indexPaiement');
 $routes->match(['get', 'post'], 'paiement/paiement', 'PaiementController::paiement');
 
-// ------------------------------------------------------------------------------------------------------------------------
 
+// ESPACE ADMINISTRATEUR------------------------------------------------------------------------------------------------
+$routes->get('espaces/administrateurs/espace_admin', 'AdminController::index');
+$routes->get('espaces/administrateurs/connexionAdmin', 'AdminController::connexion');
+
+
+// ------------------------------------------------------------------------------------------------------------------------
 
 /*
 * --------------------------------------------------------------------

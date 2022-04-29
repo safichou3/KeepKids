@@ -32,8 +32,8 @@ class EspaceParentsController extends BaseController
     {
         $enfant = $this->enfantsModel->find($id);
         if (!empty($enfants)) {
-            $imageName = $enfant["carnetVaccin"];
-            @unlink(ROOTPATH . "/public/upload/certificat/" . $imageName);
+            $imageName2 = $enfant["certificat"];
+            @unlink(ROOTPATH . "/public/upload/certificat/" . $imageName2);
         }
     }
     private function moveVaccin(string $inputName)
@@ -45,6 +45,17 @@ class EspaceParentsController extends BaseController
             $img->move(ROOTPATH . "/public/upload/carnetVaccin", $carnetVaccin);
 
             return $carnetVaccin;
+        }
+    }
+    private function moveCertificat(string $inputName)
+    {
+        $img2 = $this->request->getFile($inputName);
+
+        if ($img2->isValid() && !$img2->hasMoved()) {
+            $certificat = $img2->getRandomName();
+            $img2->move(ROOTPATH . "/public/upload/certificat", $certificat);
+
+            return $certificat;
         }
     }
     private function generateEnfant(string $carnetVaccin, $certificat)
@@ -84,11 +95,11 @@ class EspaceParentsController extends BaseController
     function mesEnfants()
     {
         $enfant = $this->enfantsModel->findEnfantsByParent(session("id"));
-        $accompagnant = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
+        $accompagnants = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
 
         $data = [
             "enfant" => $enfant,
-            "accompagnant" => $accompagnant
+            "accompagnant" => $accompagnants
         ];
 
         echo view("espaces/parents/mesEnfants", $data);
@@ -103,21 +114,44 @@ class EspaceParentsController extends BaseController
 
     function modifEnfants(int $id)
     {
+        $accompagnant = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
         $enfant = $this->enfantsModel->findEnfantsByParent(session("id"));
         if ($this->request->getMethod() === 'post') {
+            foreach ($enfant as $element) {
+                if ($element["id"] == $id) {
+                    $enfantAModif = $element;
+                }
+            }
             $img = $this->request->getFile('carnetVaccin');
             $img2 = $this->request->getFile('certificat');
+            $carnetVaccin = $enfantAModif["carnetVaccin"];
+            $certificat = $enfantAModif["certificat"];
+            print_r($this->request->getFile('carnetVaccin'));
 
-
-            if ($img->isValid() && !$img->hasMoved() && $img2->isValid() && !$img2->hasMoved()) {
-                $this->unlinkCarnetVaccinById($id);
-                $this->unlinkCertificatById($id);
-                $carnetVaccin = $this->moveVaccin("carnetVaccin");
+            if ($img2->isValid() && !$img2->hasMoved()) {
+                @unlink(ROOTPATH . "/public/upload/certificat/" . $enfantAModif['certificat']);
                 $certificat = $this->moveCertificat("certificat");
-            } else {
-                $carnetVaccin = $enfant["carnetVaccin"];
-                $certificat = $enfant["certificat"];
             }
+
+            if ($img->isValid() && !$img->hasMoved()) {
+                @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $enfantAModif['carnetVaccin']);
+                $carnetVaccin = $this->moveVaccin("carnetVaccin");
+            }
+
+            // if ($this->request->getPost('certificat')) {
+            //     if ($img2->isValid() && !$img2->hasMoved()) {
+            //         $this->unlinkCertificatById($id);
+            //         $certificat = $this->moveCertificat("certificat");
+            //     }
+            // }
+            // if ($this->request->getFile('carnetVaccin')) {
+            //     echo "ping";
+            //     die();
+            //     if ($img->isValid() && !$img->hasMoved()) {
+            //         $this->unlinkCarnetVaccinById($id);
+            //         $carnetVaccin = $this->moveVaccin("carnetVaccin");
+            //     }
+            // }
 
             $data = $this->generateEnfant($carnetVaccin, $certificat);
 
@@ -126,6 +160,7 @@ class EspaceParentsController extends BaseController
         } else {
             echo view("espaces/parents/modifEnfants", [
                 "enfant"       => $enfant,
+                "accompagnant"       => $accompagnant,
                 "parents" => $this->parentsModel->findAll()
             ]);
         }
@@ -133,17 +168,7 @@ class EspaceParentsController extends BaseController
 
     // ACCOMPAGNATEURS
 
-    private function moveCertificat(string $inputName2)
-    {
-        $img2 = $this->request->getFile($inputName2);
 
-        if ($img2->isValid() && !$img2->hasMoved()) {
-            $certificat = $img2->getRandomName();
-            $img2->move(ROOTPATH . "/public/upload/certificat", $certificat);
-
-            return $certificat;
-        }
-    }
     private function generateAccompagnant()
     {
         return [

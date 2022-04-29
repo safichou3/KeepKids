@@ -9,7 +9,7 @@
 <!-- <div id="overlay"> -->
 <!-- <div class="rouge"> -->
 <div class="center-div">
-    <img class="img-header" src="<?= base_url(); ?>/img/enfant.png" alt="">
+    <img class="img-header" src="<?= base_url(); ?>/img/bebe2.jpg" alt="">
     <div class="wrap">
         <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>
         <div class="search">
@@ -18,6 +18,16 @@
                 <i class="fi fi-br-search"></i>
             </button>
         </div>
+    </div>
+    <div class="wrap2">
+        <h1 style="font-size:100%;border-radius: 5px;padding: 2%;">La plateforme sécurisé qui permets aux parents de gagner du temps dans leurs réservations, leurs factures et leurs paiements.</h1>
+    </div>
+    <div class="wrap3">
+        <h1 style="font-size:100%;border-radius: 5px;padding: 2%;">Un espace professionnel pour les Crèches et les assistantes Maternelles </h1>
+    </div>
+    <div class="wrap4">
+        <h1 class="title-accueil1" style="border-radius: 5px;padding: 2%;">Faites nous confiance, inscrivez-vous, c'est gratuit à vie ! </h1>
+        <button class="bouton-accueil">Je m'inscris maintenant</button>
     </div>
 </div>
 <!-- </div> -->
@@ -59,12 +69,11 @@
     <div class="card">
         <div class="wrapCard">
             <div class="infoCard">
-                <img src="<?= base_url(); ?>/img/pp1.svg" alt="">
+                <img src="<?= base_url(); ?>/img/steve.svg" alt="">
                 <div class="detailInfo">
                     <p>Guillaume C.</p>
                     <p>
-                        <!-- <i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i><i class="fi fi-sr-star star-color"></i> -->
-                        <i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i>
+                       <i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i>
                     </p>
                 </div>
             </div>

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ReservationModel extends Model
 {
     protected $table          = 'reservation';
-    protected $allowedFields  = ['idPro', 'idEnfant', 'date', 'heure', 'statut'];
+    protected $allowedFields  = ['idPro', 'idEnfant', 'date', 'heure', 'statut','facture'];
     // protected $createdField   = 'created_at';
     // protected $updatedField   = 'updated_at';
     // protected $useSoftDeletes = true;

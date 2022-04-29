@@ -12,12 +12,16 @@ class EspaceProController extends BaseController
     }
     protected $enfantsModel;
     protected $reservationsModel;
+    protected $accompagnantsModel;
+    protected $parentsModel;
 
 
     public function __construct()
     {
         $this->enfantsModel = model(EnfantsModel::class);
         $this->reservationsModel = model(ReservationModel::class);
+        $this->accompagnantsModel = model(AccompagnantModel::class);
+        $this->parentsModel = model(ParentsModel::class);
     }
     public function planningPro()
     {
@@ -34,8 +38,10 @@ class EspaceProController extends BaseController
     public function enfantsPro()
     {
         $enfant = $this->reservationsModel->findAllEnfantsByPro();
+        $accompagnants = $this->accompagnantsModel->findAccompagnantByEnfant();
         $data = [
-            "enfant" => $enfant
+            "enfant" => $enfant,
+            "accompagnant" => $accompagnants
         ];
 
         echo view("espaces/pro/enfantsPro", $data);

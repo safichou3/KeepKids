@@ -12,6 +12,7 @@
     ob_start(); ?>
     <div class="day">
         <span><?= $day ?></span>
+        <!-- <input style="visiblity:hidden" name="" -->
     </div>
 
     <div class="horaires">
@@ -125,6 +126,7 @@
     </div>
     <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
 </form>
+
 <script src="https://cdn.jsdelivr.net/npm/less@4">
 
 </script>

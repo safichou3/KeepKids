@@ -19,4 +19,11 @@ class AccompagnantModel extends Model
             ->where(['idParent' => $idParent])
             ->findAll();
     }
+    public function findAccompagnantByEnfant()
+    {
+        return $this->select("accompagnant.*,enfant.*")
+            ->join('enfant', 'accompagnant.idParent = enfant.idParent')
+            // ->where(['id' => $idParent])
+            ->findAll();
+    }
 }

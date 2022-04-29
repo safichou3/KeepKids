@@ -1,12 +1,10 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/espace_pro.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
 <?= $this->section('title') ?>
-<!-- <h1>ESPACE PRO</h1> -->
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -24,10 +22,14 @@
 
                 <div class="btn-pro">
                     <div class="btn-planning-pro">
-                        <button class="btn-pro-plan"><i class="fi fi-rs-calendar fi-pro fi-plan"></i>Mon Planning de garde</button>
+                        <a href="<?= base_url(); ?>/espaces/pro/planningPro">
+                            <button class="btn-pro-plan"><i class="fi fi-rs-calendar fi-pro fi-plan"></i>Mon Planning de garde</button>
+                        </a>
                     </div>
                     <div class="btn-add-fact-pro">
-                        <button class="btn-pro-fact"><i class="fi fi-rs-receipt fi-pro fi-fact"></i>Créer une facture</button>
+                        <a href="<?= base_url(); ?>/espaces/pro/facturesPro">
+                            <button class="btn-pro-fact"><i class="fi fi-rs-receipt fi-pro fi-fact"></i>Créer une facture</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -39,17 +41,17 @@
             <div class="kids">
                 <h3 class="title-card-pro">Enfants</h3>
                 <img class="img-title-card-pro" src="<?= base_url(); ?>/img/kiddo.svg" alt="">
-                <a class="link-btn-pro" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
+                <a class="link-btn-pro" href="<?= base_url(); ?>/espaces/pro/enfantsPro"><button class="access">Accéder</button></a>
             </div>
             <div class="justificatifs kids">
-                <h3 class="title-card-pro">Justificatifs</h3>
-                <img class="img-title-card-pro" src="<?= base_url(); ?>/img/justificatifs.svg" alt="">
-                <a class="link-btn-pro" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
+                <h3 class="title-card-pro">Mon profil</h3>
+                <img class="img-title-card-pro" src="<?= base_url(); ?>/img/profil-pro-avatar.svg" alt="">
+                <a class="link-btn-pro" href="<?= base_url(); ?>/espaces/pro/profilPro"><button class="access">Accéder</button></a>
             </div>
             <div class="factures kids">
                 <h3 class="title-card-pro">Factures</h3>
-                <img class="img-title-card-pro" src="<?= base_url(); ?>/img/factures.svg" alt="">
-                <a class="link-btn-pro" href="<?= base_url(); ?>/espaces/espace_pro"><button class="access">Accéder</button></a>
+                <img class="img-title-card-pro" src="<?= base_url(); ?>/img/justificatifs.svg" alt="">
+                <a class="link-btn-pro" href="<?= base_url(); ?>/espaces/pro/facturesPro"><button class="access">Accéder</button></a>
             </div>
         </div>
     </div>
