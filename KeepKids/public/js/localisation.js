@@ -1,78 +1,71 @@
-var map = null; // carte leaflet pour affichage
+                  
+                  
+// function addIml(map) {
+//     const catalogHrn = 'hrn:here:data::olp-here:dh-showcase-dc-transit';
+//     const layerId = 'dc-transit';
+//     const service = platform.getIMLService();
+//     const imlProvider = new H.service.iml.Provider(service, catalogHrn, layerId);
 
-function go() {
-  var lon1 = document.getElementById("lon1").value;
-  var lat1 = document.getElementById("lat1").value;
-  var lon2 = document.getElementById("lon2").value;
-  var lat2 = document.getElementById("lat2").value;
-  var lon3 = document.getElementById("lon3").value;
-  var lat3 = document.getElementById("lat3").value;
-  var avoidFeatures = [];
-  var noToll = document.getElementById("toll").checked;
-  if (noToll) avoidFeatures.push("toll");
-  var noBridge = document.getElementById("bridge").checked;
-  if (noBridge) avoidFeatures.push("bridge");
-  var noTunnel = document.getElementById("tunnel").checked;
-  if (noTunnel) avoidFeatures.push("tunnel");
-  var graphIdx = document.getElementById("graph").selectedIndex;
-  var graph = document.getElementById("graph").options[graphIdx].value;
-  var methodIdx = document.getElementById("method").selectedIndex;
-  var method = document.getElementById("method").options[methodIdx].value;
-  var resultDiv = document.getElementById("result");
-  try {
-    Gp.Services.route({
-      startPoint: {
-        x: lon1,
-        y: lat1
-      },
-      endPoint: {
-        x: lon3,
-        y: lat3
-      },
-      viaPoints: [{
-        x: lon2,
-        y: lat2
-      }],
-      graph: graph,
-      avoidFeature: avoidFeatures,
-      routePreference: method,
-      apiKey: "jhyvi0fgmnuxvfv0zjzorvdn",
-      onSuccess: function(result) {
-        resultDiv.innerHTML = "<p>" + JSON.stringify(result) + "</p>";
-        // affichage sur la carte
-        L.geoJson(result.routeGeometry).addTo(map);
-      },
-      onFailure: function(error) {
-        resultDiv.innerHTML = "<p>" + error + "</p>";
-      }
-    });
-  } catch (e) {
-    resultDiv.innerHTML = "<p>" + e + "</p>"
-  }
-};
-map = L.map("map").setView([48.845, 2.424], 5);
-L.tileLayer(
-  'https://wxs.ign.fr/jhyvi0fgmnuxvfv0zjzorvdn/geoportail/wmts?service=WMTS&request=GetTile&version=1.0.0&tilematrixset=PM&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal', {
-    minZoom: 0,
-    maxZoom: 18,
-    tileSize: 256
-  }).addTo(map);
+//     const style = imlProvider.getStyle();
+//     const styleConfig = style.extractConfig(['iml']);
 
-var infoDiv = document.getElementById("info");
-infoDiv.innerHTML = "<p> Bibliothèque d'accès version " + Gp.servicesVersion + " (" + Gp.servicesDate + ")</p>";
+//     styleConfig.layers.iml.lines.draw.lines.dash = [1, 1];
+
+//     styleConfig.layers.iml.lines.draw.lines.width = [[5, 5000], [8, 800], [10, 200], [12, 160], [14, 60], [18, 20]];
+
+//     style.mergeConfig(styleConfig);
+
+//     map.addLayer(new H.map.layer.TileLayer(imlProvider));
+// }
 
 
+
+
+// const platform = new H.service.Platform({
+//     apikey: 'wuhhFoo3HHQ8Bxw68fCZe8iA_J9v4dBnRhSbkAlMup4'
+// });
+// const defaultLayers = platform.createDefaultLayers();
+
+// const map = new H.Map(
+//     document.getElementById('map'),
+//     defaultLayers.vector.normal.map,
+//     {
+//         center: new H.geo.Point(49.4313075, 1.0914433),
+//         zoom: 12
+//     }
+// );
+// window.addEventListener('resize', () => map.getViewPort().resize());
+
+
+// const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+// const ui = H.ui.UI.createDefault(map, defaultLayers);
+
+// addIml(map);
+
+
+// CODE EN JS POUR L'autogeolocalisation://
 var x = document.getElementById("demo");
 
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
 }
-    
+
 function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+    x.innerHTML = ''+ position.coords.latitude +'    '+ position.coords.longitude;	
+}      
+
+// CODE EN JS POUR récuperer la valeur de l'imput//
+function getValue() {
+    // Sélectionner l'élément input et récupérer sa valeur
+    var button = document.getElementById("demo").textContent;
+	
+    // Afficher la valeur
+    alert(button);
 }
+
+                
