@@ -105,14 +105,56 @@ class ProController extends BaseController
             print_r($data);
         }
     }
+    private function unlinkCarteIdById(int $id)
+    {
+        $pro = $this->proModel->find($id);
+        if (!empty($enfants)) {
+            $imageName = $pro["carteId"];
+            @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $imageName);
+        }
+    }
+    private function unlinkKbisById(int $id)
+    {
+        $pro = $this->proModel->find($id);
+        if (!empty($enfants)) {
+            $imageName2 = $pro["kbis"];
+            @unlink(ROOTPATH . "/public/upload/certificat/" . $imageName2);
+        }
+    }
+    private function movecarteId(string $inputName)
+    {
+        $img = $this->request->getFile($inputName);
+        if (!empty($img)) {
+            if ($img->isValid() && !$img->hasMoved()) {
+                $carteId = $img->getRandomName();
+                $img->move(ROOTPATH . "/public/upload/carnetVaccin", $carteId);
+
+                return $carteId;
+            }
+        }
+    }
+    private function moveKbis(string $inputName)
+    {
+        if (!empty($img2)) {
+            $img2 = $this->request->getFile($inputName);
+
+            if ($img2->isValid() && !$img2->hasMoved()) {
+                $kbis = $img2->getRandomName();
+                $img2->move(ROOTPATH . "/public/upload/certificat", $kbis);
+
+                return $kbis;
+            }
+        }
+    }
 
     public function inscription()
-
     {
+        $carteId = $this->movecarteId("carteId");
+        $kbis = $this->moveKbis("kbis");
         if ($this->request->getMethod() === 'post' && $this->validate([
             'nom' => 'required|min_length[3]|max_length[20]',
             'prenom' => 'required|min_length[3]|max_length[20]',
-            'nomEntreprise' => 'required|min_length[3]|max_length[40]',
+            'nomEntreprise' => 'min_length[3]|max_length[40]',
             'email' => 'required|valid_email|is_unique[pro.email]',
             'adresse' => 'required|min_length[3]|max_length[200]',
             'tel' => 'required|min_length[10]|max_length[10]',
@@ -123,7 +165,9 @@ class ProController extends BaseController
             'password' => 'required|min_length[6]|max_length[255]',
         ])) {
 
-            $pro = [
+
+
+            $data = [
                 "nom" => $this->request->getPost("nom"),
                 "prenom" => $this->request->getPost("prenom"),
                 "nomEntreprise" => $this->request->getPost("nomEntreprise"),
@@ -131,14 +175,16 @@ class ProController extends BaseController
                 "adresse" => $this->request->getPost("adresse"),
                 "tel" => $this->request->getPost("tel"),
                 "siret" => $this->request->getPost("siret"),
-                "carteId" => $this->request->getPost("carteId"),
-                "kbis" => $this->request->getPost("kbis"),
                 "idEtablissement" => $this->request->getPost("idEtablissement"),
-                "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT)
+                "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT),
+                "carteId" => $carteId,
+                "kbis" => $kbis
             ];
+            if (!empty($this->request->getPost('nom')) && !empty($this->request->getPost('prenom'))) {
 
-            $this->proModel->insert($pro);
-            return redirect()->to('/');
+                $this->proModel->insert($data);
+                return redirect()->to('/');
+            }
         } else {
             echo view("espaces/pro/inscriptionPro", [
                 'validation' => $this->validator

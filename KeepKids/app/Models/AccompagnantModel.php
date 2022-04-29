@@ -13,17 +13,17 @@ class AccompagnantModel extends Model
     // protected $useSoftDeletes = true;
     // protected $deletedField   = 'deleted_at';
 
-    public function findAccompagnantByParent(int $idParent)
+    public function findAccompagnantsByParent(int $idParent)
     {
         return $this->select("accompagnant.*")
             ->where(['idParent' => $idParent])
             ->findAll();
     }
-
+    public function findAccompagnantByEnfant()
+    {
+        return $this->select("accompagnant.*,enfant.*")
+            ->join('enfant', 'accompagnant.idParent = enfant.idParent')
+            // ->where(['id' => $idParent])
+            ->findAll();
+    }
 }
-// {
-//     return $this->select("accompagnant.*,parent.*")
-//         ->join('parent', 'accompagnant.idParent = parent.id')
-//         ->where(['idParent' => $idParent])
-//         ->findAll();
-// }

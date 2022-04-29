@@ -1,12 +1,10 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/espace_pro.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
 <?= $this->section('title') ?>
-<!-- <h1>ESPACE PRO</h1> -->
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

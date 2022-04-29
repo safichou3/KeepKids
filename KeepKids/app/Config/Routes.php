@@ -95,6 +95,12 @@ $routes->match(['get', 'post'], 'espaces/pro/profilPro', 'EspaceProController::p
 $routes->get('paiement/index_paiement', 'PaiementController::indexPaiement');
 $routes->get('paiement/paiement', 'PaiementController::paiement');
 
+
+// ESPACE ADMINISTRATEUR------------------------------------------------------------------------------------------------
+$routes->get('espaces/administrateurs/espace_admin', 'AdminController::index');
+$routes->get('espaces/administrateurs/connexionAdmin', 'AdminController::connexion');
+
+
 // ------------------------------------------------------------------------------------------------------------------------
 
 /*

@@ -2,7 +2,6 @@
 
 
 <?= $this->section('css') ?>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
@@ -72,14 +71,14 @@
         Allergie(s): " . $element["allergies"] . "<br>
         Maladie(s): " . $element["maladies"] . "<br>
         Traitement(s): " . $element["traitement"] . "<br>
-        Régime Alimentaire: " . $element["description"] . "<br>
+        Régime Alimentaire: " . $element["description"] . "<br><br>
         
         
-        
+         <a class='link-btn-kids vaccin' href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download>carnet <br> vaccination</a>
+        <a class='link-btn-kids certificat' href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download>certificat</a><br>
         <br>
         <div class='link-btn-kids-div'>
-        <a class='link-btn-kids vaccin' href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download><i class='fi fi-rs-syringe'></i></i></a>
-        <a class='link-btn-kids certificat' href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download><i class='fi fi-sr-stethoscope'></i></a><br>
+       
         <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/modifEnfants/" . $element["id"] . $element["id"] . "><i class='fi fi-rs-pencil'></i></a>
         <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Reserver</button></h4></div>";
     }
