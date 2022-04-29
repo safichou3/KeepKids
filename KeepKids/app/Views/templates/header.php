@@ -1,6 +1,6 @@
 <nav>
     <div class="logo">
-        <img src="<?= base_url(); ?>/img/logo.svg" alt="Logo Image">
+        <img src="<?= base_url(); ?>/img/logo_noir.svg" alt="Logo Image">
     </div>
     <div class="hamburger">
         <div class="line1"></div>
