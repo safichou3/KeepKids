@@ -3,14 +3,11 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #E4EAFF;
-}
-html {
-  width: 100%;
+  min-height: 100vh;
 }
 .content-body-parents {
   padding-bottom: 70px;
 }
-
 .top-empty {
   width: 100%;
   height: 130px;
@@ -36,11 +33,10 @@ html {
   justify-content: space-between;
   padding: 60px 20px;
   background-color: #C6D2FF;
-  /* border: 2px solid black; */
 }
 
 .top-left-parents {
-  margin-left: 30px;
+  margin: 0 30px;
 }
 
 .btn-parents {
@@ -220,12 +216,6 @@ html {
   margin-right: 10px;
 }
 
-/* .fi:hover{
-  font-size: 25px; */
-  /* transform: scale(1.5); */
-  /* font-weight: bold; */
-/* } */
-
 /* ============================= FORM ADD KIDS ============================= */
 
 .input-inscription {
@@ -374,5 +364,3 @@ tbody:hover tr:hover td {
   display: flex;
   justify-content: center;
 }
-
-/* molette range */
