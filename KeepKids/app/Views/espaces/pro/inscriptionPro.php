@@ -7,63 +7,112 @@
 <?= $this->section('content') ?>
 
 <div class="body-form body-co-pro body-pro">
-    <h2 class="section-title-pro">Inscription espace professionnel</h2>
-    <form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
+    <div class="ins-space">
+        <h2 class="section-title-pro">Inscription espace professionnel</h2>
 
-        <input type="radio" name="idEtablissement" value="1" checked required>
-        <label for="1">Assistante Maternelle</label>
+        <div class="form-ins-parents">
+            <form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
 
-        <input type="radio" name="idEtablissement" value="2" required>
-        <label for="2">Creche</label><br>
-
-        <label>Nom *</label><br>
-        <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" required><br>
-        <span id="onlyText">Chiffres interdits</span><br>
-
-        <label>Prénom *</label><br>
-        <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required><br>
-        <span id="onlyTexte">Chiffres interdits</span><br>
-
-        <label>Nom de l'Entreprise</label><br>
-        <input class="input-inscription" type="text" name="nomEntreprise" placeholder="Prenom"><br>
-
-        <label>Email *</label><br>
-        <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
-
-        <label>Téléphone *</label><br>
-        <input class="input-inscription" type="tel" name="tel" placeholder="Telephone" required><br>
-
-        <label>Adresse *</label><br>
-        <input class="input-inscription" type="text" name="adresse" placeholder="adresse" required><br>
-
-        <label>Numéro de Siret *</label><br>
-        <input id="siretImput" class="input-inscription" type="number" name="siret" placeholder="siret" required><br>
-        <span id="siretERROR">14 nombres</span><br>
-
-        <label title="Carte d'Id | Passeport | Permis de conduire">Pièce d'identité <i class="fi fi-rs-interrogation"></i></label><br>
-        <input class="input-inscription" type="file" name="carteId" required><br>
-
-        <label>Extrait de kbis *</label><br>
-        <input class="input-inscription" type="file" name="kbis" required><br>
+                <div class="input-radio">
+                    <div class="radio-group1 radio-group">
+                        <input type="radio" name="idEtablissement" value="1" checked required class="radio-margin-right">
+                        <label class="radio-margin" for="1">Assistante Maternelle</label>
+                    </div>
+                    <div class="radiio-group2 radio-group">
+                        <input type="radio" name="idEtablissement" value="2" required>
+                        <label for="2">Creche</label>
+                    </div>
+                </div>
 
 
+                <div class="ins-group">
+                    <div class="input-label margin-group-right">
+                        <label>Nom *</label>
+                        <input id="nom" class="input-inscription" type="text" name="nom" placeholder="Nom" required>
+                        <span id="onlyText">Chiffres interdits</span>
+                    </div>
+                    <div class="input-label">
+                        <label>Prénom *</label>
+                        <input id="prenom" class="input-inscription" type="text" name="prenom" placeholder="Prenom" required>
+                        <span id="onlyTexte">Chiffres interdits</span>
+                    </div>
+                </div>
 
-        <label>Mot de passe *</label><br>
-        <input id="passwordInput" class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
-        <div class="errors">
-            <span id="passwordErrorMajuscule">1 majuscule |</span>
-            <span id="passwordErrorMinuscule">1 minuscule |</span>
-            <span id="passwordErrorNombre">1 chiffre |</span><br>
-            <span id="passwordErrorSpecial">1 caractère special |</span>
-            <span id="passwordErrorSize">8 caractères minimum</span>
+                <div class="ins-group">
+                    <div class="input-label margin-group-right">
+                        <label>Nom de l'Entreprise</label>
+                        <input class="input-inscription" type="text" name="nomEntreprise" placeholder="Prenom">
+                    </div>
+
+                    <div class="input-label">
+                        <label>Numéro de Siret *</label>
+                        <input id="siretImput" class="input-inscription" type="number" name="siret" placeholder="siret" required>
+                        <span id="siretERROR">14 nombres</span>
+                    </div>
+
+                </div>
+
+                <div class="ins-group">
+                    <div class="input-label margin-group-right">
+                        <label>Email *</label>
+                        <input class="input-inscription" type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-label">
+                        <label>Téléphone *</label>
+                        <input class="input-inscription" type="tel" name="tel" placeholder="Telephone" required>
+                    </div>
+
+                </div>
+                <div class="input-label">
+                    <label>Adresse *</label>
+                    <input class="input-inscription input-full-width" type="text" name="adresse" placeholder="adresse" required>
+                </div>
+                <!-- <div class="ins-group"> -->
+
+                <!-- </div> -->
+                <div class="ins-group doc-download">
+                    <div class="input-label">
+                        <label title="Carte d'Id | Passeport | Permis de conduire">Pièce d'identité <i class="fi fi-rs-interrogation"></i></label>
+                        <input class="input-inscription" type="file" name="carteId" required>
+
+                    </div>
+                    <div class="input-label">
+                        <label>Extrait de kbis *</label>
+                        <input class="input-inscription" type="file" name="kbis" required>
+                    </div>
+                </div>
+
+                <!-- <div class="ins-group"> -->
+                <div class="input-label">
+                    <label>Mot de passe *</label>
+                    <input id="passwordInput" class="input-inscription input-full-width" type="password" name="password" placeholder="Mot de Passe" required>
+                    <div class="errors pro-errors">
+                        <span id="passwordErrorMajuscule">1 majuscule |</span>
+                        <span id="passwordErrorMinuscule">1 minuscule |</span>
+                        <span id="passwordErrorNombre">1 chiffre |</span>
+                        <span id="passwordErrorSpecial">1 caractère special |</span>
+                        <span id="passwordErrorSize">8 caractères minimum</span>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="conditions" id="" require>
+                    <label for="conditions">J'acceptes les <a class="politique" href="<?= base_url(); ?>/accueil/mentions_legales">conditions d'utilisations</a></label>
+                </div>
+                <!--  -->
+                * Champs Obligatoires
+                <div class="ins-group">
+                    <div class="input-label">
+                        <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
+                    </div>
+                </div>
+
+            </form>
+            <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
         </div>
-<br>
-* Champs Obligatoires
-
-        <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
-    </form>
-    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
+    </div>
 </div>
+
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script src="<?= base_url(); ?>/js/main.js"></script>

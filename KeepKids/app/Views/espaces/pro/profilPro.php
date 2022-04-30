@@ -1,8 +1,8 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/profil_pro.css" rel="stylesheet">
+<link href="<?= base_url(); ?>/css/profil.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -15,7 +15,7 @@
         <h3 class="mini-title-parents">Profil</h3>
         <img class="img-profil-parents" src="<?= base_url(); ?>/img/sammy.jpg" alt="">
       </div>
-      <a class="link-mail-parents" href="mailto:professionnel@gmail.com"><button class="mail-parents">professionnel@gmail.com</button></a>
+      <a class="link-mail-parents" href="mailto:professionnel@gmail.com"><button class="mail-parents"><i class="fi fi-rs-envelope"></i> professionnel@gmail.com</button></a>
     </div>
 
     <div class="middle-parents">

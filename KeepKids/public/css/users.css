@@ -1,18 +1,12 @@
+/* ============================ INSCRIPTION/CONNEXION ============================ */
+
 html {
-  /* background-color: #C6D2FF; */
   text-align: center;
 }
 
 .body-form {
   padding: 90px 0px;
 }
-
-/* .section-title-pro{
-  background-color: #F9C6C4;
-}*/
-/* .section-title-parents{
-  margin-bottom: 30px;
-}  */
 
 .body-pro {
   background-color: #FF817B;
@@ -21,6 +15,15 @@ html {
 .body-parents {
   background-color: #E4EAFF;
 }
+
+
+.link-co-ins {
+  color: #8B3EDF;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ============================ INSCRIPTION ============================ */
 
 .inscription {
   background-color: #3D63F3;
@@ -41,25 +44,55 @@ html {
   width: 100%;
 }
 
+.ins-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-/* .form-ins-parents {
+.input-label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
-  justify-content: space-around;
-  width: 23%;
-  height: 350px;
-  border-radius: 45px;
-  color: #000000;
-  padding: 25px;
-} */
-
-.link-co-ins {
-  color: #8B3EDF;
-  font-weight: bold;
-  text-decoration: none;
 }
+
+.margin-group-right {
+  margin-right: 5rem;
+}
+
+.errors {
+  margin-bottom: 20px;
+}
+
+.input-full-width {
+  width: 39%;
+  margin-bottom: 30px;
+}
+
+.input-radio {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.radio-group {
+  margin-right: 20px;
+}
+
+.doc-download {
+  display: flex;
+  margin-left: 50px;
+}
+
+.checkbox {
+  margin-bottom: 20px;
+}
+
+.politique{
+  color: #3D63F3;
+  /* text-decoration: none; */
+}
+/* ============================ CONNEXION ============================ */
 
 .card-co {
   display: flex;
@@ -92,49 +125,4 @@ html {
 .img-co {
   width: 40%;
   margin-top: 30px;
-}
-
-/* .card-ins {
-  width: 45%;
-  height: auto;
-  background-color: #C6D2FF;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
-  border-radius: 45px;
-  text-align: center;
-  height: 500px;
-  padding: 20px 0;
-} */
-
-.ins-group {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.input-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.margin-group-right {
-  margin-right: 8rem;
-}
-
-.errors {
-  margin-bottom: 20px;
-}
-
-/*
-.errors-line{
-  display: flex;
-} */
-
-.input-full-width {
-  width: 30%;
-  margin-bottom: 30px;
 }
