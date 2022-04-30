@@ -92,6 +92,10 @@ html {
   color: #3D63F3;
   /* text-decoration: none; */
 }
+
+.list-adresses{
+  list-style-type: none;
+}
 /* ============================ CONNEXION ============================ */
 
 .card-co {

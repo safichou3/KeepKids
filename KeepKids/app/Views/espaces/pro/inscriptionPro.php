@@ -68,23 +68,34 @@
                         <div class="col-6 adresse">
                             <form novalidate>
                                 <div class="form-row">
-                                    <label>Adresse *</label>
-                                    <input type="text" class="form-control" id="inputRue" name="inputRue" placeholder="Adresse">
-                                    <input type="text" class="form-control" pattern="^[0-9]{1}[0-9a-bA-B]{1}[0-9]{3}$" id="inputCodePostal" minlength="5" maxlength="5" placeholder="Code Postal">
-                                    <input type="text" class="form-control" id="inputVille" name="inputVille" placeholder="Ville">
+                                    <div class="ins-group">
+                                        <div class="input-label margin-group-right">
+                                            <label>Adresse *</label>
+                                            <input type="text" class="form-control input-inscription" id="inputRue" name="inputRue" placeholder="Adresse">
+                                        </div>
+                                        <div class="input-label margin-group-right">
+                                            <label>Code Postal</label>
+                                            <input type="text" class="form-control input-inscription" pattern="^[0-9]{1}[0-9a-bA-B]{1}[0-9]{3}$" id="inputCodePostal" minlength="5" maxlength="5" placeholder="Code Postal">
+                                        </div>
+                                        <div class="input-label">
+                                            <label>Ville</label>
+                                            <input type="text" class="form-control input-inscription" id="inputVille" name="inputVille" placeholder="Ville">
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                         <div class="col-6 proposition">
                             <div class="adress-feedback">
-                                <ul></ul>
+                                <div class="iins-group">
+                                    <ul class="list-adresses"></ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="ins-group"> -->
 
-                <!-- </div> -->
+
                 <div class="ins-group doc-download">
                     <div class="input-label">
                         <label title="Carte d'Id | Passeport | Permis de conduire">Pièce d'identité <i class="fi fi-rs-interrogation"></i></label>

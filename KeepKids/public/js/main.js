@@ -104,6 +104,23 @@ hamburger.addEventListener('click', () => {
 
 $(document).ready(function () {
 
+
+	//set responsive mobile input field placeholder text
+	if ($(window).width() < 769) {
+		$(".searchTerm").attr("placeholder", "Trouver une crèche à proximité");
+}
+else {
+		$(".searchTerm").attr("placeholder", "Rechercher des creches à proximité");
+}
+	 $(window).resize(function () {
+		if ($(window).width() < 769) {
+				$(".searchTerm").attr("placeholder", "Trouver une crèche à proximité");
+		}
+		else {
+				$(".searchTerm").attr("placeholder", "Rechercher des creches à proximité");
+		}
+});
+
 	$(".showMore1").click(function () {
 		$(".hideContent1").hide();
 		$(".showContent1").show();

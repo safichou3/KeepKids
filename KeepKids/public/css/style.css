@@ -618,6 +618,7 @@ footer ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   /* align-content: center; */
 }
 
@@ -713,6 +714,13 @@ footer.site-footer {
 /* ====================== RESPONSIVE ACCUEIL ====================== */
 
 @media screen and (max-width: 380px) {
+  .logo img {
+    display: none;
+  }
+  .hamburger div{
+    background-color: #000000;
+  }
+
   .img-header {
     display: none;
   }
@@ -722,14 +730,29 @@ footer.site-footer {
     width: 100%;
   }
 
+  .wrap {
+    width: 71%;
+    top: 72%;
+    left: 52%;
+  }
+
+  .searchTerm::placeholder{
+    color: #000;
+  }
   .wrap2, .wrap3, .wrap4 {
     display: none;
   }
 
   h1.title-accueil {
-    font-size: 10px;
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    color: #000000;
+    font-size: 15px;
   }
-
+.text-top-accueil{
+  margin-top: 30px;
+}
   /* .wrap {
     display: none;
   }
@@ -763,6 +786,7 @@ footer.site-footer {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
   }
 
   .card {
