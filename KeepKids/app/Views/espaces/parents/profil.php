@@ -1,7 +1,7 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link href="<?= base_url(); ?>/css/profil.css" rel="stylesheet">
 <link href="<?= base_url(); ?>/css/profil_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
 

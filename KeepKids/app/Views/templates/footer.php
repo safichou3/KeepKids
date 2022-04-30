@@ -15,12 +15,12 @@
     </div>
     <div class="link-footer">
       <ul class="ul-footer">
-        <li><a class="link-footer-a" href="<?= base_url(); ?>/">accueil</a></li>
-        <li><a class="link-footer-a" href="<?= base_url(); ?>/espaces/pro/connexionPro">espace pros</a></li>
-        <li><a class="link-footer-a" href="<?= base_url(); ?>/espaces/parents/connexionParents">espace parents</a></li>
-        <li><a class="link-footer-a" href="<?= base_url(); ?>#contact">contact</a></li>
-        <li><a class="link-footer-a" href="<?= base_url(); ?>/accueil/mentions_legales">mentions legales</a></li>
-        <li><a class="link-footer-a" href="<?= base_url(); ?>/espaces/administrateurs/espace_admin">Administrateurs</a></li>
+        <li class="margin-bottom-footer"><a class="link-footer-a" href="<?= base_url(); ?>/">accueil</a></li>
+        <li class="margin-bottom-footer"><a class="link-footer-a" href="<?= base_url(); ?>/espaces/pro/connexionPro">espace pros</a></li>
+        <li class="margin-bottom-footer"><a class="link-footer-a" href="<?= base_url(); ?>/espaces/parents/connexionParents">espace parents</a></li>
+        <li class="margin-bottom-footer"><a class="link-footer-a" href="<?= base_url(); ?>#contact">contact</a></li>
+        <li class="margin-bottom-footer"><a class="link-footer-a" href="<?= base_url(); ?>/accueil/mentions_legales">mentions legales</a></li>
+        <li class="margin-bottom-footer"><a class="link-footer-a" href="<?= base_url(); ?>/espaces/administrateurs/espace_admin">Administrateurs</a></li>
       </ul>
     </div>
     <div class="copyright">

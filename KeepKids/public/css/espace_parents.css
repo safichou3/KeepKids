@@ -1,69 +1,24 @@
 /* ============================= CSS SAFIA ============================= */
 /* ============================= MON ESPACE PARENTS ============================= */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #E4EAFF;
-  min-height: 100vh;
-}
-.content-body-parents {
-  padding-bottom: 70px;
-}
-.top-empty {
-  width: 100%;
-  height: 130px;
 }
 
 .hello-parents {
   color: #8B3EDF;
-  font-size: 50px;
-}
-
-.mini-title-parents {
-  color: #000;
-  margin-bottom: -30px;
-}
-
-.mini-text-parents {
-  font-size: 20px;
-  margin-bottom: 50px;
 }
 
 .top-parents {
-  display: flex;
-  justify-content: space-between;
-  padding: 60px 20px;
   background-color: #C6D2FF;
 }
 
-.top-left-parents {
-  margin: 0 30px;
-}
-
-.btn-parents {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.btn-parents-res, .btn-parents-kids {
-  padding: 20px 40px;
-  border-radius: 10px;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  width: 100%;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
 
 .btn-parents-res {
   background-color: #3D63F3;
-  margin-right: 10px;
 }
 
 .btn-parents-res:hover {
   background-color: #2D19ED;
-  margin-right: 10px;
 }
 
 .btn-parents-kids {
@@ -74,47 +29,14 @@ body {
   background-color: #9915CD;
 }
 
-.img-top-right {
-  width: 55%;
-}
-
-.img_parents {
-  width: 95%;
-}
-
-.middle-parents, .add-kids-display {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 40px 70px 0;
-  justify-content: center;
-}
 
 .kids {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
   background-color: #B891E3;
-  width: 276px;
-  height: auto;
-  border-radius: 45px;
   color: #fff;
-  padding: 25px;
 }
 
 
 .access {
-  margin-top: 25px;
-  padding: 20px 20px;
-  border-radius: 10px;
-  border: none;
-  color: #fff;
-  font-size: 80%;
-  font-weight: bold;
-  width: 100%;
-  cursor: pointer;
   background-color: #8B3EDF;
 }
 
@@ -122,38 +44,10 @@ body {
   background-color: #9915CD;
 }
 
-.title-card-parents {
-  font-size: 100%;
-  text-align: center;
-}
-.link-btn-parents {
-  width: 60%;
-}
-.vaccin{
-  color: #dac20b;
-}
-.certificat{
-  color: #027134;
-}
+
+
+
 /* ============================= ADD KIDS ============================= */
-.btn-add-kids-div {
-  margin-left: 20px;
-}
-
-.btn-add-kids {
-  margin-top: 25px;
-  padding: 15px 10px;
-  border-radius: 10px;
-  border: none;
-  color: #fff;
-  font-size: 15px;
-  font-weight: bold;
-  width: 100%;
-  cursor: pointer;
-  background-color: #8B3EDF;
-}
-
-
 .card-add-kids {
   display: flex;
   flex-direction: column;
@@ -169,18 +63,11 @@ body {
   box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
   margin-left: 2%;
 }
-.card-add-kids:hover{
+
+.card-add-kids:hover {
   transform: scale(1.02);
 }
 
-.add-kids-card-form {
-  background-color: #2D19ED;
-}
-
-.link-card-add-kids {
-  text-align: left;
-  margin-top: 20px;
-}
 
 .link-btn-kids-div {
   display: flex;
@@ -193,6 +80,15 @@ body {
   font-weight: bold;
 }
 
+
+.vaccin {
+  color: #dac20b;
+}
+
+.certificat {
+  color: #027134;
+}
+
 .delete {
   color: #FF2015;
 }
@@ -201,20 +97,6 @@ body {
   color: #3D63F3;
 }
 
-.add-kids-title {
-  text-align: center;
-  padding-top: 50px;
-}
-
-/* ============================= ICONS ============================= */
-.fi {
-  font-size: 20px;
-  /* transition: transform .2s; */
-}
-
-.icons-btn {
-  margin-right: 10px;
-}
 
 /* ============================= FORM ADD KIDS ============================= */
 
@@ -255,10 +137,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 summary {
   display: flex;
   justify-content: center;
 }
+
 .details-modal-content {
   display: flex;
   justify-content: center;
@@ -274,9 +158,9 @@ form {
   width: 100%;
 }
 
-h4{
+h4 {
   width: 100%;
-  
+
   padding: 8px 15px;
 }
 
@@ -293,52 +177,53 @@ textarea {
 /* tableau des factures */
 
 strong {
-	font-weight: bold; 
+  font-weight: bold;
 }
 
 em {
-	font-style: italic; 
+  font-style: italic;
 }
 
 table {
-	width: 90%;
-    font-size: 13px;
-    line-height: 24px;
-    margin: 30px auto;
-    text-align: left;
-    color: black;
+  width: 90%;
+  font-size: 13px;
+  line-height: 24px;
+  margin: 30px auto;
+  text-align: left;
+  color: black;
 }
 
 th {
-    color: #fff;
-    font-weight: bold;
-    position: relative;
-    background-color: #98adff;
-    padding: 10px;
-    text-align: center;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  background-color: #98adff;
+  padding: 10px;
+  text-align: center;
 }
 
 td {
-    position: relative;
-    transition: all 300ms;
-	background-color: #e2e2e2;
-	text-align: center;
+  position: relative;
+  transition: all 300ms;
+  background-color: #e2e2e2;
+  text-align: center;
 }
 
 
 tr:nth-child(odd) td {
-	background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);	
+  background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
 }
 
 tbody:hover td {
-	color: transparent;
-	text-shadow: 0 0 1px #aaa;
+  color: transparent;
+  text-shadow: 0 0 1px #aaa;
 }
 
 tbody:hover tr:hover td {
-	color: rgb(0, 0, 0);
-	text-shadow: 0 1px 0 #fff;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 1px 0 #fff;
 }
+
 /* reservation */
 .card-add-reservation {
   display: flex;
@@ -364,3 +249,5 @@ tbody:hover tr:hover td {
   display: flex;
   justify-content: center;
 }
+
+

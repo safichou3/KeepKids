@@ -2,7 +2,7 @@
 
 
 <?= $this->section('css') ?>
-
+<link href="<?= base_url(); ?>/css/espace_commun.css" rel="stylesheet">
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
 <?= $this->section('title') ?>
@@ -56,7 +56,7 @@
 </details>
 
 
-<div class="add-kids-display">
+<div class="middle-espaces add-kids-display">
 
     <?php
     if (empty($enfant)) {
@@ -66,7 +66,7 @@
     <?php foreach ($enfant as $element) {
 
         echo "<div class='card-add-kids'>
-        <h3 class='title-card-parents'>" . $element["prenom"] . " </br> " . $element["nom"] . "</h3>
+        <h3 class='title-card title-card-parents'>" . $element["prenom"] . " </br> " . $element["nom"] . "</h3>
         <h4>Né(e) le: " . $element["dateDeNaissance"] . "<br>
         Allergie(s): " . $element["allergies"] . "<br>
         Maladie(s): " . $element["maladies"] . "<br>
@@ -117,7 +117,7 @@
 </details>
 
 
-<div class="add-kids-display">
+<div class="middle-espaces add-kids-display">
 
     <?php
     if (empty($accompagnant)) {
@@ -127,7 +127,7 @@
 
     <?php foreach ($accompagnant as $element) {
         echo "<div class='card-add-kids'>
-        <h3 class='title-card-parents'>" . $element["prenomAccompagnant"] . " </br> " . $element["nomAccompagnant"] . "</h3>
+        <h3 class='title-card title-card-parents'>" . $element["prenomAccompagnant"] . " </br> " . $element["nomAccompagnant"] . "</h3>
         <h4>Nom: " . $element["nomAccompagnant"] . "<br>
         Prénom: " . $element["prenomAccompagnant"] . "<br>
         Relation: " . $element["relation"] . "<br>

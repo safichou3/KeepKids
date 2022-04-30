@@ -14,6 +14,7 @@
 
         <div class="form-ins-parents">
             <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
+
                 <div class="ins-group">
                     <div class="input-label margin-group-right">
                         <label>Nom</label>
@@ -57,6 +58,11 @@
                         <!-- </div> -->
                         <span id="passwordErrorSize">8 caractères minimum</span>
                     </div>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" name="conditions" id="" require>
+                    <label for="conditions">J'acceptes les <a class="politique" href="<?= base_url(); ?>/accueil/mentions_legales">conditions d'utilisations</a></label>
                 </div>
                 <!-- </div> -->
                 <div class="ins-group">
