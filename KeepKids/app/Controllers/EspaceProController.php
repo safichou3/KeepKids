@@ -38,10 +38,10 @@ class EspaceProController extends BaseController
     public function enfantsPro()
     {
         $enfant = $this->reservationsModel->findAllEnfantsByPro();
-        $accompagnants = $this->accompagnantsModel->findAccompagnantByEnfant();
+        $accompagnant = $this->accompagnantsModel->findAccompagnantByEnfant();
         $data = [
             "enfant" => $enfant,
-            "accompagnant" => $accompagnants
+            "accompagnant" => $accompagnant
         ];
 
         echo view("espaces/pro/enfantsPro", $data);

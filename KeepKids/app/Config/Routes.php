@@ -20,9 +20,9 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override(function () {
-    echo view('404.php');
-});
+// $routes->set404Override(function () {
+//     echo view('404.php');
+// });
 $routes->setAutoRoute(true);
 
 /*
@@ -38,8 +38,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'AccueilController::index');
 $routes->get('accueil/mentions_legales', 'AccueilController::mentionsL');
 $routes->get('accueil/contact', 'AccueilController::contact');
-// $routes->get('Error', 'Error404Controller::Error404');
-// $routes->get('404', 'Error404Controller::Error');
+$routes->get('Error', 'Error404Controller::Error404');
+$routes->get('404', 'Error404Controller::Error');
 
 // BOTH
 $routes->get('deconnexion', 'ParentsController::deconnexion');
@@ -60,8 +60,7 @@ $routes->match(['get', 'post'], 'espaces/parents/modifAccompagnant/(:num)', 'Esp
 
 
 // reservations
-$routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::reservations');
-
+$routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::creerReservation');
 //paiements & factures
 $routes->match(['get', 'post'], 'espaces/parents/paiements', 'EspaceParentsController::paiements');
 

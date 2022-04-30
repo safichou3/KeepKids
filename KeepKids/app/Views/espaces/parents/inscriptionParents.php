@@ -42,6 +42,7 @@
                     <label>Adresse</label>
                     <input class="input-inscription input-full-width" type="text" name="adresse" placeholder="adresse">
                 </div>
+
                 <div class="input-label">
                     <label>Mot de passe</label>
                     <input id="passwordInput" class="input-inscription input-full-width" type="password" name="password" placeholder="Mot de Passe" required>

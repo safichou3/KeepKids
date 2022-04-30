@@ -33,9 +33,27 @@
         <label>Téléphone *</label><br>
         <input class="input-inscription" type="tel" name="tel" placeholder="Telephone" required><br>
 
-        <label>Adresse *</label><br>
-        <input class="input-inscription" type="text" name="adresse" placeholder="adresse" required><br>
-
+        <!-- ---------------------------------- -->
+        <div class="container">
+            <div class="row">
+                <div class="col-6 adresse">
+                    <form novalidate>
+                        <div class="form-row">
+                            <label>Adresse *</label>
+                            <input type="text" class="form-control" id="inputRue" name="inputRue" placeholder="Adresse">
+                            <input type="text" class="form-control" pattern="^[0-9]{1}[0-9a-bA-B]{1}[0-9]{3}$" id="inputCodePostal" minlength="5" maxlength="5" placeholder="Code Postal">
+                            <input type="text" class="form-control" id="inputVille" name="inputVille" placeholder="Ville">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6 proposition">
+                    <div class="adress-feedback">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------------ -->
         <label>Numéro de Siret *</label><br>
         <input id="siretImput" class="input-inscription" type="number" name="siret" placeholder="siret" required><br>
         <span id="siretERROR">14 nombres</span><br>
@@ -57,8 +75,8 @@
             <span id="passwordErrorSpecial">1 caractère special |</span>
             <span id="passwordErrorSize">8 caractères minimum</span>
         </div>
-<br>
-* Champs Obligatoires
+        <br>
+        * Champs Obligatoires
 
         <input onclick="validate()" class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
     </form>
