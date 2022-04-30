@@ -1,26 +1,67 @@
-// console.log("JS ACTIF");
-// Molette géolocalisation (km)
+// localisation
+var lat,lng;
+navigator.geolocation.getCurrentPosition(function(pos){
+lat = pos.coords.latitude;
+lng = pos.coords.longitude;
+});
 
-var rangeSlider = function(){
+function distance(lat1, lon1, lat2, lon2, unit) {
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit=="K") { dist = dist * 1.609344 }
+		if (unit=="N") { dist = dist * 0.8684 }
+		return dist;
+	}
+}
+function getValue() {
+	// alert('Lat:' + lat + 'Lng :' + lng);
+	alert(distance(lat,lng,48.864716,2.349014,"K"));
+}
+function get25km() {
+	if (distance(lat,lng,48.864716,2.349014,"K") >= 25){
+		alert('distance supp a 25.00')
+	}else alert('distance inf a 25.00');
+}
+function get10km() {
+	if (distance(lat,lng,48.864716,2.349014,"K") >= 10){
+		alert('distance supp a 10')
+	}else alert('distance inf a 10');
+}
+// molette
+
+var rangeSlider = function () {
 	var slider = $('.range-slider'),
 		range = $('.range-slider__range'),
 		value = $('.range-slider__value');
-	  
-	slider.each(function(){
-  
-	  value.each(function(){
-		var value = $(this).prev().attr('value');
-		$(this).html(value);
-	  });
-  
-	  range.on('input', function(){
-		$(this).next(value).html(this.value);
-	  });
+
+	slider.each(function () {
+
+		value.each(function () {
+			var value = $(this).prev().attr('value');
+			$(this).html(value);
+		});
+
+		range.on('input', function () {
+			$(this).next(value).html(this.value);
+		});
 	});
-  };
-  
-  rangeSlider();
-  
+};
+
+rangeSlider();
+
 //  fonction invoice (facture)
 
 window.onload = function () {
@@ -37,7 +78,7 @@ window.onload = function () {
 				unit: "mm",
 				format: "a4",
 				orientation: "portrait"
-				
+
 			},
 		};
 		html2pdf().from(invoice).set(opt).save();
@@ -187,9 +228,9 @@ function verifSiret() {
 		siretERROR.style.visibility = 'hidden';
 	} else {
 		siretERROR.style.color = "red";
-		
+
 		;
-	}	
+	}
 }
 // 		siretERROR.style.visibility = 'visible';
 
@@ -205,3 +246,46 @@ var downloadURL = function downloadURL(url) {
 		iframe.id = hiddenIFrameID; iframe.style.display = 'none'; document.body.appendChild(iframe);
 	} iframe.src = url;
 };
+
+// api adresse gouv
+$("#inputRue").keyup(function(event) {
+	// Stop la propagation par défaut
+		  event.preventDefault();
+		  event.stopPropagation();
+  
+		  let rue = $("#inputRue").val();
+		  $.get('https://api-adresse.data.gouv.fr/search/', {
+			  q: rue,
+			  limit: 15,
+			  autocomplete: 1
+		  }, function (data, status, xhr) {
+			  let liste = "";
+			  $.each(data.features, function(i, obj) {
+				  console.log(obj.properties);
+				  // données phase 1 (obj.properties.label) & phase 2 : name, postcode, city
+				  // J'ajoute chaque élément dans une liste
+				  liste += '<li><a href="#" name="'+obj.properties.label+'" data-name="'+obj.properties.name+'" data-postcode="'+obj.properties.postcode+'" data-city="'+obj.properties.city+'">'+obj.properties.label+'</a></li>';
+			  });
+			  $('.adress-feedback ul').html(liste);
+  
+			  // ToDo: Au clic du lien voulu, on envoie l'info en $_POST
+			  $('.adress-feedback ul>li').on("click","a", function(event) {
+				  // Stop la propagation par défaut
+				  event.preventDefault();
+				  event.stopPropagation();
+  
+				  let adresse = $(this).attr("name");
+  
+				  $("#inputRue").val($(this).attr("data-name"));
+				  $("#inputCodePostal").val($(this).attr("data-postcode"));
+				  $("#inputVille").val($(this).attr("data-city"));
+  
+				  $('.adress-feedback ul').empty();
+			  });
+  
+		  }).error(function () {
+			  // alert( "error" );
+		  }).always(function () {
+			  // alert( "finished" );
+		  }, 'json');
+	  });

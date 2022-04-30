@@ -9,12 +9,15 @@ class EspaceParentsController extends BaseController
     protected $enfantsModel;
     protected $parentsModel;
     protected $accompagnantsModel;
+    protected $reservationsModel;
 
     public function __construct()
     {
         $this->enfantsModel = model(EnfantsModel::class);
         $this->parentsModel = model(ParentsModel::class);
         $this->accompagnantsModel = model(AccompagnantModel::class);
+        $this->reservationsModel = model(ReservationModel::class);
+
     }
     public function index()
     {
@@ -91,7 +94,6 @@ class EspaceParentsController extends BaseController
             ]);
         }
     }
-
     function mesEnfants()
     {
         $enfant = $this->enfantsModel->findEnfantsByParent(session("id"));
@@ -137,22 +139,6 @@ class EspaceParentsController extends BaseController
                 @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $enfantAModif['carnetVaccin']);
                 $carnetVaccin = $this->moveVaccin("carnetVaccin");
             }
-
-            // if ($this->request->getPost('certificat')) {
-            //     if ($img2->isValid() && !$img2->hasMoved()) {
-            //         $this->unlinkCertificatById($id);
-            //         $certificat = $this->moveCertificat("certificat");
-            //     }
-            // }
-            // if ($this->request->getFile('carnetVaccin')) {
-            //     echo "ping";
-            //     die();
-            //     if ($img->isValid() && !$img->hasMoved()) {
-            //         $this->unlinkCarnetVaccinById($id);
-            //         $carnetVaccin = $this->moveVaccin("carnetVaccin");
-            //     }
-            // }
-
             $data = $this->generateEnfant($carnetVaccin, $certificat);
 
             $this->enfantsModel->update($id, $data);
@@ -167,7 +153,6 @@ class EspaceParentsController extends BaseController
     }
 
     // ACCOMPAGNATEURS
-
 
     private function generateAccompagnant()
     {
@@ -194,8 +179,6 @@ class EspaceParentsController extends BaseController
         }
     }
 
-
-
     function deleteAccompagnant(int $id)
     {
         $this->accompagnantsModel->delete($id);
@@ -219,11 +202,37 @@ class EspaceParentsController extends BaseController
             ]);
         }
     }
-    function reservations()
+    function generateReservations()
     {
-        return view("espaces/parents/reservations");
+        return [
+            "idPro" => session('idPro'),
+            "idEnfant" => $this->request->getPost('idEnfant'),
+            "date" => $this->request->getPost('date'),
+            "heure" => $this->request->getPost('heure'),
+            "statut" => $this->request->getPost('statut'),
+            "facture" => $this->request->getPost('facture')
+        ];
     }
+    function creerReservation()
+    {
+        
+        
 
+        if ($this->request->getMethod() === 'post') {
+
+            if (!empty($this->request->getPost('date')) && !empty($this->request->getPost('heure')) && !empty($this->request->getPost('statut'))) {
+                $data2 = $this->generateReservations();
+                $this->reservationsModel->insert($data2);
+            }
+            return redirect()->to('espaces/parents/reservations');
+        } else {
+            echo view("espaces/parents/reservations", [
+                "idPro" => $this->reservationsModel->findAll(),
+                "idEnfant" => $this->enfantsModel->findAll(),
+                "enfant" => $this->reservationsModel->findAllByReservation()
+            ]);
+        }
+    }
     function paiements()
     {
         return view("espaces/parents/paiements");

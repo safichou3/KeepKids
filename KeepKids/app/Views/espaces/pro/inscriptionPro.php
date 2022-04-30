@@ -63,9 +63,24 @@
                     </div>
 
                 </div>
-                <div class="input-label">
-                    <label>Adresse *</label>
-                    <input class="input-inscription input-full-width" type="text" name="adresse" placeholder="adresse" required>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 adresse">
+                            <form novalidate>
+                                <div class="form-row">
+                                    <label>Adresse *</label>
+                                    <input type="text" class="form-control" id="inputRue" name="inputRue" placeholder="Adresse">
+                                    <input type="text" class="form-control" pattern="^[0-9]{1}[0-9a-bA-B]{1}[0-9]{3}$" id="inputCodePostal" minlength="5" maxlength="5" placeholder="Code Postal">
+                                    <input type="text" class="form-control" id="inputVille" name="inputVille" placeholder="Ville">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-6 proposition">
+                            <div class="adress-feedback">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- <div class="ins-group"> -->
 
