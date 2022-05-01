@@ -7,18 +7,23 @@ use CodeIgniter\Model;
 class planningModel extends Model
 {
     protected $table          = 'planning';
-    protected $allowedFields  = ['date', 'heureOuverture', 'heureFermeture', 'capacité', 'idPro'];
+    protected $allowedFields  = ['date', 'heureOuverture', 'heureFermeture', 'semaine', 'capacité', 'idPro'];
 
     public function lastMonday()
     {
-        $timestamp = $this->orderby("date", "desc")
+        $semaine = $this->orderby("semaine", "desc")
             ->where(['idPro' => session("id")])
-            ->findAll();
-        $timestamp = $timestamp[0];
-        foreach ($timestamp as $element) {
-            if (date('D', $element) === 'Mon') {
-                return ($element + (24 * 60 * 60 * 7));
-            }
+            ->first();
+        if (!empty($semaine['semaine'])) {
+
+            $date = $this->orderby("date", "asc")
+                ->where(['idPro' => session("id")])
+                ->where(['semaine' => $semaine['semaine']])
+                ->first();
+
+            return $date['date'] = $date['date'] + 604800;
+        } else {
+            return (strtotime("last Monday"));
         }
     }
 }

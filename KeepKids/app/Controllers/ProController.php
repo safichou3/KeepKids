@@ -61,29 +61,33 @@ class ProController extends BaseController
     }
     public function gestionHoraire($day, $date)
     {
-        $day = strtolower($day);
-        echo $this->request->getPost($day . "lower");
+        $day = ucfirst($day);
+
         if (null !== $this->request->getPost($day . 'checkbox')) {
 
             $ouverture = null;
             $fermeture = null;
+            $capacite = null;
         } else {
 
             $ouverture = $this->request->getPost($day . "lower");
             $fermeture = $this->request->getPost($day . "upper");
+            $capacite = $this->request->getPost($day . "capacite");
         }
 
 
         $planning = [
             "idPro" => session('id'),
+            "date" => $date,
+            "semaine" => date('W', $date),
             "heureOuverture" => $ouverture,
             "heureFermeture" => $fermeture,
-            "capacité" => 20,
+            "capacité" => $capacite,
         ];
-// var_dump($planning);
-// die();
+        // var_dump($planning);
+        // die();
         $this->planningModel->insert($planning);
-        return redirect()->to('/');
+        $planning;
     }
     public function CreatePlanningPro()
     {
@@ -92,38 +96,33 @@ class ProController extends BaseController
 
 
 
-            $data = [
-                'timestamp' => $this->planningModel->lastMonday()
-            ];
-            echo view("espaces/pro/createPlanningPro", $data);
+
+
+
             echo "<pre>";
-            $date = $_POST['timestamp'];
-            print_r($this->gestionHoraire('lundi', $date));
-            $date = $date + 24 * 60 * 60;
-            print_r($this->gestionHoraire('mardi', $date));
-            $date = $date + 24 * 60 * 60;
-            print_r($this->gestionHoraire('mercredi', $date));
-            $date = $date + 24 * 60 * 60;
-            print_r($this->gestionHoraire('jeudi', $date));
-            $date = $date + 24 * 60 * 60;
-            print_r($this->gestionHoraire('vendre', $date));
-            $date = $date + 24 * 60 * 60;
-            print_r($this->gestionHoraire('samedi', $date));
-            $date = $date + 24 * 60 * 60;
-            print_r($this->gestionHoraire('dimanche', $date));
+            $date = $this->planningModel->lastMonday();
+            $dayweek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+            for ($i = 0; $i <= 6; $i++) {
+
+                $this->gestionHoraire($dayweek[$i], $date);
+                $date = $date + 86400;
+            }
 
             // $this->planningModel->insert();
-            print_r($_POST);
-            print_r($this->planningModel->findAll());
-            print_r($_SESSION);
+            // print_r($_POST);
+            // print_r($this->planningModel->findAll());
+            // print_r($_SESSION);
             echo "</pre>";
-        } else {
-            print_r("pas de post");
-            $data = [
-                'timestamp' => $this->planningModel->lastMonday()
-            ];
-            echo view("espaces/pro/createPlanningPro", $data);
+
+            // echo view("espaces/pro/createPlanningPro", $data);
+            unset($_POST);
         }
+
+        $data = [
+            'date' => $this->planningModel->lastMonday()
+        ];
+        echo view("espaces/pro/createPlanningPro", $data);
     }
     private function unlinkCarteIdById(int $id)
     {
