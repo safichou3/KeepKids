@@ -105,29 +105,13 @@ class ProController extends BaseController
             print_r($data);
         }
     }
-    private function unlinkCarteIdById(int $id)
-    {
-        $pro = $this->proModel->find($id);
-        if (!empty($enfants)) {
-            $imageName = $pro["carteId"];
-            @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $imageName);
-        }
-    }
-    private function unlinkKbisById(int $id)
-    {
-        $pro = $this->proModel->find($id);
-        if (!empty($enfants)) {
-            $imageName2 = $pro["kbis"];
-            @unlink(ROOTPATH . "/public/upload/certificat/" . $imageName2);
-        }
-    }
     private function movecarteId(string $inputName)
     {
         $img = $this->request->getFile($inputName);
         if (!empty($img)) {
             if ($img->isValid() && !$img->hasMoved()) {
                 $carteId = $img->getRandomName();
-                $img->move(ROOTPATH . "/public/upload/carnetVaccin", $carteId);
+                $img->move(ROOTPATH . "/public/upload/carteId", $carteId);
 
                 return $carteId;
             }
@@ -140,7 +124,7 @@ class ProController extends BaseController
 
             if ($img2->isValid() && !$img2->hasMoved()) {
                 $kbis = $img2->getRandomName();
-                $img2->move(ROOTPATH . "/public/upload/certificat", $kbis);
+                $img2->move(ROOTPATH . "/public/upload/kbis", $kbis);
 
                 return $kbis;
             }
@@ -149,42 +133,70 @@ class ProController extends BaseController
 
     public function inscription()
     {
-        $carteId = $this->movecarteId("carteId");
-        $kbis = $this->moveKbis("kbis");
+        $erreurfiles = false;
+        $img = $this->request->getFile('carteId');
+        $img2 = $this->request->getFile('kbis');
+        // $carteId = $this->movecarteId("carteId");
+        // $kbis = $this->moveKbis("kbis");
         if ($this->request->getMethod() === 'post' && $this->validate([
             'nom' => 'required|min_length[3]|max_length[20]',
             'prenom' => 'required|min_length[3]|max_length[20]',
             'nomEntreprise' => 'min_length[3]|max_length[40]',
             'email' => 'required|valid_email|is_unique[pro.email]',
             'adresse' => 'required|min_length[3]|max_length[200]',
+            'ville' => 'required|min_length[3]|max_length[200]',
+            'cp' => 'required|min_length[5]|max_length[10]',
+            'tauxHoraire' => 'required|min_length[0]|max_length[500]',
             'tel' => 'required|min_length[10]|max_length[10]',
             'siret' => 'required|min_length[14]|max_length[14]',
             'idEtablissement' => 'required',
-            'carteId' => 'required',
-            'kbis' => 'required',
-            'password' => 'required|min_length[6]|max_length[255]',
+            'password' => 'required|min_length[6]|max_length[255]'
         ])) {
 
 
-
-            $data = [
-                "nom" => $this->request->getPost("nom"),
-                "prenom" => $this->request->getPost("prenom"),
-                "nomEntreprise" => $this->request->getPost("nomEntreprise"),
-                "email" => $this->request->getPost("email"),
-                "adresse" => $this->request->getPost("adresse"),
-                "tel" => $this->request->getPost("tel"),
-                "siret" => $this->request->getPost("siret"),
-                "idEtablissement" => $this->request->getPost("idEtablissement"),
-                "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT),
-                "carteId" => $carteId,
-                "kbis" => $kbis
-            ];
-            if (!empty($this->request->getPost('nom')) && !empty($this->request->getPost('prenom'))) {
-
+            if (empty($_FILES['carteId']['name']) || empty($_FILES['kbis']['name'])) {
+                $erreurfiles = true;
+            } else {
+                if ($img->isValid() && !$img->hasMoved()) {
+                    $carteId = $img2->getRandomName();
+                    $img->move(ROOTPATH . "/public/upload/carteId", $carteId);
+                }
+                if ($img2->isValid() && !$img2->hasMoved()) {
+                    $kbis = $img2->getRandomName();
+                    $img2->move(ROOTPATH . "/public/upload/kbis", $kbis);
+                }
+                $data = [
+                    "nom" => $this->request->getPost("nom"),
+                    "prenom" => $this->request->getPost("prenom"),
+                    "nomEntreprise" => $this->request->getPost("nomEntreprise"),
+                    "email" => $this->request->getPost("email"),
+                    "adresse" => $this->request->getPost("adresse"),
+                    "ville" => $this->request->getPost("ville"),
+                    "cp" => $this->request->getPost("cp"),
+                    "tel" => $this->request->getPost("tel"),
+                    "tauxHoraire" => $this->request->getPost("tauxHoraire"),
+                    "siret" => $this->request->getPost("siret"),
+                    "idEtablissement" => $this->request->getPost("idEtablissement"),
+                    "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT),
+                    "carteId" => $carteId,
+                    "kbis" => $kbis
+                ];
                 $this->proModel->insert($data);
                 return redirect()->to('/');
             }
+
+            // $data = [
+            //     'erreur' => true
+
+            // ]
+            // return view("espaces/pro/inscriptionPro", $data );
+
+            // if (!empty($this->request->getPost('nom')) && !empty($this->request->getPost('prenom'))) {
+
+
+            //     $this->proModel->insert($data);
+            //     return redirect()->to('/');
+            // }
         } else {
             echo view("espaces/pro/inscriptionPro", [
                 'validation' => $this->validator

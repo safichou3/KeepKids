@@ -255,3 +255,7 @@
 </div>
 
 <?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/animations.js"></script>
+<?= $this->endSection() ?>

@@ -86,3 +86,8 @@
 </div>
 <br><br>
 <?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
+<script src="<?= base_url(); ?>/js/verifs.js"></script>
+<?= $this->endSection() ?>

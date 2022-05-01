@@ -23,7 +23,12 @@
         <div class="middle-text-parents">
           <div class="kids">
             <h3 class="title-card-parents">Nom de l'utilisateur</h3>
-            <img class="img-title-card-parents" src="<?= base_url(); ?>/img/infos-enfants.svg" alt="">
+            <?php
+            echo "<pre>";
+            print_r($profil);
+            echo "</pre>";
+
+            ?>
             <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="access">Modifier le profil</button></a>
           </div>
         </div>
@@ -61,4 +66,8 @@
   </div>
 </div>
 
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
 <?= $this->endSection() ?>

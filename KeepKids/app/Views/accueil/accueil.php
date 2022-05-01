@@ -12,7 +12,23 @@
     <img class="img-header" src="<?= base_url(); ?>/img/bebe2.jpg" alt="">
     <img class="img-header-bis" src="<?= base_url(); ?>/img/bebe2.svg" alt="">
     <div class="wrap">
-        <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>
+        <h1 class="title-accueil">
+            <div id=container3>
+                KEEPKIDS,
+                <div id=flip>
+                    <div>
+                        <div>LIBERTE</div>
+                    </div>
+                    <div>
+                        <div>TRANQUILLITE</div>
+                    </div>
+                    <div>
+                        <div>CONFIANCE</div>
+                    </div>
+                </div>
+                POUR LA JOURNEE
+            </div>
+        </h1>
         <div class="search">
             <input type="text" class="searchTerm" placeholder="Rechercher des creches à proximité">
             <button type="submit" class="searchButton">
@@ -30,6 +46,7 @@
         </div>
     </div> -->
     <!-- <div class="wrap-mix"> -->
+        
     <div class="wrap2">
         <h1 class="wrap-style">La plateforme sécurisé qui permets aux parents de gagner du temps dans leurs réservations, leurs factures et leurs paiements.</h1>
     </div>
@@ -153,4 +170,9 @@
 </section>
 
 
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
+<script src="<?= base_url(); ?>/js/animations.js"></script>
 <?= $this->endSection() ?>

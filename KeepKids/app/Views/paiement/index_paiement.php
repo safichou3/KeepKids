@@ -18,3 +18,9 @@
 </form>
 
 <?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="stripe.js"></script>
+<script src="<?= base_url(); ?>/js/main.js"></script>
+<?= $this->endSection() ?>

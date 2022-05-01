@@ -1,3 +1,4 @@
+
 // window.onload = () => {
 //     let stripe = Stripe('pk_test_51KrI3pCJMAhAR429OcsSj92iGdpP2dDBRRV5qGxICb7KylqK02wwB1ivYfz6LWEzMgzOkjm6hXUGOG28IUa5vxR600PWHsl9eu')
 //     let elements = stripe.elements()

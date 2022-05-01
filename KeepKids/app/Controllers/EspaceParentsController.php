@@ -17,7 +17,6 @@ class EspaceParentsController extends BaseController
         $this->parentsModel = model(ParentsModel::class);
         $this->accompagnantsModel = model(AccompagnantModel::class);
         $this->reservationsModel = model(ReservationModel::class);
-
     }
     public function index()
     {
@@ -213,11 +212,9 @@ class EspaceParentsController extends BaseController
             "facture" => $this->request->getPost('facture')
         ];
     }
+    // RESRVATION
     function creerReservation()
     {
-        
-        
-
         if ($this->request->getMethod() === 'post') {
 
             if (!empty($this->request->getPost('date')) && !empty($this->request->getPost('heure')) && !empty($this->request->getPost('statut'))) {
@@ -233,13 +230,57 @@ class EspaceParentsController extends BaseController
             ]);
         }
     }
+    // PAIEMENTS
     function paiements()
     {
         return view("espaces/parents/paiements");
     }
-
+    // PROFIL
     function profil()
     {
         return view("espaces/parents/profil");
+    }
+    function generateProfil()
+    {
+        return [
+            "nom" => session('nom'),
+            "prenom" => $this->request->getPost('prenom'),
+            "email" => $this->request->getPost('email'),
+            "tel" => $this->request->getPost('tel'),
+            "adresse" => $this->request->getPost('adresse')
+        ];
+    }
+    function monProfil()
+    {
+        $profil = $this->parentsModel->generateProfil();
+
+        $data = [
+            "profil" => $profil
+        ];
+
+        echo view("espaces/parents/profil", $data);
+    }
+    function deleteAccount(int $id)
+    {
+        $this->accompagnantsModel->delete($id);
+        return redirect()->to('espaces/parents/profil');
+    }
+
+    function modifProfil(int $id)
+    {
+        $accompagnant = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
+
+        if ($this->request->getMethod() === 'post') {
+
+            $data = $this->generateAccompagnant();
+
+            $this->accompagnantsModel->update($id, $data);
+            return redirect()->to('espaces/parents/mesEnfants');
+        } else {
+            echo view("espaces/parents/modifAccompagnant", [
+                "accompagnant"       => $accompagnant,
+                "parents" => $this->parentsModel->findAll()
+            ]);
+        }
     }
 }

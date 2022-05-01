@@ -66,6 +66,8 @@ $routes->match(['get', 'post'], 'espaces/parents/paiements', 'EspaceParentsContr
 
 // profil parents
 $routes->match(['get', 'post'], 'espaces/parents/profil', 'EspaceParentsController::profil');
+$routes->get('espaces/parents/profil/delete/(:num)', 'EspaceParentsController::delete/$1');
+$routes->match(['get', 'post'], 'espaces/parents/ModifProfil/(:num)', 'EspaceParentsController::modifProfil/$1');
 
 // connexion/inscription
 $routes->match(['get', 'post'], 'espaces/parents/connexionParents', 'ParentsController::connexion');

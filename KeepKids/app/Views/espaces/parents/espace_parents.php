@@ -6,10 +6,6 @@
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
-<?= $this->section('title') ?>
-<h2 class="section-title"></h2>
-<?= $this->endSection() ?>
-
 <?= $this->section('content') ?>
 
 <div class="body-parents">
@@ -58,4 +54,8 @@
   </div>
 </div>
 
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
 <?= $this->endSection() ?>

@@ -1,10 +1,10 @@
 <?= $this->extend('master') ?>
 
-
 <?= $this->section('css') ?>
 <link href="<?= base_url(); ?>/css/espace_commun.css" rel="stylesheet">
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
+
 <?= $this->section('title') ?>
 <h2 class="section-title"><br></h2>
 <?= $this->endSection() ?>
@@ -141,4 +141,9 @@
 </div>
 <br><br>
 
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/verifs.js"></script>
+<script src="<?= base_url(); ?>/js/main.js"></script>
 <?= $this->endSection() ?>

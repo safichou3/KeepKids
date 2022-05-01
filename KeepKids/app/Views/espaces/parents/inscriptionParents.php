@@ -4,8 +4,6 @@
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
-
-
 <?= $this->section('content') ?>
 
 <div class="body-form body-ins-parents body-parents">
@@ -80,6 +78,8 @@
     </div>
 </div>
 <?= $this->endSection() ?>
+
 <?= $this->section('js') ?>
 <script src="<?= base_url(); ?>/js/main.js"></script>
+<script src="<?= base_url(); ?>/js/verifs.js"></script>
 <?= $this->endSection() ?>

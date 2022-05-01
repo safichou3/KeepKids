@@ -60,3 +60,7 @@
 
 
 <?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
+<?= $this->endSection() ?>

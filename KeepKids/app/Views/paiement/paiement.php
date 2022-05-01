@@ -16,17 +16,17 @@
 
 
 <?php
-if(isset($_POST['prix']) && !empty($_POST['prix'])){
+if (isset($_POST['prix']) && !empty($_POST['prix'])) {
     require_once('vendor/autoload.php');
     $prix = (float)$_POST['prix'];
-    
+
     \Stripe\Stripe::setApiKey('sk_test_51KrI3pCJMAhAR429j4t8pIrsuZhuAMoJWkWt4mJqA5qQHbQ0DFdmWu7RnppahVqEMj8xYXVS3kBe995Pn6pHnsAI00WnkGbex6');
 
     $intent = \Stripe\PaymentIntent::create([
-        'amount' => $prix*100,
+        'amount' => $prix * 100,
         'currency' => 'eur'
     ]);
-}else{
+} else {
     header('Location: index_paiement.php');
 }
 
@@ -83,14 +83,20 @@ if(isset($_POST['prix']) && !empty($_POST['prix'])){
 //     die('Bravo votre paiement a bien été enregistré');
 // }
 ?>
-    <form method="post">
-        <div id="errors"></div>
-        <input type="text" id="cardHolder-name" placeholder="Titulaire de la carte">
-        <div id="card-elements"></div>
-        <div id="card-errors" role="alert"></div>
-        <button id="card-button" type="button" data-secret="<?= $intent['client_secret'] ?>">Procéder au paiement</button>
-    </form>
-    
+<form method="post">
+    <div id="errors"></div>
+    <input type="text" id="cardHolder-name" placeholder="Titulaire de la carte">
+    <div id="card-elements"></div>
+    <div id="card-errors" role="alert"></div>
+    <button id="card-button" type="button" data-secret="<?= $intent['client_secret'] ?>">Procéder au paiement</button>
+</form>
 
 
-    <?= $this->endSection() ?>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="stripe.js"></script>
+<script src="<?= base_url(); ?>/js/main.js"></script>
+<?= $this->endSection() ?>

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ProModel extends Model
 {
     protected $table          = 'pro';
-    protected $allowedFields  = ['nom', 'prenom', 'email', 'nomEntreprise','tel', 'adresse', 'siret', 'password','idEtablissement','carteId','kbis'];
+    protected $allowedFields  = ['nom', 'prenom', 'email', 'nomEntreprise','tel', 'adresse','ville','cp','siret', 'password','idEtablissement','carteId','kbis','tauxHoraire'];
     // protected $createdField   = 'created_at';
     // protected $updatedField   = 'updated_at';
     // protected $useSoftDeletes = true;
