@@ -10,7 +10,7 @@
 <!-- <div class="rouge"> -->
 <div class="center-div">
     <img class="img-header" src="<?= base_url(); ?>/img/bebe2.jpg" alt="">
-    <img class="img-header-bis" src="<?= base_url(); ?>/img/bebe2_vertical.png" alt="">
+    <img class="img-header-bis" src="<?= base_url(); ?>/img/bebeVertical.jpg" alt="">
 
     <div class="wrap">
         <div class="tt-accueil-bg"></div>
