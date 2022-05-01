@@ -819,11 +819,11 @@ footer ul {
     position: relative;
     top: 90px;
     background: rgba(0, 0, 0, 0.15);
-    width: 273px;
-    height: 259px;
+    width: 285px;
+    height: 254px;
     right: 9px;
     border-radius: 10px;
-  }
+}
 
   h1.title-accueil {
     font-size: 28px;
