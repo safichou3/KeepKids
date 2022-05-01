@@ -10,15 +10,37 @@
 <!-- <div class="rouge"> -->
 <div class="center-div">
     <img class="img-header" src="<?= base_url(); ?>/img/bebe2.jpg" alt="">
-    <img class="img-header-bis" src="<?= base_url(); ?>/img/bebe2.svg" alt="">
+    <img class="img-header-bis" src="<?= base_url(); ?>/img/bebe2_vertical.png" alt="">
+
     <div class="wrap">
-        <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>
+        <div class="tt-accueil-bg"></div>
+        <h1 class="title-accueil">
+            <div id=container3>
+                KEEPKIDS,
+                <div id=flip>
+                    <div>
+                        <div>LIBERTE</div>
+                    </div>
+                    <div>
+                        <div>TRANQUILLITE</div>
+                    </div>
+                    <div>
+                        <div>CONFIANCE</div>
+                    </div>
+                </div>
+                POUR LA JOURNEE
+            </div>
+        </h1>
+        <p class="title-accueil">Plateforme 100% gratuite de mise en relation de parents avec des professionnels de la garde d'enfants.</p>
         <div class="search">
             <input type="text" class="searchTerm">
             <button type="submit" class="searchButton">
                 <i class="fi fi-br-search"></i>
             </button>
         </div>
+        <p class="text-input">Sécurisé & créer juste pour votre confort.</p>
+        <a class="link-btn-ins-accueil" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">
+        <button class="btn-ins-accueil">S'inscrire maintenant</button></a>
     </div>
     <!-- <div class="wrap-bis">
         <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>
