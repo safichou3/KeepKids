@@ -2,6 +2,7 @@
 
 <?= $this->section('css') ?>
 <link href="<?= base_url(); ?>/css/espace_pro.css" rel="stylesheet">
+<link rel="stylesheet/less" type="text/css" href="<?= base_url(); ?>/css/styles.less" />
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -156,7 +157,7 @@
 
         return ob_get_clean();
     } ?>
-    <link rel="stylesheet/less" type="text/css" href="<?= base_url(); ?>/css/styles.less" />
+    
     <form method="POST" action="<?= base_url(); ?>/espaces/pro/create/planningPro" enctype="multipart/form-data">
         <div id='formContainer'>
             <?php
