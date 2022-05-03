@@ -27,7 +27,7 @@ FACTURES & PAIEMENTS
             <td>Validé</td>
             <td>100€</td>
             <td><i class="fi fi-rs-bank"></i></td>
-            <td><i class='fi fi-rs-download'></i></td>
+            <td>Voir la facture</td>
 
         </tr>
     </tbody>

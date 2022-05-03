@@ -16,6 +16,7 @@
             <th>Téléphone</th>
             <th>Montant dû</th>
             <th>Statut du paiement</th>
+            <th>Voir la facture client</th>
             <th>Facture</th>
         </tr>
     </thead>
@@ -27,6 +28,7 @@
             <td>0652362544</td>
             <td>100€</td>
             <td><i class="fi fi-rs-bank"></i></td>
+            <td><a href="<?= base_url(); ?>/">Voir la facture</a></td>
             <td><i class='fi fi-rs-download'></i></td>
 
         </tr>

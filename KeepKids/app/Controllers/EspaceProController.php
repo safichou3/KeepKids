@@ -29,7 +29,14 @@ class EspaceProController extends BaseController
     }
     public function facturesPro()
     {
-        echo view("espaces/pro/facturesPro");
+        $all = $this->reservationsModel->findAllByReservation();
+        
+        $data = [
+            "all" => $all
+            
+        ];
+
+        echo view("espaces/pro/facturesPro", $data);
     }
     public function relancesPro()
     {

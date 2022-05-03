@@ -290,7 +290,6 @@ tbody:hover tr:hover td {
 
 /* facture */
 #invoice{
-	background-color: #ffffff;
 	color: #000;
 	padding: 3px;
 	border-radius: 3px;
@@ -298,6 +297,7 @@ tbody:hover tr:hover td {
 .input-facture {
     border: none;
     width: 341px;
+	background-color:#fe948c00;
 }
 
 #creche-client {

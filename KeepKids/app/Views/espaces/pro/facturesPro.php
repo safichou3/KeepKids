@@ -5,7 +5,14 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<br><br>
+<div style="height: 65px; width:100%;"></div>
+
+<?php
+foreach ($all as $element) {
+    echo $element;
+}
+print_r($all);
+?>
 
 <div id="invoice">
     <h1>Facture N°<input class="input-facture" style="font-size:large;" type="number" value="10" name="numéro facture"></h1>
@@ -24,7 +31,7 @@
             <input class="input-facture" type="number" value="0652365233" name="telephone client">
             <br>
             <p>Fait le: <input class="input-facture" type="date" value="" name="date d'emission"></p>
-            
+
 
         </div>
         <br><br>
@@ -59,10 +66,6 @@
 </div>
 <button id="downloadPdf">telecharger</button>
 
-
-<script>
-
-</script>
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>

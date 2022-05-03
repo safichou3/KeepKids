@@ -85,65 +85,78 @@
                                     <input type="text" class="form-control" pattern="^[0-9]{1}[0-9a-bA-B]{1}[0-9]{3}$" id="inputCodePostal" minlength="5" maxlength="5" name="cp" placeholder="Code Postal">
                                     <input type="text" class="form-control" id="inputVille" name="ville" placeholder="Ville">
                                 </div>
-                                <p id="allAdresse"></p>
-                                <!-- </form> -->
-                            </div>
-                            <div class="col-6 proposition">
-                                <div class="adress-feedback">
-                                    <ul></ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+                                <details>
+                                    <summary>
+                                        <div class="buttonPurple" onclick="codeAddress()">
+                                            C'est bien mon adresse
+                                        </div>
+                                    </summary>
+                                    <div class="details-modal-content">
 
-                    <!-- <div id="map"></div> -->
+                                        <div class="ins-group doc-download">
+                                            <div class="input-label">
+                                                <label title="Carte d'Id | Passeport | Permis de conduire">Pièce d'identité <i class="fi fi-rs-interrogation"></i></label>
+                                                <input class="input-inscription" type="file" name="carteId" required>
 
-                    <!-- <div class="ins-group"> -->
+                                            </div>
+                                            <div class="input-label">
+                                                <label>Extrait de kbis *</label>
+                                                <input class="input-inscription" type="file" name="kbis" required>
+                                            </div>
+                                        </div>
 
-                    <!-- </div> -->
-                    <div class="ins-group doc-download">
-                        <div class="input-label">
-                            <label title="Carte d'Id | Passeport | Permis de conduire">Pièce d'identité <i class="fi fi-rs-interrogation"></i></label>
-                            <input class="input-inscription" type="file" name="carteId" required>
+                                        <!-- <div class="ins-group"> -->
+                                        <div class="input-label">
+                                            <label>Mot de passe *</label>
+                                            <input id="passwordInput" class="input-inscription input-full-width" type="password" name="password" placeholder="Mot de Passe" required>
+                                            <div class="errors pro-errors">
+                                                <span id="passwordErrorMajuscule">1 majuscule |</span>
+                                                <span id="passwordErrorMinuscule">1 minuscule |</span>
+                                                <span id="passwordErrorNombre">1 chiffre |</span>
+                                                <span id="passwordErrorSpecial">1 caractère special |</span>
+                                                <span id="passwordErrorSize">8 caractères minimum</span>
+                                            </div>
+                                            <!-- </div> -->
+                                        </div>
 
-                        </div>
-                        <div class="input-label">
-                            <label>Extrait de kbis *</label>
-                            <input class="input-inscription" type="file" name="kbis" required>
-                        </div>
-                    </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="conditions" id="" require>
+                                            <label for="conditions">J'acceptes les <a class="politique" href="<?= base_url(); ?>/accueil/mentions_legales">conditions d'utilisations</a></label>
+                                        </div>
+                                        <!--  -->
+                                        * Champs Obligatoires
+                                        <div class="ins-group">
+                                            <div class="input-label">
+                                                <input type="text" id="inputCache" name="latLng">
+                                                <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro" onclick="validate()">
 
-                    <!-- <div class="ins-group"> -->
-                    <div class="input-label">
-                        <label>Mot de passe *</label>
-                        <input id="passwordInput" class="input-inscription input-full-width" type="password" name="password" placeholder="Mot de Passe" required>
-                        <div class="errors pro-errors">
-                            <span id="passwordErrorMajuscule">1 majuscule |</span>
-                            <span id="passwordErrorMinuscule">1 minuscule |</span>
-                            <span id="passwordErrorNombre">1 chiffre |</span>
-                            <span id="passwordErrorSpecial">1 caractère special |</span>
-                            <span id="passwordErrorSize">8 caractères minimum</span>
-                        </div>
-                        <!-- </div> -->
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" name="conditions" id="" require>
-                        <label for="conditions">J'acceptes les <a class="politique" href="<?= base_url(); ?>/accueil/mentions_legales">conditions d'utilisations</a></label>
-                    </div>
-                    <!--  -->
-                    * Champs Obligatoires
-                    <div class="ins-group">
-                        <div class="input-label">
-                            <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro" onclick="codeAdresse()" onclick="validate()">
-                            <!-- <input type="button" value="Encode" onclick="codeAddress()"> -->
-                        </div>
-                    </div>
+                                            </div>
+                                        </div>
 
                 </form>
-                <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
+            </div>
+            </details>
+            <!-- </form> -->
+        </div>
+        <div class="col-6 proposition">
+            <div class="adress-feedback">
+                <ul></ul>
             </div>
         </div>
+    </div>
+    </div>
+
+
+    <!-- <div id="map"></div> -->
+
+    <!-- <div class="ins-group"> -->
+
+    <!-- </div> -->
+
+    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
+    </div>
+    </div>
     </div>
 </body>
 <?= $this->endSection() ?>

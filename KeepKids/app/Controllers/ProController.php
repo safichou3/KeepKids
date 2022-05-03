@@ -175,6 +175,7 @@ class ProController extends BaseController
                     "cp" => $this->request->getPost("cp"),
                     "tel" => $this->request->getPost("tel"),
                     "tauxHoraire" => $this->request->getPost("tauxHoraire"),
+                    "latLng" => $this->request->getPost("latLng"),
                     "siret" => $this->request->getPost("siret"),
                     "idEtablissement" => $this->request->getPost("idEtablissement"),
                     "password" => password_hash($this->request->getPost("password"), PASSWORD_DEFAULT),
