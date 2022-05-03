@@ -55,54 +55,22 @@ class ProController extends BaseController
         ]);
     }
 
-    public function planningPro()
+    
+
+    private function unlinkCarteIdById(int $id)
     {
-        echo view("espaces/pro/planningPro");
-    }
-    public function gestionHoraire($day)
-    {
-        $day = strtolower($day);
-        echo $this->request->getPost($day . "lower");
-        if (null !== $this->request->getPost($day . 'checkbox')) {
-            $fermé = 0;
-            $ouverture = null;
-            $fermeture = null;
-        } else {
-            $fermé = 1;
-            $ouverture = $this->request->getPost($day . "lower");
-            $fermeture = $this->request->getPost($day . "upper");
+        $pro = $this->proModel->find($id);
+        if (!empty($enfants)) {
+            $imageName = $pro["carteId"];
+            @unlink(ROOTPATH . "/public/upload/carnetVaccin/" . $imageName);
         }
-        return array(
-            $fermé, $ouverture, $fermeture
-        );
     }
-    public function CreatePlanningPro()
+    private function unlinkKbisById(int $id)
     {
-        if ($this->request->getMethod() === 'post') {
-
-
-
-
-
-            echo view("espaces/pro/createPlanningPro");
-            echo "<pre>";
-            print_r($this->gestionHoraire('lundi'));
-            print_r($this->gestionHoraire('mardi'));
-            print_r($this->gestionHoraire('mercredi'));
-            print_r($this->gestionHoraire('jeudi'));
-            print_r($this->gestionHoraire('vendre'));
-            print_r($this->gestionHoraire('samedi'));
-            print_r($this->gestionHoraire('dimanche'));
-            // $this->planningModel->insert();
-            print_r($_POST);
-            print_r($this->planningModel->findAll());
-            print_r($_SESSION);
-            echo "</pre>";
-        } else {
-            print_r("pas de post");
-            $data = [$this->planningModel->lastMonday()];
-            echo view("espaces/pro/createPlanningPro", $data);
-            print_r($data);
+        $pro = $this->proModel->find($id);
+        if (!empty($enfants)) {
+            $imageName2 = $pro["kbis"];
+            @unlink(ROOTPATH . "/public/upload/certificat/" . $imageName2);
         }
     }
     private function movecarteId(string $inputName)
