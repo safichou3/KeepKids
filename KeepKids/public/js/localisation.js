@@ -1,22 +1,22 @@
 // geocoder
-// window.initMap = initMap;
+window.initMap = initMap;
 
-// var geocoder;
-// var map;
-// function initialize() {
-// 	geocoder = new google.maps.Geocoder();
-// 	var latlng = new google.maps.LatLng(lat, lng);
+var geocoder;
+var map;
+function initialize() {
+	geocoder = new google.maps.Geocoder();
+	var latlng = new google.maps.LatLng(lat, lng);
 
-// }
+}
 
-// function codeAddress() {
-// 	var address = document.getElementById('address').value;
-// 	geocoder.geocode({ 'address': address }, function (results, status) {
+function codeAddress() {
+	var address = document.getElementById('address').value;
+	geocoder.geocode({ 'address': address }, function (results, status) {
 
-// 		document.getElementById("inputCache").value = results[0].geometry.location;
+		document.getElementById("inputCache").value = results[0].geometry.location;
 
-// 	});
-// }
+	});
+}
 
 // auto geolocalisation
 var latAuto, lngAuto;
