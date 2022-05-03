@@ -8,12 +8,12 @@
 
 
 <?php
-
+print_r(date("D.F.Y", 1654252934));
 print_r($_POST);
 if (isset($semaine)) {
     if (empty($semaine)) {
-        
     }
+
     echo "<pre>";
     print_r($semaine);
     echo "</pre>";
