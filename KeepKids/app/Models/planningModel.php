@@ -26,4 +26,11 @@ class planningModel extends Model
             return (strtotime("last Monday"));
         }
     }
+    public function weekByPost($arg)
+    {
+        $semaine = $this->where(['idPro' => session("id")])
+            ->where(['semaine' => $arg])
+            ->findAll();
+        return $semaine;
+    }
 }

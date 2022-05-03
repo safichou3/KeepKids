@@ -6,101 +6,91 @@
 
 <?= $this->section('content') ?>
 
-<!-- <center>
-    <div id="title">
-        <div id="back"></div>
-        <p id="month"></p>
-        <div id="forward"></div>
-    </div>
 
-    <table id="days">
-        <tr>
-            <td class="test2" id="sunday">Sunday</td>
-            <td class="test2" id="monday">Monday</td>
-            <td class="test2" id="tuesday">Tuesday</td>
-            <td class="test2" id="wednesday">Wednesday</td>
-            <td class="test2" id="thursday">Thursday</td>
-            <td class="test2" id="friday">Friday</td>
-            <td class="test2" id="saturday">Saturday</td>
-        </tr>
-        <tr>
-            <td class="test" id="d1" onClick="openMod(0)">4</td>
-            <td class="test" id="d2" onClick="openMod(1)">5</td>
-            <td class="test" id="d3" onClick="openMod(2)">6</td>
-            <td class="test" id="d4" onClick="openMod(3)">7</td>
-            <td class="test" id="d5" onClick="openMod(4)">8</td>
-            <td class="test" id="d6" onClick="openMod(5)">9</td>
-            <td class="test" id="d7" onClick="openMod(6)">10</td>
-        </tr>
-    </table>
+<?php
 
-    <div id="modalBox">
-        <div id="number">4</div>
-        <div id="close">X</div>
-        <div id="reminders">
-            <ul>
-                <li class="check">Pick up package from UPS</li>
-                <li class="uncheck">Meeting @ 2:00</li>
-                <li class="uncheck">Dinner with the Francs</li>
-            </ul>
-        </div>
-    </div>
-</center> -->
+print_r($_POST);
+if (isset($semaine)) {
+    if (empty($semaine)) {
+        
+    }
+    echo "<pre>";
+    print_r($semaine);
+    echo "</pre>";
+};
+function increaseWeek()
+{
+    $_POST['semaine'] = 1;
+};
+function decreaseWeek()
+{
+    $_POST['semaine'] = $_POST['semaine'] - 1;
+};
+?>
 
-<link rel="stylesheet/less" type="text/css" href="<?= base_url(); ?>/css/styles.less" />
-<form method="POST" action="<?= base_url(); ?>/espaces/pro/inscriptionPro" enctype="multipart/form-data">
-    <label>lundi</label><br>
-    <label>horaire</label><br>
-    <span class="multi-range">
-        <input type="range" min="0" max="50" value="5" id="lower">
-        <input type="range" min="0" max="50" value="45" id="upper">
-    </span><br>
-    <span class="multi-range">
-        <input type="range" min="0" max="50" value="5" id="lundilower">
-        <input type="range" min="0" max="50" value="45" id="lundiupper">
-    </span>
-    <br>
+<form method="post">
 
-    <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro">
+    <input type="number" name="semaine" value="<?= $semaine[0]['semaine'] ?>">
+
 </form>
-<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
-<script>
-    var lowerSlider = document.querySelector('#lundilower'),
-        upperSlider = document.querySelector('#lundiupper'),
-        lowerVal = parseInt(lowerSlider.value);
-    upperVal = parseInt(upperSlider.value);
 
-    upperSlider.oninput = function() {
-        lowerVal = parseInt(lowerSlider.value);
-        upperVal = parseInt(upperSlider.value);
-
-        if (upperVal < lowerVal + 4) {
-            lowerSlider.value = upperVal - 4;
-
-            if (lowerVal == lowerSlider.min) {
-                upperSlider.value = 4;
+<div id="planningBody">
+    <?php
+    $day = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+    for ($i = 6; $i < 20; $i++) {
+        for ($y = -1; $y < 7; $y++) { //case en haut a gauche
+            if ($y == -1 && $i == 6) {
+                echo "<div class='dayCol' style='border:1px solid #F9C6C4'></div>";
+            } else if ($i == 6) { //case en haut (jours)
+                echo "<div class='dayCol'>" . $day[$y] . "</div>";
+            } else if ($y == -1 && $i != 6) { //cases à gauche (heures)
+                echo "<div class='dayCol'>" . $i . "H</div>";
+            } else { //le reste
+                echo "<div class='dayCol'>";
+                // echo "i =" . $i . " y=" . $y;
+                if ($i < $semaine[$y]['heureOuverture'] || $i >= $semaine[$y]['heureFermeture'] || $semaine[$y]['heureOuverture'] == NULL) {
+                    echo "fermé";
+                }
+                echo "</div>";
             }
         }
-    };
+        echo "<div class='break'></div>";
+    }
 
 
-    lowerSlider.oninput = function() {
-        lowerVal = parseInt(lowerSlider.value);
-        upperVal = parseInt(upperSlider.value);
+    ?>
+</div>
 
-        if (lowerVal > upperVal - 4) {
-            upperSlider.value = lowerVal + 4;
-
-            if (upperVal == upperSlider.max) {
-                lowerSlider.value = parseInt(upperSlider.max) - 4;
-            }
-
-        }
-    };
-</script>
 <style>
     footer {
         display: none;
+    }
+
+    body {
+        padding-top: 100px;
+    }
+
+
+
+    #planningBody {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1800px;
+        height: 1000px;
+        /* --------------- */
+        color: black;
+        font-size: 20px;
+    }
+
+    .dayCol {
+        width: 200px;
+        height: 75px;
+        border: 1px solid black;
+    }
+
+    .break {
+        flex-basis: 100%;
+        height: 0;
     }
 </style>
 <?= $this->endSection() ?>
