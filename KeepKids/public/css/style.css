@@ -819,7 +819,7 @@ footer ul {
     position: relative;
     top: 90px;
     background: rgba(0, 0, 0, 0.15);
-    width: 285px;
+    width: 275px;
     height: 254px;
     right: 9px;
     border-radius: 10px;
@@ -843,7 +843,7 @@ footer ul {
   .btn-ins-accueil {
     display: block;
     position: relative;
-    top: 130px;
+    top: 105px;
     left: 18%;
     padding: 10px 20px;
     border-radius: 8px;
@@ -924,6 +924,7 @@ footer ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-right: 60px;
   }
 
   .margin-bottom-footer {

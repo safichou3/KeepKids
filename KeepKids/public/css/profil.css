@@ -162,3 +162,26 @@ html {
   font-size: 18px;
   margin-right: 10px;
 }
+
+
+
+
+/* ================================ RESPONSIVE PROFIL ================================ */
+
+@media screen and (max-width: 380px){
+  .img_parents{
+    display: none;
+  }
+  .btn-parents{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* .btn-options{
+    width: 100%;
+  } */
+
+  .middle-left-parents{
+    margin-left: 0;
+  }
+}

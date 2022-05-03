@@ -52,7 +52,7 @@
         </div>
 
         <div class="btn-tuto-parents btn-options">
-          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rr-play-alt icons-btn"></i>Tutoriel</button></a>
+          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rs-interrogation icons-btn"></i>Tutoriel</button></a>
         </div>
 
       </div>

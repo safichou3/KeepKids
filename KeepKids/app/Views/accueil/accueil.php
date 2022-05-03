@@ -40,7 +40,7 @@
         </div>
         <p class="text-input">Sécurisé & créer juste pour votre confort.</p>
         <a class="link-btn-ins-accueil" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">
-        <button class="btn-ins-accueil">S'inscrire maintenant</button></a>
+            <button class="btn-ins-accueil">S'inscrire maintenant</button></a>
     </div>
     <!-- <div class="wrap-bis">
         <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>

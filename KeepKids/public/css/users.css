@@ -88,14 +88,15 @@ html {
   margin-bottom: 20px;
 }
 
-.politique{
+.politique {
   color: #3D63F3;
   /* text-decoration: none; */
 }
 
-.list-adresses{
+.list-adresses {
   list-style-type: none;
 }
+
 /* ============================ CONNEXION ============================ */
 
 .card-co {
@@ -104,11 +105,11 @@ html {
   align-items: center;
   align-content: center;
   justify-content: space-around;
-  width: 23%;
+  width: 20%;
   height: 350px;
   border-radius: 45px;
   color: #000000;
-  padding: 25px;
+  padding: 20px 5px;
 }
 
 .card-co-parents {
@@ -126,7 +127,54 @@ html {
   align-content: center;
 }
 
+.input-connexion {
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  width: 80%;
+}
+
 .img-co {
   width: 40%;
   margin-top: 30px;
+}
+
+/* ============================ RESPONSIVE ============================ */
+@media screen and (max-width: 380px) {
+  .img-co {
+    display: none;
+  }
+
+  .card-co {
+    width: 85%;
+    padding: 20px 10px;
+  }
+
+  .input-inscription {
+    width: 80%;
+  }
+
+  .form-center {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* align-content: center; */
+    justify-content: center;
+    /* margin-left: 55px; */
+  }
+
+  .ins-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    margin-right: 0;
+    /* width: 80%; */
+  }
+
+  .input-label {
+    width: 80%;
+  }
 }

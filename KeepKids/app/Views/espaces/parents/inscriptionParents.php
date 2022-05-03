@@ -13,7 +13,7 @@
         <h2 class="section-title-parents">Inscription parents</h2>
 
         <div class="form-ins-parents">
-            <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
+            <form class="form-center" method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
 
                 <div class="ins-group">
                     <div class="input-label margin-group-right">
