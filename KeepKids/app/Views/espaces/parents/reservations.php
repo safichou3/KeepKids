@@ -11,7 +11,7 @@
 <?= $this->section('content') ?>
 <script src="<?= base_url(); ?>/js/main.js"></script>
 <form>
-    <input id="distance" value type="range" min="0" max="200" oninput='filtre()'>
+    <input id="distance" value type="range" min="0" max="100" oninput='filtre()'>
 
 </form>
 <?php
@@ -66,7 +66,7 @@ echo "</pre>";
                 if (distance(latAuto, lngAuto, array[i][16], array[i][17], "K") <= t.value) {
 
                     console.log(array[i]);
-                    liste.innerHTML += array[i][1]
+                    liste.innerHTML += array[i][1] + " " + array[i][2] + "<br>"
                 }
 
 
