@@ -157,10 +157,15 @@ html {
   width: 60%;
 }
 
+
+.btn-group{
+  display: flex;
+}
 /* ============================= ICONS ============================= */
 .fi {
-  font-size: 18px;
+  font-size: 21px;
   margin-right: 10px;
+  margin-bottom: -2px;
 }
 
 
@@ -168,11 +173,16 @@ html {
 
 /* ================================ RESPONSIVE PROFIL ================================ */
 
-@media screen and (max-width: 380px){
-  .img_parents{
+@media screen and (max-width: 380px) {
+  .img-profil-parents {
+    width: 50%;
+  }
+
+  .img_parents {
     display: none;
   }
-  .btn-parents{
+
+  .btn-parents {
     display: flex;
     flex-wrap: wrap;
   }
@@ -181,7 +191,22 @@ html {
     width: 100%;
   } */
 
-  .middle-left-parents{
+  .middle-left-parents {
     margin-left: 0;
   }
+
+
+  .btn-parents-bottom {
+    padding: 5px 12px;
+    font-size: 17px;
+  }
+
+  .btn-group {
+    display: flex;
+    margin-left: -18px;
+  }
+.fi{
+  font-size: 18px;
+}
+
 }

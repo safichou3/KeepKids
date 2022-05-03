@@ -104,22 +104,23 @@ hamburger.addEventListener('click', () => {
 
 $(document).ready(function () {
 
-
+	
 	//set responsive mobile input field placeholder text
 	if ($(window).width() < 769) {
 		$(".searchTerm").attr("placeholder", "Trouver une crèche à proximité");
-}
-else {
+	}
+	else {
 		$(".searchTerm").attr("placeholder", "Rechercher des creches à proximité");
-}
-	 $(window).resize(function () {
+	}
+	$(window).resize(function () {
 		if ($(window).width() < 769) {
-				$(".searchTerm").attr("placeholder", "Trouver une crèche à proximité");
+			$(".searchTerm").attr("placeholder", "Trouver une crèche à proximité");
 		}
 		else {
-				$(".searchTerm").attr("placeholder", "Rechercher des creches à proximité");
+			$(".searchTerm").attr("placeholder", "Rechercher des creches à proximité");
 		}
-});
+	});
+	
 
 	$(".showMore1").click(function () {
 		$(".hideContent1").hide();
@@ -147,6 +148,9 @@ else {
 		$(".hideContent3").show();
 		$(".showContent3").hide();
 	});
+
+	$('#payement_table').DataTable();
+
 })
 
 // verifs
