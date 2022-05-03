@@ -10,6 +10,7 @@ class EspaceParentsController extends BaseController
     protected $parentsModel;
     protected $accompagnantsModel;
     protected $reservationsModel;
+    protected $proModel;
 
     public function __construct()
     {
@@ -17,6 +18,7 @@ class EspaceParentsController extends BaseController
         $this->parentsModel = model(ParentsModel::class);
         $this->accompagnantsModel = model(AccompagnantModel::class);
         $this->reservationsModel = model(ReservationModel::class);
+        $this->proModel = model(ProModel::class);
     }
     public function index()
     {
@@ -223,12 +225,13 @@ class EspaceParentsController extends BaseController
                 $data2 = $this->generateReservations();
                 $this->reservationsModel->insert($data2);
             }
-            return redirect()->to('espaces/parents/reservations');
+            return redirect()->to('/');
         } else {
             echo view("espaces/parents/reservations", [
                 "idPro" => $this->reservationsModel->findAll(),
                 "idEnfant" => $this->enfantsModel->findAll(),
-                "enfant" => $this->reservationsModel->findAllByReservation()
+                "enfant" => $this->reservationsModel->findAllByReservation(),
+                "pro" => $this->proModel->findAll()
             ]);
         }
     }
