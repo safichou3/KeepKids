@@ -1,5 +1,15 @@
+var latAuto, lngAuto;
+navigator.geolocation.getCurrentPosition(function (pos) {
+	latAuto = pos.coords.latitude;
+	lngAuto = pos.coords.longitude;
+});
 // geocoder
-window.initMap = initMap;
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: {lat:latAuto, lng:lngAuto },
+    zoom: 13,
+  });
+}
 
 var geocoder;
 var map;
@@ -18,13 +28,7 @@ function codeAddress() {
 	});
 }
 
-// auto geolocalisation
-// var latAuto, lngAuto;
-// navigator.geolocation.getCurrentPosition(function (pos) {
-// 	latAuto = pos.coords.latitude;
-// 	lngAuto = pos.coords.longitude;
-// 	// alert(latAuto);
-// });
+window.initMap = initMap;
 
 // Convertions
 function distance(lat1, lon1, lat2, lon2, unit) {
@@ -71,3 +75,6 @@ function getValues() {
 // 		alert('distance supp a 10')
 // 	} else alert('distance inf a 10');
 // }
+
+
+//   ajouter des markeurs 

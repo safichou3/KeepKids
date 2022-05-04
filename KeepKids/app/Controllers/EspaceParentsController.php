@@ -235,6 +235,19 @@ class EspaceParentsController extends BaseController
             ]);
         }
     }
+    function showReservation($param)
+    {
+        $reservation = $this->reservationsModel->findById($param);
+        // if (empty($reservation)) {
+        //     return redirect()->to('/');
+        // }
+
+        $data = [
+            "reservation" => $reservation
+        ];
+
+        echo view("espaces/parents/voirReservation", $data);
+    }
     // PAIEMENTS
     function paiements()
     {

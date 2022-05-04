@@ -29,4 +29,11 @@ class ReservationModel extends Model
             ->where(['idParent' => session("id")])
             ->findAll();
     }
+    public function findById($id)
+    {
+        return $this->select("reservation.*")
+            ->join('pro', 'reservation.idPro = pro.id')
+            ->where(['idPro' => $id])
+            ->findAll();
+    }
 }

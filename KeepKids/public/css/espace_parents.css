@@ -229,12 +229,13 @@ tbody:hover tr:hover td {
   display: flex;
   flex-direction: column;
   background-color: #B891E3;
-  width: 35%;
-  border-radius: 45px;
+  width: 50%;
+  border-radius: 23px;
   padding: 3%;
-  margin: 3% auto 20px auto;
+  margin: 2%;
+  box-shadow: black;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
-
 .continuer {
   /* margin-top: -6px; */
   padding: 17px 20px;
@@ -250,7 +251,11 @@ tbody:hover tr:hover td {
   justify-content: center;
 }
 
-/* #map {
-  height: 500px;
-  width: 50%;
-} */
+#map {
+  width: 47%;
+  height: 550px;
+  margin: 2%;
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+
+}
