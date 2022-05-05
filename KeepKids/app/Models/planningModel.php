@@ -51,4 +51,11 @@ class planningModel extends Model
         }
         return false;
     }
+    public function getHoraire($id, $date)
+    {
+        return $this->select("planning.*")
+            ->where(['idPro' => $id])
+            ->where(['date' => strtotime($date)])
+            ->findAll();
+    }
 }

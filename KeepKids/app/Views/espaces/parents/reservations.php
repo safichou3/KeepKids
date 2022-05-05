@@ -9,11 +9,12 @@
 <br> <br>
 <div style="display: flex; flex-direction:row">
     <div class='card-add-reservation'>
-    <h2 class="section-title">Reservations</h2>
+        <h2 class="section-title">Reservations</h2>
         <form>
             <input id="distance" value type="range" min="0" max="100" oninput='filtre()'>
-        </form><p id="compteurRange">0</p>
-<p id="listePro"></p>
+        </form>
+        <p id="compteurRange">0</p>
+        <p id="listePro"></p>
     </div>
     <div id="map"></div>
 </div>
@@ -51,7 +52,7 @@ foreach ($pro as $element) {
 
                 if (distance(latAuto, lngAuto, array[i][16], array[i][17], "K") <= t.value) {
                     console.log(array[i]);
-                    liste.innerHTML += "<h5 style='color:white;'><a href='reservations/" + array[i][0] + "'>" + array[i][3] + " | " + array[i][6] + " " + array[i][7] + " " + array[i][8] + "</a></h5><br>";
+                    liste.innerHTML += "<h5 style='color:white;'><a href='reservations1/" + array[i][0] + "'>" + array[i][3] + " | " + array[i][6] + " " + array[i][7] + " " + array[i][8] + "</a></h5><br>";
                 }
 
             }

@@ -62,6 +62,10 @@ $routes->match(['get', 'post'], 'espaces/parents/modifAccompagnant/(:num)', 'Esp
 // reservations
 $routes->match(['get', 'post'], 'espaces/parents/reservations', 'EspaceParentsController::creerReservation');
 $routes->get('espaces/parents/reservations/(:any)', 'EspaceParentsController::showReservation/$1');
+
+$routes->match(['get', 'post'], 'espaces/parents/reservations1/(:num)', 'EspaceParentsController::reservations1/$1');
+$routes->match(['get', 'post'], 'espaces/parents/reservations2', 'EspaceParentsController::reservations2');
+
 //paiements & factures
 $routes->match(['get', 'post'], 'espaces/parents/paiements', 'EspaceParentsController::paiements');
 
