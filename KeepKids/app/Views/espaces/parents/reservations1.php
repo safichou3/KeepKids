@@ -5,8 +5,13 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<?= "<br><br><br>" ?>
 <?php print_r($enfants); ?>
-<?php print_r($_POST); ?>
+<?php print_r($_POST);
+print_r($strtotime);
+print_r($horaires);
+print_r($capacite);
+?>
 
 <br> <br>
 
@@ -15,28 +20,33 @@
         <label>Je veux reserver pour:</label>
 
 
-        <?php if (!isset($_POST['enfantSelect'])) {
-            echo "<select name='enfantSelect'>";
-            foreach ($enfants as $element) {
-                echo "<option value=" . $element['id'] . ">" . $element['prenom'] . " " . $element['nom'] . "</option>";
-            };
-            echo '</select>';
+        <?php if (!isset($_POST['enfantSelect'])) { ?>
+            <select name='enfantSelect'>
 
-            echo "<label>Je veux reserver pour le</label>";
-            echo "<input type='date'>";
-            echo "<button type='submit'>suite</button>";
-        } else {
-            print_r($horaires);
+                <?php foreach ($enfants as $element) {
+                    echo "<option value=" . $element['id'] . ">" . $element['prenom'] . " " . $element['nom'] . "</option>";
+                }; ?>
 
-            echo "<label>de</label>";
-            echo "<input type='date' min='' max=''>";
+            </select>
 
-            echo "<label>à</label>";
-            echo "<input type='date' min='' max=''>";
+            <label>Je veux reserver pour le</label>
+            <input type='date' name='date'>
+            <button type='submit'>suite</button>
+        <?php  } else { ?>
 
-            echo "<button type='submit'>envoyer</button>";
-        }
-        ?>
+
+            <label>de</label>
+            <select name='heureOuverture'>
+
+            </select>
+            <label>à</label>
+            <select name='heureFermeture'>
+
+            </select>
+            <button type='submit'>envoyer</button>
+
+        <?php } ?>
+
     </form>
 </div>
 

@@ -141,7 +141,7 @@ class EspaceProController extends BaseController
         for ($y = 0; $y < 7; $y++) {
             $capaciteParHeureTemporaire = [];
             for ($i = 6; $i < 20; $i++) {
-                array_push($capaciteParHeureTemporaire, $this->reservationsModel->findEnfantByDayAndHour($semaine[$y]['date'], $i));
+                array_push($capaciteParHeureTemporaire, $this->reservationsModel->findEnfantByDayAndHour(session('id'),$semaine[$y]['date'], $i));
             }
             array_push($capacite, $capaciteParHeureTemporaire);
         }
@@ -157,8 +157,10 @@ class EspaceProController extends BaseController
     {
         $data = [
 
-            'liste' => $this->reservationsModel->findEnfantByDayAndHour($date, $heure),
+            'liste' => $this->reservationsModel->findEnfantByDayAndHour(session('id'),$date, $heure),
             'date' => $date,
+
+            
             "accompagnant" => $this->accompagnantsModel->findAccompagnantByEnfant()
         ];
 
