@@ -256,52 +256,45 @@ class EspaceParentsController extends BaseController
     {
         return view("espaces/parents/paiements");
     }
-    // PROFIL
-    function profil()
-    {
-        return view("espaces/parents/profil");
-    }
+    // PROFIL    
+    
     function generateProfil()
     {
         return [
-            "nom" => session('nom'),
+            "id" => session('id'),            
+            "nom" => $this->request->getPost('nom'),
             "prenom" => $this->request->getPost('prenom'),
             "email" => $this->request->getPost('email'),
             "tel" => $this->request->getPost('tel'),
             "adresse" => $this->request->getPost('adresse')
         ];
     }
-    function monProfil()
+    function profil()
     {
-        $profil = $this->parentsModel->generateProfil();
-
+        $profil = $this->parentsModel->find(session('id'));
         $data = [
             "profil" => $profil
         ];
 
         echo view("espaces/parents/profil", $data);
     }
-    function deleteAccount(int $id)
-    {
-        $this->accompagnantsModel->delete($id);
-        return redirect()->to('espaces/parents/profil');
-    }
+
 
     function modifProfil(int $id)
     {
-        $accompagnant = $this->accompagnantsModel->findAccompagnantsByParent(session("id"));
+        $parents = $this->parentsModel->findParentsById(session("id"));
 
         if ($this->request->getMethod() === 'post') {
 
-            $data = $this->generateAccompagnant();
+            $data = $this->generateProfil();
 
-            $this->accompagnantsModel->update($id, $data);
-            return redirect()->to('espaces/parents/mesEnfants');
+            $this->parentsModel->update($id, $data);
+            return redirect()->to('espaces/parents/profil');
         } else {
-            echo view("espaces/parents/modifAccompagnant", [
-                "accompagnant"       => $accompagnant,
-                "parents" => $this->parentsModel->findAll()
+            echo view("espaces/parents/modifProfil", [
+                "profil" => $parents
             ]);
         }
     }
+
 }
