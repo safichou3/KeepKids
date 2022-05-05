@@ -36,4 +36,21 @@ class ReservationModel extends Model
             ->where(['idPro' => $id])
             ->findAll();
     }
+    public function findEnfantByDay($date)
+    {
+        return $this->select("enfant.*,reservation.*,")
+            ->join('enfant', 'reservation.idEnfant = enfant.id')
+            ->where(['idPro' => session("id")])
+            ->where(['date' => date('Y-m-d', $date)])
+            ->findAll();
+    }
+    public function findEnfantByDayAndHour($date, $heure)
+    {
+        return $this->select("enfant.*,reservation.*,")
+            ->join('enfant', 'reservation.idEnfant = enfant.id')
+            ->where(['idPro' => session("id")])
+            ->where(['date' => date('Y-m-d', $date)])
+            ->where(['heure' => $heure])
+            ->findAll();
+    }
 }

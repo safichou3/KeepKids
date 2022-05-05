@@ -40,4 +40,15 @@ class planningModel extends Model
             ->where(['date >' => time()])
             ->findAll();
     }
+    public function semaineExist($semaine)
+    {
+        $exist = $this->select("planning.*")
+            ->where(['idPro' => session('id')])
+            ->where(['semaine' => $semaine])
+            ->findAll();
+        if (!empty($exist)) {
+            return true;
+        }
+        return false;
+    }
 }

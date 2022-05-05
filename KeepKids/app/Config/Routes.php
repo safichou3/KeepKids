@@ -84,6 +84,8 @@ $routes->match(['get', 'post'], 'espaces/pro/inscriptionPro', 'ProController::in
 // planning creche
 $routes->match(['get', 'post'], 'espaces/pro/planningPro', 'EspaceProController::planningPro');
 $routes->match(['get', 'post'], 'espaces/pro/create/planningPro', 'EspaceProController::createPlanningPro');
+$routes->match(['get', 'post'], 'espaces/pro/enfantsPlanning/(:num)/(:num)', 'EspaceProController::enfantsPlanning/$1/$2');
+
 // paiement & relances
 $routes->match(['get', 'post'], 'espaces/pro/relancesPro', 'EspaceProController::relancesPro');
 // factures
