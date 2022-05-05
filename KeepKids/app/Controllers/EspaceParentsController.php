@@ -217,7 +217,32 @@ class EspaceParentsController extends BaseController
         ];
     }
     // RESRVATION
+    function reservations1($id)
+    {
+        // if ($this->request->getMethod() === 'post') {
+        $date = $this->request->getPost('date');
+        $capacite = [];
+        for ($i = 6; $i < 20; $i++) {
+            array_push($capacite, $this->reservationsModel->findEnfantByDayAndHour(session('id'), $date, $i));
+        }
+        $data = [
+            'enfants' => $this->enfantsModel->findEnfantsByParent(session('id')),
+            'horaires' => $this->planningModel->getHoraire($id, strtotime($date)),
+            'strtotime' => strtotime($date),
+            'capacite' => $capacite
+        ];
 
+        echo view("espaces/parents/reservations1", $data);
+
+        // } else {
+        //     return redirect()->to('/');
+        // }
+    }
+
+    function reservations2()
+    {
+        echo view("espaces/parents/reservations2");
+    }
 
     function creerReservation()
     {
