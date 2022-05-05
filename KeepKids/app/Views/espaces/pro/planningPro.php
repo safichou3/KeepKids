@@ -30,7 +30,7 @@ function decreaseWeek()
 
 <form method="post">
 
-    <input type="number" name="semaine" value="<?= $semaine[0]['semaine'] ?>">
+    <!-- <input type="number" name="semaine" value="<?= $semaine[0]['semaine'] ?>"> -->
 
 </form>
 
@@ -40,16 +40,16 @@ function decreaseWeek()
     for ($i = 6; $i < 20; $i++) {
         for ($y = -1; $y < 7; $y++) { //case en haut a gauche
             if ($y == -1 && $i == 6) {
-                echo "<div class='dayCol' style='border:1px solid #F9C6C4'></div>";
+                echo "<div class='dayCol' style='border:1px solid #F9C6C4'>semaine n° <input type='number' name='semaine' value=" . $semaine[0]['semaine'] . "></div>";
             } else if ($i == 6) { //case en haut (jours)
-                echo "<div class='dayCol'>" . $day[$y] . "</div>";
+                echo "<div class='dayCol'>" . $day[$y] . " " . date('d M', $semaine[$y]['date']) . "</div>";
             } else if ($y == -1 && $i != 6) { //cases à gauche (heures)
                 echo "<div class='dayCol'>" . $i . "H</div>";
             } else { //le reste
                 echo "<div class='dayCol'>";
                 // echo "i =" . $i . " y=" . $y;
                 if ($i < $semaine[$y]['heureOuverture'] || $i >= $semaine[$y]['heureFermeture'] || $semaine[$y]['heureOuverture'] == NULL) {
-                    echo "fermé";
+                    echo "<div style='width:15px;height:15px;background-color:red; margin:5px;border-radius:20px'></div>";
                 }
                 echo "</div>";
             }
