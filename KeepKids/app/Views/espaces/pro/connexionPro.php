@@ -6,12 +6,19 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    body {
+        background-color: #FF817B;
+    }
+</style>
+
+
 <div class="body-form body-co-pro body-pro">
 
     <div class="co-pro co-space">
 
         <img class="img-co-pro img-co" src="<?= base_url(); ?>/img/co-pro-img.svg" alt="">
-        
+
         <div class="card-co-pro card-co">
 
             <h2 class="section-title-pro">Connexion pro</h2>

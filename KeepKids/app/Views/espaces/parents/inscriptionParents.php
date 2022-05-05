@@ -8,6 +8,12 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    body {
+        background-color: #E4EAFF;
+    }
+</style>
+
 <div class="body-form body-ins-parents body-parents">
     <div class="ins-space">
         <h2 class="section-title-parents">Inscription parents</h2>

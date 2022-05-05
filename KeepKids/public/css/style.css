@@ -83,19 +83,19 @@ nav {
   color: #f3c964;
 }
 
-.nav-links li {
+/* .nav-links li {
   position: relative;
-}
+} */
 
 .nav-links li a::before {
-  content: "";
+  /* content: "";
   display: block;
-  height: 3px;
+  height: 0.2rem;
   width: 0%;
   background-color: #f3c964;
-  position: absolute;
+  position: absolute; */
   transition: all ease-in-out 250ms;
-  margin: 0 0 0 10%;
+  /* margin: 0 0 0 10%; */
 }
 
 .nav-links li a:hover::before {
@@ -105,7 +105,7 @@ nav {
 /*Styling Buttons*/
 .login-button {
   background-color: transparent;
-  border: 1.5px solid #f3c964;
+  border: 0.1rem solid #f3c964;
   border-radius: 2em;
   padding: 0.6rem 0.8rem;
   margin-left: 2vw;
@@ -149,83 +149,7 @@ nav {
   display: none;
 }
 
-/*Stying for small screens*/
-@media screen and (max-width: 800px) {
-  nav {
-    position: fixed;
-    z-index: 3;
-    top: 0;
-  }
 
-  .hamburger {
-    display: block;
-    position: absolute;
-    cursor: pointer;
-    right: 5%;
-    top: 50%;
-    transform: translate(-5%, -50%);
-    z-index: 2;
-    transition: all 0.7s ease;
-  }
-
-  .nav-links {
-    position: fixed;
-    background: #ffffff;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-    clip-path: circle(50px at 90% -20%);
-    -webkit-clip-path: circle(50px at 90% -10%);
-    transition: all 1s ease-out;
-    pointer-events: none;
-    margin: 0px;
-  }
-
-  .nav-links.open {
-    clip-path: circle(1000px at 90% -10%);
-    -webkit-clip-path: circle(1000px at 90% -10%);
-    pointer-events: all;
-  }
-
-  .nav-links li {
-    opacity: 0;
-  }
-
-  .nav-links li:nth-child(1) {
-    transition: all 0.5s ease 0.2s;
-  }
-
-  .nav-links li:nth-child(2) {
-    transition: all 0.5s ease 0.4s;
-  }
-
-  .nav-links li:nth-child(3) {
-    transition: all 0.5s ease 0.6s;
-  }
-
-  .nav-links li:nth-child(4) {
-    transition: all 0.5s ease 0.7s;
-  }
-
-  .nav-links li:nth-child(5) {
-    transition: all 0.5s ease 0.8s;
-  }
-
-  .nav-links li:nth-child(6) {
-    transition: all 0.5s ease 0.9s;
-    margin: 0;
-  }
-
-  .nav-links li:nth-child(7) {
-    transition: all 0.5s ease 1s;
-    margin: 0;
-  }
-
-  li.fade {
-    opacity: 1;
-  }
-}
 
 /*Animating Hamburger Icon on Click*/
 .toggle .line1 {
@@ -451,8 +375,8 @@ h1.title-accueil1 {
 .bouton-accueil {
   background-color: #f3c964;
   width: 36%;
-  font-size: 100%;
-  color: black;
+  font-size: 17px;
+  color: #ffffff;
   border: none;
   border-radius: 18px;
   padding: 2%;
@@ -742,6 +666,10 @@ footer ul {
   margin: 0 10px;
 }
 
+.link-footer-a:hover {
+  color: #f98d86;
+}
+
 .copy {
   font-size: 10px;
   color: #757575;
@@ -771,15 +699,125 @@ footer ul {
 /* ============================= RESPONSIVE SAFIA ============================= */
 
 
-/* ====================== RESPONSIVE ACCUEIL ====================== */
-
-@media screen and (max-width: 380px) {
-  .logo img {
-    width: 65%;
+/* ====================== RESPONSIVE MENU ====================== */
+/*Stying for small screens*/
+@media screen and (max-width: 1280px) {
+  #container3 {
+    font-size: 1.9rem;
   }
 
-  .hamburger div {
-    background-color: #000000;
+  .wrap3 {
+    top: 50%;
+  }
+
+  .wrap4 {
+    width: 60%;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links li {
+    font-size: 0.8rem;
+  }
+
+  .wrap3 {
+    top: 55%;
+  }
+
+  #flip {
+    height: 45px;
+  }
+
+  #container3 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 24%;
+  }
+}
+
+
+
+@media screen and (max-width: 830px) {
+  nav {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    margin: 0px;
+  }
+
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  .nav-links li:nth-child(4) {
+    transition: all 0.5s ease 0.7s;
+  }
+
+  .nav-links li:nth-child(5) {
+    transition: all 0.5s ease 0.8s;
+  }
+
+  .nav-links li:nth-child(6) {
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+  }
+
+  .nav-links li:nth-child(7) {
+    transition: all 0.5s ease 1s;
+    margin: 0;
+  }
+
+  li.fade {
+    opacity: 1;
   }
 
   .img-header {
@@ -791,6 +829,39 @@ footer ul {
     width: 100%;
   }
 
+  .wrap2, .wrap3, .wrap4 {
+    display: none;
+  }
+
+  .section-img {
+    display: none;
+  }
+}
+
+/* @media screen and (max-width: 800px) {
+ 
+} */
+
+/* ====================== RESPONSIVE ACCUEIL ====================== */
+
+@media screen and (max-width: 550px) {
+  .logo img {
+    width: 65%;
+  }
+
+  .hamburger div {
+    background-color: #000000;
+  }
+
+  /* .img-header {
+    display: none;
+  }
+
+  .img-header-bis {
+    display: block;
+    width: 100%;
+  } */
+
   .wrap {
     width: 71%;
     top: 44%;
@@ -801,9 +872,7 @@ footer ul {
     color: #000;
   }
 
-  .wrap2, .wrap3, .wrap4 {
-    display: none;
-  }
+
 
   /* .bg-opacity{
     background-color: #00000052;
@@ -823,7 +892,7 @@ footer ul {
     height: 254px;
     right: 9px;
     border-radius: 10px;
-}
+  }
 
   h1.title-accueil {
     font-size: 28px;
@@ -882,7 +951,7 @@ footer ul {
   }
 
   .section2 p, .section3 p {
-    font-size: 12px;
+    font-size: 1rem;
   }
 
   .card-review {
@@ -932,6 +1001,68 @@ footer ul {
   }
 }
 
+@media screen and (max-width: 300px) {
+  .wrap {
+    top: 35%;
+    left: 50%;
+  }
+
+  .tt-accueil-bg {
+    top: 204px;
+    right: 23px;
+    width: 244px;
+  }
+
+  h1.title-accueil, p.title-accueil {
+    top: -55px;
+  }
+
+  p.title-accueil {
+    font-size: 0.9rem;
+  }
+
+  #container3 {
+    font-size: 20px;
+  }
+
+
+  .text-input {
+    font-size: 10px;
+  }
+
+  .btn-ins-accueil {
+    top: 88px;
+    left: 10%;
+  }
+
+
+
+  .section2 p, .section3 p {
+    font-size: 0.9rem;
+  }
+
+
+
+  .trait {
+    width: 13%;
+  }
+
+  .title-footer {
+    font-size: 22px;
+  }
+
+  .fi-footer {
+    font-size: 25px;
+  }
+
+  .ul-footer {
+    font-size: 11px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 26px;
+  }
+}
 
 
 

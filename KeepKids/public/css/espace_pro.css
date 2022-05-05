@@ -1,20 +1,20 @@
 body {
-  color: #fff;
-  background-color: #F9C6C4;
+	color: #fff;
+	background-color: #F9C6C4;
 }
 
 
 .hello-pro {
-  color: #fff;
+	color: #fff;
 }
 
 
 .top-pro {
-  background-color: #FE938C;
+	background-color: #FE938C;
 }
 
 .btn-pro-plan {
-  background-color: #FF5146;
+	background-color: #FF5146;
 }
 
 .btn-pro-plan:hover, .btn-pro-fact:hover {
@@ -29,15 +29,15 @@ body {
 
 
 .kids {
-  background-color: #FF817B;
+	background-color: #FF817B;
 }
 
 
 .access {
-  background-color: #FF2015;
+	background-color: #FF2015;
 }
 
-.access:hover{
+.access:hover {
 	background-color: #b51c14;
 }
 
@@ -47,17 +47,20 @@ body {
 #days {
 	position: absolute;
 	left: 10.3%;
-	top: 40%; /*10%*/
+	top: 40%;
+	/*10%*/
 	min-width: 630px;
 	width: 79.5%;
 	height: 23%;
 	border-bottom: 4px solid #ff944d;
 	transition: top 2s;
 }
+
 #title {
 	position: absolute;
 	left: 10.3%;
-	top: 30%; /*0%*/
+	top: 30%;
+	/*0%*/
 	text-align: center;
 	min-width: 667px;
 	width: 79.5%;
@@ -70,27 +73,31 @@ body {
 	letter-spacing: 10px;
 	color: #fff;
 }
+
 .test {
-  width: 90px;
-  height: 100px;
-  background: #fff;
-  border: none;
-  transition: -webkit-transform 0.5s, box-shadow 0.5s, background 0.5s, color 0.5s;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 40px;
-  text-align: center;
-  cursor: pointer;
-  color: black;
+	width: 90px;
+	height: 100px;
+	background: #fff;
+	border: none;
+	transition: -webkit-transform 0.5s, box-shadow 0.5s, background 0.5s, color 0.5s;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 40px;
+	text-align: center;
+	cursor: pointer;
+	color: black;
 }
+
 .test:hover {
 	-webkit-transform: scale(1.3);
 	box-shadow: 0px 0px 20px #000;
 	background: #ff944d;
 	color: white;
 }
+
 .test:active {
 	background: #cc5200;
 }
+
 .testCur {
 	width: 90px;
 	height: 100px;
@@ -103,15 +110,18 @@ body {
 	cursor: pointer;
 	color: white;
 }
+
 .testCur:hover {
 	-webkit-transform: scale(1.3);
 	box-shadow: 0px 0px 20px #000;
 	background: #ff651a;
 	color: white;
 }
+
 .testCur:active {
 	background: #cc5200;
 }
+
 .test2 {
 	min-width: 90px;
 	width: 14.28%;
@@ -123,19 +133,22 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
 }
+
 #modalBox {
 	position: absolute;
 	left: 10.3%;
-	top: 30%; 
+	top: 30%;
 	min-width: 667px;
 	width: 79.5%;
-	height: 0%; /*40%*/
+	height: 0%;
+	/*40%*/
 	background: #ff944d;
 	transition: height 2s;
 	border-radius: 40px;
 	z-index: 2;
 }
-#number{
+
+#number {
 	position: absolute;
 	left: 100px;
 	top: 20px;
@@ -145,6 +158,7 @@ body {
 	opacity: 0;
 	transition: opacity 2s, left 3s;
 }
+
 #close {
 	position: absolute;
 	left: 92%;
@@ -157,9 +171,11 @@ body {
 	visibility: hidden;
 	transition: opacity 2s, color 0.3s;
 }
+
 #close:hover {
 	color: #ffc299;
 }
+
 #reminders {
 	position: absolute;
 	left: 31%;
@@ -173,6 +189,7 @@ body {
 	display: none;
 	transition: opacity 1s, top 3s;
 }
+
 #back {
 	position: absolute;
 	left: 3%;
@@ -187,12 +204,15 @@ body {
 	transition: background 0.2s, -webkit-transform 0.5s;
 	z-index: 1;
 }
+
 #back:hover {
 	-webkit-transform: scale(1.2);
 }
+
 #back:active {
 	background: #ffc299;
 }
+
 #forward {
 	position: absolute;
 	left: 92%;
@@ -206,12 +226,15 @@ body {
 	transition: background 0.2s, -webkit-transform 0.5s;
 	z-index: 1;
 }
+
 #forward:hover {
 	-webkit-transform: scale(1.2);
 }
+
 #forward:active {
 	background: #ffc299;
 }
+
 #month {
 	position: relative;
 	top: -60%;
@@ -221,106 +244,195 @@ body {
 	color: #fff;
 	z-index: 0;
 }
+
 .uncheck {
 	list-style-type: circle;
 	opacity: 1;
 	transition: opacity 5s;
 }
+
 .uncheck:hover {
 	list-style-type: disc;
 	text-decoration: line-through;
 }
+
 .check {
 	list-style-type: disc;
 	text-decoration: line-through;
 	opacity: 1;
 	transition: opacity 5s;
 }
+
 .check:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
-/* CSS tableau des enfants */
+/* ======================================= CSS TABLEAU DES ENFANTS ======================================= */
 strong {
-	font-weight: bold; 
+	font-weight: bold;
 }
 
 em {
-	font-style: italic; 
+	font-style: italic;
 }
 
-table {
-	width: 90%;
-    font-size: 13px;
-    line-height: 24px;
-    margin: 30px auto;
-    text-align: left;
-    color: black;
+
+
+
+.div-center {
+	display: flex;
+	justify-content: center;
+	color: #fff;
 }
+
+.table_div {
+	overflow-x: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin: 150px 0 35px 0;
+	padding: 30px 0;
+	width: 100%;
+	height: auto;
+	background-color: transparent;
+	border-radius: 15px;
+}
+
+#payement_table {
+	width: 100%;
+	height: 100%;
+	/* line-height: 25px; */
+	margin: 35px auto;
+	text-align: center;
+	color: black;
+	font-size: 15px;
+	background-color: #fff;
+	box-shadow: 0 1px 22px -12px #101413;
+}
+
+.dataTables_wrapper {
+	width: 85%;
+}
+
+
+/* table { */
+/* width: 90%; */
+/* font-size: 13px; */
+/* line-height: 24px; */
+/* margin: 30px auto; */
+/* text-align: left; */
+/* color: black; */
+/* } */
 
 th {
-    color: #fff;
-    font-weight: bold;
-    position: relative;
-    background-color: #ff9595;
+	color: #fff;
+	font-weight: bold;
+	/* position: relative; */
+	background-color: #ff9595;
 	padding: 10px;
 }
 
-td {
-    position: relative;
-    transition: all 300ms;
+/* td { */
+/* color: rgb(0, 0, 0);
+	text-shadow: 0 1px 0 #fff; */
+/* transition: all 300ms;
 	background-color: #e2e2e2;
-	text-align: center;
-}
+	text-align: center; */
+/* } */
 
 
-tr:nth-child(odd) td {
-	background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);	
-}
+/* tr:nth-child(odd) td {
+	background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
+} */
 
+/* 
 tbody:hover td {
 	color: transparent;
 	text-shadow: 0 0 1px #aaa;
-}
+} */
 
-tbody:hover tr:hover td {
+/* tbody:hover tr:hover td {
 	color: rgb(0, 0, 0);
 	text-shadow: 0 1px 0 #fff;
-}
+} */
 
 /* facture */
-#invoice{
+#invoice {
 	background-color: #ffffff;
 	color: #000;
 	padding: 3px;
 	border-radius: 3px;
+	margin-top: 60px;
 }
+
 .input-facture {
-    border: none;
-    width: 341px;
+	border: none;
+	width: 341px;
 }
 
 #creche-client {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
+
 #creche-facture {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
-#table-facture{
+
+#table-facture {
 	width: 70%;
 }
 
 #table-facture th {
-    color: #fff;
-    font-weight: bold;
-    background-color: #ff9595;
-    width: 0%;
+	color: #fff;
+	font-weight: bold;
+	background-color: #ff9595;
+	width: 0%;
 }
+
 #table-facture th {
 	padding: 0px;
 	text-align: center;
 }
 
+.btn-pdf {
+	display: flex;
+	justify-content: center;
+}
+
+#downloadPdf {
+	padding: 10px 15px;
+	margin: 25px 0 40px 0;
+	border: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+	/* color: #ff9551; */
+	font-weight: bold;
+}
+
+/* ============================== RESPONSIVE ============================== */
+
+@media screen and (max-width: 1024px) {
+	.table_div {
+		width: 95%;
+	}
+
+	.img-middle-right {
+		width: 60%;
+	}
+
+	.img_parents {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.input-facture {
+		border: none;
+		width: 270px;
+	}
+}

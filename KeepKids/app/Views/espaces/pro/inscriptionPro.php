@@ -6,6 +6,13 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    body {
+        background-color: #FF817B;
+    }
+</style>
+
+
 <div class="body-form body-co-pro body-pro">
     <div class="ins-space">
         <h2 class="section-title-pro">Inscription espace professionnel</h2>
@@ -87,7 +94,7 @@
                         </div>
                         <div class="col-6 proposition">
                             <div class="adress-feedback">
-                                <div class="iins-group">
+                                <div class="ins-group">
                                     <ul class="list-adresses"></ul>
                                 </div>
                             </div>

@@ -6,6 +6,11 @@
 
 
 <?= $this->section('content') ?>
+<style>
+    body{
+        background-color: #E4EAFF;
+    }
+</style>
 
 <div class="body-form body-co-parents body-parents">
 

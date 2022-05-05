@@ -200,8 +200,8 @@ em {
   padding: 30px 0;
   width: 90%;
   height: auto;
-  background-color: #C6D2FF;
-border-radius: 15px;
+  /* background-color: #C6D2FF; */
+  border-radius: 15px;
 }
 
 #payement_table {
@@ -235,9 +235,9 @@ td {
 }
 
 
-tr:nth-child(odd) td {
+/* tr:nth-child(odd) td {
   background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
-}
+} */
 
 tbody:hover td {
   color: transparent;
@@ -278,11 +278,17 @@ tbody:hover tr:hover td {
 
 /* ============================= RESPONSIVE ESPACE PARENTS ============================= */
 
+@media screen and (max-width: 1280px) {
+  .card-add-kids {
+    width: 25%;
+  }
+}
+
 @media screen and (max-width: 380px) {
 
   .card-add-kids {
     width: 65%;
-    margin-left: 0;
+    margin: 25px 0;
     padding: 0px 35px;
   }
 

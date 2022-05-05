@@ -120,6 +120,7 @@ body {
 
 
 /* ============================= RESPONSIVE ESPACE PARENTS ============================= */
+@media screen and (max-width: 1280px) {}
 
 @media screen and (max-width: 380px) {
 
@@ -144,16 +145,57 @@ body {
   .img-top-right {
     display: none;
   }
-  .middle-espaces{
+
+  .middle-espaces {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .btn-espaces-margin{
+  .btn-espaces-margin {
     margin-bottom: 30px;
   }
 
   .kids {
     margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .mini-title {
+    font-size: 13px;
+    margin-bottom: 0px;
+  }
+
+  .hello {
+    font-size: 24px;
+  }
+
+  .mini-text {
+    font-size: 17px;
+  }
+
+  .btn-top-espaces {
+    padding: 15px 10px;
+  }
+
+  .fi {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  /* .fi-pro {
+    display: none;
+  } */
+
+  .kids {
+    width: 235px;
+    height: 356px;
+  }
+
+
+  .access {
+    margin-top: 29px;
+    padding: 13px 0px;
+    font-size: 0.7rem;
   }
 }
