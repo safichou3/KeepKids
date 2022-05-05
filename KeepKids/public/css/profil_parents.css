@@ -41,3 +41,10 @@ body {
 .access:hover {
   background-color: #9915CD;
 }
+
+@media screen and (max-width: 380px) {
+  .kids{
+    color: #000 !important;
+    background-color: #C6D2FF;
+  }
+}

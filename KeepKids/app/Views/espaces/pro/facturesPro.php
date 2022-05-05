@@ -6,13 +6,13 @@
 
 <?= $this->section('content') ?>
 <div style="height: 65px; width:100%;"></div>
-
+<!-- 
 <?php
 foreach ($all as $element) {
     echo $element;
 }
 print_r($all);
-?>
+?> -->
 
 <div id="invoice">
     <h1>Facture N°<input class="input-facture" style="font-size:large;" type="number" value="10" name="numéro facture"></h1>
@@ -64,7 +64,9 @@ print_r($all);
         </p>
     </form>
 </div>
-<button id="downloadPdf">telecharger</button>
+<div class="btn-pdf">
+    <button id="downloadPdf">telecharger</button>
+</div>
 
 <?= $this->endSection() ?>
 

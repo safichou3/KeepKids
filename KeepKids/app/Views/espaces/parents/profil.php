@@ -1,8 +1,8 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link href="<?= base_url(); ?>/css/profil.css" rel="stylesheet">
 <link href="<?= base_url(); ?>/css/profil_parents.css" rel="stylesheet">
+<link href="<?= base_url(); ?>/css/profil.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -57,7 +57,7 @@
         </div>
 
         <div class="btn-tuto-parents btn-options">
-          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rr-play-alt icons-btn"></i>Tutoriel</button></a>
+          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rs-interrogation icons-btn"></i>Tutoriel</button></a>
         </div>
 
       </div>

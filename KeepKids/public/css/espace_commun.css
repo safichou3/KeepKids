@@ -54,7 +54,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.btn-espaces-margin{
+.btn-espaces-margin {
   margin-right: 10px;
 }
 
@@ -69,8 +69,8 @@ body {
 .middle-espaces {
   display: flex;
   justify-content: space-around;
-	flex-wrap: wrap;
-	margin: 40px 0;
+  flex-wrap: wrap;
+  margin: 40px 0;
 }
 
 .kids {
@@ -83,12 +83,13 @@ body {
   height: 380px;
   border-radius: 45px;
   padding: 25px 0;
-	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.title-card{
+.title-card {
   font-size: 20px;
 }
+
 .access {
   margin-top: 25px;
   padding: 20px 20px;
@@ -115,4 +116,86 @@ body {
 .fi {
   font-size: 20px;
   margin: 0 10px;
+}
+
+
+/* ============================= RESPONSIVE ESPACE PARENTS ============================= */
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 380px) {
+
+  .hello {
+    font-size: 40px;
+  }
+
+  .mini-title {
+    margin-bottom: -15px;
+  }
+
+  .mini-text {
+    font-size: 19px;
+  }
+
+  .btn-espaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .img-top-right {
+    display: none;
+  }
+
+  .middle-espaces {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .btn-espaces-margin {
+    margin-bottom: 30px;
+  }
+
+  .kids {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .mini-title {
+    font-size: 13px;
+    margin-bottom: 0px;
+  }
+
+  .hello {
+    font-size: 24px;
+  }
+
+  .mini-text {
+    font-size: 17px;
+  }
+
+  .btn-top-espaces {
+    padding: 15px 10px;
+  }
+
+  .fi {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  /* .fi-pro {
+    display: none;
+  } */
+
+  .kids {
+    width: 235px;
+    height: 356px;
+  }
+
+
+  .access {
+    margin-top: 29px;
+    padding: 13px 0px;
+    font-size: 0.7rem;
+  }
 }

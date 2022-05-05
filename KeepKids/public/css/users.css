@@ -4,9 +4,10 @@ html {
   text-align: center;
 }
 
-.body-form {
-  padding: 90px 0px;
+/* body {
+  background: #FF817B;
 }
+
 
 .body-pro {
   background-color: #FF817B;
@@ -14,8 +15,11 @@ html {
 
 .body-parents {
   background-color: #E4EAFF;
-}
+} */
 
+.body-form {
+  padding: 90px 0px;
+}
 
 .link-co-ins {
   color: #8B3EDF;
@@ -88,10 +92,15 @@ html {
   margin-bottom: 20px;
 }
 
-.politique{
+.politique {
   color: #3D63F3;
   /* text-decoration: none; */
 }
+
+.list-adresses {
+  list-style-type: none;
+}
+
 /* ============================ CONNEXION ============================ */
 
 .card-co {
@@ -100,11 +109,11 @@ html {
   align-items: center;
   align-content: center;
   justify-content: space-around;
-  width: 23%;
+  width: 20%;
   height: 350px;
   border-radius: 45px;
   color: #000000;
-  padding: 25px;
+  padding: 20px 5px;
 }
 
 .card-co-parents {
@@ -122,6 +131,14 @@ html {
   align-content: center;
 }
 
+.input-connexion {
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  width: 80%;
+}
+
 .img-co {
   width: 40%;
   margin-top: 30px;
@@ -130,3 +147,99 @@ html {
 #map {
 	width: 600px; height: 200px; margin:auto; border-radius:8px;
   }
+footer {
+  display: none;
+}
+
+
+/* ============================ RESPONSIVE ============================ */
+@media screen and (max-width: 1280px) {
+  .card-co {
+    width: 23%;
+  }
+
+  .input-inscription {
+    width: 80%;
+  }
+
+  .input-full-width {
+    width: 36%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card-co {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .form-center {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* align-content: center; */
+    justify-content: center;
+    /* margin-left: 55px; */
+  }
+
+  .ins-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    margin-right: 0;
+    /* width: 80%; */
+  }
+
+  .input-label {
+    width: 80%;
+    margin-left: 80px;
+  }
+
+  .margin-group-right {
+    margin-right: 0;
+  }
+
+  .input-full-width {
+    width: 80%;
+  }
+
+  .doc-download {
+    margin-left: -24px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .img-co {
+    display: none;
+  }
+
+  .card-co {
+    width: 55%;
+  }
+
+  .input-label {
+    width: 80%;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .card-co {
+    width: 93%;
+    padding: 0px 0px 20px;
+  }
+
+  .input-label {
+    width: 80%;
+    margin-left: 35px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .card-co {
+    background-color: transparent;
+  }
+}

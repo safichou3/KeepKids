@@ -10,8 +10,10 @@
 <!-- <div class="rouge"> -->
 <div class="center-div">
     <img class="img-header" src="<?= base_url(); ?>/img/bebe2.jpg" alt="">
-    <img class="img-header-bis" src="<?= base_url(); ?>/img/bebe2.svg" alt="">
+    <img class="img-header-bis" src="<?= base_url(); ?>/img/bebeVertical.jpg" alt="">
+
     <div class="wrap">
+        <div class="tt-accueil-bg"></div>
         <h1 class="title-accueil">
             <div id=container3>
                 KEEPKIDS,
@@ -29,24 +31,17 @@
                 POUR LA JOURNEE
             </div>
         </h1>
+        <p class="title-accueil">Plateforme 100% gratuite de mise en relation de parents avec des professionnels de la garde d'enfants.</p>
         <div class="search">
-            <input type="text" class="searchTerm" placeholder="Rechercher des creches à proximité">
+            <input type="text" class="searchTerm">
             <button type="submit" class="searchButton">
                 <i class="fi fi-br-search"></i>
             </button>
         </div>
+        <p class="text-input">Sécurisé & créer juste pour votre confort.</p>
+        <a class="link-btn-ins-accueil" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">
+            <button class="btn-ins-accueil">S'inscrire maintenant</button></a>
     </div>
-    <!-- <div class="wrap-bis">
-        <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>
-        <div class="search-bis">
-            <input type="text" class="searchTerm" placeholder="Rechercher des creches à proximité">
-            <button type="submit" class="searchButton">
-                <i class="fi fi-br-search"></i>
-            </button>
-        </div>
-    </div> -->
-    <!-- <div class="wrap-mix"> -->
-        
     <div class="wrap2">
         <h1 class="wrap-style">La plateforme sécurisé qui permets aux parents de gagner du temps dans leurs réservations, leurs factures et leurs paiements.</h1>
     </div>

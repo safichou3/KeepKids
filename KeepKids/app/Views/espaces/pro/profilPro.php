@@ -37,24 +37,28 @@
     <div class="bottom-parents">
       <div class="btn-parents">
 
-        <div class="btn-param-parents btn-options">
-          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants">
-            <button class="btn-parents-param btn-color-light btn-parents-bottom"><i class="fi fi-rs-settings icons-btn"></i>Paramètres</button>
-          </a>
+        <div class="btn-group">
+
+          <div class="btn-param-parents btn-options">
+            <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants">
+              <button class="btn-parents-param btn-color-light btn-color btn-parents-bottom"><i class="fi fi-rs-settings icons-btn"></i>Paramètres</button>
+            </a>
+          </div>
+
+          <div class="btn-theme-parents btn-options">
+            <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-theme btn-color-dark btn-color btn-parents-bottom"><i class="fi fi-rs-fill icons-btn"></i>Thème du site</button></a>
+          </div>
         </div>
 
-        <div class="btn-theme-parents btn-options">
-          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-theme btn-color-dark btn-parents-bottom"><i class="fi fi-rs-fill icons-btn"></i>Thème du site</button></a>
-        </div>
+        <div class="btn-group">
+          <div class="btn-contact-parents btn-options">
+            <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-contact btn-color-light btn-color btn-parents-bottom"><i class="fi fi-rs-headset icons-btn"></i>Nous contacter</button></a>
+          </div>
 
-        <div class="btn-contact-parents btn-options">
-          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-contact btn-color-light btn-parents-bottom"><i class="fi fi-rs-headset icons-btn"></i>Nous contacter</button></a>
+          <div class="btn-tuto-parents btn-options">
+            <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-color btn-parents-bottom"><i class="fi fi-rs-interrogation icons-btn"></i>Tutoriel</button></a>
+          </div>
         </div>
-
-        <div class="btn-tuto-parents btn-options">
-          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rr-play-alt icons-btn"></i>Tutoriel</button></a>
-        </div>
-
       </div>
     </div>
 

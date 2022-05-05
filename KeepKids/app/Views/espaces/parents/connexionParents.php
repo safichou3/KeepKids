@@ -6,6 +6,11 @@
 
 
 <?= $this->section('content') ?>
+<style>
+    body{
+        background-color: #E4EAFF;
+    }
+</style>
 
 <div class="body-form body-co-parents body-parents">
 
@@ -19,10 +24,10 @@
                 } ?>
 
                 <label>Email</label><br>
-                <input class="input-inscription" type="email" name="email" placeholder="Email" required><br>
+                <input class="input-connexion" type="email" name="email" placeholder="Email" required><br>
 
                 <label>Mot de passe</label><br>
-                <input class="input-inscription" type="password" name="password" placeholder="Mot de Passe" required><br>
+                <input class="input-connexion" type="password" name="password" placeholder="Mot de Passe" required><br>
 
                 <input class="inscription ins-parents" type="submit" value="Je me connecte">
 
