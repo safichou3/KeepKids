@@ -11,6 +11,7 @@ class EspaceParentsController extends BaseController
     protected $accompagnantsModel;
     protected $reservationsModel;
     protected $proModel;
+    protected $planningModel;
 
     public function __construct()
     {
@@ -19,6 +20,7 @@ class EspaceParentsController extends BaseController
         $this->accompagnantsModel = model(AccompagnantModel::class);
         $this->reservationsModel = model(ReservationModel::class);
         $this->proModel = model(ProModel::class);
+        $this->planningModel = model(planningModel::class);
     }
     public function index()
     {
@@ -243,7 +245,8 @@ class EspaceParentsController extends BaseController
         // }
 
         $data = [
-            "reservation" => $reservation
+            "reservation" => $reservation,
+            "horaires" => $this->planningModel->getHoraires($param)
         ];
 
         echo view("espaces/parents/voirReservation", $data);

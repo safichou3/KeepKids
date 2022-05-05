@@ -33,4 +33,11 @@ class planningModel extends Model
             ->findAll();
         return $semaine;
     }
+    public function getHoraires($id)
+    {
+        return $this->select("planning.*")
+            ->where(['idPro' => $id])
+            ->where(['date >' => time()])
+            ->findAll();
+    }
 }
