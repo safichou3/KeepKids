@@ -29,13 +29,13 @@
 // };
 
 ?>
-
-<form method="post">
-
-
-
-</form>
-
+<h1 style="text-align:center;">Mon Planning</h1> <a href="<?= base_url(); ?>/espaces/pro/create/planningPro">Modifier les horaires de la semaine</a>
+<div style="display:flex;justify-content:center;align-items:center;">
+    <div style='width:15px;height:15px;background-color:red; margin:5px;border-radius:20px'></div>
+    <p>Etablissement fermé</p>  <div style='width:15px;height:15px;background-color:green; margin:5px;border-radius:20px'></div>
+    <p>Etablissement ouvert</p> <div style='width:15px;height:15px;background-color:orange; margin:5px;border-radius:20px'></div>
+    <p>Bientôt complet</p>
+</div>
 <div id="planningBody">
     <?php
     $day = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
@@ -84,7 +84,7 @@
     }
 
     #nombreCase {
-        width: 50%;
+        width: 100%;
         border: none;
         background-color: #ff000000;
         font-size: inherit;
@@ -101,18 +101,18 @@
     }
 
     .dayCol {
-        width: 143px;
-        height: 53px;
-        border: none;
-        margin: 3px;
-        background-color: #ffffff70;
-        border-radius: 5px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 8px;
-        box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
-    }
+    width: 123px;
+    height: 28px;
+    border: none;
+    margin: 3px;
+    background-color: #ffffff70;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+}
 
     .dayCol a {
         text-decoration: none;
@@ -128,14 +128,15 @@
         font-size: 85%;
     }
 
+
     .dayCase {
-        background-color: #de9999;
-        font-weight: 400;
-        text-align: center;
-        color: white;
-
-    }
-
+    background-color: #ff7a7a;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 65%;
+    color: white;
+}
     .break {
         flex-basis: 100%;
         height: 0;
