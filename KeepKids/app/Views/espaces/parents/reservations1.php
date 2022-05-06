@@ -9,10 +9,13 @@
 <?php
 print_r($enfants);
 print_r($_POST);
-// print_r($strtotime);
+print_r($strtotime);
 // print_r(session('id'));
-print_r($capacite);
+echo "<pre>";
 print_r($horaires);
+
+print_r(count($capacite[9]));
+echo "</pre>";
 ?>
 
 <br> <br>
@@ -39,10 +42,25 @@ print_r($horaires);
 
             <label>de</label>
             <select name='heureOuverture'>
-
+                <?php for ($i = 6; $i < 20; $i++) {
+                    if ($i >= $horaires[0]['heureOuverture']  && $i <= ($horaires[0]['heureFermeture'] - 1)) {
+                ?>
+                        <option value="<?= $i ?>"><?= $i ?>H</option>
+                <?php }
+                }
+                ?>
             </select>
             <label>à</label>
             <select name='heureFermeture'>
+                <?php for ($i = 6; $i < 20; $i++) {
+                    if ($i >= ($horaires[0]['heureOuverture'] + 1)   && $i <= $horaires[0]['heureFermeture']) {
+                ?>
+                        <option value="<?= $i ?>"><?= $i ?>H</option>
+                <?php }
+                } ?>
+                <input type="hidden" value="<?= $_POST['enfantSelect'] ?>" name="enfantSelect" />
+                <input type="hidden" value="<?= $_POST['date'] ?>" name="date" />
+
 
             </select>
             <button type='submit'>envoyer</button>
