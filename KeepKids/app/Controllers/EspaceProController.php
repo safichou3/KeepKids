@@ -144,9 +144,9 @@ class EspaceProController extends BaseController
             }
 
             // $this->planningModel->insert();
-            // print_r($_POST);
-            // print_r($this->planningModel->findAll());
-            // print_r($_SESSION);
+            // // print_r($_POST);
+            // // print_r($this->planningModel->findAll());
+            // // print_r($_SESSION);
             echo "</pre>";
 
             // echo view("espaces/pro/createPlanningPro", $data);

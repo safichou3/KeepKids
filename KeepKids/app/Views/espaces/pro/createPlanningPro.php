@@ -12,13 +12,13 @@
 
     // echo "<pre>";
     // if (isset($date)) {
-    //     print_r("
+    //     // print_r("
 
 
 
 
     //     ");
-    //     print_r($date);
+    //     // print_r($date);
     //     if (is_int($date)) {
     //         $timestamp = $date;
     //         $date = [$timestamp];
@@ -35,7 +35,7 @@
     //             array_push($datetemporaire, $element['date']);
     //         }
     //         $date = $datetemporaire;
-    //         print_r($date);
+    //         // print_r($date);
     //         $timestampPost = "";
     //     }
     // }

@@ -93,7 +93,7 @@
                                         foreach ($row['args'] as $key => $value) : ?>
 											<tr>
 												<td><code><?= esc(isset($params[$key]) ? '$' . $params[$key]->name : "#{$key}") ?></code></td>
-												<td><pre><?= esc(print_r($value, true)) ?></pre></td>
+												<td><pre><?= esc(// print_r($value, true)) ?></pre></td>
 											</tr>
 										<?php endforeach ?>
 
@@ -147,7 +147,7 @@
 									<?php if (is_string($value)) : ?>
 										<?= esc($value) ?>
 									<?php else: ?>
-										<pre><?= esc(print_r($value, true)) ?></pre>
+										<pre><?= esc(// print_r($value, true)) ?></pre>
 									<?php endif; ?>
 								</td>
 							</tr>
@@ -177,7 +177,7 @@
 									<?php if (is_string($value)) : ?>
 										<?= esc($value) ?>
 									<?php else: ?>
-										<pre><?= esc(print_r($value, true)) ?></pre>
+										<pre><?= esc(// print_r($value, true)) ?></pre>
 									<?php endif; ?>
 								</td>
 							</tr>
@@ -252,7 +252,7 @@
 									<?php if (is_string($value)) : ?>
 										<?= esc($value) ?>
 									<?php else: ?>
-										<pre><?= esc(print_r($value, true)) ?></pre>
+										<pre><?= esc(// print_r($value, true)) ?></pre>
 									<?php endif; ?>
 								</td>
 							</tr>

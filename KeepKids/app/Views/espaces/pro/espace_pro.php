@@ -9,7 +9,8 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<?php print_r(session("prenom")); ?>
+<?php // print_r(session("prenom")); 
+?>
 
 <div class="body-pro">
     <div class="content-body content-body-pro">

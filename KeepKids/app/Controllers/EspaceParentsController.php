@@ -131,7 +131,7 @@ class EspaceParentsController extends BaseController
             $img2 = $this->request->getFile('certificat');
             $carnetVaccin = $enfantAModif["carnetVaccin"];
             $certificat = $enfantAModif["certificat"];
-            print_r($this->request->getFile('carnetVaccin'));
+            // print_r($this->request->getFile('carnetVaccin'));
 
             if ($img2->isValid() && !$img2->hasMoved()) {
                 @unlink(ROOTPATH . "/public/upload/certificat/" . $enfantAModif['certificat']);

@@ -6,8 +6,8 @@
 
 <?= $this->section('content');
 echo "<pre>";
-print_r($reservation);
-print_r($horaires);
+// print_r($reservation);
+// print_r($horaires);
 $array2d = [];
 foreach ($horaires as $element) {
     $array = [];

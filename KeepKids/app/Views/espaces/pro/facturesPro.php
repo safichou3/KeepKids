@@ -11,7 +11,7 @@
 foreach ($all as $element) {
     echo $element;
 }
-print_r($all);
+// print_r($all);
 ?> -->
 
 <div id="invoice">
