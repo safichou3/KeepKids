@@ -21,7 +21,7 @@
 
         <div class="card-co-pro card-co">
 
-            <h2 class="section-title-pro">Connexion pro</h2>
+            <h1 class="section-title-pro">Connexion pro</h1>
 
             <form action="" method="POST" action="<?= base_url(); ?>/espaces/pro/connexionPro" enctype="multipart/form-data">
                 <?php if (!empty($validation)) {
