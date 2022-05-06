@@ -42,229 +42,115 @@ body {
 }
 
 
-/* PLANNING */
-
-#days {
-	position: absolute;
-	left: 10.3%;
-	top: 40%;
-	/*10%*/
-	min-width: 630px;
-	width: 79.5%;
-	height: 23%;
-	border-bottom: 4px solid #ff944d;
-	transition: top 2s;
-}
-
-#title {
-	position: absolute;
-	left: 10.3%;
-	top: 30%;
-	/*0%*/
-	text-align: center;
-	min-width: 667px;
-	width: 79.5%;
-	min-height: 55px;
-	height: 10%;
-	transition: top 2s;
-	background: #ff944d;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 55px;
-	letter-spacing: 10px;
-	color: #fff;
-}
-
-.test {
-	width: 90px;
-	height: 100px;
-	background: #fff;
-	border: none;
-	transition: -webkit-transform 0.5s, box-shadow 0.5s, background 0.5s, color 0.5s;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 40px;
-	text-align: center;
-	cursor: pointer;
-	color: black;
-}
-
-.test:hover {
-	-webkit-transform: scale(1.3);
-	box-shadow: 0px 0px 20px #000;
-	background: #ff944d;
-	color: white;
-}
-
-.test:active {
-	background: #cc5200;
-}
-
-.testCur {
-	width: 90px;
-	height: 100px;
-	background: #ff651a;
-	border: none;
-	transition: -webkit-transform 0.5s, box-shadow 0.5s, background 0.5s, color 0.5s;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 40px;
-	text-align: center;
-	cursor: pointer;
-	color: white;
-}
-
-.testCur:hover {
-	-webkit-transform: scale(1.3);
-	box-shadow: 0px 0px 20px #000;
-	background: #ff651a;
-	color: white;
-}
-
-.testCur:active {
-	background: #cc5200;
-}
-
-.test2 {
-	min-width: 90px;
-	width: 14.28%;
-	height: 30px;
-	border: none;
-	background: #ff944d;
-	color: #fff;
-	transition: -webkit-transform 0.5s, box-shadow 0.5s, background 0.5s;
-	font-family: 'Quicksand', sans-serif;
-	text-align: center;
-}
-
-#modalBox {
-	position: absolute;
-	left: 10.3%;
-	top: 30%;
-	min-width: 667px;
-	width: 79.5%;
-	height: 0%;
-	/*40%*/
-	background: #ff944d;
-	transition: height 2s;
-	border-radius: 40px;
-	z-index: 2;
-}
-
-#number {
-	position: absolute;
-	left: 100px;
-	top: 20px;
-	font-size: 70px;
-	font-family: 'Quicksand', sans-serif;
-	color: white;
-	opacity: 0;
-	transition: opacity 2s, left 3s;
-}
-
-#close {
-	position: absolute;
-	left: 92%;
-	top: 20px;
-	font-size: 60px;
-	font-family: 'Quicksand', sans-serif;
-	color: white;
-	cursor: pointer;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 2s, color 0.3s;
-}
-
-#close:hover {
-	color: #ffc299;
-}
-
-#reminders {
-	position: absolute;
-	left: 31%;
-	top: 100px;
-	font-size: 30px;
-	font-family: 'Quicksand', sans-serif;
-	color: white;
-	cursor: pointer;
-	opacity: 1;
-	border-left: 3px solid #fff;
-	display: none;
-	transition: opacity 1s, top 3s;
-}
-
-#back {
-	position: absolute;
-	left: 3%;
-	top: 26%;
-	width: 25px;
-	height: 25px;
-	background: #ff944d;
-	border: 3px solid #cc5200;
-	border-radius: 50px;
-	font-size: 7px;
-	cursor: pointer;
-	transition: background 0.2s, -webkit-transform 0.5s;
-	z-index: 1;
-}
-
-#back:hover {
-	-webkit-transform: scale(1.2);
-}
-
-#back:active {
-	background: #ffc299;
-}
-
-#forward {
-	position: absolute;
-	left: 92%;
-	top: 26%;
-	width: 25px;
-	height: 25px;
-	background: #ff944d;
-	border: 3px solid #cc5200;
-	border-radius: 50px;
-	cursor: pointer;
-	transition: background 0.2s, -webkit-transform 0.5s;
-	z-index: 1;
-}
-
-#forward:hover {
-	-webkit-transform: scale(1.2);
-}
-
-#forward:active {
-	background: #ffc299;
-}
-
-#month {
-	position: relative;
-	top: -60%;
-	left: 2%;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 1em;
-	color: #fff;
-	z-index: 0;
-}
-
-.uncheck {
-	list-style-type: circle;
-	opacity: 1;
-	transition: opacity 5s;
-}
-
-.uncheck:hover {
-	list-style-type: disc;
-	text-decoration: line-through;
-}
-
-.check {
-	list-style-type: disc;
-	text-decoration: line-through;
-	opacity: 1;
-	transition: opacity 5s;
-}
-
-.check:hover {
+/* ============================================ PLANNING ============================================ */
+.link-modify-planning {
 	text-decoration: none;
+	/* text-align: center; */
+	color: #fff;
+}
+
+.text-align {
+	text-align: center;
+}
+
+.box_planning {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.legend-planning {
+	width: 15px;
+	height: 15px;
+	margin: 5px;
+	border-radius: 20px
+}
+
+.red-planning {
+	background-color: red;
+}
+
+.green-planning {
+	background-color: green;
+}
+
+.orange-planning {
+	background-color: #ffa24f;
+}
+
+.border-style-planning {
+	border: 1px solid #F9C6C4
+}
+
+
+.body-planning {
+	padding: 100px 0;
+}
+
+#nombreCase {
+	width: 100%;
+	border: none;
+	background-color: #ff000000;
+	font-size: inherit;
+}
+
+#planningBody {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: auto;
+	color: black;
+	font-size: 20px;
+	justify-content: center;
+}
+
+.dayCol {
+	width: 123px;
+	height: 28px;
+	border: none;
+	margin: 3px;
+	background-color: #ffffff70;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 8px;
+	box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+}
+
+.dayCol a {
+	text-decoration: none;
+	color: grey;
+	justify-content: center;
+
+}
+
+.SemaineN {
+	background-color: #ffffff;
+	border: none;
+	text-align: center;
+	font-size: 85%;
+}
+
+
+.dayCase {
+	background-color: #ff7a7a;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	font-size: 65%;
+	color: white;
+}
+
+.break {
+	flex-basis: 100%;
+	height: 0;
+}
+
+.legend_box {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
 }
 
 /* ======================================= CSS TABLEAU DES ENFANTS ======================================= */
@@ -367,9 +253,9 @@ tbody:hover td {
 }
 
 .input-facture {
-    border: none;
-    width: 341px;
-	background-color:#fe948c00;
+	border: none;
+	width: 341px;
+	background-color: #fe948c00;
 }
 
 #creche-client {
@@ -429,6 +315,22 @@ tbody:hover td {
 	.img_parents {
 		width: 100%;
 	}
+}
+
+@media screen and (max-width: 550px) {
+	.box_planning {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.table_div {
+		width: 85%;
+	}
+
+	.tab .dataTables_wrapper {
+		width: 100%;
+	}
+
 }
 
 @media screen and (max-width: 300px) {

@@ -35,17 +35,6 @@ html, body {
 
 /* ============================= NAVBAR ============================= */
 
-/* nav {
-  height: 4rem;
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 3px 20px rgb(0 0 0 / 20%);
-  display: flex;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-} */
-
 nav {
   height: 4rem;
   width: 100%;
@@ -61,6 +50,11 @@ nav {
 .logo img {
   height: 5rem;
   width: 5rem;
+}
+
+.link-logo {
+  color: red;
+  text-decoration: none;
 }
 
 /*Styling Links*/
@@ -80,6 +74,10 @@ nav {
   color: #2d2d2d;
 }
 
+/* .nav-links li a:active{
+  color: red;
+} */
+
 .nav-links li a:hover {
   color: #f3c964;
 }
@@ -88,16 +86,16 @@ nav {
   position: relative;
 } */
 
-.nav-links li a::before {
-  /* content: "";
+/* .nav-links li a::before { */
+/* content: "";
   display: block;
   height: 0.2rem;
   width: 0%;
   background-color: #f3c964;
   position: absolute; */
-  transition: all ease-in-out 250ms;
-  /* margin: 0 0 0 10%; */
-}
+/* transition: all ease-in-out 250ms; */
+/* margin: 0 0 0 10%; */
+/* } */
 
 .nav-links li a:hover::before {
   width: 80%;
@@ -112,7 +110,6 @@ nav {
   margin-left: 2vw;
   font-size: 1rem;
   cursor: pointer;
-
 }
 
 .login-button:hover {
@@ -310,6 +307,14 @@ p.title-accueil {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+}
+
+.btn-search-icon {
+  text-decoration: none;
+}
+
+.fi-br-search {
+  color: #fff;
 }
 
 /*Resize the wrap to see the search bar change!*/
@@ -699,10 +704,8 @@ footer ul {
 
 
 
-/* ============================= RESPONSIVE SAFIA ============================= */
+/* ============================= RESPONSIVE ============================= */
 
-
-/* ====================== RESPONSIVE MENU ====================== */
 /*Stying for small screens*/
 @media screen and (max-width: 1300px) {
   #container3 {
@@ -841,12 +844,6 @@ footer ul {
   }
 }
 
-/* @media screen and (max-width: 800px) {
- 
-} */
-
-/* ====================== RESPONSIVE ACCUEIL ====================== */
-
 @media screen and (max-width: 550px) {
   .logo img {
     width: 65%;
@@ -879,14 +876,14 @@ footer ul {
     color: #000;
   }
 
-.searchButton a{
-  text-decoration: none;
-}
+  .searchButton a {
+    text-decoration: none;
+  }
 
   /* .bg-opacity{
     background-color: #00000052;
   } */
-  h1.title-accueil,p.title-accueil {
+  h1.title-accueil, p.title-accueil {
     display: block;
     color: #fff;
     position: relative;
@@ -922,6 +919,7 @@ footer ul {
     display: block;
     font-size: 12px;
     color: #FFF;
+    text-decoration: none;
   }
 
   .btn-ins-accueil {
@@ -1017,20 +1015,89 @@ footer ul {
     margin-bottom: 10px;
   }
 
-  .search{
+  .search {
     position: absolute;
     top: 103%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .tt-accueil-bg {
+    top: 73px;
+    width: 290px;
+    left: 3px;
+  }
+
+  .search {
+    top: 85%;
+  }
+
+  .text-input {
+    position: relative;
+    font-size: 0.8rem;
+    top: 3.5rem;
+  }
+
+  .btn-ins-accueil {
+    top: 205px;
+    left: 5%;
+    font-size: 1rem;
+  }
+  .card-pilot{
+    margin: 0 15px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .tt-accueil-bg {
     top: 67px;
-    width: 290px;
+    /* width: 290px; */
   }
 
   .btn-ins-accueil {
     top: 160px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .tt-accueil-bg {
+    left: -13px;
+    height: 270px;
+    top: 77px;
+    /* top: 67px;
+    width: 290px; */
+  }
+
+  .btn-ins-accueil {
+    top: 160px;
+  }
+
+  p.title-accueil {
+    font-size: 1.2rem;
+    width: 100%;
+    left: 0%;
+  }
+
+  h1.title-accueil, p.title-accueil {
+    top: -195px;
+  }
+
+  .search {
+    top: 80%;
+  }
+
+  .text-input {
+    /* position: relative;
+    font-size: 0.8rem; */
+    top: 1rem;
+    /* display: block; */
+    /* color: #FFF; */
+  }
+
+  .btn-ins-accueil {
+    top: 140px;
+    left: 0%;
+    padding: 16px 50px;
   }
 }
 
@@ -1101,86 +1168,3 @@ footer ul {
 
 
 /* ====================== FIN RESPONSIVE ACCUEIL ====================== */
-
-/* @media screen and (max-width: 1300px) {
-
-  .ul-footer {
-    font-size: 12px;
-  }
-
-  .wrap2 {
-    top: 30%;
-  }
-} */
-
-
-/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
-
-#container3 {
-
-  font-size: 36px;
-
-}
-
-#flip {
-  height: 50px;
-  overflow: hidden;
-}
-
-#flip>div>div {
-  color: #fff;
-  padding: 4px 12px;
-  height: 45px;
-  margin-bottom: 45px;
-  display: inline-block;
-}
-
-#flip div:first-child {
-  animation: show 5s linear infinite;
-}
-
-#flip div div {
-  background: #e8b80a;
-}
-
-#flip div:first-child div {
-  background: #4ec7f3;
-}
-
-#flip div:last-child div {
-  background: #f37777;
-}
-
-@keyframes show {
-  0% {
-    margin-top: -270px;
-  }
-
-  5% {
-    margin-top: -180px;
-  }
-
-  33% {
-    margin-top: -180px;
-  }
-
-  38% {
-    margin-top: -90px;
-  }
-
-  66% {
-    margin-top: -90px;
-  }
-
-  71% {
-    margin-top: 0px;
-  }
-
-  99.99% {
-    margin-top: 0px;
-  }
-
-  100% {
-    margin-top: -270px;
-  }
-} */

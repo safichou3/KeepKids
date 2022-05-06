@@ -250,6 +250,7 @@ tbody:hover tr:hover td {
 }
 
 /* reservation */
+
 .card-add-reservation {
   display: flex;
   flex-direction: column;
@@ -261,6 +262,7 @@ tbody:hover tr:hover td {
   box-shadow: black;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
+
 .continuer {
   /* margin-top: -6px; */
   padding: 17px 20px;
@@ -282,12 +284,45 @@ tbody:hover tr:hover td {
   margin: 2%;
   border-radius: 20px;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+}
 
 /* ============================= RESPONSIVE ESPACE PARENTS ============================= */
 
 @media screen and (max-width: 1280px) {
   .card-add-kids {
     width: 25%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* .kids {
+    margin-top: 30px;
+  } */
+
+  .card-add-kids {
+    width: 65%;
+  }
+
+  summary {
+    margin-bottom: 30px;
+  }
+
+  input.access {
+    font-size: 65%;
+  }
+
+  .card-add-reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    height: auto;
+    margin: 10% 5%;
+  }
+  
+  #map{
+    width: 80%;
+    left: 7%;
   }
 }
 
@@ -307,5 +342,4 @@ tbody:hover tr:hover td {
     margin-right: auto; */
     margin: 33px auto;
   }
-}
 }

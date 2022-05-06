@@ -11,6 +11,11 @@
 
 <?= $this->section('content') ?>
 
+<br>
+<br>
+<br>
+
+
 <details>
     <summary>
         <div class="buttonPurple">
@@ -80,7 +85,7 @@
         <div class='link-btn-kids-div'>
        
         <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/modifEnfants/" . $element["id"] . $element["id"] . "><i class='fi fi-rs-pencil'></i></a>
-        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Reserver</button></h4></div>";
+        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><a href='" . base_url() . "/espaces/parents/reservations/" . "'><button class='access'>Reserver</button></a></h4></div>";
     }
     ?>
 </div>
@@ -135,7 +140,7 @@
         <br>
         <div class='link-btn-kids-div'>
         <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/modifEnfants/" . $element["id"] . $element["id"] . "><i class='fi fi-rs-pencil'></i></a>
-        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/deleteAccompagnant/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Reserver</button></h4></div>";
+        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/deleteAccompagnant/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a><a href='" . base_url() . "/espaces/parents/reservations/" . "'></div><button class='access'>Reserver</button></a></h4></div>";
     }
     ?>
 </div>

@@ -5,8 +5,11 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
-
+<style>
+    footer {
+        display: none;
+    }
+</style>
 <?php
 // // print_r(date("D.F.Y", 1654252934));
 // // print_r($_POST);
@@ -60,21 +63,16 @@
                     } else {
                         echo "<div style='width:15px;height:15px;background-color:#ffa24f; margin:5px;border-radius:20px'></div>";
                     }
-                    if (count($capacite[$y][$i - 6]) != 0) {
-                        echo "<span>" . count($capacite[$y][$i - 6]) . "/" . $semaine[$y]['capacité'] . "</span>";
-                    }
-                    echo "<a href='" . base_url() . "/espaces/pro/enfantsPlanning/" . $semaine[$y]["date"] . "/" . $i . "'><i class='fi fi-rs-eye'></i></a>";
-                    // echo "x = " . $i - 6 . "y = " . $y;
                 }
-                echo "</div>";
+                echo "<div class='break'></div>";
             }
-        }
-        echo "<div class='break'></div>";
-    }
 
 
-    ?>
+            ?>
+        </div>
+    <!-- </table> -->
 </div>
+<?= $this->endSection() ?>
 
 <style>
     footer {

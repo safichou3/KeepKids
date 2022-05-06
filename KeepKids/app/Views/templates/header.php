@@ -28,7 +28,7 @@
                 </style>
                 <!-- CRECHE -->
                 <div class="menu">
-                    <div class="logo"><a style="color: red;text-decoration:none;" href="<?= base_url(); ?>/espaces/pro/espace_pro">MON ESPACE PRO</a></div>
+                    <div class="logo"><a class="link-logo" href="<?= base_url(); ?>/espaces/pro/espace_pro">MON ESPACE PRO</a></div>
                 </div>
                 <li><a href="<?= base_url(); ?>/espaces/pro/planningPro">PLANNING</a></li>
                 <li><a href="<?= base_url(); ?>/espaces/pro/relancesPro">PAIEMENTS & RELANCES</a></li>
