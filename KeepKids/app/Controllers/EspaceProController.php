@@ -60,7 +60,7 @@ class EspaceProController extends BaseController
     function generateProfil()
     {
         return [
-            "id" => session('id'),            
+            "id" => session('id'),
             "nom" => $this->request->getPost('nom'),
             "prenom" => $this->request->getPost('prenom'),
             "email" => $this->request->getPost('email'),
@@ -176,7 +176,7 @@ class EspaceProController extends BaseController
         for ($y = 0; $y < 7; $y++) {
             $capaciteParHeureTemporaire = [];
             for ($i = 6; $i < 20; $i++) {
-                array_push($capaciteParHeureTemporaire, $this->reservationsModel->findEnfantByDayAndHour(session('id'),$semaine[$y]['date'], $i));
+                array_push($capaciteParHeureTemporaire, $this->reservationsModel->findEnfantByDayAndHour(session('id'), date('Y-m-d', $semaine[$y]['date']), $i));
             }
             array_push($capacite, $capaciteParHeureTemporaire);
         }
@@ -190,17 +190,16 @@ class EspaceProController extends BaseController
     }
     public function enfantsPlanning($date, $heure)
     {
+        $liste = $this->reservationsModel->findEnfantByDayAndHour(session('id'), date('Y-m-d', $date), $heure);
         $data = [
 
-            'liste' => $this->reservationsModel->findEnfantByDayAndHour(session('id'),$date, $heure),
+            'liste' => $liste,
             'date' => $date,
 
-            
+
             "accompagnant" => $this->accompagnantsModel->findAccompagnantByEnfant()
         ];
 
         echo view("espaces/pro/enfantsPlanning", $data);
     }
-
-    
 }
