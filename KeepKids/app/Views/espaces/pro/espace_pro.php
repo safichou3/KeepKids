@@ -9,6 +9,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<?php print_r(session("prenom")); ?>
 
 <div class="body-pro">
     <div class="content-body content-body-pro">
@@ -17,7 +18,7 @@
             <div class="top-left-espaces top-left-pro">
                 <div class="top-text-pro">
                     <h3 class="mini-title mini-title-pro">Vous avez la main sur votre planning</h3>
-                    <h1 class="hello hello-pro">Bonjour Houda,</h1>
+                    <h1 class="hello hello-pro">Bonjour, <?= session("prenom") ?></h1>
                     <p class="mini-text mini-text-pro">L'espace Professionnel KeepKids vous permet de gérer le planning, les factures clients, et les paiements en toute sérénité </p>
                 </div>
 

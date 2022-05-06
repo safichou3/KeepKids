@@ -6,11 +6,13 @@
 
 <?= $this->section('content') ?>
 <?= "<br><br><br>" ?>
-<?php print_r($enfants); ?>
-<?php print_r($_POST);
-print_r($strtotime);
-print_r($horaires);
+<?php
+print_r($enfants);
+print_r($_POST);
+// print_r($strtotime);
+// print_r(session('id'));
 print_r($capacite);
+print_r($horaires);
 ?>
 
 <br> <br>

@@ -223,12 +223,12 @@ class EspaceParentsController extends BaseController
         $date = $this->request->getPost('date');
         $capacite = [];
         for ($i = 6; $i < 20; $i++) {
-            array_push($capacite, $this->reservationsModel->findEnfantByDayAndHour(session('id'), $date, $i));
+            array_push($capacite, $this->reservationsModel->findEnfantByDayAndHour($id, $date, $i));
         }
         $data = [
             'enfants' => $this->enfantsModel->findEnfantsByParent(session('id')),
             'horaires' => $this->planningModel->getHoraire($id, strtotime($date)),
-            'strtotime' => strtotime($date),
+            'strtotime' => $date,
             'capacite' => $capacite
         ];
 
@@ -282,11 +282,11 @@ class EspaceParentsController extends BaseController
         return view("espaces/parents/paiements");
     }
     // PROFIL    
-    
+
     function generateProfil()
     {
         return [
-            "id" => session('id'),           
+            "id" => session('id'),
             "nom" => $this->request->getPost('nom'),
             "prenom" => $this->request->getPost('prenom'),
             "email" => $this->request->getPost('email'),
@@ -321,5 +321,4 @@ class EspaceParentsController extends BaseController
             ]);
         }
     }
-
 }
