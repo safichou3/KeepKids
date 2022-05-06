@@ -190,10 +190,10 @@ class EspaceProController extends BaseController
     }
     public function enfantsPlanning($date, $heure)
     {
-        $capacite = $this->reservationsModel->findEnfantByDayAndHour(session('id'), $date, $heure);
+        $liste = $this->reservationsModel->findEnfantByDayAndHour(session('id'), date('Y-m-d', $date), $heure);
         $data = [
 
-            'capacite' => $capacite,
+            'liste' => $liste,
             'date' => $date,
 
 
