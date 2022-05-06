@@ -6,13 +6,14 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+
 <div class="body-parents">
   <div class="content-body-parents">
 
     <div class="top-empty">
       <div class="profil-top">
         <h3 class="mini-title-parents">Profil</h3>
-        <img class="img-profil-parents" src="<?= base_url(); ?>/img/profil-pro-avatar.svg" alt="">
+        <img class="img-profil-parents" src="<?= base_url(); ?>/img/sammy.jpg" alt="">
       </div>
       <a class="link-mail-parents" href="mailto:addresse@duparent.com"><button class="mail-parents">parent@gmail.com</button></a>
     </div>
@@ -21,13 +22,22 @@
       <div class="middle-left-parents">
         <div class="middle-text-parents">
           <div class="kids">
-            <h3 class="title-card-parents">Profil de <?=$profil["nom"];?> <?=$profil["prenom"];?> </h3>
-            <h5>Mon nom: <?=$profil["nom"];?></h5>
-            <h5>Mon Prénom: <?=$profil["prenom"];?></h5>
-            <h5>Mon adresse e-mail: <?=$profil["email"];?></h5>
-            <h5>Mon numéro de téléphone: <?=$profil["tel"];?></h5>
-            <h5>Mon adresse: <?=$profil["adresse"];?></h5>
-            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/ModifProfil/<?=$profil["id"];?>"><button class="access">Modifier mon profil</button></a>
+              <form method='POST' action="<?= base_url()?>/espaces/parents/ModifProfil/<?= session("id"); ?>" enctype='multipart/form-data'>
+            <h3 class="title-card-parents">Modifier mon profil</h3><br>
+            <label>Nom d'utilisateur</label><br>
+            <input type="text" name="nom" value="<?=$profil[0]["nom"];?>"><br>
+            <label>Prenom d'utilisateur</label><br>
+            <input type="text" name="prenom" value="<?=$profil[0]["prenom"];?>"><br>
+            <label>Adresse E-mail</label><br>
+            <input type="email" name="email" value="<?=$profil[0]["email"];?>"><br>
+            <label>Téléphone</label><br>
+            <input type="text" name="tel" value="<?=$profil[0]["tel"];?>"><br>
+            <label>Adresse</label><br>
+            <input type="text" name="adresse" value="<?=$profil[0]["adresse"];?>"><br>
+
+            <input type="submit" value="Valider mes modifications" class="access">
+</form>
+            
           </div>
         </div>
       </div>

@@ -871,7 +871,9 @@ footer ul {
     color: #000;
   }
 
-
+.searchButton a{
+  text-decoration: none;
+}
 
   /* .bg-opacity{
     background-color: #00000052;

@@ -17,14 +17,17 @@
       </div>
       <a class="link-mail-parents" href="mailto:professionnel@gmail.com"><button class="mail-parents"><i class="fi fi-rs-envelope"></i> professionnel@gmail.com</button></a>
     </div>
-
     <div class="middle-parents">
       <div class="middle-left-parents">
         <div class="middle-text-parents">
           <div class="kids">
-            <h3 class="title-card-parents">Nom de l'utilisateur</h3>
-            <img class="img-title-card-parents" src="<?= base_url(); ?>/img/infos-enfants.svg" alt="">
-            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="access">Modifier le profil</button></a>
+            <h3 class="title-card-parents">Profil de <?=$profilPro["nom"];?> <?=$profilPro["prenom"];?> </h3>
+            <h5>Mon nom: <?=$profilPro["nom"];?></h5>
+            <h5>Mon Prénom: <?=$profilPro["prenom"];?></h5>
+            <h5>Mon adresse e-mail: <?=$profilPro["email"];?></h5>
+            <h5>Mon numéro de téléphone: <?=$profilPro["tel"];?></h5>
+            <h5>Mon adresse: <?=$profilPro["adresse"];?></h5>
+            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/ModifProfilPro/<?=$profilPro["id"];?>"><button class="access">Modifier mon profil</button></a>
           </div>
         </div>
       </div>

@@ -16,4 +16,10 @@ class ParentsModel extends Model
     public function findByEmail(string $email) {
         return $this->where(['email' => $email])->first();
     }
+    public function findParentsById($id)
+    {
+        return $this->select("parent.*")
+            ->where(['id' => $id])
+            ->findAll();
+    }
 }

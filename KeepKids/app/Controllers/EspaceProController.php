@@ -32,10 +32,10 @@ class EspaceProController extends BaseController
     public function facturesPro()
     {
         $all = $this->reservationsModel->findAllByReservation();
-        
+
         $data = [
             "all" => $all
-            
+
         ];
 
         echo view("espaces/pro/facturesPro", $data);
@@ -47,18 +47,53 @@ class EspaceProController extends BaseController
     public function enfantsPro()
     {
         $enfant = $this->reservationsModel->findAllEnfantsByPro();
-        $accompagnant = $this->accompagnantsModel->findAccompagnantByEnfant();
+
         $data = [
             "enfant" => $enfant,
-            "accompagnant" => $accompagnant
+            "accompagnant" => $this->accompagnantsModel->findAccompagnantByEnfant()
         ];
 
         echo view("espaces/pro/enfantsPro", $data);
     }
 
-    public function profilPro()
+
+    function generateProfil()
     {
-        echo view("espaces/pro/profilPro");
+        return [
+            "id" => session('id'),            
+            "nom" => $this->request->getPost('nom'),
+            "prenom" => $this->request->getPost('prenom'),
+            "email" => $this->request->getPost('email'),
+            "tel" => $this->request->getPost('tel'),
+            "adresse" => $this->request->getPost('adresse')
+        ];
+    }
+    function profilPro()
+    {
+        $profilPro = $this->proModel->find(session('id'));
+        $data = [
+            "profilPro" => $profilPro
+        ];
+
+        echo view("espaces/pro/profilPro", $data);
+    }
+
+
+    function modifProfil(int $id)
+    {
+        $parents = $this->parentsModel->findParentsById(session("id"));
+
+        if ($this->request->getMethod() === 'post') {
+
+            $data = $this->generateProfil();
+
+            $this->parentsModel->update($id, $data);
+            return redirect()->to('espaces/parents/profil');
+        } else {
+            echo view("espaces/parents/modifProfil", [
+                "profil" => $parents
+            ]);
+        }
     }
     public function gestionHoraire($day, $date)
     {
@@ -130,13 +165,42 @@ class EspaceProController extends BaseController
 
         if ($this->request->getMethod() === 'post') {
             $semaine = $this->request->getPost('semaine');
+            if ($this->planningModel->semaineExist($semaine) == false) {
+                return redirect()->to('espaces/pro/create/planningPro');
+            }
         } else {
             $semaine = date("W");
         }
+        $capacite = [];
+        $semaine = $this->planningModel->weekByPost($semaine);
+        for ($y = 0; $y < 7; $y++) {
+            $capaciteParHeureTemporaire = [];
+            for ($i = 6; $i < 20; $i++) {
+                array_push($capaciteParHeureTemporaire, $this->reservationsModel->findEnfantByDayAndHour(session('id'),$semaine[$y]['date'], $i));
+            }
+            array_push($capacite, $capaciteParHeureTemporaire);
+        }
+
         $data = [
-            'semaine' => $this->planningModel->weekByPost($semaine)
+            'semaine' => $semaine,
+            'capacite' => $capacite
         ];
 
         echo view("espaces/pro/planningPro", $data);
     }
+    public function enfantsPlanning($date, $heure)
+    {
+        $data = [
+
+            'liste' => $this->reservationsModel->findEnfantByDayAndHour(session('id'),$date, $heure),
+            'date' => $date,
+
+            
+            "accompagnant" => $this->accompagnantsModel->findAccompagnantByEnfant()
+        ];
+
+        echo view("espaces/pro/enfantsPlanning", $data);
+    }
+
+    
 }

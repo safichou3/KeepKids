@@ -74,8 +74,8 @@
         Régime Alimentaire: " . $element["description"] . "<br><br>
         
         
-         <a class='link-btn-kids vaccin' href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download>carnet <br> vaccination</a>
-        <a class='link-btn-kids certificat' href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download>certificat</a><br>
+         <a class='link-btn-kids vaccin' href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download>Carnet de vaccination</a>
+        <a class='link-btn-kids certificat' href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download>   Certificat</a><br>
         <br>
         <div class='link-btn-kids-div'>
        

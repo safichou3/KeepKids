@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class ReservationModel extends Model
 {
-    protected $table          = 'reservation';
-    protected $allowedFields  = ['idPro', 'idEnfant', 'date', 'heure', 'statut', 'facture'];
+    protected $table = 'reservation';
+    protected $allowedFields = ['idPro', 'idEnfant', 'date', 'heure', 'statut', 'facture'];
     // protected $createdField   = 'created_at';
     // protected $updatedField   = 'updated_at';
     // protected $useSoftDeletes = true;
@@ -34,6 +34,23 @@ class ReservationModel extends Model
         return $this->select("reservation.*")
             ->join('pro', 'reservation.idPro = pro.id')
             ->where(['idPro' => $id])
+            ->findAll();
+    }
+    public function findEnfantByDay($date)
+    {
+        return $this->select("enfant.*,reservation.*,")
+            ->join('enfant', 'reservation.idEnfant = enfant.id')
+            ->where(['idPro' => session("id")])
+            ->where(['date' => date('Y-m-d', $date)])
+            ->findAll();
+    }
+    public function findEnfantByDayAndHour($id, $date, $heure)
+    {
+        return $this->select("enfant.*,reservation.*,")
+            ->join('enfant', 'reservation.idEnfant = enfant.id')
+            ->where(['idPro' => $id])
+            ->where(['date' => $date])
+            ->where(['heure' => $heure])
             ->findAll();
     }
 }

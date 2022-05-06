@@ -33,4 +33,32 @@ class planningModel extends Model
             ->findAll();
         return $semaine;
     }
+    public function getHoraires($id)
+    {
+        return $this->select("planning.*")
+            ->where(['idPro' => $id])
+            ->where(['date >' => time()])
+            ->findAll();
+    }
+    public function semaineExist($semaine)
+    {
+        $exist = $this->select("planning.*")
+            ->where(['idPro' => session('id')])
+            ->where(['semaine' => $semaine])
+            ->findAll();
+        if (!empty($exist)) {
+            return true;
+        }
+        return false;
+    }
+    public function getHoraire($id, $date)
+    {
+        // $date = strtotime($date);
+        return $this->select("planning.*")
+            // ->where(['idPro' => $id])
+            ->where(['idPro' => $id])
+            // ->where(['date' => 1651813200])
+            ->where(['date' => $date])
+            ->findAll();
+    }
 }
