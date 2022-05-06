@@ -5,6 +5,13 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<style>
+    body {
+        background-color: #FF817B;
+    }
+</style>
+
+
 
 <body onload="initialize()">
     <div class="body-form body-co-pro body-pro">
@@ -25,7 +32,7 @@
                             <input type="radio" name="idEtablissement" value="1" checked required class="radio-margin-right">
                             <label class="radio-margin" for="1">Assistante Maternelle</label>
                         </div>
-                        <div class="radiio-group2 radio-group">
+                        <div class="radio-group2 radio-group">
                             <input type="radio" name="idEtablissement" value="2" required>
                             <label for="2">Creche</label>
                         </div>
@@ -60,13 +67,6 @@
                     </div>
                     <div class="ins-group">
                         <div class="input-label margin-group-right">
-                            <label>Taux Horaire</label>
-                            <input class="input-inscription" type="number" name="tauxHoraire" placeholder="Taux Horaire" require>
-                        </div>
-
-                    </div>
-                    <div class="ins-group">
-                        <div class="input-label margin-group-right">
                             <label>Email *</label>
                             <input class="input-inscription" type="email" name="email" placeholder="Email" required>
                         </div>
@@ -75,24 +75,50 @@
                             <input class="input-inscription" type="tel" name="tel" placeholder="Telephone" required>
                         </div>
                     </div>
+
                     <div class="container">
                         <div class="row">
                             <div class="col-6 adresse">
                                 <!-- <form novalidate> -->
                                 <div class="form-row">
-                                    <label>Adresse *</label>
-                                    <input type="textbox" id="address" class="form-control inputRue" name="adresse" placeholder="Adresse">
-                                    <input type="text" class="form-control" pattern="^[0-9]{1}[0-9a-bA-B]{1}[0-9]{3}$" id="inputCodePostal" minlength="5" maxlength="5" name="cp" placeholder="Code Postal">
-                                    <input type="text" class="form-control" id="inputVille" name="ville" placeholder="Ville">
+                                    <div class="ins-group">
+                                        <div class="input-label margin-group-right">
+                                            <label>Adresse *</label>
+                                            <input type="textbox" id="address" class="form-control inputRue input-inscription" name="adresse" placeholder="Adresse">
+                                        </div>
+                                        <div class="input-label margin-group-right">
+                                            <label>Code Postal</label>
+                                            <input type="text" class="form-control input-inscription" pattern="^[0-9]{1}[0-9a-bA-B]{1}[0-9]{3}$" id="inputCodePostal" minlength="5" maxlength="5" name="cp" placeholder="Code Postal">
+                                        </div>
+                                        <div class="input-label">
+                                            <label>Ville</label>
+                                            <input type="text" class="form-control input-inscription" id="inputVille" name="ville" placeholder="Ville">
+                                        </div>
+                                    </div>
                                 </div>
 
+                                <div class="col-6 proposition">
+                                    <div class="adress-feedback">
+                                        <ul class="list-addresses">
+                                        </ul>
+                                    </div>
+                                </div>
                                 <details>
-                                    <summary>
+                                    <summary class="btn-ins-lat-long">
+                                        <!-- <div class="btn-ins-lat-long"> -->
                                         <div class="buttonPurple" onclick="codeAddress()">
                                             C'est bien mon adresse
                                         </div>
+                                        <!-- </div> -->
                                     </summary>
                                     <div class="details-modal-content">
+
+                                        <div class="input-label">
+                                            <!-- <div class="input-inscription input-full-width"> -->
+                                                <label>Taux Horaire</label>
+                                                <input class="input-inscription input-full-width" type="number" name="tauxHoraire" placeholder="Taux Horaire" require>
+                                            <!-- </div> -->
+                                        </div>
 
                                         <div class="ins-group doc-download">
                                             <div class="input-label">
@@ -128,36 +154,35 @@
                                         * Champs Obligatoires
                                         <div class="ins-group">
                                             <div class="input-label">
-                                                <input type="text" id="inputCache" name="latLng">
+                                                <input type="text" id="inputCache" name="latLng" class="input-inscription lat-long-input">
                                                 <input class="inscription" type="submit" value="Je m'inscris" name="inscriptionPro" onclick="validate()">
 
                                             </div>
                                         </div>
+                                    </div>
+                                </details>
 
+                            </div>
+                        </div>
+                    </div>
                 </form>
+                <!-- </form> -->
             </div>
-            </details>
-            <!-- </form> -->
+
         </div>
-        <div class="col-6 proposition">
-            <div class="adress-feedback">
-                <ul></ul>
-            </div>
-        </div>
-    </div>
-    </div>
 
 
-    <!-- <div id="map"></div> -->
+        <!-- <div id="map"></div> -->
 
-    <!-- <div class="ins-group"> -->
+        <!-- <div class="ins-group"> -->
 
-    <!-- </div> -->
+        <!-- </div> -->
 
-    <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
+        <a class="link-co-ins" href="<?= base_url(); ?>/espaces/pro/connexionPro">J'aimerais me connecter</a>
     </div>
+    <!-- </div>
     </div>
-    </div>
+    </div> -->
 </body>
 <?= $this->endSection() ?>
 
