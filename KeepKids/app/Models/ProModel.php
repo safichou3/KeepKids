@@ -20,4 +20,10 @@ class ProModel extends Model
     public function findByEntreprise(string $nomEntreprise) {
         return $this->where(['nomEntreprise' => $nomEntreprise])->first();
     }
+    public function findProById($id)
+    {
+        return $this->select("pro.*")
+            ->where(['id' => $id])
+            ->findAll();
+    }
 }

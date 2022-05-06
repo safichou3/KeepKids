@@ -14,7 +14,6 @@ class EspaceProController extends BaseController
     protected $reservationsModel;
     protected $accompagnantsModel;
     protected $parentsModel;
-
     protected $proModel;
     protected $planningModel;
 
@@ -57,15 +56,14 @@ class EspaceProController extends BaseController
     }
 
 
-    function generateProfil()
+    function generateProfilPro()
     {
         return [
             "id" => session('id'),
             "nom" => $this->request->getPost('nom'),
             "prenom" => $this->request->getPost('prenom'),
             "email" => $this->request->getPost('email'),
-            "tel" => $this->request->getPost('tel'),
-            "adresse" => $this->request->getPost('adresse')
+            "tel" => $this->request->getPost('tel')
         ];
     }
     function profilPro()
@@ -79,19 +77,19 @@ class EspaceProController extends BaseController
     }
 
 
-    function modifProfil(int $id)
+    function ModifProfilPro(int $id)
     {
-        $parents = $this->parentsModel->findParentsById(session("id"));
+        $pro = $this->proModel->findProById(session("id"));
 
         if ($this->request->getMethod() === 'post') {
 
-            $data = $this->generateProfil();
+            $data = $this->generateProfilPro();
 
-            $this->parentsModel->update($id, $data);
-            return redirect()->to('espaces/parents/profil');
+            $this->proModel->update($id, $data);
+            return redirect()->to('espaces/pro/ProfilPro');
         } else {
-            echo view("espaces/parents/modifProfil", [
-                "profil" => $parents
+            echo view("espaces/pro/modifProfilPro", [
+                "profil" => $pro
             ]);
         }
     }
