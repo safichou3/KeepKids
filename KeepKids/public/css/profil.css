@@ -174,13 +174,15 @@ html {
 
 /* ================================ RESPONSIVE PROFIL ================================ */
 
+@media screen and (max-width: 550px) {
+  .img_parents {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 380px) {
   .img-profil-parents {
     width: 50%;
-  }
-
-  .img_parents {
-    display: none;
   }
 
   .btn-parents {

@@ -34,7 +34,7 @@
         <p class="title-accueil">Plateforme 100% gratuite de mise en relation de parents avec des professionnels de la garde d'enfants.</p>
         <div class="search">
             <input type="text" class="searchTerm">
-            <button class="searchButton"><a href="<?= base_url(); ?>/espaces/parents/inscriptionParents">
+            <button class="searchButton"><a class="btn-search-icon" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">
                 <i class="fi fi-br-search"></i>
             </button>
         </div>

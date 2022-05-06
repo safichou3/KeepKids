@@ -122,6 +122,26 @@ body {
 /* ============================= RESPONSIVE ESPACE PARENTS ============================= */
 @media screen and (max-width: 1280px) {}
 
+@media screen and (max-width: 550px) {
+  .img-top-right {
+    display: none;
+  }
+
+  .btn-espaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-espaces-margin {
+    margin-bottom: 30px;
+  }
+
+  .kids {
+    margin-top: 30px;
+  }
+}
+
 @media screen and (max-width: 380px) {
 
   .hello {
@@ -136,24 +156,13 @@ body {
     font-size: 19px;
   }
 
-  .btn-espaces {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
-  .img-top-right {
-    display: none;
-  }
 
   .middle-espaces {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .btn-espaces-margin {
-    margin-bottom: 30px;
-  }
 
   .kids {
     margin-top: 50px;

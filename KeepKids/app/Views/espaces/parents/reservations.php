@@ -7,7 +7,7 @@
 <?= $this->section('content') ?>
 
 <br> <br>
-<div style="display: flex; flex-direction:row">
+<div class="wrap-reservation">
     <div class='card-add-reservation'>
         <h2 class="section-title">Reservations</h2>
         <form>
