@@ -78,7 +78,7 @@ echo "</pre>"; ?>
     inputDate.addEventListener('change', date)
     console.log(array)
 
-    
+
 
     function date() {
 
