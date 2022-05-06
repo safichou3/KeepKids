@@ -35,3 +35,6 @@ Codeigniter
 
 ## Hebergement
 Hostinger
+
+## Documents
+Vous pouvez trouver les documents relatifs au projet (Devis, Cahier des charges) dans ```Public```/```Document```.
