@@ -15,19 +15,22 @@
         <h3 class="mini-title-parents">Profil</h3>
         <img class="img-profil-parents" src="<?= base_url(); ?>/img/profil-pro-avatar.svg" alt="">
       </div>
-      <a class="link-mail-parents" href="mailto:professionnel@gmail.com"><button class="mail-parents"><i class="fi fi-rs-envelope"></i> professionnel@gmail.com</button></a>
+      <a class="link-mail-parents" href="mailto:<?= $profilPro["email"]; ?>"><button class="mail-parents"><i class="fi fi-rs-envelope"></i><?= $profilPro["email"]; ?></button></a>
     </div>
     <div class="middle-parents">
       <div class="middle-left-parents">
         <div class="middle-text-parents">
           <div class="kids">
-            <h3 class="title-card-parents">Profil de <?=$profilPro["nom"];?> <?=$profilPro["prenom"];?> </h3>
-            <h5>Mon nom: <?=$profilPro["nom"];?></h5>
-            <h5>Mon Prénom: <?=$profilPro["prenom"];?></h5>
-            <h5>Mon adresse e-mail: <?=$profilPro["email"];?></h5>
-            <h5>Mon numéro de téléphone: <?=$profilPro["tel"];?></h5>
-            <h5>Mon adresse: <?=$profilPro["adresse"];?></h5>
-            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/ModifProfilPro/<?=$profilPro["id"];?>"><button class="access">Modifier mon profil</button></a>
+            <h3 class="title-card-parents">Espace PROFIL |<?= $profilPro["nomEntreprise"]; ?> </h3>
+            <h5>Mon nom: <?= $profilPro["nom"]; ?></h5>
+            <h5>Mon Prénom: <?= $profilPro["prenom"]; ?></h5>
+            <h5>Nom de l'entreprise: <?= $profilPro["nomEntreprise"]; ?></h5>
+            <h5>Adresse e-mail: <?= $profilPro["email"]; ?></h5>
+            <h5>Numéro de téléphone: <?= $profilPro["tel"]; ?></h5>
+            <h5>Numéro de siret: <?= $profilPro["siret"]; ?></h5>
+            <h5>Taux horaire de garde: <?= $profilPro["tauxHoraire"]; ?>€</h5>
+
+            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/pro/ModifProfilPro/<?= $profilPro["id"]; ?>"><button class="access">Modifier mon profil</button></a>
           </div>
         </div>
       </div>

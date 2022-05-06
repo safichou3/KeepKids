@@ -102,7 +102,7 @@
             <input class="input-inscription" type="text" name="prenomAccompagnant" placeholder="Prenom" required><br>
 
             <label>Relation avec l'enfant</label><br>
-            <select class="input-inscription"  name="relation">
+            <select class="input-inscription" name="relation">
                 <option value="">Qu'elle est votre relation avec l'enfant ?</option>
                 <option value="fraterie">Fraterie</option>
                 <option value="parents">Parents</option>

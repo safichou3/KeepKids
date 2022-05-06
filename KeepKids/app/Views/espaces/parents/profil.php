@@ -21,13 +21,13 @@
       <div class="middle-left-parents">
         <div class="middle-text-parents">
           <div class="kids">
-            <h3 class="title-card-parents">Profil de <?=$profil["nom"];?> <?=$profil["prenom"];?> </h3>
-            <h5>Mon nom: <?=$profil["nom"];?></h5>
-            <h5>Mon Prénom: <?=$profil["prenom"];?></h5>
-            <h5>Mon adresse e-mail: <?=$profil["email"];?></h5>
-            <h5>Mon numéro de téléphone: <?=$profil["tel"];?></h5>
-            <h5>Mon adresse: <?=$profil["adresse"];?></h5>
-            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/ModifProfil/<?=$profil["id"];?>"><button class="access">Modifier mon profil</button></a>
+            <h3 class="title-card-parents">Profil de <?= $profil["nom"]; ?> <?= $profil["prenom"]; ?> </h3>
+            <h5>Mon nom: <?= $profil["nom"]; ?></h5>
+            <h5>Mon Prénom: <?= $profil["prenom"]; ?></h5>
+            <h5>Mon adresse e-mail: <?= $profil["email"]; ?></h5>
+            <h5>Mon numéro de téléphone: <?= $profil["tel"]; ?></h5>
+            <h5>Mon adresse: <?= $profil["adresse"]; ?></h5>
+            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/ModifProfil/<?= $profil["id"]; ?>"><button class="access">Modifier mon profil</button></a>
           </div>
         </div>
       </div>
