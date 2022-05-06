@@ -12,7 +12,7 @@
     <div class="top-empty">
       <div class="profil-top">
         <h3 class="mini-title-parents">Profil</h3>
-        <img class="img-profil-parents" src="<?= base_url(); ?>/img/sammy.jpg" alt="">
+        <img class="img-profil-parents" src="<?= base_url(); ?>/img/profil-pro-avatar.svg" alt="">
       </div>
       <a class="link-mail-parents" href="mailto:addresse@duparent.com"><button class="mail-parents">parent@gmail.com</button></a>
     </div>

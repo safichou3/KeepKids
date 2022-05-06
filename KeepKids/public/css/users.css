@@ -45,7 +45,7 @@ html {
   border: none;
   padding: 10px 20px;
   margin: 10px 0px;
-  width: 100%;
+  width: 80%;
 }
 
 .ins-group {
@@ -79,6 +79,10 @@ html {
   margin: 30px 0;
 }
 
+.lat-long-input {
+  width: 80%;
+}
+
 .radio-group {
   margin-right: 20px;
 }
@@ -89,7 +93,7 @@ html {
 }
 
 .checkbox {
-  margin-bottom: 20px;
+  margin: 30px;
 }
 
 .politique {
@@ -99,6 +103,43 @@ html {
 
 .list-adresses {
   list-style-type: none;
+}
+
+.btn-ins-lat-long {
+  display: flex;
+  justify-content: center;
+  border: none;
+  margin-top: 30px;
+}
+
+.buttonPurple {
+  border: 2px solid #fff;
+  width: 10%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+li a {
+  text-decoration: none;
+  color: #fff;
+  margin-top: 10px;
+}
+
+li a:hover {
+  color: #000000;
+}
+
+.div-list-addresses {
+  display: flex;
 }
 
 /* ============================ CONNEXION ============================ */
@@ -145,8 +186,12 @@ html {
 }
 
 #map {
-	width: 600px; height: 200px; margin:auto; border-radius:8px;
-  }
+  width: 600px;
+  height: 200px;
+  margin: auto;
+  border-radius: 8px;
+}
+
 footer {
   display: none;
 }
@@ -168,12 +213,24 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+  .co-space {
+    margin-top: 10%;
+  }
+
   .card-co {
     width: 30%;
   }
 }
 
 @media screen and (max-width: 830px) {
+  .img-co {
+    display: none;
+  }
+
+  .card-co {
+    width: 40%;
+  }
+
   .form-center {
     display: flex;
     flex-direction: column;
@@ -209,12 +266,19 @@ footer {
   .doc-download {
     margin-left: -24px;
   }
+
+  ul.list-addresses {
+    font-size: 0.9rem;
+    margin-left: -37px;
+  }
+
+  .buttonPurple {
+    width: 25%;
+  }
 }
 
-@media screen and (max-width: 550px) {
-  .img-co {
-    display: none;
-  }
+@media screen and (max-width: 570px) {
+
 
   .card-co {
     width: 55%;
@@ -224,22 +288,45 @@ footer {
     width: 80%;
     margin-left: 50px;
   }
+
+  .buttonPurple {
+    width: 45%;
+  }
 }
 
+/* @media screen and (max-width: 530px) {} */
 @media screen and (max-width: 530px) {
+  .co-space {
+    margin-top: 30%;
+  }
+
   .card-co {
-    width: 93%;
-    padding: 0px 0px 20px;
+    background-color: transparent;
+
+    /* width: 93%;
+    padding: 0px 0px 20px; */
   }
 
   .input-label {
     width: 80%;
     margin-left: 35px;
   }
+
+  .buttonPurple {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 300px) {
-  .card-co {
-    background-color: transparent;
+
+  /* .card-co {
+  } */
+  .buttonPurple {
+    width: 60%;
   }
+
+  .card-co {
+    width: 100%;
+  }
+
 }
