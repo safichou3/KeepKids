@@ -56,9 +56,44 @@ class EspaceProController extends BaseController
         echo view("espaces/pro/enfantsPro", $data);
     }
 
-    public function profilPro()
+
+    function generateProfil()
     {
-        echo view("espaces/pro/profilPro");
+        return [
+            "id" => session('id'),            
+            "nom" => $this->request->getPost('nom'),
+            "prenom" => $this->request->getPost('prenom'),
+            "email" => $this->request->getPost('email'),
+            "tel" => $this->request->getPost('tel'),
+            "adresse" => $this->request->getPost('adresse')
+        ];
+    }
+    function profilPro()
+    {
+        $profilPro = $this->proModel->find(session('id'));
+        $data = [
+            "profilPro" => $profilPro
+        ];
+
+        echo view("espaces/pro/profilPro", $data);
+    }
+
+
+    function modifProfil(int $id)
+    {
+        $parents = $this->parentsModel->findParentsById(session("id"));
+
+        if ($this->request->getMethod() === 'post') {
+
+            $data = $this->generateProfil();
+
+            $this->parentsModel->update($id, $data);
+            return redirect()->to('espaces/parents/profil');
+        } else {
+            echo view("espaces/parents/modifProfil", [
+                "profil" => $parents
+            ]);
+        }
     }
     public function gestionHoraire($day, $date)
     {
@@ -166,4 +201,6 @@ class EspaceProController extends BaseController
 
         echo view("espaces/pro/enfantsPlanning", $data);
     }
+
+    
 }
