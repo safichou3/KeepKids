@@ -15,6 +15,9 @@ class EspaceProController extends BaseController
     protected $accompagnantsModel;
     protected $parentsModel;
 
+    protected $proModel;
+    protected $planningModel;
+
 
     public function __construct()
     {
@@ -22,14 +25,20 @@ class EspaceProController extends BaseController
         $this->reservationsModel = model(ReservationModel::class);
         $this->accompagnantsModel = model(AccompagnantModel::class);
         $this->parentsModel = model(ParentsModel::class);
+        $this->proModel = model(ProModel::class);
+        $this->planningModel = model(planningModel::class);
     }
-    public function planningPro()
-    {
-        echo view("espaces/pro/planningPro");
-    }
+
     public function facturesPro()
     {
-        echo view("espaces/pro/facturesPro");
+        $all = $this->reservationsModel->findAllByReservation();
+
+        $data = [
+            "all" => $all
+
+        ];
+
+        echo view("espaces/pro/facturesPro", $data);
     }
     public function relancesPro()
     {
@@ -38,21 +47,159 @@ class EspaceProController extends BaseController
     public function enfantsPro()
     {
         $enfant = $this->reservationsModel->findAllEnfantsByPro();
-        $accompagnants = $this->accompagnantsModel->findAccompagnantByEnfant();
+
         $data = [
             "enfant" => $enfant,
-            "accompagnant" => $accompagnants
+            "accompagnant" => $this->accompagnantsModel->findAccompagnantByEnfant()
         ];
 
         echo view("espaces/pro/enfantsPro", $data);
     }
 
-    public function profilPro()
+
+    function generateProfil()
     {
-        echo view("espaces/pro/profilPro");
+        return [
+            "id" => session('id'),
+            "nom" => $this->request->getPost('nom'),
+            "prenom" => $this->request->getPost('prenom'),
+            "email" => $this->request->getPost('email'),
+            "tel" => $this->request->getPost('tel'),
+            "adresse" => $this->request->getPost('adresse')
+        ];
+    }
+    function profilPro()
+    {
+        $profilPro = $this->proModel->find(session('id'));
+        $data = [
+            "profilPro" => $profilPro
+        ];
+
+        echo view("espaces/pro/profilPro", $data);
+    }
+
+
+    function modifProfil(int $id)
+    {
+        $parents = $this->parentsModel->findParentsById(session("id"));
+
+        if ($this->request->getMethod() === 'post') {
+
+            $data = $this->generateProfil();
+
+            $this->parentsModel->update($id, $data);
+            return redirect()->to('espaces/parents/profil');
+        } else {
+            echo view("espaces/parents/modifProfil", [
+                "profil" => $parents
+            ]);
+        }
+    }
+    public function gestionHoraire($day, $date)
+    {
+        $day = ucfirst($day);
+
+        if (null !== $this->request->getPost($day . 'checkbox')) {
+
+            $ouverture = null;
+            $fermeture = null;
+            $capacite = null;
+        } else {
+
+            $ouverture = $this->request->getPost($day . "lower");
+            $fermeture = $this->request->getPost($day . "upper");
+            $capacite = $this->request->getPost($day . "capacite");
+        }
+
+
+        $planning = [
+            "idPro" => session('id'),
+            "date" => $date,
+            "semaine" => date('W', $date),
+            "heureOuverture" => $ouverture,
+            "heureFermeture" => $fermeture,
+            "capacité" => $capacite,
+        ];
+        // var_dump($planning);
+        // die();
+        $this->planningModel->insert($planning);
+        $planning;
     }
     public function CreatePlanningPro()
     {
-        echo view("espaces/pro/createPlanningPro");
+        if ($this->request->getMethod() === 'post') {
+
+
+
+
+
+
+
+            echo "<pre>";
+            $date = $this->planningModel->lastMonday();
+            $dayweek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+            for ($i = 0; $i <= 6; $i++) {
+
+                $this->gestionHoraire($dayweek[$i], $date);
+                $date = $date + 86400;
+            }
+
+            // $this->planningModel->insert();
+            // print_r($_POST);
+            // print_r($this->planningModel->findAll());
+            // print_r($_SESSION);
+            echo "</pre>";
+
+            // echo view("espaces/pro/createPlanningPro", $data);
+            unset($_POST);
+        }
+
+        $data = [
+            'date' => $this->planningModel->lastMonday()
+        ];
+        echo view("espaces/pro/createPlanningPro", $data);
+    }
+    public function planningPro()
+    {
+
+        if ($this->request->getMethod() === 'post') {
+            $semaine = $this->request->getPost('semaine');
+            if ($this->planningModel->semaineExist($semaine) == false) {
+                return redirect()->to('espaces/pro/create/planningPro');
+            }
+        } else {
+            $semaine = date("W");
+        }
+        $capacite = [];
+        $semaine = $this->planningModel->weekByPost($semaine);
+        for ($y = 0; $y < 7; $y++) {
+            $capaciteParHeureTemporaire = [];
+            for ($i = 6; $i < 20; $i++) {
+                array_push($capaciteParHeureTemporaire, $this->reservationsModel->findEnfantByDayAndHour(session('id'), date('Y-m-d', $semaine[$y]['date']), $i));
+            }
+            array_push($capacite, $capaciteParHeureTemporaire);
+        }
+
+        $data = [
+            'semaine' => $semaine,
+            'capacite' => $capacite
+        ];
+
+        echo view("espaces/pro/planningPro", $data);
+    }
+    public function enfantsPlanning($date, $heure)
+    {
+        $liste = $this->reservationsModel->findEnfantByDayAndHour(session('id'), date('Y-m-d', $date), $heure);
+        $data = [
+
+            'liste' => $liste,
+            'date' => $date,
+
+
+            "accompagnant" => $this->accompagnantsModel->findAccompagnantByEnfant()
+        ];
+
+        echo view("espaces/pro/enfantsPlanning", $data);
     }
 }

@@ -1,127 +1,21 @@
-/* ============================= CSS SAFIA ============================= */
-
-
 /* ============================= MON PROFIL PARENTS ============================= */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #F9C6C4;
 }
 
-html {
-  width: 100%;
-}
-
-.content-body-parents {
-  padding-bottom: 70px;
-}
-
-
 /* =========================== TOP PROFIL PARENTS =========================== */
-
-.top-empty {
-  width: 100%;
-  padding: 50px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-content: center;
-  justify-content: center;
-}
-
-.profil-top {
-  width: 30%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  margin-left: 30px;
-}
-
-.mini-title-parents {
-  color: #000;
-  font-size: 40px;
-}
-
-.img-profil-parents {
-  width: 20%;
-  border-radius: 50%;
-  margin-left: 25px;
-}
-
 .mail-parents {
-  width: 100%;
-  background-color: #FF2015;
-  padding: 15px 10px;
-  border-radius: 10px;
-  border: none;
-  color: #fff;
-  font-size: 100%;
-  font-weight: bold;
-  cursor: pointer;
-  margin-left: 30px;
+  background-color: #b51c14;
 }
 
 /* =========================== MIDDLE PROFIL PARENTS =========================== */
-
-
-.middle-parents {
-  display: flex;
-  justify-content: space-between;
-  padding: 60px 20px;
+.middle-parents{
   background-color: #FE938C;
 }
-
-.middle-left-parents {
-  margin-left: 30px;
-}
-
-.img-middle-right {
-  width: 55%;
-}
-
-.img_parents {
-  width: 95%;
-}
-
-.img-title-card-parents {
-  width: 80%;
-  margin: 20px 0;
-}
-
-
 
 /* =========================== BOTTOM PROFIL PARENTS =========================== */
-
-
-.bottom-parents {
-  /* display: flex; */
-  margin-top: 15px;
-}
-
-.btn-parents {
-  display: flex;
-  justify-content: center;
-}
-
-.btn-options {
-  margin: 20px 0 0 20px;
-}
-
-.btn-parents-bottom {
-  padding: 10px 25px;
-  border: none;
-  border-radius: 15px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  font-size: 20px;
-  display: flex;
-  align-content: flex-start;
-}
-
 .btn-color-light {
-  background-color: #FE938C;
+  background-color: #FFB2AE;
 }
 
 .btn-color-light:hover {
@@ -133,12 +27,11 @@ html {
 }
 
 .btn-color-dark:hover {
-  background-color: #FF1000;
+  background-color: #b51c14;
 }
 
-.link-btn-options-parents {
-  text-decoration: none;
-}
+
+
 
 .add-kids-display {
   display: flex;
@@ -150,48 +43,27 @@ html {
 }
 
 .kids {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
   background-color: #FF5146;
-  width: 276px;
-  height: auto;
-  border-radius: 45px;
-  color: #fff;
-  padding: 25px;
 }
 
 
 .access {
-  margin-top: 25px;
-  padding: 20px 20px;
-  border-radius: 10px;
-  border: none;
-  color: #fff;
-  font-size: 80%;
-  font-weight: bold;
-  width: 100%;
-  cursor: pointer;
   background-color: #FE938C;
 }
 
 .access:hover {
-  background-color: #B40B00;
+  background-color: #b51c14;
 }
 
-.link-btn-parents {
-  width: 60%;
-}
+@media screen and (max-width: 380px) {
+  .kids{
+    background-color: transparent;
+  }
+  .access{
+    background-color: #FF5146;
+  }
 
-
-
-/* ============================= ICONS ============================= */
-.fi {
-  font-size: 20px;
-}
-
-.icons-btn {
-  margin-right: 10px;
+  .btn-color{
+    background-color: #b51c14;
+  }
 }

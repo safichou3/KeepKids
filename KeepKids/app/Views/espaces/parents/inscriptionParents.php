@@ -4,16 +4,21 @@
 <link href="<?= base_url(); ?>/css/users.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
-
-
 <?= $this->section('content') ?>
+
+<style>
+    body {
+        background-color: #E4EAFF;
+    }
+</style>
 
 <div class="body-form body-ins-parents body-parents">
     <div class="ins-space">
         <h2 class="section-title-parents">Inscription parents</h2>
 
         <div class="form-ins-parents">
-            <form method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
+            <form class="form-center" method="POST" action="<?= base_url(); ?>/espaces/parents/inscriptionParents" enctype="multipart/form-data">
+
                 <div class="ins-group">
                     <div class="input-label margin-group-right">
                         <label>Nom</label>
@@ -42,6 +47,7 @@
                     <label>Adresse</label>
                     <input class="input-inscription input-full-width" type="text" name="adresse" placeholder="adresse">
                 </div>
+
                 <div class="input-label">
                     <label>Mot de passe</label>
                     <input id="passwordInput" class="input-inscription input-full-width" type="password" name="password" placeholder="Mot de Passe" required>
@@ -56,6 +62,11 @@
                         <!-- </div> -->
                         <span id="passwordErrorSize">8 caractères minimum</span>
                     </div>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" name="conditions" id="" require>
+                    <label for="conditions">J'acceptes les <a class="politique" href="<?= base_url(); ?>/accueil/mentions_legales">conditions d'utilisations</a></label>
                 </div>
                 <!-- </div> -->
                 <div class="ins-group">
@@ -73,6 +84,8 @@
     </div>
 </div>
 <?= $this->endSection() ?>
+
 <?= $this->section('js') ?>
 <script src="<?= base_url(); ?>/js/main.js"></script>
+<script src="<?= base_url(); ?>/js/verifs.js"></script>
 <?= $this->endSection() ?>

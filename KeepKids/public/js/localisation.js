@@ -1,78 +1,80 @@
-var map = null; // carte leaflet pour affichage
-
-function go() {
-  var lon1 = document.getElementById("lon1").value;
-  var lat1 = document.getElementById("lat1").value;
-  var lon2 = document.getElementById("lon2").value;
-  var lat2 = document.getElementById("lat2").value;
-  var lon3 = document.getElementById("lon3").value;
-  var lat3 = document.getElementById("lat3").value;
-  var avoidFeatures = [];
-  var noToll = document.getElementById("toll").checked;
-  if (noToll) avoidFeatures.push("toll");
-  var noBridge = document.getElementById("bridge").checked;
-  if (noBridge) avoidFeatures.push("bridge");
-  var noTunnel = document.getElementById("tunnel").checked;
-  if (noTunnel) avoidFeatures.push("tunnel");
-  var graphIdx = document.getElementById("graph").selectedIndex;
-  var graph = document.getElementById("graph").options[graphIdx].value;
-  var methodIdx = document.getElementById("method").selectedIndex;
-  var method = document.getElementById("method").options[methodIdx].value;
-  var resultDiv = document.getElementById("result");
-  try {
-    Gp.Services.route({
-      startPoint: {
-        x: lon1,
-        y: lat1
-      },
-      endPoint: {
-        x: lon3,
-        y: lat3
-      },
-      viaPoints: [{
-        x: lon2,
-        y: lat2
-      }],
-      graph: graph,
-      avoidFeature: avoidFeatures,
-      routePreference: method,
-      apiKey: "jhyvi0fgmnuxvfv0zjzorvdn",
-      onSuccess: function(result) {
-        resultDiv.innerHTML = "<p>" + JSON.stringify(result) + "</p>";
-        // affichage sur la carte
-        L.geoJson(result.routeGeometry).addTo(map);
-      },
-      onFailure: function(error) {
-        resultDiv.innerHTML = "<p>" + error + "</p>";
-      }
-    });
-  } catch (e) {
-    resultDiv.innerHTML = "<p>" + e + "</p>"
-  }
-};
-map = L.map("map").setView([48.845, 2.424], 5);
-L.tileLayer(
-  'https://wxs.ign.fr/jhyvi0fgmnuxvfv0zjzorvdn/geoportail/wmts?service=WMTS&request=GetTile&version=1.0.0&tilematrixset=PM&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal', {
-    minZoom: 0,
-    maxZoom: 18,
-    tileSize: 256
-  }).addTo(map);
-
-var infoDiv = document.getElementById("info");
-infoDiv.innerHTML = "<p> Bibliothèque d'accès version " + Gp.servicesVersion + " (" + Gp.servicesDate + ")</p>";
-
-
-var x = document.getElementById("demo");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+var latAuto, lngAuto;
+navigator.geolocation.getCurrentPosition(function (pos) {
+	latAuto = pos.coords.latitude;
+	lngAuto = pos.coords.longitude;
+});
+// geocoder
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: {lat:latAuto, lng:lngAuto },
+    zoom: 13,
+  });
 }
-    
-function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+
+var geocoder;
+var map;
+function initialize() {
+	geocoder = new google.maps.Geocoder();
+	var latlng = new google.maps.LatLng(lat, lng);
+
 }
+
+function codeAddress() {
+	var address = document.getElementById('address').value;
+	geocoder.geocode({ 'address': address }, function (results, status) {
+
+		document.getElementById("inputCache").value = results[0].geometry.location;
+
+	});
+}
+
+window.initMap = initMap;
+
+// Convertions
+function distance(lat1, lon1, lat2, lon2, unit) {
+	if (lat1 == lat2 && lon1 == lon2) {
+		return 0;
+	} else {
+		var radlat1 = (Math.PI * lat1) / 180;
+		var radlat2 = (Math.PI * lat2) / 180;
+		var latLon = (lat2, lon2);
+		var theta = lon1 - lon2;
+		var radtheta = (Math.PI * theta) / 180;
+		var dist =
+			Math.sin(radlat1) * Math.sin(radlat2) +
+			Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = (dist * 180) / Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit == "K") {
+			dist = dist * 1.609344;
+		}
+		if (unit == "N") {
+			dist = dist * 0.8684;
+		}
+		return dist;
+	}
+}
+
+function getValues() {
+	alert(distance(latAuto, lngAuto, lat22, lon22, "K"));
+}
+
+// afficherDistance();
+// // filtrages par km
+// function get25km() {
+// 	if (distance(lat, lng, 48.864716, 2.349014, "K") >= 25) {
+// 		alert('distance supp a 25.00')
+// 	} else alert('distance inf a 25.00');
+// }
+// function get10km() {
+// 	if (distance(lat, lng, 48.864716, 2.349014, "K") >= 10) {
+// 		alert('distance supp a 10')
+// 	} else alert('distance inf a 10');
+// }
+
+
+//   ajouter des markeurs 

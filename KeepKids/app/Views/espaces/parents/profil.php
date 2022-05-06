@@ -1,19 +1,18 @@
 <?= $this->extend('master') ?>
 
 <?= $this->section('css') ?>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link href="<?= base_url(); ?>/css/profil_parents.css" rel="stylesheet">
+<link href="<?= base_url(); ?>/css/profil.css" rel="stylesheet">
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
 <div class="body-parents">
   <div class="content-body-parents">
 
     <div class="top-empty">
       <div class="profil-top">
         <h3 class="mini-title-parents">Profil</h3>
-        <img class="img-profil-parents" src="<?= base_url(); ?>/img/sammy.jpg" alt="">
+        <img class="img-profil-parents" src="<?= base_url(); ?>/img/profil-pro-avatar.svg" alt="">
       </div>
       <a class="link-mail-parents" href="mailto:addresse@duparent.com"><button class="mail-parents">parent@gmail.com</button></a>
     </div>
@@ -22,9 +21,13 @@
       <div class="middle-left-parents">
         <div class="middle-text-parents">
           <div class="kids">
-            <h3 class="title-card-parents">Nom de l'utilisateur</h3>
-            <img class="img-title-card-parents" src="<?= base_url(); ?>/img/infos-enfants.svg" alt="">
-            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="access">Modifier le profil</button></a>
+            <h3 class="title-card-parents">Profil de <?=$profil["nom"];?> <?=$profil["prenom"];?> </h3>
+            <h5>Mon nom: <?=$profil["nom"];?></h5>
+            <h5>Mon Prénom: <?=$profil["prenom"];?></h5>
+            <h5>Mon adresse e-mail: <?=$profil["email"];?></h5>
+            <h5>Mon numéro de téléphone: <?=$profil["tel"];?></h5>
+            <h5>Mon adresse: <?=$profil["adresse"];?></h5>
+            <a class="link-btn-parents" href="<?= base_url(); ?>/espaces/parents/ModifProfil/<?=$profil["id"];?>"><button class="access">Modifier mon profil</button></a>
           </div>
         </div>
       </div>
@@ -52,7 +55,7 @@
         </div>
 
         <div class="btn-tuto-parents btn-options">
-          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rr-play-alt icons-btn"></i>Tutoriel</button></a>
+          <a class="link-btn-options-parents" href="<?= base_url(); ?>/espaces/parents/mesEnfants"><button class="btn-parents-tuto btn-color-dark btn-parents-bottom"><i class="fi fi-rs-interrogation icons-btn"></i>Tutoriel</button></a>
         </div>
 
       </div>
@@ -61,4 +64,8 @@
   </div>
 </div>
 
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
 <?= $this->endSection() ?>

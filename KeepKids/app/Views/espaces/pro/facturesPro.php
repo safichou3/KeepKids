@@ -5,7 +5,14 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<br><br>
+<div style="height: 65px; width:100%;"></div>
+<!-- 
+<?php
+foreach ($all as $element) {
+    echo $element;
+}
+print_r($all);
+?> -->
 
 <div id="invoice">
     <h1>Facture N°<input class="input-facture" style="font-size:large;" type="number" value="10" name="numéro facture"></h1>
@@ -24,7 +31,7 @@
             <input class="input-facture" type="number" value="0652365233" name="telephone client">
             <br>
             <p>Fait le: <input class="input-facture" type="date" value="" name="date d'emission"></p>
-            
+
 
         </div>
         <br><br>
@@ -57,11 +64,14 @@
         </p>
     </form>
 </div>
-<button id="downloadPdf">telecharger</button>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div class="btn-pdf">
+    <button id="downloadPdf">telecharger</button>
+</div>
 
-<script>
-
-</script>
 <?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="<?= base_url(); ?>/js/main.js"></script>
+<script src="<?= base_url(); ?>/js/factures.js"></script>
+<?= $this->endSection() ?>

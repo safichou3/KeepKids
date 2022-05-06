@@ -1,15 +1,20 @@
 <?= $this->extend('master') ?>
 
-
 <?= $this->section('css') ?>
-
+<link href="<?= base_url(); ?>/css/espace_commun.css" rel="stylesheet">
 <link href="<?= base_url(); ?>/css/espace_parents.css" rel="stylesheet">
 <?= $this->endSection() ?>
+
 <?= $this->section('title') ?>
 <h2 class="section-title"><br></h2>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+
+<br>
+<br>
+<br>
+
 
 <details>
     <summary>
@@ -56,7 +61,7 @@
 </details>
 
 
-<div class="add-kids-display">
+<div class="middle-espaces add-kids-display">
 
     <?php
     if (empty($enfant)) {
@@ -66,7 +71,7 @@
     <?php foreach ($enfant as $element) {
 
         echo "<div class='card-add-kids'>
-        <h3 class='title-card-parents'>" . $element["prenom"] . " </br> " . $element["nom"] . "</h3>
+        <h3 class='title-card title-card-parents'>" . $element["prenom"] . " </br> " . $element["nom"] . "</h3>
         <h4>Né(e) le: " . $element["dateDeNaissance"] . "<br>
         Allergie(s): " . $element["allergies"] . "<br>
         Maladie(s): " . $element["maladies"] . "<br>
@@ -74,13 +79,13 @@
         Régime Alimentaire: " . $element["description"] . "<br><br>
         
         
-         <a class='link-btn-kids vaccin' href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download>carnet <br> vaccination</a>
-        <a class='link-btn-kids certificat' href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download>certificat</a><br>
+         <a class='link-btn-kids vaccin' href='" . base_url() . "/upload/carnetVaccin/" . $element["carnetVaccin"] . "' download>Carnet de vaccination</a>
+        <a class='link-btn-kids certificat' href='" . base_url() . "/upload/certificat/" . $element["certificat"] . "' download>   Certificat</a><br>
         <br>
         <div class='link-btn-kids-div'>
        
         <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/modifEnfants/" . $element["id"] . $element["id"] . "><i class='fi fi-rs-pencil'></i></a>
-        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Reserver</button></h4></div>";
+        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/delete/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><a href='" . base_url() . "/espaces/parents/reservations/" . "'><button class='access'>Reserver</button></a></h4></div>";
     }
     ?>
 </div>
@@ -102,7 +107,7 @@
             <input class="input-inscription" type="text" name="prenomAccompagnant" placeholder="Prenom" required><br>
 
             <label>Relation avec l'enfant</label><br>
-            <select class="input-inscription"  name="relation">
+            <select class="input-inscription" name="relation">
                 <option value="">Qu'elle est votre relation avec l'enfant ?</option>
                 <option value="fraterie">Fraterie</option>
                 <option value="parents">Parents</option>
@@ -117,7 +122,7 @@
 </details>
 
 
-<div class="add-kids-display">
+<div class="middle-espaces add-kids-display">
 
     <?php
     if (empty($accompagnant)) {
@@ -127,7 +132,7 @@
 
     <?php foreach ($accompagnant as $element) {
         echo "<div class='card-add-kids'>
-        <h3 class='title-card-parents'>" . $element["prenomAccompagnant"] . " </br> " . $element["nomAccompagnant"] . "</h3>
+        <h3 class='title-card title-card-parents'>" . $element["prenomAccompagnant"] . " </br> " . $element["nomAccompagnant"] . "</h3>
         <h4>Nom: " . $element["nomAccompagnant"] . "<br>
         Prénom: " . $element["prenomAccompagnant"] . "<br>
         Relation: " . $element["relation"] . "<br>
@@ -135,10 +140,15 @@
         <br>
         <div class='link-btn-kids-div'>
         <a class='link-btn-kids modify' href=" . base_url() . "/espaces/parents/modifEnfants/" . $element["id"] . $element["id"] . "><i class='fi fi-rs-pencil'></i></a>
-        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/deleteAccompagnant/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a></div><button class='access'>Reserver</button></h4></div>";
+        <a class='link-btn-kids delete' href=" . base_url() . "/espaces/parents/mesEnfants/deleteAccompagnant/" . $element["id"] . "><i class='fi fi-rs-trash'></i></a><a href='" . base_url() . "/espaces/parents/reservations/" . "'></div><button class='access'>Reserver</button></a></h4></div>";
     }
     ?>
 </div>
 <br><br>
 
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/verifs.js"></script>
+<script src="<?= base_url(); ?>/js/main.js"></script>
 <?= $this->endSection() ?>

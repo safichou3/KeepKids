@@ -1,48 +1,3 @@
-// console.log("JS ACTIF");
-// Molette géolocalisation (km)
-
-var rangeSlider = function(){
-	var slider = $('.range-slider'),
-		range = $('.range-slider__range'),
-		value = $('.range-slider__value');
-	  
-	slider.each(function(){
-  
-	  value.each(function(){
-		var value = $(this).prev().attr('value');
-		$(this).html(value);
-	  });
-  
-	  range.on('input', function(){
-		$(this).next(value).html(this.value);
-	  });
-	});
-  };
-  
-  rangeSlider();
-  
-//  fonction invoice (facture)
-
-window.onload = function () {
-	document.getElementById("downloadPdf").addEventListener("click", () => {
-		const invoice = this.document.getElementById("invoice");
-		console.log(invoice);
-		console.log(window);
-		var opt = {
-			margin: 2,
-			filename: "facture.pdf",
-			image: { type: "jpeg", quality: 0.98 },
-			html2canvas: { scale: 7 },
-			jsPDF: {
-				unit: "mm",
-				format: "a4",
-				orientation: "portrait"
-				
-			},
-		};
-		html2pdf().from(invoice).set(opt).save();
-	});
-};
 //  menu burger
 
 const hamburger = document.querySelector(".hamburger");
@@ -59,9 +14,28 @@ hamburger.addEventListener('click', () => {
 	//Hamburger Animation
 	hamburger.classList.toggle("toggle");
 });
+
 // cards
 
 $(document).ready(function () {
+
+	
+	//set responsive mobile input field placeholder text
+	if ($(window).width() < 769) {
+		$(".searchTerm").attr("placeholder", "Trouver une crèche à proximité");
+	}
+	else {
+		$(".searchTerm").attr("placeholder", "Rechercher des creches à proximité");
+	}
+	$(window).resize(function () {
+		if ($(window).width() < 769) {
+			$(".searchTerm").attr("placeholder", "Trouver une crèche à proximité");
+		}
+		else {
+			$(".searchTerm").attr("placeholder", "Rechercher des creches à proximité");
+		}
+	});
+	
 
 	$(".showMore1").click(function () {
 		$(".hideContent1").hide();
@@ -89,6 +63,9 @@ $(document).ready(function () {
 		$(".hideContent3").show();
 		$(".showContent3").hide();
 	});
+
+	$('#payement_table').DataTable();
+
 })
 
 // verifs
@@ -187,9 +164,9 @@ function verifSiret() {
 		siretERROR.style.visibility = 'hidden';
 	} else {
 		siretERROR.style.color = "red";
-		
+
 		;
-	}	
+	}
 }
 // 		siretERROR.style.visibility = 'visible';
 
@@ -205,3 +182,46 @@ var downloadURL = function downloadURL(url) {
 		iframe.id = hiddenIFrameID; iframe.style.display = 'none'; document.body.appendChild(iframe);
 	} iframe.src = url;
 };
+
+// api adresse gouv
+$("#inputRue").keyup(function(event) {
+	// Stop la propagation par défaut
+		  event.preventDefault();
+		  event.stopPropagation();
+  
+		  let rue = $("#inputRue").val();
+		  $.get('https://api-adresse.data.gouv.fr/search/', {
+			  q: rue,
+			  limit: 15,
+			  autocomplete: 1
+		  }, function (data, status, xhr) {
+			  let liste = "";
+			  $.each(data.features, function(i, obj) {
+				  console.log(obj.properties);
+				  // données phase 1 (obj.properties.label) & phase 2 : name, postcode, city
+				  // J'ajoute chaque élément dans une liste
+				  liste += '<li><a href="#" name="'+obj.properties.label+'" data-name="'+obj.properties.name+'" data-postcode="'+obj.properties.postcode+'" data-city="'+obj.properties.city+'">'+obj.properties.label+'</a></li>';
+			  });
+			  $('.adress-feedback ul').html(liste);
+  
+			  // ToDo: Au clic du lien voulu, on envoie l'info en $_POST
+			  $('.adress-feedback ul>li').on("click","a", function(event) {
+				  // Stop la propagation par défaut
+				  event.preventDefault();
+				  event.stopPropagation();
+  
+				  let adresse = $(this).attr("name");
+  
+				  $("#inputRue").val($(this).attr("data-name"));
+				  $("#inputCodePostal").val($(this).attr("data-postcode"));
+				  $("#inputVille").val($(this).attr("data-city"));
+  
+				  $('.adress-feedback ul').empty();
+			  });
+  
+		  }).error(function () {
+			  // alert( "error" );
+		  }).always(function () {
+			  // alert( "finished" );
+		  }, 'json');
+	  });

@@ -6,15 +6,22 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    body {
+        background-color: #FF817B;
+    }
+</style>
+
+
 <div class="body-form body-co-pro body-pro">
 
     <div class="co-pro co-space">
 
         <img class="img-co-pro img-co" src="<?= base_url(); ?>/img/co-pro-img.svg" alt="">
-        
+
         <div class="card-co-pro card-co">
 
-            <h2 class="section-title-pro">Connexion pro</h2>
+            <h1 class="section-title-pro">Connexion pro</h1>
 
             <form action="" method="POST" action="<?= base_url(); ?>/espaces/pro/connexionPro" enctype="multipart/form-data">
                 <?php if (!empty($validation)) {
@@ -34,4 +41,8 @@
         </div>
     </div>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
 <?= $this->endSection() ?>

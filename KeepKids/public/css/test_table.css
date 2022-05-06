@@ -1,0 +1,32 @@
+/* #log_table_filter {
+	margin-bottom: 10px;
+} */
+
+.Table_Div {
+	overflow-x: auto;
+}
+
+table {
+	width: 100%;
+	text-align: center;
+	/* font-size: 15px; grand écran */
+	/* border-radius: 5px; */
+}
+
+th, td {
+	padding: 10px 15px;
+}
+
+th {
+	background-color: #272A5F;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+tr:nth-child(odd) {
+	background-color: #ececec;
+}
+
+.container-pay {
+  padding: 70px 10px;
+}

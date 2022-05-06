@@ -10,21 +10,45 @@
 <!-- <div class="rouge"> -->
 <div class="center-div">
     <img class="img-header" src="<?= base_url(); ?>/img/bebe2.jpg" alt="">
+    <img class="img-header-bis" src="<?= base_url(); ?>/img/bebeVertical.jpg" alt="">
+
     <div class="wrap">
-        <h1 class="title-accueil">KEEPKIDS,<br>Tranquille le temps d'une balade</h1>
+        <div class="tt-accueil-bg"></div>
+        <h1 class="title-accueil">
+            <div id=container3>
+                KEEPKIDS,
+                <div id=flip>
+                    <div>
+                        <div>LIBERTE</div>
+                    </div>
+                    <div>
+                        <div>TRANQUILLITE</div>
+                    </div>
+                    <div>
+                        <div>CONFIANCE</div>
+                    </div>
+                </div>
+                POUR LA JOURNEE
+            </div>
+        </h1>
+        <p class="title-accueil">Plateforme 100% gratuite de mise en relation de parents avec des professionnels de la garde d'enfants.</p>
         <div class="search">
-            <input type="text" class="searchTerm" placeholder="Rechercher des creches à proximité">
-            <button type="submit" class="searchButton">
+            <input type="text" class="searchTerm">
+            <button class="searchButton"><a class="btn-search-icon" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">
                 <i class="fi fi-br-search"></i>
             </button>
         </div>
+        <p class="text-input">Sécurisé & créer juste pour votre confort.</p>
+        <a class="link-btn-ins-accueil" href="<?= base_url(); ?>/espaces/parents/inscriptionParents">
+            <button class="btn-ins-accueil">S'inscrire maintenant</button></a>
     </div>
     <div class="wrap2">
-        <h1 style="font-size:100%;border-radius: 5px;padding: 2%;">La plateforme sécurisé qui permets aux parents de gagner du temps dans leurs réservations, leurs factures et leurs paiements.</h1>
+        <h1 class="wrap-style">La plateforme sécurisé qui permets aux parents de gagner du temps dans leurs réservations, leurs factures et leurs paiements.</h1>
     </div>
     <div class="wrap3">
-        <h1 style="font-size:100%;border-radius: 5px;padding: 2%;">Un espace professionnel pour les Crèches et les assistantes Maternelles </h1>
+        <h1 class="wrap-style">Un espace professionnel pour les Crèches et les assistantes Maternelles </h1>
     </div>
+    <!-- </div> -->
     <div class="wrap4">
         <h1 class="title-accueil1" style="border-radius: 5px;padding: 2%;">Faites nous confiance, inscrivez-vous, c'est gratuit à vie ! </h1>
         <button class="bouton-accueil">Je m'inscris maintenant</button>
@@ -37,25 +61,25 @@
     <div class="section2">
 
         <section class="text-accueil text-top-accueil">
-            <em>A propos de nous</em>
-            <h1 class="title">Nous sommes une jeune équipe qui mettons nos qualité a l'oeuvre pour votre confort</h1>
+            <em class="em em-apropos">A propos de nous</em>
+            <h1 class="title title-text">Nous sommes une jeune équipe qui mettons nos qualité a l'oeuvre pour votre confort</h1>
             <p>En imaginant ce site nous avons pensé aux jeunes parents dans le besoin qui ne savent pas ou ils peuvent faire garder leurs bout-de-choux. </p>
             <p>Pour cela nous avons mis en commun les compétences de 6 jeunes développeurs.</p>
             <p>La rigueur et l’exigence sont les qualités principales indispensables aux prestations de garde d’enfants : chez Kangourou Kids, le recrutement est sélectif et la formation et le contrôle de qualité sont permanents.</p>
             <p>La réglementation doit devenir plus précise et plus intransigeante pour limiter le développement des pratiques approximatives du secteur (notamment le travail au noir) qui présentent des risques, tant pour les enfants que pour leurs parents</p>
         </section>
-        <section>
+        <section class="section-img">
             <img src="<?= base_url(); ?>/img/kids-top-accueil.svg" alt="garçons">
         </section>
     </div>
 </div>
 <div class="section3">
-    <section>
+    <section class="section-img">
         <img src="<?= base_url(); ?>/img/baby-accueil.svg" alt="enfants" width="20px">
     </section>
     <section class="text-accueil text-middle-accueil">
-        <em>Pourquoi Nous ?</em>
-        <h1 class="title">Notre plateforme est sûr et vous permettra d'aller au travail en toute sérenité</h1>
+        <em class="em em-pourquoi">Pourquoi Nous ?</em>
+        <h1 class="title title-text">Notre plateforme est sûr et vous permettra d'aller au travail en toute sérenité</h1>
         <p>En effet, chaque professionnel souhaitant s’inscrire doit fournir ses diplômes ainsi qu’une preuve de son identité.</p>
         <p>Le site vous indiqueras oû sont les professionels les plus proches afin de vous aider le mieux possible.</p>
         <p>Votre agence KEEPKIDS met à votre disposition des baby-sitters ou créche qui prendront en charge vos enfants depuis la sortie de l'école jusqu'à votre retour à la maison sur toute la France.
@@ -73,7 +97,7 @@
                 <div class="detailInfo">
                     <p>Guillaume C.</p>
                     <p>
-                       <i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i>
+                        <i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i><i class="fi fi-ss-star star-color"></i>
                     </p>
                 </div>
             </div>
@@ -128,10 +152,10 @@
     </div>
 </section>
 
-<section>
+<section class="section-pilot">
     <div class="container-accueil-bottom">
         <div class="card-pilot">
-            <h1 class="title">Une plateforme validé par TrustPilot</h1>
+            <h1 class="title title-pilot">Une plateforme validé par TrustPilot</h1>
             <img src="http://calliope-consulting.fr/wp-content/uploads/2020/04/trustpilot-new-.png" width="150px" alt="">
             <p class="subtitle">Parce que les meilleurs nounous se trouvent sur notre site !</p>
             <a href="https://www.trustpilot.com/" target="_blank"><button class="btn-accueil-pilot">Nous noter sur TrustPilot.com</button></a>
@@ -141,4 +165,9 @@
 </section>
 
 
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="<?= base_url(); ?>/js/main.js"></script>
+<script src="<?= base_url(); ?>/js/animations.js"></script>
 <?= $this->endSection() ?>
