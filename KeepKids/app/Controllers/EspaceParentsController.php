@@ -219,7 +219,24 @@ class EspaceParentsController extends BaseController
     // RESRVATION
     function reservations1($id)
     {
-        // if ($this->request->getMethod() === 'post') {
+        if ($this->request->getPost('heureOuverture') != NULL && $this->request->getPost('heureFermeture') != NULL && $this->request->getPost('enfantSelect') != NULL && $this->request->getPost('date') != NULL) {
+            $heureOuverture = $this->request->getPost('heureOuverture');
+            $heureFermeture = $this->request->getPost('heureFermeture');
+            $date = $this->request->getPost('date');
+            $enfantSelect = $this->request->getPost('enfantSelect');
+            for ($i = 0; $i < ($heureFermeture - $heureOuverture); $i++) {
+                $data = [
+                    'idPro' => $id,
+                    'heure' => $i + $heureOuverture,
+                    'date' => $date,
+                    'idEnfant' => $enfantSelect,
+                    'date' => $date,
+                    'statut' => 0
+                ];
+                $this->reservationsModel->insert($data);
+            }
+            return redirect()->to('/');
+        }
         $date = $this->request->getPost('date');
         $capacite = [];
         for ($i = 6; $i < 20; $i++) {
@@ -227,8 +244,8 @@ class EspaceParentsController extends BaseController
         }
         $data = [
             'enfants' => $this->enfantsModel->findEnfantsByParent(session('id')),
-            'horaires' => $this->planningModel->getHoraire($id, strtotime($date)),
-            'strtotime' => $date,
+            'horaires' => $this->planningModel->getHoraireByDay($id, strtotime($date)),
+            'strtotime' => strtotime($date),
             'capacite' => $capacite
         ];
 
