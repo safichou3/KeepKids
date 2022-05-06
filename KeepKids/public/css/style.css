@@ -871,14 +871,14 @@ footer ul {
     color: #000;
   }
 
-.searchButton a{
-  text-decoration: none;
-}
+  .searchButton a {
+    text-decoration: none;
+  }
 
   /* .bg-opacity{
     background-color: #00000052;
   } */
-  h1.title-accueil,p.title-accueil {
+  h1.title-accueil, p.title-accueil {
     display: block;
     color: #fff;
     position: relative;
@@ -1009,7 +1009,7 @@ footer ul {
     margin-bottom: 10px;
   }
 
-  .search{
+  .search {
     position: absolute;
     top: 103%;
   }
@@ -1025,15 +1025,28 @@ footer ul {
     top: 160px;
   }
 }
+
 @media screen and (max-width: 380px) {
   .tt-accueil-bg {
     left: -13px;
+    height: 270px;
+    top: 77px;
     /* top: 67px;
     width: 290px; */
   }
 
   .btn-ins-accueil {
     top: 160px;
+  }
+
+  p.title-accueil {
+    font-size: 1.2rem;
+    width: 100%;
+    left: 0%;
+  }
+
+  h1.title-accueil, p.title-accueil {
+    top: -195px;
   }
 }
 
