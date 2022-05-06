@@ -897,14 +897,13 @@ footer ul {
   }
 
   .tt-accueil-bg {
-    display: none;
-    /* position: relative;
+    position: relative;
     top: 70px;
     background: rgba(0, 0, 0, 0.15);
     width: 360px;
     left: 19px;
     height: 254px;
-    border-radius: 10px; */
+    border-radius: 10px;
   }
 
   h1.title-accueil {
