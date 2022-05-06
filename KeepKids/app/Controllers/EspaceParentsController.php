@@ -286,7 +286,7 @@ class EspaceParentsController extends BaseController
     function generateProfil()
     {
         return [
-            "id" => session('id'),            
+            "id" => session('id'),           
             "nom" => $this->request->getPost('nom'),
             "prenom" => $this->request->getPost('prenom'),
             "email" => $this->request->getPost('email'),
